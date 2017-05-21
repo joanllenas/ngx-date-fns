@@ -27,7 +27,10 @@
     "src/distance-in-words-to-now.pipe.spec.ts",
 
     "src/format.pipe.ts",
-    "src/format.pipe.spec.ts"
+    "src/format.pipe.spec.ts",
+
+    "src/get-overlapping-days-in-ranges.pipe.ts",
+    "src/get-overlapping-days-in-ranges.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"

@@ -38,7 +38,7 @@ Available pipes
 * [dfnsFormat](https://date-fns.org/docs/format)
 * max (_tbd_)
 * min (_tbd_)
-* getOverlappingDaysInRanges (_tbd_)
+* [dfnsGetOverlappingDaysInRanges](https://date-fns.org/docs/getOverlappingDaysInRanges)
 * getTime (_tbd_)
 * addMilliseconds (_tbd_)
 * differenceInMilliseconds (_tbd_)
