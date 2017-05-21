@@ -4,3 +4,4 @@ export { DistanceInWordsStrictPipe } from './distance-in-words-strict.pipe';
 export { DistanceInWordsToNowPipe } from './distance-in-words-to-now.pipe';
 export { FormatPipe } from './format.pipe';
 export { GetOverlappingDaysInRangesPipe } from './get-overlapping-days-in-ranges.pipe';
+export { GetMillisecondsPipe } from './get-milliseconds.pipe';

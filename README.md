@@ -42,7 +42,7 @@ Available pipes
 * getTime (_tbd_)
 * addMilliseconds (_tbd_)
 * differenceInMilliseconds (_tbd_)
-* getMilliseconds (_tbd_)
+* [dfnsGetMilliseconds](https://date-fns.org/docs/getMilliseconds)
 * subMilliseconds (_tbd_)
 * addSeconds (_tbd_)
 * differenceInSeconds (_tbd_)

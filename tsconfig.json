@@ -30,7 +30,10 @@
     "src/format.pipe.spec.ts",
 
     "src/get-overlapping-days-in-ranges.pipe.ts",
-    "src/get-overlapping-days-in-ranges.pipe.spec.ts"
+    "src/get-overlapping-days-in-ranges.pipe.spec.ts",
+
+    "src/get-milliseconds.pipe.ts",
+    "src/get-milliseconds.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"
