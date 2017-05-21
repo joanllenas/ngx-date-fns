@@ -1,3 +1,16 @@
+import { GetSecondsPipe } from "./get-seconds.pipe";
+import { GetMinutesPipe } from "./get-minutes.pipe";
+import { GetHoursPipe } from "./get-hours.pipe";
+import { GetDatePipe } from "./get-date.pipe";
+import { GetDayOfYearPipe } from "./get-day-of-year.pipe";
+import { GetDayPipe } from "./get-day.pipe";
+import { GetISODayPipe } from "./get-iso-day.pipe";
+import { GetDaysInMonthPipe } from "./get-days-in-month.pipe";
+import { GetMonthPipe } from "./get-month.pipe";
+import { GetDaysInYearPipe } from "./get-days-in-year.pipe";
+import { GetYearPipe } from "./get-year.pipe";
+import { GetISOWeeksInYearPipe } from "./get-iso-weeks-in-year.pipe";
+
 export { DateFnsModule } from './date-fns.module';
 export { DistanceInWordsPipe } from './distance-in-words.pipe';
 export { DistanceInWordsStrictPipe } from './distance-in-words-strict.pipe';

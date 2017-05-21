@@ -33,7 +33,46 @@
     "src/get-overlapping-days-in-ranges.pipe.spec.ts",
 
     "src/get-milliseconds.pipe.ts",
-    "src/get-milliseconds.pipe.spec.ts"
+    "src/get-milliseconds.pipe.spec.ts",
+
+    "src/get-seconds.pipe.ts",
+    "src/get-seconds.pipe.spec.ts",
+
+    "src/get-minutes.pipe.ts",
+    "src/get-minutes.pipe.spec.ts",
+
+    "src/get-hours.pipe.ts",
+    "src/get-hours.pipe.spec.ts",
+
+    "src/get-date.pipe.ts",
+    "src/get-date.pipe.spec.ts",
+
+    "src/get-day-of-year.pipe.ts",
+    "src/get-day-of-year.pipe.spec.ts",
+
+    "src/get-day.pipe.ts",
+    "src/get-day.pipe.spec.ts",
+
+    "src/get-iso-day.pipe.ts",
+    "src/get-iso-day.pipe.spec.ts",
+
+    "src/get-iso-week.pipe.ts",
+    "src/get-iso-week.pipe.spec.ts",
+
+    "src/get-days-in-month.pipe.ts",
+    "src/get-days-in-month.spec.ts",
+
+    "src/get-month.pipe.ts",
+    "src/get-month.spec.ts",
+
+    "src/get-days-in-year.pipe.ts",
+    "src/get-days-in-year.spec.ts",
+
+    "src/get-year.pipe.ts",
+    "src/get-year.spec.ts",
+
+    "src/get-iso-weeks-in-year.pipe.ts",
+    "src/get-iso-weeks-in-year.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"
