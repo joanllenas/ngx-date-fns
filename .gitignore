@@ -12,4 +12,3 @@ typings
 *.d.ts
 *.js
 *.js.map
-!src/index.js
