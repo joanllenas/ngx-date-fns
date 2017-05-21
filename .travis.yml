@@ -7,9 +7,10 @@ notifications:
 node_js:
   - '7'
   - '6'
-  - '4'
 before_script:
   - npm prune
+script:
+  - npm run build
 after_success:
   - npm run semantic-release
 branches:
