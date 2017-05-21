@@ -1,16 +1,22 @@
 {
   "name": "ngx-date-fns",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "date-fns pipes for Angular",
   "main": "index.js",
   "typings": "./index.d.ts",
   "scripts": {
-    "test": "tslint src/*.ts --exclude=src/*.d.ts && ngc && karma start",
-    "prepublish": "ngc && copyfiles -f src/*.js src/*.js.map src/*.d.ts src/*.metadata.json ."
+    "lint": "tslint src/*.ts --exclude=src/*.d.ts",
+    "test": "karma start",
+    "prebuild": "npm run lint",
+    "build": "ngc && copyfiles -f src/*.js src/*.js.map src/*.d.ts src/*.metadata.json .",
+    "postbuild": "npm test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "precommit": "npm test",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joanllenas/ngx-date-fns"
+    "url": "https://github.com/joanllenas/ngx-date-fns"
   },
   "keywords": [
     "angular",
@@ -41,8 +47,11 @@
     "@angular/platform-server": "2.0.2",
     "@types/jasmine": "2.5.35",
     "awesome-typescript-loader": "2.2.4",
+    "commitizen": "^2.9.6",
     "copyfiles": "1.0.0",
+    "cz-conventional-changelog": "^2.0.0",
     "es6-shim": "0.35.1",
+    "ghooks": "^2.0.0",
     "jasmine-core": "2.4.1",
     "karma": "1.1.0",
     "karma-jasmine": "1.0.2",
@@ -52,9 +61,18 @@
     "phantomjs-prebuilt": "2.1.7",
     "reflect-metadata": "0.1.3",
     "rxjs": "5.0.0-beta.12",
+    "semantic-release": "^6.3.6",
     "tslint": "3.15.1",
     "typescript": "2.0.3",
     "webpack": "1.13.2",
     "zone.js": "0.6.25"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm run test"
+    }
   }
 }
