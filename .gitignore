@@ -1,0 +1,15 @@
+.idea
+.DS_Store
+node_modules
+npm-debug.log
+typings
+
+
+
+# ngc generated files
+/compiled
+*.metadata.json
+*.d.ts
+*.js
+*.js.map
+!src/index.js
