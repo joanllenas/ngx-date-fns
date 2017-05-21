@@ -9,15 +9,8 @@ describe('DistanceInWordsPipe', () => {
   beforeEach(() => pipe = new DistanceInWordsPipe());
 
   it('should throw when required arguments are not provided', () => {
-    [
-      [undefined, undefined],
-      [undefined, new Date()],
-      [new Date(), undefined],
-    ]
-    .forEach(() =>
       expect(() => pipe.transform(undefined, undefined))
-        .toThrow(new Error(DistanceInWordsPipe.NO_ARGS_ERROR))
-    );
+        .toThrow(new Error(DistanceInWordsPipe.NO_ARGS_ERROR));
   });
 
   it('should display output correctly', () => {
