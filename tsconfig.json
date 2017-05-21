@@ -14,10 +14,20 @@
     "declaration": true
   },
   "files": [
+    "src/index.ts",
     "src/date-fns.module.ts",
-    "src/distance-in-words.pipe.spec.ts",
+
     "src/distance-in-words.pipe.ts",
-    "src/index.ts"
+    "src/distance-in-words.pipe.spec.ts",
+
+    "src/distance-in-words-strict.pipe.ts",
+    "src/distance-in-words-strict.pipe.spec.ts",
+
+    "src/distance-in-words-to-now.pipe.ts",
+    "src/distance-in-words-to-now.pipe.spec.ts",
+
+    "src/format.pipe.ts",
+    "src/format.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"
