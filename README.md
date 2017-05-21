@@ -28,7 +28,7 @@ import {DateFnsModule} from 'ngx-date-fns';
 
 Available pipes
 ---------------
-* [distanceInWords](https://date-fns.org/docs/distanceInWords)
-* [distanceInWordsStrict](https://date-fns.org/docs/distanceInWordsStrict)
-* [distanceInWordsToNow](https://date-fns.org/docs/distanceInWordsToNow)
-* [format](https://date-fns.org/docs/format)
+* [dfnsDistanceInWords](https://date-fns.org/docs/distanceInWords)
+* [dfnsDistanceInWordsStrict](https://date-fns.org/docs/distanceInWordsStrict)
+* [dfnsDistanceInWordsToNow](https://date-fns.org/docs/distanceInWordsToNow)
+* [dfnsFormat](https://date-fns.org/docs/format)
