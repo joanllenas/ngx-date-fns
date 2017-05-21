@@ -10,13 +10,12 @@ export class GetOverlappingDaysInRangesPipe implements PipeTransform {
     initialRangeEndDate: string | number | Date,
     comparedRangeStartDate: string | number | Date,
     comparedRangeEndDate: string | number | Date
-  ): string {
+  ): number {
     if (!initialRangeStartDate || !initialRangeEndDate || !comparedRangeStartDate || !comparedRangeEndDate) {
         throw new Error(GetOverlappingDaysInRangesPipe.NO_ARGS_ERROR);
     }
-    const days = getOverlappingDaysInRanges(
+    return getOverlappingDaysInRanges(
       initialRangeStartDate, initialRangeEndDate, comparedRangeStartDate, comparedRangeEndDate
     );
-    return days.toString(10);
   }
 }
