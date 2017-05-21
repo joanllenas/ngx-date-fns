@@ -60,19 +60,19 @@
     "src/get-iso-week.pipe.spec.ts",
 
     "src/get-days-in-month.pipe.ts",
-    "src/get-days-in-month.spec.ts",
+    "src/get-days-in-month.pipe.spec.ts",
 
     "src/get-month.pipe.ts",
-    "src/get-month.spec.ts",
+    "src/get-month.pipe.spec.ts",
 
     "src/get-days-in-year.pipe.ts",
-    "src/get-days-in-year.spec.ts",
+    "src/get-days-in-year.pipe.spec.ts",
 
     "src/get-year.pipe.ts",
-    "src/get-year.spec.ts",
+    "src/get-year.pipe.spec.ts",
 
     "src/get-iso-weeks-in-year.pipe.ts",
-    "src/get-iso-weeks-in-year.spec.ts"
+    "src/get-iso-weeks-in-year.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"
