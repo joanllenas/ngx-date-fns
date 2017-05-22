@@ -1,5 +1,7 @@
 # ngx-date-fns
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/joanllenas/ngx-date-fns.svg)](https://greenkeeper.io/)
+
 [date-fns](https://date-fns.org/) pipes for Angular 2.0 and above.
 
 [![Build Status](https://travis-ci.org/joanllenas/ngx-date-fns.png?branch=master)](https://travis-ci.org/joanllenas/ngx-date-fns)
