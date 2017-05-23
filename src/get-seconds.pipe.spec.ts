@@ -1,4 +1,4 @@
-import 'es6-shim';
+import 'core-js';
 import 'reflect-metadata';
 import { GetSecondsPipe } from './get-seconds.pipe';
 

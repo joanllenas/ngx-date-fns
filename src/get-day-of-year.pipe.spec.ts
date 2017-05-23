@@ -1,4 +1,4 @@
-import 'es6-shim';
+import 'core-js';
 import 'reflect-metadata';
 import { GetDayOfYearPipe } from './get-day-of-year.pipe';
 

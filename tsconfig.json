@@ -72,7 +72,10 @@
     "src/get-year.pipe.spec.ts",
 
     "src/get-iso-weeks-in-year.pipe.ts",
-    "src/get-iso-weeks-in-year.pipe.spec.ts"
+    "src/get-iso-weeks-in-year.pipe.spec.ts",
+
+    "src/get-iso-week.pipe.ts",
+    "src/get-iso-week.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"

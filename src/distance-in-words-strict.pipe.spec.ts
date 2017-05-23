@@ -1,4 +1,4 @@
-import 'es6-shim';
+import 'core-js';
 import 'reflect-metadata';
 import { DistanceInWordsStrictPipe } from './distance-in-words-strict.pipe';
 import * as esLocale from 'date-fns/locale/es/index.js';

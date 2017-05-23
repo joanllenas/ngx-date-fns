@@ -8,7 +8,10 @@ typings
 
 # ngc generated files
 /compiled
+index.js
 *.metadata.json
 *.d.ts
-*.js
+*.module.js
+*.pipe.js
+*.pipe.spec.js
 *.js.map
