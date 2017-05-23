@@ -6,6 +6,7 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
 
     files: [
+      { pattern: 'node_modules/core-js/modules/es6.weak-map', watched: false },
       { pattern: 'src/*.spec.ts', watched: false }
     ],
 

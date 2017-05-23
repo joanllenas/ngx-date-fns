@@ -1,4 +1,4 @@
-import 'es6-shim';
+import 'core-js';
 import 'reflect-metadata';
 import { GetISOWeeksInYearPipe } from './get-iso-weeks-in-year.pipe';
 

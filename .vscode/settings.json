@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "files.exclude": {
+    "**/*.d.ts": {
+      "when": "$(basename).ts"
+    },
+    "index.js": true,
+    "**/*.pipe.js": true,
+    "**/*.pipe.spec.js": true,
+    "**/*.js.map": true,
+    "**/*.metadata.json": true
+  }
+,
+"typescript.tsdk": "./node_modules/typescript/lib"
+}
