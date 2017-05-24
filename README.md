@@ -1,4 +1,4 @@
-# ![](http://cdn.date-fns.org/README-logo.svg) + ![](https://raw.githubusercontent.com/joanllenas/ngx-date-fns/master/.github/angular-red.svg) = ngx-date-fns
+# ![](http://cdn.date-fns.org/README-logo.svg) + ![](./.github/angular-red.svg) = ngx-date-fns
 
 [![Build Status](https://travis-ci.org/joanllenas/ngx-date-fns.png?branch=master)](https://travis-ci.org/joanllenas/ngx-date-fns)
 [![npm version](https://badge.fury.io/js/ngx-date-fns.svg)](https://badge.fury.io/js/ngx-date-fns)
