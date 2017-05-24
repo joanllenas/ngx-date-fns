@@ -13,7 +13,8 @@ describe('GetTimePipe', () => {
   });
 
   it('should return the milliseconds timestamp of the given date', () => {
-    expect(pipe.transform(new Date(2012, 1, 29, 11, 45, 5, 123)))
-      .toEqual(1330512305123);
+    const timestamp = 1483228800000;
+    expect(pipe.transform(new Date(timestamp)))
+      .toEqual(timestamp);
   });
 });
