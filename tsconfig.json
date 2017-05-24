@@ -81,7 +81,10 @@
     "src/min.pipe.spec.ts",
 
     "src/max.pipe.ts",
-    "src/max.pipe.spec.ts"
+    "src/max.pipe.spec.ts",
+
+    "src/get-time.pipe.ts",
+    "src/get-time.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"

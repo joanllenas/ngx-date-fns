@@ -20,3 +20,4 @@ export { GetISOWeeksInYearPipe } from './get-iso-weeks-in-year.pipe';
 export { GetISOWeekPipe } from './get-iso-week.pipe';
 export { MinPipe } from './min.pipe';
 export { MaxPipe } from './max.pipe';
+export { GetTimePipe } from './get-time.pipe';

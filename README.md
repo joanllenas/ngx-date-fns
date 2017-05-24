@@ -42,7 +42,7 @@ Available pipes
 * [dfnsMin](https://date-fns.org/docs/min)
 * [dfnsMax](https://date-fns.org/docs/max)
 * [dfnsGetOverlappingDaysInRanges](https://date-fns.org/docs/getOverlappingDaysInRanges)
-* getTime (_tbd_)
+* [dfnsGetTime](https://date-fns.org/docs/getTime)
 * addMilliseconds (_tbd_)
 * differenceInMilliseconds (_tbd_)
 * [dfnsGetMilliseconds](https://date-fns.org/docs/getMilliseconds)

@@ -21,6 +21,7 @@ import { GetISOWeeksInYearPipe } from './get-iso-weeks-in-year.pipe';
 import { GetISOWeekPipe } from './get-iso-week.pipe';
 import { MinPipe } from './min.pipe';
 import { MaxPipe } from './max.pipe';
+import { GetTimePipe } from './get-time.pipe';
 
 const PIPES = [
   DistanceInWordsPipe,
@@ -43,7 +44,8 @@ const PIPES = [
   GetISOWeeksInYearPipe,
   GetISOWeekPipe,
   MinPipe,
-  MaxPipe
+  MaxPipe,
+  GetTimePipe
 ];
 
 @NgModule({
