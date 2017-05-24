@@ -75,7 +75,13 @@
     "src/get-iso-weeks-in-year.pipe.spec.ts",
 
     "src/get-iso-week.pipe.ts",
-    "src/get-iso-week.pipe.spec.ts"
+    "src/get-iso-week.pipe.spec.ts",
+
+    "src/min.pipe.ts",
+    "src/min.pipe.spec.ts",
+
+    "src/max.pipe.ts",
+    "src/max.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"
