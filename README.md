@@ -34,7 +34,7 @@ import {DateFnsModule} from 'ngx-date-fns';
 
 Available pipes
 ---------------
-* closestTo (_tbd_)
+* [dfnsClosestTo](https://date-fns.org/docs/closestTo)
 * [dfnsDistanceInWords](https://date-fns.org/docs/distanceInWords)
 * [dfnsDistanceInWordsStrict](https://date-fns.org/docs/distanceInWordsStrict)
 * [dfnsDistanceInWordsToNow](https://date-fns.org/docs/distanceInWordsToNow)

@@ -22,6 +22,7 @@ import { GetISOWeekPipe } from './get-iso-week.pipe';
 import { MinPipe } from './min.pipe';
 import { MaxPipe } from './max.pipe';
 import { GetTimePipe } from './get-time.pipe';
+import { ClosestToPipe } from './closest-to.pipe';
 
 const PIPES = [
   DistanceInWordsPipe,
@@ -45,7 +46,8 @@ const PIPES = [
   GetISOWeekPipe,
   MinPipe,
   MaxPipe,
-  GetTimePipe
+  GetTimePipe,
+  ClosestToPipe
 ];
 
 @NgModule({
