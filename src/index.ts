@@ -23,3 +23,8 @@ export { MaxPipe } from './max.pipe';
 export { GetTimePipe } from './get-time.pipe';
 export { ClosestToPipe } from './closest-to.pipe';
 export { DifferenceInMillisecondsPipe } from './difference-in-milliseconds.pipe';
+export { DifferenceInSecondsPipe } from './difference-in-seconds.pipe';
+export { DifferenceInMinutesPipe } from './difference-in-minutes.pipe';
+export { DifferenceInHoursPipe } from './difference-in-hours.pipe';
+export { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe';
+export { DifferenceInDaysPipe } from './difference-in-days.pipe';
