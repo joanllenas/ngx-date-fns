@@ -84,7 +84,28 @@
     "src/max.pipe.spec.ts",
 
     "src/get-time.pipe.ts",
-    "src/get-time.pipe.spec.ts"
+    "src/get-time.pipe.spec.ts",
+
+    "src/closest-to.pipe.ts",
+    "src/closest-to.pipe.spec.ts",
+
+    "src/difference-in-milliseconds.pipe.ts",
+    "src/difference-in-milliseconds.pipe.spec.ts",
+
+    "src/difference-in-seconds.pipe.ts",
+    "src/difference-in-seconds.pipe.spec.ts",
+
+    "src/difference-in-minutes.pipe.ts",
+    "src/difference-in-minutes.pipe.spec.ts",
+
+    "src/difference-in-hours.pipe.ts",
+    "src/difference-in-hours.pipe.spec.ts",
+
+    "src/difference-in-calendar-days.pipe.ts",
+    "src/difference-in-calendar-days.pipe.spec.ts",
+
+    "src/difference-in-days.pipe.ts",
+    "src/difference-in-days.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"

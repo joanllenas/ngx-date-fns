@@ -22,6 +22,13 @@ import { GetISOWeekPipe } from './get-iso-week.pipe';
 import { MinPipe } from './min.pipe';
 import { MaxPipe } from './max.pipe';
 import { GetTimePipe } from './get-time.pipe';
+import { ClosestToPipe } from './closest-to.pipe';
+import { DifferenceInMillisecondsPipe } from './difference-in-milliseconds.pipe';
+import { DifferenceInSecondsPipe } from './difference-in-seconds.pipe';
+import { DifferenceInMinutesPipe } from './difference-in-minutes.pipe';
+import { DifferenceInHoursPipe } from './difference-in-hours.pipe';
+import { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe';
+import { DifferenceInDaysPipe } from './difference-in-days.pipe';
 
 const PIPES = [
   DistanceInWordsPipe,
@@ -45,7 +52,14 @@ const PIPES = [
   GetISOWeekPipe,
   MinPipe,
   MaxPipe,
-  GetTimePipe
+  GetTimePipe,
+  ClosestToPipe,
+  DifferenceInMillisecondsPipe,
+  DifferenceInSecondsPipe,
+  DifferenceInMinutesPipe,
+  DifferenceInHoursPipe,
+  DifferenceInCalendarDaysPipe,
+  DifferenceInDaysPipe
 ];
 
 @NgModule({
