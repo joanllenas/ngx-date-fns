@@ -23,6 +23,7 @@ import { MinPipe } from './min.pipe';
 import { MaxPipe } from './max.pipe';
 import { GetTimePipe } from './get-time.pipe';
 import { ClosestToPipe } from './closest-to.pipe';
+import { DifferenceInMillisecondsPipe } from './difference-in-milliseconds.pipe';
 
 const PIPES = [
   DistanceInWordsPipe,
@@ -47,7 +48,8 @@ const PIPES = [
   MinPipe,
   MaxPipe,
   GetTimePipe,
-  ClosestToPipe
+  ClosestToPipe,
+  DifferenceInMillisecondsPipe
 ];
 
 @NgModule({

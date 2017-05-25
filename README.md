@@ -44,7 +44,7 @@ Available pipes
 * [dfnsGetOverlappingDaysInRanges](https://date-fns.org/docs/getOverlappingDaysInRanges)
 * [dfnsGetTime](https://date-fns.org/docs/getTime)
 * addMilliseconds (_tbd_)
-* differenceInMilliseconds (_tbd_)
+* [dfnsDifferenceInMilliseconds](https://date-fns.org/docs/differenceInMilliseconds)
 * [dfnsGetMilliseconds](https://date-fns.org/docs/getMilliseconds)
 * subMilliseconds (_tbd_)
 * addSeconds (_tbd_)

@@ -87,7 +87,10 @@
     "src/get-time.pipe.spec.ts",
 
     "src/closest-to.pipe.ts",
-    "src/closest-to.pipe.spec.ts"
+    "src/closest-to.pipe.spec.ts",
+
+    "src/difference-in-milliseconds.pipe.ts",
+    "src/difference-in-milliseconds.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"
