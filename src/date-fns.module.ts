@@ -29,6 +29,10 @@ import { DifferenceInMinutesPipe } from './difference-in-minutes.pipe';
 import { DifferenceInHoursPipe } from './difference-in-hours.pipe';
 import { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe';
 import { DifferenceInDaysPipe } from './difference-in-days.pipe';
+import { DifferenceInCalendarWeeksPipe } from './difference-in-calendar-weeks.pipe';
+import { DifferenceInWeeksPipe } from './difference-in-weeks.pipe';
+import { DifferenceInCalendarISOWeeksPipe } from './difference-in-calendar-iso-weeks.pipe';
+import { DifferenceInCalendarMonthsPipe } from './difference-in-calendar-months.pipe';
 
 const PIPES = [
   DistanceInWordsPipe,
@@ -59,7 +63,11 @@ const PIPES = [
   DifferenceInMinutesPipe,
   DifferenceInHoursPipe,
   DifferenceInCalendarDaysPipe,
-  DifferenceInDaysPipe
+  DifferenceInDaysPipe,
+  DifferenceInCalendarWeeksPipe,
+  DifferenceInWeeksPipe,
+  DifferenceInCalendarISOWeeksPipe,
+  DifferenceInCalendarMonthsPipe
 ];
 
 @NgModule({

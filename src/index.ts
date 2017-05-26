@@ -28,3 +28,7 @@ export { DifferenceInMinutesPipe } from './difference-in-minutes.pipe';
 export { DifferenceInHoursPipe } from './difference-in-hours.pipe';
 export { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe';
 export { DifferenceInDaysPipe } from './difference-in-days.pipe';
+export { DifferenceInCalendarWeeksPipe } from './difference-in-calendar-weeks.pipe';
+export { DifferenceInWeeksPipe } from './difference-in-weeks.pipe';
+export { DifferenceInCalendarISOWeeksPipe } from './difference-in-calendar-iso-weeks.pipe';
+export { DifferenceInCalendarMonthsPipe } from './difference-in-calendar-months.pipe';

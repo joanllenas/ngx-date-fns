@@ -105,7 +105,19 @@
     "src/difference-in-calendar-days.pipe.spec.ts",
 
     "src/difference-in-days.pipe.ts",
-    "src/difference-in-days.pipe.spec.ts"
+    "src/difference-in-days.pipe.spec.ts",
+
+    "src/difference-in-calendar-weeks.pipe.ts",
+    "src/difference-in-calendar-weeks.pipe.spec.ts",
+
+    "src/difference-in-weeks.pipe.ts",
+    "src/difference-in-weeks.pipe.spec.ts",
+
+    "src/difference-in-calendar-iso-weeks.pipe.ts",
+    "src/difference-in-calendar-iso-weeks.pipe.spec.ts",
+
+    "src/difference-in-calendar-months.pipe.ts",
+    "src/difference-in-calendar-months.pipe.spec.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "compiled"
