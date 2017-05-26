@@ -60,7 +60,7 @@ Available pipes
 * startOfMinute (_tbd_)
 * subMinutes (_tbd_)
 * addHours (_tbd_)
-* [dfnsDifferenceInHours(https://date-fns.org/docs/differenceInHours)]
+* [dfnsDifferenceInHours](https://date-fns.org/docs/differenceInHours)
 * endOfHour (_tbd_)
 * [dfnsGetHours](https://date-fns.org/docs/getHours)
 * startOfHour (_tbd_)
@@ -81,7 +81,7 @@ Available pipes
 * startOfYesterday (_tbd_)
 * subDays (_tbd_)
 * [dfnsGetDay](https://date-fns.org/docs/getDay)
-* [dfnsGetISODay] (https://date-fns.org/docs/getISODay)
+* [dfnsGetISODay](https://date-fns.org/docs/getISODay)
 * addWeeks (_tbd_)
 * [dfnsDifferenceInCalendarWeeks](https://date-fns.org/docs/differenceInCalendarWeeks)
 * [dfnsDifferenceInWeeks](https://date-fns.org/docs/differenceInWeeks)
