@@ -1,7 +1,4 @@
 {
-  "angularCompilerOptions": {
-    "skipTemplateCodegen": true
-  },
   "compilerOptions": {
     "declaration": true,
     "emitDecoratorMetadata": true,
@@ -10,15 +7,12 @@
       "es2015",
       "dom"
     ],
-    "module": "commonjs",
+    "module": "es2015",
+    "moduleResolution": "node",
     "outDir": "./dist",
     "sourceMap": true,
     "stripInternal": true,
     "target": "es5",
-    "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules"
-    ],
     "types": [
       "node"
     ]
@@ -26,7 +20,8 @@
   "exclude": [
     "./src/**/*.spec.ts"
   ],
-  "include": [
-    "./src/**/*.ts"
+  "extends": "./tsconfig.json",
+  "files": [
+    "./src/index.ts"
   ]
 }

@@ -1,0 +1,29 @@
+{
+  "cache": true,
+  "check-coverage": false,
+  "branches": 100,
+  "functions": 80,
+  "lines": 80,
+  "statements": 80,
+  "extension": [
+    ".ts"
+  ],
+  "exclude": [
+    ".tmp/**",
+    "dist/**",
+    "coverage/**",
+    "node_modules/**",
+    ".nyc-output/**",
+    "webpack.*",
+    "test-shim.*"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ],
+  "instrument": false,
+  "reporter": [
+    "html",
+    "text-summary"
+  ],
+  "sourceMap": false
+}

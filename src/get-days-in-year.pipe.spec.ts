@@ -1,4 +1,5 @@
 import 'core-js';
+import { expect } from 'chai';
 import 'reflect-metadata';
 import { GetDaysInYearPipe } from './get-days-in-year.pipe';
 
@@ -9,11 +10,11 @@ describe('GetDaysInYearPipe', () => {
 
   it('should throw when required arguments are not provided', () => {
       expect(() => pipe.transform(undefined))
-        .toThrow(new Error(GetDaysInYearPipe.NO_ARGS_ERROR));
+        .to.throw(Error, GetDaysInYearPipe.NO_ARGS_ERROR);
   });
 
   it('should display output correctly', () => {
     expect(pipe.transform(new Date(2012, 0, 1)))
-      .toBe(366);
+      .to.equal(366);
   });
 });
