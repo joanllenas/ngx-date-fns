@@ -6,11 +6,10 @@ notifications:
   email: false
 node_js:
   - '7'
-  - '6'
 before_script:
   - npm prune
 script:
-  - npm run build
+  - npm run package
 after_success:
   - npm run semantic-release
 branches:

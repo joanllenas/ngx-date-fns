@@ -1,0 +1,78 @@
+{
+  "name": "ngx-date-fns",
+  "version": "0.0.0-development",
+  "description": "date-fns pipes for Angular",
+  "main": "index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "lint": "tslint src/*.ts --exclude=src/*.d.ts",
+    "test": "karma start",
+    "prebuild": "npm run lint",
+    "build": "ngc && copyfiles -f src/*.js src/*.js.map src/*.d.ts src/*.metadata.json .",
+    "postbuild": "npm test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "precommit": "npm test",
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joanllenas/ngx-date-fns"
+  },
+  "keywords": [
+    "angular",
+    "ngx",
+    "angular2",
+    "ng2",
+    "date-fns",
+    "date"
+  ],
+  "author": "Joan Llenas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joanllenas/ngx-date-fns/issues"
+  },
+  "homepage": "https://github.com/joanllenas/ngx-date-fns#readme",
+  "peerDependencies": {
+    "@angular/core": ">=2.0.0"
+  },
+  "dependencies": {
+    "date-fns": "^1.28.5",
+    "@angular/common": "4.1.3",
+    "@angular/compiler": "4.1.3",
+    "@angular/compiler-cli": "4.1.3",
+    "@angular/core": "4.1.3",
+    "@angular/platform-browser": "4.1.3",
+    "@angular/platform-server": "4.1.3",
+    "es6-shim": "0.35.3",
+    "reflect-metadata": "0.1.10",
+    "rxjs": "5.4.0",
+    "zone.js": "0.8.11"
+  },
+  "devDependencies": {
+    "@types/jasmine": "2.5.35",
+    "awesome-typescript-loader": "3.1.3",
+    "commitizen": "^2.9.6",
+    "copyfiles": "1.0.0",
+    "cz-conventional-changelog": "^2.0.0",
+    "ghooks": "^2.0.0",
+    "jasmine-core": "2.4.1",
+    "karma": "1.1.0",
+    "karma-jasmine": "1.0.2",
+    "karma-phantomjs-launcher": "1.0.1",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "1.7.0",
+    "phantomjs-prebuilt": "2.1.7",
+    "semantic-release": "^6.3.6",
+    "tslint": "5.2.0",
+    "typescript": "2.3.2",
+    "webpack": "1.13.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm run test"
+    }
+  }
+}

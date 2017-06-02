@@ -1,4 +1,5 @@
 import 'core-js';
+import { expect } from 'chai';
 import 'reflect-metadata';
 import { GetISOWeeksInYearPipe } from './get-iso-weeks-in-year.pipe';
 
@@ -9,11 +10,11 @@ describe('GetISOWeeksInYearPipe', () => {
 
   it('should throw when required arguments are not provided', () => {
       expect(() => pipe.transform(undefined))
-        .toThrow(new Error(GetISOWeeksInYearPipe.NO_ARGS_ERROR));
+        .to.throw(Error, GetISOWeeksInYearPipe.NO_ARGS_ERROR);
   });
 
   it('should display output correctly', () => {
     expect(pipe.transform(new Date(2015, 1, 11)))
-      .toBe(53);
+      .to.equal(53);
   });
 });

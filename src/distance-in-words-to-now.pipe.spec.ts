@@ -1,41 +1,43 @@
 import 'core-js';
+import { expect } from 'chai';
+import * as sinon from 'sinon';
 import 'reflect-metadata';
 import { DistanceInWordsToNowPipe } from './distance-in-words-to-now.pipe';
 import * as esLocale from 'date-fns/locale/es/index.js';
 
 describe('DistanceInWordsToNowPipe', () => {
   var pipe: DistanceInWordsToNowPipe;
+  var clock;
 
   beforeEach(() => {
     pipe = new DistanceInWordsToNowPipe();
-    jasmine.clock().install();
-    jasmine.clock().mockDate(new Date(2015, 0, 1));
+    clock = sinon.useFakeTimers(new Date(2015, 0, 1).getTime());
   });
 
-  afterEach(jasmine.clock().uninstall);
+  afterEach(() => {clock.restore()});
 
   it('should throw when required arguments are not provided', () => {
     expect(() => pipe.transform(undefined))
-      .toThrow(new Error(DistanceInWordsToNowPipe.NO_ARGS_ERROR));
+      .to.throw(Error, DistanceInWordsToNowPipe.NO_ARGS_ERROR);
   });
 
   it('should display output correctly', () => {
     expect(pipe.transform(new Date(2014, 6, 2)))
-      .toBe('6 months');
+      .to.equal('6 months');
   });
 
   it('should display output correctly when providing "includeSeconds"', () => {
     expect(pipe.transform(new Date(2015, 0, 1, 0, 0, 15), {includeSeconds: true}))
-      .toBe('less than 20 seconds');
+      .to.equal('less than 20 seconds');
   });
 
   it('should display output correctly when providing "addSuffix"', () => {
     expect(pipe.transform(new Date(2016, 0, 1), {addSuffix: true}))
-      .toBe('in about 1 year');
+      .to.equal('in about 1 year');
   });
 
   it('should display output correctly when providing "locale"', () => {
     expect(pipe.transform(new Date(2016, 7, 1), {locale: esLocale}))
-      .toBe('más de 1 año');
+      .to.equal('más de 1 año');
   });
 });

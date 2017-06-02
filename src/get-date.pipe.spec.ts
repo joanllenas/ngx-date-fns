@@ -1,4 +1,5 @@
 import 'core-js';
+import { expect } from 'chai';
 import 'reflect-metadata';
 import { GetDatePipe } from './get-date.pipe';
 
@@ -9,11 +10,11 @@ describe('GetDatePipe', () => {
 
   it('should throw when required arguments are not provided', () => {
       expect(() => pipe.transform(undefined))
-        .toThrow(new Error(GetDatePipe.NO_ARGS_ERROR));
+        .to.throw(Error, GetDatePipe.NO_ARGS_ERROR);
   });
 
   it('should display output correctly', () => {
     expect(pipe.transform(new Date(2012, 1, 29)))
-      .toBe(29);
+      .to.equal(29);
   });
 });

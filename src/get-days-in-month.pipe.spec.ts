@@ -1,4 +1,5 @@
 import 'core-js';
+import { expect } from 'chai';
 import 'reflect-metadata';
 import { GetDaysInMonthPipe } from './get-days-in-month.pipe';
 
@@ -9,11 +10,11 @@ describe('GetDaysInMonthPipe', () => {
 
   it('should throw when required arguments are not provided', () => {
       expect(() => pipe.transform(undefined))
-        .toThrow(new Error(GetDaysInMonthPipe.NO_ARGS_ERROR));
+        .to.throw(Error, GetDaysInMonthPipe.NO_ARGS_ERROR);
   });
 
   it('should display output correctly', () => {
     expect(pipe.transform(new Date(2000, 1)))
-      .toBe(29);
+      .to.equal(29);
   });
 });
