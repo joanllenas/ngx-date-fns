@@ -15,9 +15,7 @@
     "build:aot": "ngc",
     "build": "rimraf build && npm run tslint && npm run build:esm && npm run build:bundle && npm run build:aot",
     "copy": "cp package.json dist && cp README.md dist",
-    "pack": "npm pack ./dist",
-    "package": "npm run build && npm run copy",
-    "semantic-release": "semantic-release pre && npm publish dist/ --tag beta && semantic-release post",
+    "semantic-release": "semantic-release pre && npm run copy && npm publish dist/ && semantic-release post",
     "precommit": "npm test",
     "commit": "git-cz"
   },
