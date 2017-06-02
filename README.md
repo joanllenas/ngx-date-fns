@@ -26,9 +26,33 @@ import {DateFnsModule} from 'ngx-date-fns';
 
 @NgModule({
   imports: [
+    // (...)
     DateFnsModule
   ]
 })
+```
+
+``` typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-components',
+  template: `
+    <p>
+      {{ dateOne | dfnsFormat : 'YYYY/MM/DD' }}
+    </p>
+    <p>
+      {{ [dateOne, dateTwo] | dfnsMin }}
+    </p>
+    <p>
+      {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat : 'YYYY/MM/DD' }}
+    </p>
+  `
+})
+export class AppComponent {
+  dateOne = new Date(2016, 0, 1);
+  dateTwo = new Date(2017, 0, 1);
+}
 ```
 
 
