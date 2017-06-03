@@ -9,7 +9,7 @@
   "scripts": {
     "tslint": "tslint \"src/**/*.ts\"",
     "test": "rimraf ./tmp/mocha-webpack && mocha-webpack --opts 'mocha.opts'",
-    "coverage": "NODE_ENV=coverage nyc npm test",
+    "coverage": "NODE_ENV=coverage nyc npm test | coveralls",
     "build:esm": "ntsc -p tsconfig.esm.json",
     "build:bundle": "webpack --progress --colors",
     "build:aot": "ngc",
@@ -55,6 +55,7 @@
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.1.3",
     "chai": "^4.0.1",
+    "codecov": "^2.2.0",
     "commitizen": "^2.9.6",
     "core-js": "^2.4.1",
     "cz-conventional-changelog": "^2.0.0",
