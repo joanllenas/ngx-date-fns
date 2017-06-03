@@ -36,7 +36,7 @@ import {DateFnsModule} from 'ngx-date-fns';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-components',
+  selector: 'my-component',
   template: `
     <p>
       {{ dateOne | dfnsFormat : 'YYYY/MM/DD' }}
