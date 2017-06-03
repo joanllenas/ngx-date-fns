@@ -9,7 +9,7 @@
   "scripts": {
     "tslint": "tslint \"src/**/*.ts\"",
     "test": "rimraf ./tmp/mocha-webpack && mocha-webpack --opts 'mocha.opts'",
-    "coverage": "NODE_ENV=coverage nyc npm test | codecov",
+    "coverage": "NODE_ENV=coverage nyc npm test && nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "build:esm": "ntsc -p tsconfig.esm.json",
     "build:bundle": "webpack --progress --colors",
     "build:aot": "ngc",
