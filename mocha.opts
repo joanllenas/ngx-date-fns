@@ -3,4 +3,5 @@
 --ui bdd
 --glob *.spec.ts
 --recursive
+--reporter dot
 src/**/*.ts

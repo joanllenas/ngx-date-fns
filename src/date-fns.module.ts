@@ -33,6 +33,26 @@ import { DifferenceInCalendarWeeksPipe } from './difference-in-calendar-weeks.pi
 import { DifferenceInWeeksPipe } from './difference-in-weeks.pipe';
 import { DifferenceInCalendarISOWeeksPipe } from './difference-in-calendar-iso-weeks.pipe';
 import { DifferenceInCalendarMonthsPipe } from './difference-in-calendar-months.pipe';
+import { AddMillisecondsPipe } from './add-milliseconds.pipe';
+import { AddSecondsPipe } from './add-seconds.pipe';
+import { AddMinutesPipe } from './add-minutes.pipe';
+import { AddHoursPipe } from './add-hours.pipe';
+import { AddDaysPipe } from './add-days.pipe';
+import { AddWeeksPipe } from './add-weeks.pipe';
+import { AddMonthsPipe } from './add-months.pipe';
+import { AddQuartersPipe } from './add-quarters.pipe';
+import { AddYearsPipe } from './add-years.pipe';
+import { AddISOYearsPipe } from './add-iso-years.pipe';
+import { SubMillisecondsPipe } from './sub-milliseconds.pipe';
+import { SubSecondsPipe } from './sub-seconds.pipe';
+import { SubMinutesPipe } from './sub-minutes.pipe';
+import { SubHoursPipe } from './sub-hours.pipe';
+import { SubDaysPipe } from './sub-days.pipe';
+import { SubWeeksPipe } from './sub-weeks.pipe';
+import { SubMonthsPipe } from './sub-months.pipe';
+import { SubQuartersPipe } from './sub-quarters.pipe';
+import { SubYearsPipe } from './sub-years.pipe';
+import { SubISOYearsPipe } from './sub-iso-years.pipe';
 
 const PIPES = [
   DistanceInWordsPipe,
@@ -67,7 +87,27 @@ const PIPES = [
   DifferenceInCalendarWeeksPipe,
   DifferenceInWeeksPipe,
   DifferenceInCalendarISOWeeksPipe,
-  DifferenceInCalendarMonthsPipe
+  DifferenceInCalendarMonthsPipe,
+  AddMillisecondsPipe,
+  AddSecondsPipe,
+  AddMinutesPipe,
+  AddHoursPipe,
+  AddDaysPipe,
+  AddWeeksPipe,
+  AddMonthsPipe,
+  AddQuartersPipe,
+  AddYearsPipe,
+  AddISOYearsPipe,
+  SubMillisecondsPipe,
+  SubSecondsPipe,
+  SubMinutesPipe,
+  SubHoursPipe,
+  SubDaysPipe,
+  SubWeeksPipe,
+  SubMonthsPipe,
+  SubQuartersPipe,
+  SubYearsPipe,
+  SubISOYearsPipe,
 ];
 
 @NgModule({
