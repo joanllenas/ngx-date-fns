@@ -13,7 +13,7 @@ describe('GetDatePipe', () => {
         .to.throw(Error, GetDatePipe.NO_ARGS_ERROR);
   });
 
-  it('should display output correctly', () => {
+  it('should display which day of the month is 29 February 2012', () => {
     expect(pipe.transform(new Date(2012, 1, 29)))
       .to.equal(29);
   });

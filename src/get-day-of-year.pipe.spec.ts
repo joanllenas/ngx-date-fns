@@ -13,7 +13,7 @@ describe('GetDayOfYearPipe', () => {
         .to.throw(Error, GetDayOfYearPipe.NO_ARGS_ERROR);
   });
 
-  it('should display output correctly', () => {
+  it('should display which day of the year is 2 July 2014', () => {
     expect(pipe.transform(new Date(2014, 6, 2)))
       .to.equal(183);
   });
