@@ -59,17 +59,17 @@ export class AppComponent {
 
 Available pipes
 ---------------
-## Distance
+#### Distance
 * [dfnsDistanceInWords](https://date-fns.org/docs/distanceInWords)
 * [dfnsDistanceInWordsStrict](https://date-fns.org/docs/distanceInWordsStrict)
 * [dfnsDistanceInWordsToNow](https://date-fns.org/docs/distanceInWordsToNow)
-## Min / Max
+#### Min / Max
 * [dfnsMin](https://date-fns.org/docs/min)
 * [dfnsMax](https://date-fns.org/docs/max)
-## Misc
+#### Misc
 * [dfnsClosestTo](https://date-fns.org/docs/closestTo)
 * [dfnsFormat](https://date-fns.org/docs/format)
-## Get
+#### Get
 * [dfnsGetOverlappingDaysInRanges](https://date-fns.org/docs/getOverlappingDaysInRanges)
 * [dfnsGetTime](https://date-fns.org/docs/getTime)
 * [dfnsGetMilliseconds](https://date-fns.org/docs/getMilliseconds)
@@ -88,7 +88,7 @@ Available pipes
 * [dfnsGetYear](https://date-fns.org/docs/getYear)
 * [dfnsGetISOWeeksInYear](https://date-fns.org/docs/getISOWeeksInYear)
 * [dfnsGetISOYear](https://date-fns.org/docs/getISOYear)
-## Difference
+#### Difference
 * [dfnsDifferenceInMilliseconds](https://date-fns.org/docs/differenceInMilliseconds)
 * [dfnsDifferenceInSeconds](https://date-fns.org/docs/differenceInSeconds)
 * [dfnsDifferenceInMinutes](https://date-fns.org/docs/differenceInMinutes)
@@ -106,7 +106,7 @@ Available pipes
 * [dfnsDifferenceInYears](https://date-fns.org/docs/differenceInYears)
 * [dfnsDifferenceInCalendarISOYears](https://date-fns.org/docs/differenceInCalendarISOYears)
 * [dfnsDifferenceInISOYears](https://date-fns.org/docs/differenceInISOYears)
-## Add
+#### Add
 * [dfnsAddMilliseconds](https://date-fns.org/docs/addMilliseconds)
 * [dfnsAddSeconds](https://date-fns.org/docs/addSeconds)
 * [dfnsAddMinutes](https://date-fns.org/docs/addMinutes)
@@ -117,7 +117,7 @@ Available pipes
 * [dfnsAddQuarters](https://date-fns.org/docs/addQuarters)
 * [dfnsAddYears](https://date-fns.org/docs/addYears)
 * [dfnsAddISOYears](https://date-fns.org/docs/addISOYears)
-## Subtract
+#### Subtract
 * [dfnsSubMilliseconds](https://date-fns.org/docs/subMilliseconds)
 * [dfnsSubSeconds](https://date-fns.org/docs/subSeconds)
 * [dfnsSubMinutes](https://date-fns.org/docs/subMinutes)
@@ -128,7 +128,7 @@ Available pipes
 * [dfnsSubQuarters](https://date-fns.org/docs/subQuarters)
 * [dfnsSubYears](https://date-fns.org/docs/subYears)
 * [dfnsSubISOYears](https://date-fns.org/docs/subISOYears)
-## End
+#### End
 * [dfnsEndOfSecond](https://date-fns.org/docs/endOfSecond)
 * [dfnsEndOfMinute](https://date-fns.org/docs/endOfMinute)
 * [dfnsEndOfHour](https://date-fns.org/docs/endOfHour)
@@ -142,7 +142,7 @@ Available pipes
 * [dfnsEndOfQuarter](https://date-fns.org/docs/endOfQuarter)
 * [dfnsEndOfYear](https://date-fns.org/docs/endOfYear)
 * [dfnsEndOfISOYear](https://date-fns.org/docs/endOfISOYear)
-## Start
+#### Start
 * [dfnsStartOfSecond](https://date-fns.org/docs/startOfSecond)
 * [dfnsStartOfMinute](https://date-fns.org/docs/startOfMinute)
 * [dfnsStartOfHour](https://date-fns.org/docs/startOfHour)
@@ -156,7 +156,7 @@ Available pipes
 * [dfnsStartOfQuarter](https://date-fns.org/docs/startOfQuarter)
 * [dfnsStartOfYear](https://date-fns.org/docs/startOfYear)
 * [dfnsStartOfISOYear](https://date-fns.org/docs/startOfISOYear)
-## Last
+#### Last
 * [dfnsLastDayOfWeek](https://date-fns.org/docs/lastDayOfWeek)
 * [dfnsLastDayOfISOWeek](https://date-fns.org/docs/lastDayOfISOWeek)
 * [dfnsLastDayOfMonth](https://date-fns.org/docs/lastDayOfMonth)
