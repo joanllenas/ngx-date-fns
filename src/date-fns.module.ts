@@ -119,13 +119,13 @@ const PIPES = [
   GetYearPipe,
   GetISOWeeksInYearPipe,
   GetISOWeekPipe,
+  GetTimePipe,
 
   // Min / Max
   MinPipe,
   MaxPipe,
 
   // Misc
-  GetTimePipe,
   ClosestToPipe,
   FormatPipe,
 
