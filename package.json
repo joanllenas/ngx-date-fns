@@ -14,9 +14,15 @@
     "build:bundle": "webpack --progress --colors",
     "build": "rimraf dist && npm run tslint && npm run build:esm && npm run build:bundle",
     "copy": "cp package.json dist && cp README.md dist",
-    "semantic-release": "semantic-release pre && npm run copy && npm publish dist/ && semantic-release post",
+    "semantic-release": "semantic-release pre && npm run copy && npm publish dist/ --tag=next && semantic-release post",
     "precommit": "npm test",
     "commit": "git-cz"
+  },
+  "release": {
+    "branch": "develop"
+  },
+  "publishConfig": {
+    "tag": "next"
   },
   "repository": {
     "type": "git",
