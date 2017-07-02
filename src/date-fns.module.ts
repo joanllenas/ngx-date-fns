@@ -53,12 +53,55 @@ import { SubMonthsPipe } from './sub-months.pipe';
 import { SubQuartersPipe } from './sub-quarters.pipe';
 import { SubYearsPipe } from './sub-years.pipe';
 import { SubISOYearsPipe } from './sub-iso-years.pipe';
+import { EndOfSecondPipe } from './end-of-second.pipe';
+import { EndOfMinutePipe } from './end-of-minute.pipe';
+import { EndOfHourPipe } from './end-of-hour.pipe';
+import { EndOfDayPipe } from './end-of-day.pipe';
+import { EndOfYesterdayPipe } from './end-of-yesterday.pipe';
+import { EndOfTodayPipe } from './end-of-today.pipe';
+import { EndOfTomorrowPipe } from './end-of-tomorrow.pipe';
+import { EndOfWeekPipe } from './end-of-week.pipe';
+import { EndOfISOWeekPipe } from './end-of-iso-week.pipe';
+import { EndOfMonthPipe } from './end-of-month.pipe';
+import { EndOfQuarterPipe } from './end-of-quarter.pipe';
+import { EndOfYearPipe } from './end-of-year.pipe';
+import { EndOfISOYearPipe } from './end-of-iso-year.pipe';
+import { StartOfSecondPipe } from './start-of-second.pipe';
+import { StartOfMinutePipe } from './start-of-minute.pipe';
+import { StartOfHourPipe } from './start-of-hour.pipe';
+import { StartOfDayPipe } from './start-of-day.pipe';
+import { StartOfTodayPipe } from './start-of-today.pipe';
+import { StartOfTomorrowPipe } from './start-of-tomorrow.pipe';
+import { StartOfYesterdayPipe } from './start-of-yesterday.pipe';
+import { StartOfWeekPipe } from './start-of-week.pipe';
+import { StartOfISOWeekPipe } from './start-of-iso-week.pipe';
+import { StartOfMonthPipe } from './start-of-month.pipe';
+import { StartOfQuarterPipe } from './start-of-quarter.pipe';
+import { StartOfYearPipe } from './start-of-year.pipe';
+import { StartOfISOYearPipe } from './start-of-iso-year.pipe';
+import { LastDayOfWeekPipe } from './last-day-of-week.pipe';
+import { LastDayOfISOWeekPipe } from './last-day-of-iso-week.pipe';
+import { LastDayOfMonthPipe } from './last-day-of-month.pipe';
+import { LastDayOfQuarterPipe } from './last-day-of-quarter.pipe';
+import { LastDayOfISOYearPipe } from './last-day-of-iso-year.pipe';
+import { LastDayOfYearPipe } from './last-day-of-year.pipe';
+import { DifferenceInMonthsPipe } from './difference-in-months.pipe';
+import { DifferenceInCalendarQuartersPipe } from './difference-in-calendar-quarters.pipe';
+import { DifferenceInQuartersPipe } from './difference-in-quarters.pipe';
+import { DifferenceInCalendarYearsPipe } from './difference-in-calendar-years.pipe';
+import { DifferenceInYearsPipe } from './difference-in-years.pipe';
+import { DifferenceInCalendarISOYearsPipe } from './difference-in-calendar-iso-years.pipe';
+import { DifferenceInISOYearsPipe } from './difference-in-iso-years.pipe';
+import { GetQuarterPipe } from './get-quarter.pipe';
+import { GetISOYearPipe } from './get-iso-year.pipe';
 
 const PIPES = [
+  // Distance
   DistanceInWordsPipe,
   DistanceInWordsStrictPipe,
   DistanceInWordsToNowPipe,
-  FormatPipe,
+
+  // Get
   GetOverlappingDaysInRangesPipe,
   GetMillisecondsPipe,
   GetSecondsPipe,
@@ -67,27 +110,45 @@ const PIPES = [
   GetDatePipe,
   GetDayOfYearPipe,
   GetDayPipe,
+  GetQuarterPipe,
   GetISODayPipe,
+  GetISOYearPipe,
   GetDaysInMonthPipe,
   GetMonthPipe,
   GetDaysInYearPipe,
   GetYearPipe,
   GetISOWeeksInYearPipe,
   GetISOWeekPipe,
+
+  // Min / Max
   MinPipe,
   MaxPipe,
+
+  // Misc
   GetTimePipe,
   ClosestToPipe,
+  FormatPipe,
+
+  // Difference
   DifferenceInMillisecondsPipe,
   DifferenceInSecondsPipe,
   DifferenceInMinutesPipe,
+  DifferenceInMonthsPipe,
   DifferenceInHoursPipe,
   DifferenceInCalendarDaysPipe,
+  DifferenceInCalendarISOYearsPipe,
+  DifferenceInCalendarYearsPipe,
   DifferenceInDaysPipe,
   DifferenceInCalendarWeeksPipe,
+  DifferenceInISOYearsPipe,
   DifferenceInWeeksPipe,
   DifferenceInCalendarISOWeeksPipe,
   DifferenceInCalendarMonthsPipe,
+  DifferenceInCalendarQuartersPipe,
+  DifferenceInQuartersPipe,
+  DifferenceInYearsPipe,
+
+  // Add
   AddMillisecondsPipe,
   AddSecondsPipe,
   AddMinutesPipe,
@@ -98,6 +159,8 @@ const PIPES = [
   AddQuartersPipe,
   AddYearsPipe,
   AddISOYearsPipe,
+
+  // Subtract
   SubMillisecondsPipe,
   SubSecondsPipe,
   SubMinutesPipe,
@@ -108,6 +171,44 @@ const PIPES = [
   SubQuartersPipe,
   SubYearsPipe,
   SubISOYearsPipe,
+
+  // End
+  EndOfSecondPipe,
+  EndOfMinutePipe,
+  EndOfHourPipe,
+  EndOfDayPipe,
+  EndOfYesterdayPipe,
+  EndOfTodayPipe,
+  EndOfTomorrowPipe,
+  EndOfWeekPipe,
+  EndOfISOWeekPipe,
+  EndOfMonthPipe,
+  EndOfQuarterPipe,
+  EndOfYearPipe,
+  EndOfISOYearPipe,
+
+  // Start
+  StartOfSecondPipe,
+  StartOfMinutePipe,
+  StartOfHourPipe,
+  StartOfDayPipe,
+  StartOfTodayPipe,
+  StartOfTomorrowPipe,
+  StartOfYesterdayPipe,
+  StartOfWeekPipe,
+  StartOfISOWeekPipe,
+  StartOfMonthPipe,
+  StartOfQuarterPipe,
+  StartOfYearPipe,
+  StartOfISOYearPipe,
+
+  // Last
+  LastDayOfWeekPipe,
+  LastDayOfISOWeekPipe,
+  LastDayOfMonthPipe,
+  LastDayOfQuarterPipe,
+  LastDayOfYearPipe,
+  LastDayOfISOYearPipe,
 ];
 
 @NgModule({

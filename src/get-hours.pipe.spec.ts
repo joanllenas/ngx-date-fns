@@ -13,7 +13,7 @@ describe('GetHoursPipe', () => {
         .to.throw(Error, GetHoursPipe.NO_ARGS_ERROR);
   });
 
-  it('should display output correctly', () => {
+  it('should get the hours of 29 February 2012 11:45:00', () => {
     expect(pipe.transform(new Date(2012, 1, 29, 11, 45)))
       .to.equal(11);
   });

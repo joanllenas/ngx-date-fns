@@ -13,7 +13,7 @@ describe('GetDaysInMonthPipe', () => {
         .to.throw(Error, GetDaysInMonthPipe.NO_ARGS_ERROR);
   });
 
-  it('should display output correctly', () => {
+  it('should display how many days are in February 2000', () => {
     expect(pipe.transform(new Date(2000, 1)))
       .to.equal(29);
   });
