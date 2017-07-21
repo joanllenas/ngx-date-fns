@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "date-fns pipes for Angular",
   "main": "bundle.js",
-  "jsnext:main": "ngx-date-fns.module.js",
+  "jsnext:main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -12,8 +12,7 @@
     "coverage": "NODE_ENV=coverage nyc npm test && nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "build:esm": "ngc -p tsconfig.esm.json",
     "build:bundle": "webpack --progress --colors",
-    "build:aot": "ngc",
-    "build": "rimraf build && npm run tslint && npm run build:esm && npm run build:bundle && npm run build:aot",
+    "build": "rimraf dist && npm run tslint && npm run build:esm && npm run build:bundle",
     "copy": "cp package.json dist && cp README.md dist",
     "semantic-release": "semantic-release pre && npm run copy && npm publish dist/ && semantic-release post",
     "precommit": "npm test",
