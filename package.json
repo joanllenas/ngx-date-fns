@@ -73,7 +73,7 @@
     "sinon": "^2.3.2",
     "source-map-support": "^0.4.15",
     "tslint": "~4.5.1",
-    "tslint-no-unused-var": "^0.0.6",
+    "tslint-no-unused-var": "^1.0.0",
     "typescript": "2.3.x",
     "webpack": "^2.5.1",
     "webpack-node-externals": "^1.6.0",
