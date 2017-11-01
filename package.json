@@ -45,7 +45,7 @@
     "@angular/compiler": "^4.1.3",
     "@angular/compiler-cli": "^4.1.3",
     "@angular/core": "^4.1.3",
-    "@angular/platform-browser": "^4.1.3",
+    "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^4.1.3",
     "@angular/platform-server": "^4.1.3",
     "@types/chai": "^4.0.1",
