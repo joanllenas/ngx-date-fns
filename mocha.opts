@@ -1,7 +1,0 @@
---webpack-config ./webpack.testing.js
---require ./test-shim.js
---ui bdd
---glob *.spec.ts
---recursive
---reporter dot
-src/**/*.ts
