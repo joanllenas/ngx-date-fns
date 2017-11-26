@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as subYears from 'date-fns/sub_years';
+import * as subYearsNs from 'date-fns/sub_years';
+const subYears = subYearsNs;
 
 @Pipe({ name: 'dfnsSubYears' })
 export class SubYearsPipe implements PipeTransform {

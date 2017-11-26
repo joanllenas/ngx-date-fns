@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as formatDate from 'date-fns/format';
+import * as formatDateNs from 'date-fns/format';
+const formatDate = formatDateNs;
 
 @Pipe({ name: 'dfnsFormat' })
 export class FormatPipe implements PipeTransform {

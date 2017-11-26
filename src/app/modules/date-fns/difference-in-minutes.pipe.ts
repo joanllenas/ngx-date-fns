@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as differenceInMinutes from 'date-fns/difference_in_minutes';
+import * as differenceInMinutesNs from 'date-fns/difference_in_minutes';
+const differenceInMinutes = differenceInMinutesNs;
 
 @Pipe({ name: 'dfnsDifferenceInMinutes' })
 export class DifferenceInMinutesPipe implements PipeTransform {

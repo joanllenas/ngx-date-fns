@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as addMilliseconds from 'date-fns/add_milliseconds';
+import * as addMillisecondsNs from 'date-fns/add_milliseconds';
+const addMilliseconds = addMillisecondsNs;
 
 @Pipe({ name: 'dfnsAddMilliseconds' })
 export class AddMillisecondsPipe implements PipeTransform {

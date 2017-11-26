@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as subHours from 'date-fns/sub_hours';
+import * as subHoursNs from 'date-fns/sub_hours';
+const subHours = subHoursNs;
 
 @Pipe({ name: 'dfnsSubHours' })
 export class SubHoursPipe implements PipeTransform {

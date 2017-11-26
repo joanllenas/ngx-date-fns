@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as endOfYear from 'date-fns/end_of_year';
+import * as endOfYearNs from 'date-fns/end_of_year';
+const endOfYear = endOfYearNs;
 
 @Pipe({ name: 'dfnsEndOfYear' })
 export class EndOfYearPipe implements PipeTransform {

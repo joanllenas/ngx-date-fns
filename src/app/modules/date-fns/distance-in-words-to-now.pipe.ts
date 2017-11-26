@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import * as distanceInWordsToNowNs from 'date-fns/distance_in_words_to_now';
+const distanceInWordsToNow = distanceInWordsToNowNs;
 
 @Pipe({ name: 'dfnsDistanceInWordsToNow' })
 export class DistanceInWordsToNowPipe implements PipeTransform {

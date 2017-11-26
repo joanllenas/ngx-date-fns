@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as getDate from 'date-fns/get_date';
+import * as getDateNs from 'date-fns/get_date';
+const getDate = getDateNs;
 
 @Pipe({ name: 'dfnsGetDate' })
 export class GetDatePipe implements PipeTransform {

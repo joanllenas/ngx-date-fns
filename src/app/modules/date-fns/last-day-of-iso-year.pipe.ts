@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as lastDayOfISOYear from 'date-fns/last_day_of_iso_year';
+import * as lastDayOfISOYearNs from 'date-fns/last_day_of_iso_year';
+const lastDayOfISOYear = lastDayOfISOYearNs;
 
 @Pipe({ name: 'dfnsLastDayOfISOYear' })
 export class LastDayOfISOYearPipe implements PipeTransform {

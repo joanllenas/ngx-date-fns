@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as subQuarters from 'date-fns/sub_quarters';
+import * as subQuartersNs from 'date-fns/sub_quarters';
+const subQuarters = subQuartersNs;
 
 @Pipe({ name: 'dfnsSubQuarters' })
 export class SubQuartersPipe implements PipeTransform {

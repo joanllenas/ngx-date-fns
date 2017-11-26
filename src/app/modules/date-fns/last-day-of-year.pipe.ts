@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as lastDayOfYear from 'date-fns/last_day_of_year';
+import * as lastDayOfYearNs from 'date-fns/last_day_of_year';
+const lastDayOfYear = lastDayOfYearNs;
 
 @Pipe({ name: 'dfnsLastDayOfYear' })
 export class LastDayOfYearPipe implements PipeTransform {

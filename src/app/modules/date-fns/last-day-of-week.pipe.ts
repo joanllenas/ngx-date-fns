@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as lastDayOfWeek from 'date-fns/last_day_of_week';
+import * as lastDayOfWeekNs from 'date-fns/last_day_of_week';
+const lastDayOfWeek = lastDayOfWeekNs;
 
 @Pipe({ name: 'dfnsLastDayOfWeek' })
 export class LastDayOfWeekPipe implements PipeTransform {

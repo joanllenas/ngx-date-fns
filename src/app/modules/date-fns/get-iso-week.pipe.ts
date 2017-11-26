@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as getISOWeek from 'date-fns/get_iso_week';
+import * as getISOWeekNs from 'date-fns/get_iso_week';
+const getISOWeek = getISOWeekNs;
 
 @Pipe({ name: 'dfnsGetISOWeek' })
 export class GetISOWeekPipe implements PipeTransform {

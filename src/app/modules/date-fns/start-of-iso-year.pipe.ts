@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as startOfISOYear from 'date-fns/start_of_iso_year';
+import * as startOfISOYearNs from 'date-fns/start_of_iso_year';
+const startOfISOYear = startOfISOYearNs;
 
 @Pipe({ name: 'dfnsStartOfISOYear' })
 export class StartOfISOYearPipe implements PipeTransform {

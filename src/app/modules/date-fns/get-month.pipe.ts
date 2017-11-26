@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as getMonth from 'date-fns/get_month';
+import * as getMonthNs from 'date-fns/get_month';
+const getMonth = getMonthNs;
 
 @Pipe({ name: 'dfnsGetMonth' })
 export class GetMonthPipe implements PipeTransform {

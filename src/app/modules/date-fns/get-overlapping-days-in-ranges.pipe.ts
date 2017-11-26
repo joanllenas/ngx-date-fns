@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as getOverlappingDaysInRanges from 'date-fns/get_overlapping_days_in_ranges';
+import * as getOverlappingDaysInRangesNs from 'date-fns/get_overlapping_days_in_ranges';
+const getOverlappingDaysInRanges = getOverlappingDaysInRangesNs;
 
 @Pipe({ name: 'dfnsGetOverlappingDaysInRanges' })
 export class GetOverlappingDaysInRangesPipe implements PipeTransform {

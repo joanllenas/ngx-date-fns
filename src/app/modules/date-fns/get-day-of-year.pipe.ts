@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as getDayOfYear from 'date-fns/get_day_of_year';
+import * as getDayOfYearNs from 'date-fns/get_day_of_year';
+const getDayOfYear = getDayOfYearNs;
 
 @Pipe({ name: 'dfnsGetDayOfYear' })
 export class GetDayOfYearPipe implements PipeTransform {

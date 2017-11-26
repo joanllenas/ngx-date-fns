@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as closestTo from 'date-fns/closest_to';
+import * as closestToNs from 'date-fns/closest_to';
+const closestTo = closestToNs;
 
 @Pipe({ name: 'dfnsClosestTo' })
 export class ClosestToPipe implements PipeTransform {

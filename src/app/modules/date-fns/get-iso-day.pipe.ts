@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as getISODay from 'date-fns/get_iso_day';
+import * as getISODayNs from 'date-fns/get_iso_day';
+const getISODay = getISODayNs;
 
 @Pipe({ name: 'dfnsGetISODay' })
 export class GetISODayPipe implements PipeTransform {

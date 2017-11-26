@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as addWeeks from 'date-fns/add_weeks';
+import * as addWeeksNs from 'date-fns/add_weeks';
+const addWeeks = addWeeksNs;
 
 @Pipe({ name: 'dfnsAddWeeks' })
 export class AddWeeksPipe implements PipeTransform {

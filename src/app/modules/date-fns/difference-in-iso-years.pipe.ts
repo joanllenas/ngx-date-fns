@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as differenceInISOYears from 'date-fns/difference_in_iso_years';
+import * as differenceInISOYearsNs from 'date-fns/difference_in_iso_years';
+const differenceInISOYears = differenceInISOYearsNs;
 
 @Pipe({ name: 'dfnsDifferenceInISOYears' })
 export class DifferenceInISOYearsPipe implements PipeTransform {

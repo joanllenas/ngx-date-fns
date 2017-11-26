@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as endOfDay from 'date-fns/end_of_day';
+import * as endOfDayNs from 'date-fns/end_of_day';
+const endOfDay = endOfDayNs;
 
 @Pipe({ name: 'dfnsEndOfDay' })
 export class EndOfDayPipe implements PipeTransform {

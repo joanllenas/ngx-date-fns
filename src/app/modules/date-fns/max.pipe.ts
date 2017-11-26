@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as max from 'date-fns/max';
+import * as maxNs from 'date-fns/max';
+const max = maxNs;
 
 @Pipe({ name: 'dfnsMax' })
 export class MaxPipe implements PipeTransform {

@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as startOfSecond from 'date-fns/start_of_second';
+import * as startOfSecondNs from 'date-fns/start_of_second';
+const startOfSecond = startOfSecondNs;
 
 @Pipe({ name: 'dfnsStartOfSecond' })
 export class StartOfSecondPipe implements PipeTransform {

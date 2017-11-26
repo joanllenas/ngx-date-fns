@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as addISOYears from 'date-fns/add_iso_years';
+import * as addISOYearsNs from 'date-fns/add_iso_years';
+const addISOYears = addISOYearsNs;
 
 @Pipe({ name: 'dfnsAddISOYears' })
 export class AddISOYearsPipe implements PipeTransform {

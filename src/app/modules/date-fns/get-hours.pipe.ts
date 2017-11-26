@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as getHours from 'date-fns/get_hours';
+import * as getHoursNs from 'date-fns/get_hours';
+const getHours = getHoursNs;
 
 @Pipe({ name: 'dfnsGetHours' })
 export class GetHoursPipe implements PipeTransform {

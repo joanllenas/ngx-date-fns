@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as endOfMonth from 'date-fns/end_of_month';
+import * as endOfMonthNs from 'date-fns/end_of_month';
+const endOfMonth = endOfMonthNs;
 
 @Pipe({ name: 'dfnsEndOfMonth' })
 export class EndOfMonthPipe implements PipeTransform {

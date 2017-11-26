@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as lastDayOfMonth from 'date-fns/last_day_of_month';
+import * as lastDayOfMonthNs from 'date-fns/last_day_of_month';
+const lastDayOfMonth = lastDayOfMonthNs;
 
 @Pipe({ name: 'dfnsLastDayOfMonth' })
 export class LastDayOfMonthPipe implements PipeTransform {

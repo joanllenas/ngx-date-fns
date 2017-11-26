@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as startOfQuarter from 'date-fns/start_of_quarter';
+import * as startOfQuarterNs from 'date-fns/start_of_quarter';
+const startOfQuarter = startOfQuarterNs;
 
 @Pipe({ name: 'dfnsStartOfQuarter' })
 export class StartOfQuarterPipe implements PipeTransform {
