@@ -1,0 +1,12 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  color: #333;
+}
+
+code {
+  background-color: #666;
+  border-radius: 5px;
+  padding: 3px;
+  color: #fff;
+}
