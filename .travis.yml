@@ -32,9 +32,9 @@ before_script:
 
 script:
   - npm run build
+  - npm run coverage
 
 after_success:
-  - npm run coverage
   - npm run semantic-release
 
 branches:
