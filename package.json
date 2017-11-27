@@ -31,7 +31,8 @@
     "angular2",
     "ng2",
     "date-fns",
-    "date"
+    "date",
+    "pipe"
   ],
   "author": "Joan Llenas",
   "license": "MIT",
