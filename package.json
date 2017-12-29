@@ -62,7 +62,7 @@
     "ghooks": "^2.0.0",
     "istanbul-instrumenter-loader": "^2.0.0",
     "jsdom": "^11.1.0",
-    "mocha": "^3.4.1",
+    "mocha": "^4.1.0",
     "mocha-webpack": "^0.7.0",
     "nyc": "^10.3.2",
     "raw-loader": "^0.5.1",
