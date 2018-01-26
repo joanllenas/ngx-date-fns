@@ -70,7 +70,7 @@
     "rimraf": "^2.6.1",
     "rxjs": "^5.4.0",
     "semantic-release": "^6.3.6",
-    "sinon": "^2.3.2",
+    "sinon": "^4.2.2",
     "source-map-support": "^0.4.15",
     "tslint": "~4.5.1",
     "tslint-no-unused-var": "^0.0.6",
