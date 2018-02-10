@@ -75,7 +75,7 @@
     "tslint": "~4.5.1",
     "tslint-no-unused-var": "^0.0.6",
     "typescript": "2.3.x",
-    "webpack": "^2.5.1",
+    "webpack": "^3.11.0",
     "webpack-node-externals": "^1.6.0",
     "zone.js": "^0.8.10"
   },
