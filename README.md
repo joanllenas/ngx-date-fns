@@ -69,6 +69,19 @@ export class AppComponent {
 ```
 
 
+The output:
+
+
+```
+2016/01/01
+
+Fri Jan 01 2016 00:00:00 GMT+0100 (CET)
+
+2017/01/01
+
+alrededor de 1 mes
+```
+
 Available pipes
 ---------------
 #### Distance
