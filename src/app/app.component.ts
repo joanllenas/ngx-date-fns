@@ -1,21 +1,32 @@
 import { Component } from '@angular/core';
+import * as esLocale from 'date-fns/locale/es/index.js';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <p>
+      {{ dateOne | dfnsFormat : 'YYYY/MM/DD' }}
+    </p>
+    <p>
+      {{ [dateOne, dateTwo] | dfnsMin }}
+    </p>
+    <p>
+      {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat : 'YYYY/MM/DD' }}
+    </p>
+    <p>
+      {{ dateThree | dfnsDistanceInWordsToNow : options }}
+    </p>
+  `
 })
 export class AppComponent {
-  now = new Date();
-  today = new Date();
-  tomorrow = new Date();
-  yesterday = new Date();
-  threeDaysAgo = new Date();
-
+  dateOne = new Date(2016, 0, 1);
+  dateTwo = new Date(2017, 0, 1);
+  dateThree;
+  options = {
+    locale: esLocale
+  }
   constructor() {
-    this.yesterday.setDate(this.today.getDate() - 1);
-    this.tomorrow.setDate(this.today.getDate() + 1);
-    this.threeDaysAgo.setDate(this.today.getDate() - 3);
-    setInterval(() => this.now = new Date(), 500);
+    this.dateThree = new Date();
+    this.dateThree.setDate(-6);
   }
 }
