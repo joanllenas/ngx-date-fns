@@ -27,13 +27,21 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "gulp --gulpfile gulpfile.lib.js",
-    "version": "sync-json -v --property version --source package.json src/lib/package.json",
     "coverage": "ng test --watch=false --code-coverage && codecov",
     "cm": "git-cz",
     "cm-retry": "git-cz --retry",
-    "release": "standard-version --no-verify && git push --follow-tags && npm run version && npm publish",
-    "prerelease": "standard-version --no-verify --prerelease alpha && git push --follow-tags && npm run version && npm publish dist --tag next"
+    "build:lib": "gulp --gulpfile gulpfile.lib.js",
+    "build:version": "sync-json -v --property version --source package.json src/lib/package.json && sync-json -v --property version --source package.json dist/package.json",
+    "release": "standard-version --no-verify && npm publish",
+    "prerelease": "standard-version --no-verify --prerelease alpha && npm publish dist --tag next"
+  },
+  "standard-version": {
+    "scripts": {
+      "prebump": "npm run build:lib",
+      "postbump": "npm run build:version",
+      "precommit": "git add .",
+      "posttag": "git push --follow-tags"
+    }
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
