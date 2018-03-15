@@ -32,9 +32,8 @@
     "coverage": "ng test --watch=false --code-coverage && codecov",
     "cm": "git-cz",
     "cm-retry": "git-cz --retry",
-    "push-release": "git push --follow-tags",
-    "release": "standard-version --no-verify && npm push-release && npm publish",
-    "prerelease": "standard-version --no-verify --prerelease alpha && npm push-release && npm publish dist --tag next"
+    "release": "standard-version --no-verify && git push --follow-tags && npm run version && npm publish",
+    "prerelease": "standard-version --no-verify --prerelease alpha && git push --follow-tags && npm run version && npm publish dist --tag next"
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
