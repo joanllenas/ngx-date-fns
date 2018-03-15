@@ -30,7 +30,7 @@
     "build:lib": "gulp --gulpfile gulpfile.lib.js",
     "version": "sync-json -v --property version --source package.json src/lib/package.json",
     "coverage": "ng test --watch=false --code-coverage && codecov",
-    "beta": "npm publish --tag next"
+    "beta": "npm run version && npm publish --tag next"
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
