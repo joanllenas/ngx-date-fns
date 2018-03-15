@@ -1,6 +1,6 @@
 {
   "name": "ngx-date-fns",
-  "version": null,
+  "version": "1.13.4",
   "description": "date-fns pipes for Angular",
   "repository": {
     "type": "git",
@@ -32,13 +32,12 @@
     "cm-retry": "git-cz --retry",
     "build:lib": "gulp --gulpfile gulpfile.lib.js",
     "build:version": "sync-json -v --property version --source package.json src/lib/package.json && sync-json -v --property version --source package.json dist/package.json",
-    "release": "standard-version --no-verify --commit-all && npm publish dist",
-    "next": "standard-version --no-verify --commit-all && npm publish dist --tag next",
+    "release": "npm run build:lib && standard-version --no-verify --commit-all && npm publish dist",
+    "next": "npm run build:lib && standard-version --no-verify --commit-all && npm publish dist --tag next",
     "standard-version": "standard-version"
   },
   "standard-version": {
     "scripts": {
-      "prebump": "npm run build:lib",
       "postbump": "npm run build:version",
       "precommit": "git add .",
       "posttag": "git push --follow-tags"
