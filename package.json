@@ -33,7 +33,8 @@
     "build:lib": "gulp --gulpfile gulpfile.lib.js",
     "build:version": "sync-json -v --property version --source package.json src/lib/package.json && sync-json -v --property version --source package.json dist/package.json",
     "release": "standard-version --no-verify --commit-all && npm publish dist",
-    "next": "standard-version --no-verify --commit-all && npm publish dist --tag next"
+    "next": "standard-version --no-verify --commit-all && npm publish dist --tag next",
+    "standard-version": "standard-version"
   },
   "standard-version": {
     "scripts": {
