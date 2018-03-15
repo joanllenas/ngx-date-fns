@@ -1,6 +1,6 @@
 {
   "name": "ngx-date-fns",
-  "version": "1.13.0",
+  "version": "1.13.1",
   "description": "date-fns pipes for Angular",
   "repository": {
     "type": "git",
@@ -32,8 +32,8 @@
     "coverage": "ng test --watch=false --code-coverage && codecov",
     "cm": "git-cz",
     "cm-retry": "git-cz --retry",
-    "beta": "npm publish dist --tag next",
-    "release": "standard-version"
+    "release": "standard-version --no-verify && npm publish",
+    "prerelease": "standard-version --no-verify --prerelease alpha && npm publish dist --tag next"
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
