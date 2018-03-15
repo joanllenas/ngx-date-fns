@@ -32,8 +32,8 @@
     "cm-retry": "git-cz --retry",
     "build:lib": "gulp --gulpfile gulpfile.lib.js",
     "build:version": "sync-json -v --property version --source package.json src/lib/package.json && sync-json -v --property version --source package.json dist/package.json",
-    "release": "standard-version --no-verify && npm publish",
-    "prerelease": "standard-version --no-verify --prerelease alpha && npm publish dist --tag next"
+    "release": "standard-version --no-verify --commit-all && npm publish",
+    "prerelease": "standard-version --no-verify --commit-all --prerelease alpha && npm publish dist --tag next"
   },
   "standard-version": {
     "scripts": {
