@@ -3,12 +3,13 @@
 
 import { FormatPipe } from './format.pipe';
 import * as esLocale from 'date-fns/locale/es/index.js';
+import { DateFnsConfigurationService } from './date-fns-configuration.service';
 
 describe('FormatPipe', () => {
   let pipe: FormatPipe;
 
   beforeEach(() => {
-    pipe = new FormatPipe();
+    pipe = new FormatPipe(new DateFnsConfigurationService());
   });
 
   it('should throw when required arguments are not provided', () => {

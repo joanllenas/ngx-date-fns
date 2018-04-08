@@ -1,21 +1,26 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {format as formatDate} from 'date-fns';
+import { Pipe, PipeTransform } from "@angular/core";
+import { format as formatDate } from "date-fns";
+import {
+  DateFnsConfigurationService,
+  calculateLocale
+} from "./date-fns-configuration.service";
 
-
-@Pipe({ name: 'dfnsFormat' })
+@Pipe({ name: "dfnsFormat", pure: false })
 export class FormatPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsFormat: missing required arguments';
+  static readonly NO_ARGS_ERROR = "dfnsFormat: missing required arguments";
+
+  constructor(public config: DateFnsConfigurationService) {}
 
   transform(
     date: string | number | Date,
     format?: string,
     options?: {
-      locale?: Object
+      locale?: Object;
     }
   ): string {
     if (!date) {
-        throw new Error(FormatPipe.NO_ARGS_ERROR);
+      throw new Error(FormatPipe.NO_ARGS_ERROR);
     }
-    return formatDate(date, format, options);
+    return formatDate(date, format, calculateLocale(options, this.config));
   }
 }

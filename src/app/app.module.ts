@@ -4,7 +4,11 @@ import { NgModule } from '@angular/core';
 
 import { DateFnsModule } from '../lib';
 import { AppComponent } from './app.component';
+import { DateFnsConfigurationService } from '../lib/src/date-fns-configuration.service';
+import * as frLocale from "date-fns/locale/fr/index.js";
 
+const frenchConfig = new DateFnsConfigurationService();
+frenchConfig.setLocale(frLocale);
 
 @NgModule({
   declarations: [
@@ -12,9 +16,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    DateFnsModule
+    DateFnsModule.forRoot()
   ],
-  providers: [],
+  providers: [ { provide: DateFnsConfigurationService, useValue: frenchConfig } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

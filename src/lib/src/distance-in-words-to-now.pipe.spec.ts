@@ -1,11 +1,12 @@
 import { DistanceInWordsToNowPipe } from './distance-in-words-to-now.pipe';
 import * as esLocale from 'date-fns/locale/es/index.js';
+import { DateFnsConfigurationService } from './date-fns-configuration.service';
 
 describe('DistanceInWordsToNowPipe', () => {
   let pipe: DistanceInWordsToNowPipe;
 
   beforeEach(() => {
-    pipe = new DistanceInWordsToNowPipe();
+    pipe = new DistanceInWordsToNowPipe(new DateFnsConfigurationService());
     jasmine.clock().install();
     jasmine.clock().mockDate(new Date(2015, 0, 1));
   });

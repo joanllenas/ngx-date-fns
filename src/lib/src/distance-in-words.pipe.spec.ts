@@ -3,11 +3,12 @@
 
 import { DistanceInWordsPipe } from './distance-in-words.pipe';
 import * as esLocale from 'date-fns/locale/es/index.js';
+import { DateFnsConfigurationService } from './date-fns-configuration.service';
 
 describe('DistanceInWordsPipe', () => {
   let pipe: DistanceInWordsPipe;
 
-  beforeEach(() => pipe = new DistanceInWordsPipe());
+  beforeEach(() => pipe = new DistanceInWordsPipe(new DateFnsConfigurationService()));
 
   it('should throw when required arguments are not provided', () => {
       expect(() => pipe.transform(undefined, undefined))

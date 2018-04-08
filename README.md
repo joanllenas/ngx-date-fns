@@ -21,8 +21,8 @@ npm install --save date-fns
 npm install --save ngx-date-fns
 ```
 
-Usage
------
+Basic Usage
+-----------
 
 Import `DateFnsModule` into your app's modules:
 
@@ -32,7 +32,7 @@ import {DateFnsModule} from 'ngx-date-fns';
 @NgModule({
   imports: [
     // (...)
-    DateFnsModule
+    DateFnsModule.forRoot()
   ]
 })
 ```
@@ -84,6 +84,63 @@ Fri Jan 01 2016 00:00:00 GMT+0100 (CET)
 2017/01/01
 
 alrededor de 1 mes
+```
+
+Working with locales
+--------------------
+
+> All locale aware pipes use English by default.
+
+### Changing locale globally
+
+Instead of passing the locale to each pipe via options you can set it globally in one single step by overriding the default `DateFnsConfiguration` implementation:
+
+``` typescript
+import { DateFnsModule } from 'ngx-date-fns';
+import * as frLocale from "date-fns/locale/fr/index.js";
+
+const frenchConfig = new DateFnsConfigurationService();
+frenchConfig.setLocale(frLocale);
+
+@NgModule({
+  imports: [
+    // (...)
+    DateFnsModule.forRoot()
+  ],
+  providers: [ 
+    // (...)
+    { provide: DateFnsConfigurationService, useValue: frenchConfig } // <---- All pipies in French by default
+  ]
+})
+```
+
+### Changing locale at runtime
+
+It is also possible to change the default locale at runtime:
+
+``` typescript
+@Component({
+  selector: "app-root",
+  template: `
+    <p>
+      {{ dateOne | dfnsFormat : 'ddd MMM D YYYY' }}
+    </p>
+    <hr>
+    Set default locale to: 
+      <a href="#" (click)="changeToGerman()">German</a>, 
+      <a href="#" (click)="changeToSpanish()">Spanish</a>.
+  `
+})
+export class AppComponent {
+  dateOne = new Date(2016, 0, 1);
+  constructor(public config: DateFnsConfigurationService) {}
+  changeToGerman() {
+    this.config.setLocale(deLocale);
+  }
+  changeToSpanish() {
+    this.config.setLocale(esLocale);
+  }
+}
 ```
 
 Available pipes
@@ -192,3 +249,7 @@ Available pipes
 * [dfnsLastDayOfQuarter](https://date-fns.org/docs/lastDayOfQuarter)
 * [dfnsLastDayOfYear](https://date-fns.org/docs/lastDayOfYear)
 * [dfnsLastDayOfISOYear](https://date-fns.org/docs/lastDayOfISOYear)
+
+---
+
+> *Library created with [ng-lib-schematics](https://github.com/caroso1222/ng-lib-schematics)*

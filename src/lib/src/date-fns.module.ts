@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DistanceInWordsPipe } from './distance-in-words.pipe';
@@ -95,6 +95,7 @@ import { DifferenceInCalendarISOYearsPipe } from './difference-in-calendar-iso-y
 import { DifferenceInISOYearsPipe } from './difference-in-iso-years.pipe';
 import { GetQuarterPipe } from './get-quarter.pipe';
 import { GetISOYearPipe } from './get-iso-year.pipe';
+import { DateFnsConfigurationService } from './date-fns-configuration.service';
 
 
 const PIPES = [
@@ -218,4 +219,11 @@ const PIPES = [
   declarations: PIPES,
   exports: PIPES
 })
-export class DateFnsModule { }
+export class DateFnsModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: DateFnsModule,
+      providers: [DateFnsConfigurationService]
+    }
+  }
+}
