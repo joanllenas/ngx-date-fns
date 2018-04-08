@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v1.13.4...v2.0.0) (2018-04-08)
+
+
+### Features
+
+* **locales:** Added global locale configuration options ([7f50125](https://github.com/joanllenas/ngx-date-fns/commit/7f50125)), closes [#135](https://github.com/joanllenas/ngx-date-fns/issues/135)
+
+
+### BREAKING CHANGES
+
+* **locales:** * To import the module you have to use `DateFnsModule.forRoot()`.
+
+
+
 <a name="1.13.4"></a>
 ## [1.13.4](https://github.com/joanllenas/ngx-date-fns/compare/v1.13.3...v1.13.4) (2018-03-15)
 
