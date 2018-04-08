@@ -6,15 +6,9 @@ All notable changes to this project will be documented in this file. See [standa
 ## [2.0.2](https://github.com/joanllenas/ngx-date-fns/compare/v2.0.1...v2.0.2) (2018-04-08)
 
 
-
-<a name="2.0.1"></a>
-## [2.0.1](https://github.com/joanllenas/ngx-date-fns/compare/v2.0.0...v2.0.1) (2018-04-08)
-
-
 ### Bug Fixes
 
 * **export:** Added missing library export ([ce23004](https://github.com/joanllenas/ngx-date-fns/commit/ce23004))
-
 
 
 <a name="2.0.0"></a>
