@@ -23,7 +23,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### BREAKING CHANGES
 
-* **locales:** * To import the module you have to use `DateFnsModule.forRoot()`.
+* **locales:** To import the module you have to use `DateFnsModule.forRoot()`.
 
 
 
