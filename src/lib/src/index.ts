@@ -92,4 +92,5 @@ export * from './difference-in-calendar-iso-years.pipe';
 export * from './difference-in-iso-years.pipe';
 export * from './get-quarter.pipe';
 export * from './get-iso-year.pipe';
+export * from './date-fns-configuration.service';
 export * from './date-fns.module';
