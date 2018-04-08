@@ -93,7 +93,7 @@ Working with locales
 
 ### Changing locale globally
 
-Instead of passing the locale to each pipe via options you can set it globally in one single step by overriding the default `DateFnsConfiguration` implementation:
+Instead of passing the locale to each pipe via `options` you can set it globally in one single step by overriding the default `DateFnsConfiguration` implementation:
 
 ``` typescript
 import { DateFnsModule } from 'ngx-date-fns';
@@ -109,7 +109,7 @@ frenchConfig.setLocale(frLocale);
   ],
   providers: [ 
     // (...)
-    { provide: DateFnsConfigurationService, useValue: frenchConfig } // <---- All pipies in French by default
+    { provide: DateFnsConfigurationService, useValue: frenchConfig } // <-- All pipies in French by default
   ]
 })
 ```
@@ -119,6 +119,11 @@ frenchConfig.setLocale(frLocale);
 It is also possible to change the default locale at runtime:
 
 ``` typescript
+import { Component } from "@angular/core";
+import { DateFnsConfigurationService } from "../lib/src/date-fns-configuration.service";
+import * as esLocale from "date-fns/locale/es/index.js";
+import * as deLocale from "date-fns/locale/de/index.js";
+
 @Component({
   selector: "app-root",
   template: `
