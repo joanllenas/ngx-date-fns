@@ -89,7 +89,7 @@
     "path": "^0.12.7",
     "protractor": "~5.1.2",
     "rimraf": "^2.6.2",
-    "rollup": "^0.54.0",
+    "rollup": "^0.59.2",
     "run-sequence": "^2.2.1",
     "sorcery": "^0.10.0",
     "standard-version": "^4.3.0",
