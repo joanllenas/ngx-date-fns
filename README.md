@@ -150,16 +150,17 @@ export class AppComponent {
 
 Available pipes
 ---------------
+> All pipes are [pure](https://angular.io/guide/pipes#pure-and-impure-pipes) unless stated otherwise.
 #### Distance
-* [dfnsDistanceInWords](https://date-fns.org/docs/distanceInWords)
-* [dfnsDistanceInWordsStrict](https://date-fns.org/docs/distanceInWordsStrict)
-* [dfnsDistanceInWordsToNow](https://date-fns.org/docs/distanceInWordsToNow)
+* [dfnsDistanceInWords](https://date-fns.org/docs/distanceInWords) _(impure)_
+* [dfnsDistanceInWordsStrict](https://date-fns.org/docs/distanceInWordsStrict) _(impure)_
+* [dfnsDistanceInWordsToNow](https://date-fns.org/docs/distanceInWordsToNow) _(impure)_
 #### Min / Max
 * [dfnsMin](https://date-fns.org/docs/min)
 * [dfnsMax](https://date-fns.org/docs/max)
 #### Misc
 * [dfnsClosestTo](https://date-fns.org/docs/closestTo)
-* [dfnsFormat](https://date-fns.org/docs/format)
+* [dfnsFormat](https://date-fns.org/docs/format) _(impure)_
 #### Get
 * [dfnsGetOverlappingDaysInRanges](https://date-fns.org/docs/getOverlappingDaysInRanges)
 * [dfnsGetTime](https://date-fns.org/docs/getTime)
