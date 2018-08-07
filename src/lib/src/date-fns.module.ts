@@ -96,12 +96,14 @@ import { DifferenceInISOWeekYearsPipe } from './difference-in-iso-week-years.pip
 import { GetQuarterPipe } from './get-quarter.pipe';
 import { GetISOWeekYearPipe } from './get-iso-week-year.pipe';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
+import { FormatRelativePipe } from './format-relative.pipe';
 
 const PIPES = [
   // Distance
   FormatDistancePipe,
   FormatDistanceStrictPipe,
   FormatDistanceToNowPipe,
+  FormatRelativePipe,
 
   // Get
   GetOverlappingDaysInRangesPipe,
