@@ -1,15 +1,15 @@
-import { Component } from "@angular/core";
-import { TestBed, ComponentFixture, async } from "@angular/core/testing";
-import { DateFnsConfigurationService } from "./date-fns-configuration.service";
-import { DateFnsModule } from ".";
-import * as esLocale from "date-fns/locale/es/index.js";
-import * as frLocale from "date-fns/locale/fr/index.js";
+import { Component } from '@angular/core';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
+import { DateFnsConfigurationService } from './date-fns-configuration.service';
+import { DateFnsModule } from '.';
+import * as esLocale from 'date-fns/locale/es/index.js';
+import * as frLocale from 'date-fns/locale/fr/index.js';
 
 @Component({
   template: `
-    <p class="dfns">{{ date | dfnsFormat : 'ddd MMM D YYYY' }}</p>
-    <p class="explicit">{{ date | dfnsFormat : 'ddd MMM D YYYY' : options }}</p>
-  `
+    <p class="dfns">{{ date | dfnsFormat : 'eee MMM d yyyy' }}</p>
+    <p class="explicit">{{ date | dfnsFormat : 'eee MMM d yyyy' : options }}</p>
+  `,
 })
 class TestHostComponent {
   date: Date = new Date();
@@ -17,14 +17,15 @@ class TestHostComponent {
 }
 
 describe('DateFnsConfigurationService', () => {
-
   const mockConfig = new DateFnsConfigurationService();
 
-  beforeEach(async (() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestHostComponent ],
-      imports: [ DateFnsModule.forRoot() ],
-      providers: [ {provide: DateFnsConfigurationService, useValue: mockConfig} ]
+      declarations: [TestHostComponent],
+      imports: [DateFnsModule.forRoot()],
+      providers: [
+        { provide: DateFnsConfigurationService, useValue: mockConfig },
+      ],
     }).compileComponents();
   }));
 
@@ -33,7 +34,7 @@ describe('DateFnsConfigurationService', () => {
   let element: HTMLElement;
 
   beforeEach(() => {
-    fixture  = TestBed.createComponent(TestHostComponent);
+    fixture = TestBed.createComponent(TestHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,10 +1,10 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {getOverlappingDaysInRanges} from 'date-fns';
-
+import { Pipe, PipeTransform } from '@angular/core';
+import { getOverlappingDaysInIntervals } from 'date-fns';
 
 @Pipe({ name: 'dfnsGetOverlappingDaysInRanges' })
 export class GetOverlappingDaysInRangesPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsGetOverlappingDaysInRanges: missing required arguments';
+  static readonly NO_ARGS_ERROR =
+    'dfnsGetOverlappingDaysInRanges: missing required arguments';
 
   transform(
     initialRangeStartDate: string | number | Date,
@@ -12,11 +12,17 @@ export class GetOverlappingDaysInRangesPipe implements PipeTransform {
     comparedRangeStartDate: string | number | Date,
     comparedRangeEndDate: string | number | Date
   ): number {
-    if (!initialRangeStartDate || !initialRangeEndDate || !comparedRangeStartDate || !comparedRangeEndDate) {
-        throw new Error(GetOverlappingDaysInRangesPipe.NO_ARGS_ERROR);
+    if (
+      !initialRangeStartDate ||
+      !initialRangeEndDate ||
+      !comparedRangeStartDate ||
+      !comparedRangeEndDate
+    ) {
+      throw new Error(GetOverlappingDaysInRangesPipe.NO_ARGS_ERROR);
     }
-    return getOverlappingDaysInRanges(
-      initialRangeStartDate, initialRangeEndDate, comparedRangeStartDate, comparedRangeEndDate
+    return getOverlappingDaysInIntervals(
+      { start: initialRangeStartDate, end: initialRangeEndDate },
+      { start: comparedRangeStartDate, end: comparedRangeEndDate }
     );
   }
 }

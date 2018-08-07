@@ -1,6 +1,3 @@
-
-
-
 import { DifferenceInHoursPipe } from './difference-in-hours.pipe';
 
 describe('DifferenceInHoursPipe', () => {
