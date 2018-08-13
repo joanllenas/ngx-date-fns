@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { getOverlappingDaysInIntervals } from 'date-fns';
 
-@Pipe({ name: 'dfnsGetOverlappingDaysInRanges' })
+@Pipe({ name: 'dfnsGetOverlappingDaysInIntervals' })
 export class GetOverlappingDaysInIntervalsPipe implements PipeTransform {
   static readonly NO_ARGS_ERROR =
     'dfnsGetOverlappingDaysInRanges: missing required arguments';

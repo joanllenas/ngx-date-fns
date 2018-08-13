@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 export interface DateFnsConfiguration {
   /**
@@ -32,16 +32,17 @@ export const calculateLocale = (
   options: { locale?: Object },
   config: DateFnsConfiguration
 ): Object => {
+
   const configLocale = config.locale();
 
-  if (!options && configLocale) {
-    return { locale: configLocale };
+  if(!options && configLocale) {
+    return {locale: configLocale};
   }
 
-  if (options && !options.locale && configLocale) {
+  if(options && !options.locale && configLocale) {
     return {
       ...options,
-      locale: configLocale,
+      locale: configLocale
     };
   }
 

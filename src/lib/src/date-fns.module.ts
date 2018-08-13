@@ -97,6 +97,8 @@ import { GetQuarterPipe } from './get-quarter.pipe';
 import { GetISOWeekYearPipe } from './get-iso-week-year.pipe';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { FormatRelativePipe } from './format-relative.pipe';
+import { GetOverlappingDaysInIntervalsPipe } from './get-overlapping-days-in-intervals.pipe';
+
 
 const PIPES = [
   // Distance
@@ -107,6 +109,7 @@ const PIPES = [
 
   // Get
   GetOverlappingDaysInRangesPipe,
+  GetOverlappingDaysInIntervalsPipe,
   GetMillisecondsPipe,
   GetSecondsPipe,
   GetMinutesPipe,

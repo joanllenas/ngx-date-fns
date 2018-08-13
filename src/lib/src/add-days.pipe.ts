@@ -13,6 +13,6 @@ export class AddDaysPipe implements PipeTransform {
     if (!date) {
       throw new Error(AddDaysPipe.NO_ARGS_ERROR);
     }
-    return addDays(date, amount || 0);
+    return addDays(date, amount || 0, options);
   }
 }

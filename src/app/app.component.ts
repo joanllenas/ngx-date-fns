@@ -7,21 +7,21 @@ import { DateFnsConfigurationService } from "../lib/src/date-fns-configuration.s
   selector: "app-root",
   template: `
     <p>
-      {{ dateOne | dfnsFormat : 'YYYY/MM/DD' }}
+      {{ dateOne | dfnsFormat : 'yyyy/MM/dd' }}
     </p>
     <p>
-      {{ [dateOne, dateTwo] | dfnsMin | dfnsFormat : 'ddd MMM D YYYY' }}
+      {{ [dateOne, dateTwo] | dfnsMin | dfnsFormat : 'EEE MMM d yyyy' }}
     </p>
     <p>
-      {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat : 'ddd MMM D YYYY' }}
+      {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat : 'EEE MMM d yyyy' }}
     </p>
     <p>
-      {{ dateThree | dfnsDistanceInWordsToNow : options }} - (Explicit 'es' locale)
+      {{ dateThree | dfnsFormatDistanceToNow : options }} - (Explicit 'es' locale)
     </p>
     <hr>
     Set default locale to: <a href="#" (click)="changeToGerman()">German</a>, <a href="#" (click)="changeToSpanish()">Spanish</a>.
     <p *ngFor="let d of dates">
-      {{ d | dfnsDistanceInWordsToNow }}
+      {{ d | dfnsFormatDistanceToNow }}
     </p>
   `
 })
