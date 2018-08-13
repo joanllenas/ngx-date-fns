@@ -1,6 +1,3 @@
-
-
-
 import { DifferenceInCalendarMonthsPipe } from './difference-in-calendar-months.pipe';
 
 describe('DifferenceInCalendarMonthsPipe', () => {
