@@ -27,9 +27,9 @@
   "peerDependencies": {
     "@angular/core": ">=2",
     "@angular/common": ">=2",
-    "date-fns": ">=2"
+    "date-fns": "^2.0.0-alpha.16"
   },
   "devDependencies": {
-    "date-fns": ">=2"
+    "date-fns": "^2.0.0-alpha.16"
   }
 }
