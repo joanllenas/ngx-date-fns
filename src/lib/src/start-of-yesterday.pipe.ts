@@ -1,11 +1,9 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {startOfYesterday} from 'date-fns';
-
+import { Pipe, PipeTransform } from '@angular/core';
+import { startOfDay, subDays } from 'date-fns';
 
 @Pipe({ name: 'dfnsStartOfYesterday' })
 export class StartOfYesterdayPipe implements PipeTransform {
-
   transform(): Date {
-    return startOfYesterday();
+    return startOfDay(subDays(new Date(), 1));
   }
 }

@@ -1,9 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DistanceInWordsPipe } from './distance-in-words.pipe';
-import { DistanceInWordsStrictPipe } from './distance-in-words-strict.pipe';
-import { DistanceInWordsToNowPipe } from './distance-in-words-to-now.pipe';
+import { FormatDistancePipe } from './format-distance.pipe';
+import { FormatDistanceStrictPipe } from './format-distance-strict.pipe';
+import { FormatDistanceToNowPipe } from './format-distance-to-now.pipe';
 import { FormatPipe } from './format.pipe';
 import { GetOverlappingDaysInRangesPipe } from './get-overlapping-days-in-ranges.pipe';
 import { GetMillisecondsPipe } from './get-milliseconds.pipe';
@@ -43,7 +43,7 @@ import { AddWeeksPipe } from './add-weeks.pipe';
 import { AddMonthsPipe } from './add-months.pipe';
 import { AddQuartersPipe } from './add-quarters.pipe';
 import { AddYearsPipe } from './add-years.pipe';
-import { AddISOYearsPipe } from './add-iso-years.pipe';
+import { AddISOWeekYearsPipe } from './add-iso-week-years.pipe';
 import { SubMillisecondsPipe } from './sub-milliseconds.pipe';
 import { SubSecondsPipe } from './sub-seconds.pipe';
 import { SubMinutesPipe } from './sub-minutes.pipe';
@@ -53,7 +53,7 @@ import { SubWeeksPipe } from './sub-weeks.pipe';
 import { SubMonthsPipe } from './sub-months.pipe';
 import { SubQuartersPipe } from './sub-quarters.pipe';
 import { SubYearsPipe } from './sub-years.pipe';
-import { SubISOYearsPipe } from './sub-iso-years.pipe';
+import { SubISOWeekYearsPipe } from './sub-iso-week-years.pipe';
 import { EndOfSecondPipe } from './end-of-second.pipe';
 import { EndOfMinutePipe } from './end-of-minute.pipe';
 import { EndOfHourPipe } from './end-of-hour.pipe';
@@ -66,7 +66,7 @@ import { EndOfISOWeekPipe } from './end-of-iso-week.pipe';
 import { EndOfMonthPipe } from './end-of-month.pipe';
 import { EndOfQuarterPipe } from './end-of-quarter.pipe';
 import { EndOfYearPipe } from './end-of-year.pipe';
-import { EndOfISOYearPipe } from './end-of-iso-year.pipe';
+import { EndOfISOWeekYearPipe } from './end-of-iso-week-year.pipe';
 import { StartOfSecondPipe } from './start-of-second.pipe';
 import { StartOfMinutePipe } from './start-of-minute.pipe';
 import { StartOfHourPipe } from './start-of-hour.pipe';
@@ -79,33 +79,37 @@ import { StartOfISOWeekPipe } from './start-of-iso-week.pipe';
 import { StartOfMonthPipe } from './start-of-month.pipe';
 import { StartOfQuarterPipe } from './start-of-quarter.pipe';
 import { StartOfYearPipe } from './start-of-year.pipe';
-import { StartOfISOYearPipe } from './start-of-iso-year.pipe';
+import { StartOfISOWeekYearPipe } from './start-of-iso-week-year.pipe';
 import { LastDayOfWeekPipe } from './last-day-of-week.pipe';
 import { LastDayOfISOWeekPipe } from './last-day-of-iso-week.pipe';
 import { LastDayOfMonthPipe } from './last-day-of-month.pipe';
 import { LastDayOfQuarterPipe } from './last-day-of-quarter.pipe';
-import { LastDayOfISOYearPipe } from './last-day-of-iso-year.pipe';
+import { LastDayOfISOWeekYearPipe } from './last-day-of-iso-week-year.pipe';
 import { LastDayOfYearPipe } from './last-day-of-year.pipe';
 import { DifferenceInMonthsPipe } from './difference-in-months.pipe';
 import { DifferenceInCalendarQuartersPipe } from './difference-in-calendar-quarters.pipe';
 import { DifferenceInQuartersPipe } from './difference-in-quarters.pipe';
 import { DifferenceInCalendarYearsPipe } from './difference-in-calendar-years.pipe';
 import { DifferenceInYearsPipe } from './difference-in-years.pipe';
-import { DifferenceInCalendarISOYearsPipe } from './difference-in-calendar-iso-years.pipe';
-import { DifferenceInISOYearsPipe } from './difference-in-iso-years.pipe';
+import { DifferenceInCalendarISOWeekYearsPipe } from './difference-in-calendar-iso-week-years.pipe';
+import { DifferenceInISOWeekYearsPipe } from './difference-in-iso-week-years.pipe';
 import { GetQuarterPipe } from './get-quarter.pipe';
-import { GetISOYearPipe } from './get-iso-year.pipe';
+import { GetISOWeekYearPipe } from './get-iso-week-year.pipe';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
+import { FormatRelativePipe } from './format-relative.pipe';
+import { GetOverlappingDaysInIntervalsPipe } from './get-overlapping-days-in-intervals.pipe';
 
 
 const PIPES = [
   // Distance
-  DistanceInWordsPipe,
-  DistanceInWordsStrictPipe,
-  DistanceInWordsToNowPipe,
+  FormatDistancePipe,
+  FormatDistanceStrictPipe,
+  FormatDistanceToNowPipe,
+  FormatRelativePipe,
 
   // Get
   GetOverlappingDaysInRangesPipe,
+  GetOverlappingDaysInIntervalsPipe,
   GetMillisecondsPipe,
   GetSecondsPipe,
   GetMinutesPipe,
@@ -115,7 +119,7 @@ const PIPES = [
   GetDayPipe,
   GetQuarterPipe,
   GetISODayPipe,
-  GetISOYearPipe,
+  GetISOWeekYearPipe,
   GetDaysInMonthPipe,
   GetMonthPipe,
   GetDaysInYearPipe,
@@ -139,11 +143,11 @@ const PIPES = [
   DifferenceInMonthsPipe,
   DifferenceInHoursPipe,
   DifferenceInCalendarDaysPipe,
-  DifferenceInCalendarISOYearsPipe,
+  DifferenceInCalendarISOWeekYearsPipe,
   DifferenceInCalendarYearsPipe,
   DifferenceInDaysPipe,
   DifferenceInCalendarWeeksPipe,
-  DifferenceInISOYearsPipe,
+  DifferenceInISOWeekYearsPipe,
   DifferenceInWeeksPipe,
   DifferenceInCalendarISOWeeksPipe,
   DifferenceInCalendarMonthsPipe,
@@ -161,7 +165,7 @@ const PIPES = [
   AddMonthsPipe,
   AddQuartersPipe,
   AddYearsPipe,
-  AddISOYearsPipe,
+  AddISOWeekYearsPipe,
 
   // Subtract
   SubMillisecondsPipe,
@@ -173,7 +177,7 @@ const PIPES = [
   SubMonthsPipe,
   SubQuartersPipe,
   SubYearsPipe,
-  SubISOYearsPipe,
+  SubISOWeekYearsPipe,
 
   // End
   EndOfSecondPipe,
@@ -188,7 +192,7 @@ const PIPES = [
   EndOfMonthPipe,
   EndOfQuarterPipe,
   EndOfYearPipe,
-  EndOfISOYearPipe,
+  EndOfISOWeekYearPipe,
 
   // Start
   StartOfSecondPipe,
@@ -203,7 +207,7 @@ const PIPES = [
   StartOfMonthPipe,
   StartOfQuarterPipe,
   StartOfYearPipe,
-  StartOfISOYearPipe,
+  StartOfISOWeekYearPipe,
 
   // Last
   LastDayOfWeekPipe,
@@ -211,19 +215,19 @@ const PIPES = [
   LastDayOfMonthPipe,
   LastDayOfQuarterPipe,
   LastDayOfYearPipe,
-  LastDayOfISOYearPipe,
+  LastDayOfISOWeekYearPipe,
 ];
 
 @NgModule({
   imports: [CommonModule],
   declarations: PIPES,
-  exports: PIPES
+  exports: PIPES,
 })
 export class DateFnsModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: DateFnsModule,
-      providers: [DateFnsConfigurationService]
-    }
+      providers: [DateFnsConfigurationService],
+    };
   }
 }
