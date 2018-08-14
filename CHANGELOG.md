@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.2"></a>
+## [3.0.2](https://github.com/joanllenas/ngx-date-fns/compare/v3.0.1...v3.0.2) (2018-08-14)
+
+
+### Bug Fixes
+
+* **types:** Added Options and Interval types to avoid compile errors ([e7cc6f5](https://github.com/joanllenas/ngx-date-fns/commit/e7cc6f5))
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/joanllenas/ngx-date-fns/compare/v3.0.0...v3.0.1) (2018-08-13)
 
