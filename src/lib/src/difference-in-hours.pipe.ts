@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import {differenceInHours} from 'date-fns';
+import { Options } from './types/options';
 
 @Pipe({ name: 'dfnsDifferenceInHours' })
 export class DifferenceInHoursPipe implements PipeTransform {

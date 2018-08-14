@@ -4,6 +4,7 @@ import {
   DateFnsConfigurationService,
   calculateLocale,
 } from './date-fns-configuration.service';
+import { Options } from './types/options';
 
 @Pipe({ name: 'dfnsFormatRelative', pure: false })
 export class FormatRelativePipe implements PipeTransform {

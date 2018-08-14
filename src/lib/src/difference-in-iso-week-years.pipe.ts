@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { differenceInISOWeekYears } from 'date-fns';
+import { Options } from './types/options';
 
 @Pipe({ name: 'dfnsDifferenceInISOWeekYears' })
 export class DifferenceInISOWeekYearsPipe implements PipeTransform {

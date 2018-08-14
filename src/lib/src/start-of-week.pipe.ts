@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { startOfWeek } from 'date-fns';
+import { Options } from './types/options';
 
 @Pipe({ name: 'dfnsStartOfWeek' })
 export class StartOfWeekPipe implements PipeTransform {
