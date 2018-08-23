@@ -64,7 +64,7 @@
     "@angular/language-service": "^6.0.0",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~9.6.2",
+    "@types/node": "~10.7.2",
     "codecov": "^3.0.0",
     "codelyzer": "^4.0.1",
     "commitizen": "^2.9.6",
