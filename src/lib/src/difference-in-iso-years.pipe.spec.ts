@@ -9,7 +9,7 @@ describe('DifferenceInISOYearsPipe', () => {
   beforeEach(() => pipe = new DifferenceInISOYearsPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined, undefined))
+      expect(() => pipe.transform.call(pipe, undefined, undefined))
         .toThrowError(Error, DifferenceInISOYearsPipe.NO_ARGS_ERROR);
   });
 

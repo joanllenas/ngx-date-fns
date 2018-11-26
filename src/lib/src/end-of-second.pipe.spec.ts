@@ -9,7 +9,7 @@ describe('EndOfSecondPipe', () => {
   beforeEach(() => pipe = new EndOfSecondPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, EndOfSecondPipe.NO_ARGS_ERROR);
   });
 

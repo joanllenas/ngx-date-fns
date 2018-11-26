@@ -1,15 +1,24 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform, ChangeDetectorRef } from "@angular/core";
 import { format as formatDate } from "date-fns";
 import {
   DateFnsConfigurationService,
   calculateLocale
 } from "./date-fns-configuration.service";
+import { Subscription } from "rxjs/Subscription";
 
 @Pipe({ name: "dfnsFormat", pure: false })
 export class FormatPipe implements PipeTransform {
   static readonly NO_ARGS_ERROR = "dfnsFormat: missing required arguments";
 
-  constructor(public config: DateFnsConfigurationService) {}
+  private localeChanged$: Subscription;
+
+  constructor(public config: DateFnsConfigurationService, public cd: ChangeDetectorRef) {
+    this.localeChanged$ = this.config.localeChanged.subscribe(_ => this.cd.markForCheck());
+  }
+
+  ngOnDestroy(): void {
+    this.localeChanged$.unsubscribe();
+  }
 
   transform(
     date: string | number | Date,

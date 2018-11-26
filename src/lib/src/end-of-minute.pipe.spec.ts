@@ -9,7 +9,7 @@ describe('EndOfMinutePipe', () => {
   beforeEach(() => pipe = new EndOfMinutePipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, EndOfMinutePipe.NO_ARGS_ERROR);
   });
 

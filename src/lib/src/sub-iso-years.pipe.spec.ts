@@ -9,7 +9,7 @@ describe('SubISOYearsPipe', () => {
   beforeEach(() => pipe = new SubISOYearsPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined, undefined))
+      expect(() => pipe.transform.call(pipe, undefined, undefined))
         .toThrowError(Error, SubISOYearsPipe.NO_ARGS_ERROR);
   });
 

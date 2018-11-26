@@ -9,7 +9,7 @@ describe('GetOverlappingDaysInRangesPipe', () => {
   beforeEach(() => pipe = new GetOverlappingDaysInRangesPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined, undefined, undefined, undefined))
+      expect(() => pipe.transform.call(pipe, undefined, undefined, undefined, undefined))
         .toThrowError(Error, GetOverlappingDaysInRangesPipe.NO_ARGS_ERROR);
   });
 

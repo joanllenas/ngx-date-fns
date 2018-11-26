@@ -9,7 +9,7 @@ describe('DifferenceInMinutesPipe', () => {
   beforeEach(() => pipe = new DifferenceInMinutesPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined, undefined))
+      expect(() => pipe.transform.call(pipe, undefined, undefined))
         .toThrowError(Error, DifferenceInMinutesPipe.NO_ARGS_ERROR);
   });
 

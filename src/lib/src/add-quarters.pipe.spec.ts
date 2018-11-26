@@ -6,7 +6,7 @@ describe('AddQuartersPipe', () => {
   beforeEach(() => pipe = new AddQuartersPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined, undefined))
+      expect(() => pipe.transform.call(pipe, undefined, undefined))
         .toThrowError(Error, AddQuartersPipe.NO_ARGS_ERROR);
   });
 

@@ -9,7 +9,7 @@ describe('GetMillisecondsPipe', () => {
   beforeEach(() => pipe = new GetMillisecondsPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, GetMillisecondsPipe.NO_ARGS_ERROR);
   });
 

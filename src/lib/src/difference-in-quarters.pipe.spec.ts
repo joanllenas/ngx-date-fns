@@ -9,7 +9,7 @@ describe('DifferenceInQuartersPipe', () => {
   beforeEach(() => pipe = new DifferenceInQuartersPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined, undefined))
+      expect(() => pipe.transform.call(pipe, undefined, undefined))
         .toThrowError(Error, DifferenceInQuartersPipe.NO_ARGS_ERROR);
   });
 

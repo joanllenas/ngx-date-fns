@@ -9,7 +9,7 @@ describe('GetDayPipe', () => {
   beforeEach(() => pipe = new GetDayPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, GetDayPipe.NO_ARGS_ERROR);
   });
 

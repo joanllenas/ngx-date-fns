@@ -9,7 +9,7 @@ describe('GetDaysInMonthPipe', () => {
   beforeEach(() => pipe = new GetDaysInMonthPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, GetDaysInMonthPipe.NO_ARGS_ERROR);
   });
 

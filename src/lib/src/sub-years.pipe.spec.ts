@@ -9,7 +9,7 @@ describe('SubYearsPipe', () => {
   beforeEach(() => pipe = new SubYearsPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined, undefined))
+      expect(() => pipe.transform.call(pipe, undefined, undefined))
         .toThrowError(Error, SubYearsPipe.NO_ARGS_ERROR);
   });
 

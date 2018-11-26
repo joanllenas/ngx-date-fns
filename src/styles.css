@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+a.active, a:hover {
+  text-decoration: none;
+}
+
+a.active {
+  font-weight: bold;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-right: 1px solid #ccc;
+}
+
+.content {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 16px;
+}

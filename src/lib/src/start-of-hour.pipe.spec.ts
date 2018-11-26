@@ -9,7 +9,7 @@ describe('StartOfHourPipe', () => {
   beforeEach(() => pipe = new StartOfHourPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, StartOfHourPipe.NO_ARGS_ERROR);
   });
 

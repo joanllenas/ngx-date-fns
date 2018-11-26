@@ -9,7 +9,7 @@ describe('EndOfWeekPipe', () => {
   beforeEach(() => pipe = new EndOfWeekPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, EndOfWeekPipe.NO_ARGS_ERROR);
   });
 

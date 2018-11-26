@@ -4,14 +4,34 @@
 import { DistanceInWordsStrictPipe } from './distance-in-words-strict.pipe';
 import * as esLocale from 'date-fns/locale/es/index.js';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 describe('DistanceInWordsStrictPipe', () => {
   let pipe: DistanceInWordsStrictPipe;
 
-  beforeEach(() => pipe = new DistanceInWordsStrictPipe(new DateFnsConfigurationService()));
+  beforeEach(() => {
+    const MyChangeDetector = class extends ChangeDetectorRef {
+      markForCheck(): void {
+        throw new Error("Method not implemented.");
+      }
+      detach(): void {
+        throw new Error("Method not implemented.");
+      }
+      detectChanges(): void {
+        throw new Error("Method not implemented.");
+      }
+      checkNoChanges(): void {
+        throw new Error("Method not implemented.");
+      }
+      reattach(): void {
+        throw new Error("Method not implemented.");
+      }
+    }
+    pipe = new DistanceInWordsStrictPipe(new DateFnsConfigurationService(), new MyChangeDetector())
+  });
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined, undefined))
+      expect(() => pipe.transform.call(pipe, undefined, undefined))
         .toThrowError(Error, DistanceInWordsStrictPipe.NO_ARGS_ERROR);
   });
 

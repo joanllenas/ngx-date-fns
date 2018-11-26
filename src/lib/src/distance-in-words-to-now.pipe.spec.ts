@@ -1,12 +1,30 @@
 import { DistanceInWordsToNowPipe } from './distance-in-words-to-now.pipe';
 import * as esLocale from 'date-fns/locale/es/index.js';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 describe('DistanceInWordsToNowPipe', () => {
   let pipe: DistanceInWordsToNowPipe;
 
   beforeEach(() => {
-    pipe = new DistanceInWordsToNowPipe(new DateFnsConfigurationService());
+    const MyChangeDetector = class extends ChangeDetectorRef {
+      markForCheck(): void {
+        throw new Error("Method not implemented.");
+      }
+      detach(): void {
+        throw new Error("Method not implemented.");
+      }
+      detectChanges(): void {
+        throw new Error("Method not implemented.");
+      }
+      checkNoChanges(): void {
+        throw new Error("Method not implemented.");
+      }
+      reattach(): void {
+        throw new Error("Method not implemented.");
+      }
+    }
+    pipe = new DistanceInWordsToNowPipe(new DateFnsConfigurationService(), new MyChangeDetector());
     jasmine.clock().install();
     jasmine.clock().mockDate(new Date(2015, 0, 1));
   });
@@ -14,7 +32,7 @@ describe('DistanceInWordsToNowPipe', () => {
   afterEach(() => {jasmine.clock().uninstall(); });
 
   it('should throw when required arguments are not provided', () => {
-    expect(() => pipe.transform(undefined))
+    expect(() => pipe.transform.call(pipe, undefined))
       .toThrowError(Error, DistanceInWordsToNowPipe.NO_ARGS_ERROR);
   });
 

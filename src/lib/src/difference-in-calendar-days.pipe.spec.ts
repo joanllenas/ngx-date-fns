@@ -9,7 +9,7 @@ describe('DifferenceInCalendarDaysPipe', () => {
   beforeEach(() => pipe = new DifferenceInCalendarDaysPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined, undefined))
+      expect(() => pipe.transform.call(pipe, undefined, undefined))
         .toThrowError(Error, DifferenceInCalendarDaysPipe.NO_ARGS_ERROR);
   });
 

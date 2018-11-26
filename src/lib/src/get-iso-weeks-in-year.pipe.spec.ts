@@ -9,7 +9,7 @@ describe('GetISOWeeksInYearPipe', () => {
   beforeEach(() => pipe = new GetISOWeeksInYearPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, GetISOWeeksInYearPipe.NO_ARGS_ERROR);
   });
 

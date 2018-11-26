@@ -9,7 +9,7 @@ describe('MaxPipe', () => {
   beforeEach(() => pipe = new MaxPipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, MaxPipe.NO_ARGS_ERROR);
   });
 

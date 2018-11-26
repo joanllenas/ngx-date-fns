@@ -9,7 +9,7 @@ describe('GetTimePipe', () => {
   beforeEach(() => pipe = new GetTimePipe());
 
   it('should throw when required arguments are not provided', () => {
-      expect(() => pipe.transform(undefined))
+      expect(() => pipe.transform.call(pipe, undefined))
         .toThrowError(Error, GetTimePipe.NO_ARGS_ERROR);
   });
 
