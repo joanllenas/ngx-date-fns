@@ -67,7 +67,7 @@
     "@types/node": "~9.6.2",
     "codecov": "^3.0.0",
     "codelyzer": "^4.0.1",
-    "commitizen": "^2.9.6",
+    "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
     "del": "^3.0.0",
     "fs": "0.0.1-security",
