@@ -72,7 +72,7 @@
     "del": "^3.0.0",
     "fs": "0.0.1-security",
     "ghooks": "^2.0.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.9.2",
     "gulp-htmlmin": "^4.0.0",
