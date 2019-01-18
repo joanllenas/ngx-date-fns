@@ -62,7 +62,7 @@
     "@angular/cli": "~1.7.3",
     "@angular/compiler-cli": "^6.0.0",
     "@angular/language-service": "^6.0.0",
-    "@types/jasmine": "~2.8.3",
+    "@types/jasmine": "~3.3.6",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~9.6.2",
     "codecov": "^3.0.0",
