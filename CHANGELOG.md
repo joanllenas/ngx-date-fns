@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v3.0.2...v4.0.0) (2019-01-21)
+
+
+### Bug Fixes
+
+* **angular:** Upgrade to Angular v7 and rxjs v6 ([32d6505](https://github.com/joanllenas/ngx-date-fns/commit/32d6505)), closes [#216](https://github.com/joanllenas/ngx-date-fns/issues/216)
+
+
+### BREAKING CHANGES
+
+* **angular:** This version requires Angular >= v6 and RxJs >= v6
+
+
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/joanllenas/ngx-date-fns/compare/v2.0.2...v2.0.3) (2018-11-26)
 
