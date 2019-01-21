@@ -9,9 +9,9 @@ notifications:
 node_js:
   - '8'
 before_install:
- - export DISPLAY=:99.0
- - sh -e /etc/init.d/xvfb start
- - sleep 3 # give xvfb some time to start
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3 # give xvfb some time to start
 addons:
   chrome: stable
 before_script:
@@ -19,7 +19,7 @@ before_script:
 script:
   - npm run build
 after_success:
-  - npm run coverage
+  - npm run test -- --code-coverage --watch=false
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/

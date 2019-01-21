@@ -2,39 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-<a name="3.0.2"></a>
-## [3.0.2](https://github.com/joanllenas/ngx-date-fns/compare/v3.0.1...v3.0.2) (2018-08-14)
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/joanllenas/ngx-date-fns/compare/v2.0.2...v2.0.3) (2018-11-26)
 
 
 ### Bug Fixes
 
-* **types:** Added Options and Interval types to avoid compile errors ([e7cc6f5](https://github.com/joanllenas/ngx-date-fns/commit/e7cc6f5))
-
-
-
-<a name="3.0.1"></a>
-## [3.0.1](https://github.com/joanllenas/ngx-date-fns/compare/v3.0.0...v3.0.1) (2018-08-13)
-
-
-### Bug Fixes
-
-* **package.json:** Fixed date-fns peerDependency version ([7b9369c](https://github.com/joanllenas/ngx-date-fns/commit/7b9369c))
-
-
-
-<a name="3.0.0"></a>
-# [3.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v2.0.2...v3.0.0) (2018-08-13)
-
-
-### Features
-
-* **dateFns:** dateFns v2 migration ([38fec4f](https://github.com/joanllenas/ngx-date-fns/commit/38fec4f)), closes [#178](https://github.com/joanllenas/ngx-date-fns/issues/178)
-
-
-### BREAKING CHANGES
-
-* **dateFns:** Visit https://github.com/date-fns/date-fns/blob/master/CHANGELOG.md to see what's
-changed
+* **locales:** Fixed locale aware pipes behaviour in OnPush situations ([3d3a5d0](https://github.com/joanllenas/ngx-date-fns/commit/3d3a5d0)), closes [#208](https://github.com/joanllenas/ngx-date-fns/issues/208)
 
 
 
@@ -42,9 +16,15 @@ changed
 ## [2.0.2](https://github.com/joanllenas/ngx-date-fns/compare/v2.0.1...v2.0.2) (2018-04-08)
 
 
+
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/joanllenas/ngx-date-fns/compare/v2.0.0...v2.0.1) (2018-04-08)
+
+
 ### Bug Fixes
 
 * **export:** Added missing library export ([ce23004](https://github.com/joanllenas/ngx-date-fns/commit/ce23004))
+
 
 
 <a name="2.0.0"></a>

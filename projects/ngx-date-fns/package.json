@@ -1,0 +1,32 @@
+{
+  "name": "ngx-date-fns",
+  "version": "2.0.3",
+  "description": "date-fns pipes for Angular",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joanllenas/ngx-date-fns"
+  },
+  "keywords": [
+    "angular",
+    "ngx",
+    "angular2",
+    "ng2",
+    "date-fns",
+    "date"
+  ],
+  "author": {
+    "name": "Joan Llenas Masó",
+    "email": "joan.llenas.maso@gmail.com",
+    "url": "http://joanllenas.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joanllenas/ngx-date-fns/issues"
+  },
+  "homepage": "https://github.com/joanllenas/ngx-date-fns#readme",
+  "peerDependencies": {
+    "@angular/common": ">=6",
+    "@angular/core": ">=6",
+    "date-fns": ">=1.29"
+  }
+}
