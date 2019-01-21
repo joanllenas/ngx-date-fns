@@ -34,15 +34,15 @@ import {DateFnsModule} from 'ngx-date-fns';
 ```
 
 ```typescript
-import { Component } from "@angular/core";
-import * as esLocale from "date-fns/locale/es/index.js";
+import { Component } from '@angular/core';
+import * as esLocale from 'date-fns/locale/es/index.js';
 
 @Component({
-  selector: "my-component",
+  selector: 'my-component',
   template: `
-    <p>{{ dateOne | dfnsFormat: "YYYY/MM/DD" }}</p>
+    <p>{{ dateOne | dfnsFormat: 'YYYY/MM/DD' }}</p>
     <p>{{ [dateOne, dateTwo] | dfnsMin }}</p>
-    <p>{{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: "YYYY/MM/DD" }}</p>
+    <p>{{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'YYYY/MM/DD' }}</p>
     <p>{{ dateThree | dfnsDistanceInWordsToNow: options }}</p>
   `
 })
@@ -104,15 +104,15 @@ frenchConfig.setLocale(frLocale);
 It is also possible to change the default locale at runtime:
 
 ```typescript
-import { Component } from "@angular/core";
-import { DateFnsConfigurationService } from "../lib/src/date-fns-configuration.service";
-import * as esLocale from "date-fns/locale/es/index.js";
-import * as deLocale from "date-fns/locale/de/index.js";
+import { Component } from '@angular/core';
+import { DateFnsConfigurationService } from '../lib/src/date-fns-configuration.service';
+import * as esLocale from 'date-fns/locale/es/index.js';
+import * as deLocale from 'date-fns/locale/de/index.js';
 
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   template: `
-    <p>{{ dateOne | dfnsFormat: "ddd MMM D YYYY" }}</p>
+    <p>{{ dateOne | dfnsFormat: 'ddd MMM D YYYY' }}</p>
     <hr />
     Set default locale to: <a href="#" (click)="changeToGerman()">German</a>,
     <a href="#" (click)="changeToSpanish()">Spanish</a>.
@@ -132,11 +132,13 @@ export class AppComponent {
 
 ## Available pipes
 
+> All pipes are pure unless stated otherwise.
+
 #### Distance
 
-- [dfnsDistanceInWords](https://date-fns.org/docs/distanceInWords)
-- [dfnsDistanceInWordsStrict](https://date-fns.org/docs/distanceInWordsStrict)
-- [dfnsDistanceInWordsToNow](https://date-fns.org/docs/distanceInWordsToNow)
+- [dfnsDistanceInWords](https://date-fns.org/docs/distanceInWords) _(impure)_
+- [dfnsDistanceInWordsStrict](https://date-fns.org/docs/distanceInWordsStrict) _(impure)_
+- [dfnsDistanceInWordsToNow](https://date-fns.org/docs/distanceInWordsToNow) _(impure)_
 
 #### Min / Max
 
@@ -146,7 +148,7 @@ export class AppComponent {
 #### Misc
 
 - [dfnsClosestTo](https://date-fns.org/docs/closestTo)
-- [dfnsFormat](https://date-fns.org/docs/format)
+- [dfnsFormat](https://date-fns.org/docs/format) _(impure)_
 
 #### Get
 
