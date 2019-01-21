@@ -1,6 +1,6 @@
 {
   "name": "ngx-date-fns",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "date-fns pipes for Angular",
   "repository": {
     "type": "git",
@@ -36,8 +36,8 @@
     "cm": "git-cz",
     "cm-retry": "git-cz --retry",
     "build:version": "sync-json -v --property version --source package.json projects/ngx-date-fns/package.json && sync-json -v --property version --source package.json dist/ngx-date-fns/package.json",
-    "release": "npm run build && standard-version --no-verify --commit-all && npm publish dist",
-    "next": "npm run build && standard-version --no-verify --commit-all && npm publish dist --tag next",
+    "release": "npm run build && standard-version --no-verify --commit-all && npm publish dist/ngx-date-fns",
+    "next": "npm run build && standard-version --no-verify --commit-all && npm publish dist/ngx-date-fns --tag next",
     "standard-version": "standard-version"
   },
   "standard-version": {
