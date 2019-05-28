@@ -14,7 +14,7 @@
 This library has been tested with [date-fns](https://date-fns.org/) v1.29.
 
 ```
-npm install --save date-fns
+npm install --save date-fns@1.29.0
 npm install --save ngx-date-fns
 ```
 
