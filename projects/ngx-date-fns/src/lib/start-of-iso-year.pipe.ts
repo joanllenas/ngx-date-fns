@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isInvalidDate } from './utils';
 import { startOfISOYear } from 'date-fns';
 
 @Pipe({ name: 'dfnsStartOfISOYear' })
@@ -7,7 +8,7 @@ export class StartOfISOYearPipe implements PipeTransform {
     'dfnsStartOfISOYear: missing required arguments';
 
   transform(date: string | number | Date): Date {
-    if (!date) {
+    if (isInvalidDate(date)) {
       throw new Error(StartOfISOYearPipe.NO_ARGS_ERROR);
     }
     return startOfISOYear(date);

@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isInvalidDate } from './utils';
 import { differenceInMonths } from 'date-fns';
 
 @Pipe({ name: 'dfnsDifferenceInMonths' })
@@ -10,7 +11,7 @@ export class DifferenceInMonthsPipe implements PipeTransform {
     dateLeft: string | number | Date,
     dateRight: string | number | Date
   ): number {
-    if (!dateLeft || !dateRight) {
+    if (isInvalidDate(dateLeft) || isInvalidDate(dateRight)) {
       throw new Error(DifferenceInMonthsPipe.NO_ARGS_ERROR);
     }
     return differenceInMonths(dateLeft, dateRight);

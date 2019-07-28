@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isInvalidDate } from './utils';
 import { differenceInQuarters } from 'date-fns';
 
 @Pipe({ name: 'dfnsDifferenceInQuarters' })
@@ -10,7 +11,7 @@ export class DifferenceInQuartersPipe implements PipeTransform {
     dateLeft: string | number | Date,
     dateRight: string | number | Date
   ): number {
-    if (!dateLeft || !dateRight) {
+    if (isInvalidDate(dateLeft) || isInvalidDate(dateRight)) {
       throw new Error(DifferenceInQuartersPipe.NO_ARGS_ERROR);
     }
     return differenceInQuarters(dateLeft, dateRight);

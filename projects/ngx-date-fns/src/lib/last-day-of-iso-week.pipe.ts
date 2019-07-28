@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isInvalidDate } from './utils';
 import { lastDayOfISOWeek } from 'date-fns';
 
 @Pipe({ name: 'dfnsLastDayOfISOWeek' })
@@ -7,7 +8,7 @@ export class LastDayOfISOWeekPipe implements PipeTransform {
     'dfnsLastDayOfISOWeek: missing required arguments';
 
   transform(date: string | number | Date): Date {
-    if (!date) {
+    if (isInvalidDate(date)) {
       throw new Error(LastDayOfISOWeekPipe.NO_ARGS_ERROR);
     }
     return lastDayOfISOWeek(date);

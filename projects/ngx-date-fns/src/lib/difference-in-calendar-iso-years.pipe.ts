@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isInvalidDate } from './utils';
 import { differenceInCalendarISOYears } from 'date-fns';
 
 @Pipe({ name: 'dfnsDifferenceInCalendarISOYears' })
@@ -10,7 +11,7 @@ export class DifferenceInCalendarISOYearsPipe implements PipeTransform {
     dateLeft: string | number | Date,
     dateRight: string | number | Date
   ): number {
-    if (!dateLeft || !dateRight) {
+    if (isInvalidDate(dateLeft) || isInvalidDate(dateRight)) {
       throw new Error(DifferenceInCalendarISOYearsPipe.NO_ARGS_ERROR);
     }
     return differenceInCalendarISOYears(dateLeft, dateRight);

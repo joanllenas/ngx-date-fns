@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isInvalidDate } from './utils';
 import { endOfMonth } from 'date-fns';
 
 @Pipe({ name: 'dfnsEndOfMonth' })
@@ -6,7 +7,7 @@ export class EndOfMonthPipe implements PipeTransform {
   static readonly NO_ARGS_ERROR = 'dfnsEndOfMonth: missing required arguments';
 
   transform(date: string | number | Date): Date {
-    if (!date) {
+    if (isInvalidDate(date)) {
       throw new Error(EndOfMonthPipe.NO_ARGS_ERROR);
     }
     return endOfMonth(date);

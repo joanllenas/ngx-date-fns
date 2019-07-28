@@ -10,6 +10,7 @@ import {
   calculateLocale
 } from './date-fns-configuration.service';
 import { Subscription } from 'rxjs';
+import { isInvalidDate } from './utils';
 
 @Pipe({ name: 'dfnsDistanceInWordsStrict', pure: false })
 export class DistanceInWordsStrictPipe implements PipeTransform, OnDestroy {
@@ -40,7 +41,7 @@ export class DistanceInWordsStrictPipe implements PipeTransform, OnDestroy {
       locale?: Object | undefined;
     }
   ): string {
-    if (!dateToCompare || !date) {
+    if (isInvalidDate(dateToCompare) || isInvalidDate(date)) {
       throw new Error(DistanceInWordsStrictPipe.NO_ARGS_ERROR);
     }
     return distanceInWordsStrict(

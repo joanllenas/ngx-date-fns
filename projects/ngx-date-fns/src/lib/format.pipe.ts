@@ -10,6 +10,7 @@ import {
   calculateLocale
 } from './date-fns-configuration.service';
 import { Subscription } from 'rxjs';
+import { isInvalidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormat', pure: false })
 export class FormatPipe implements PipeTransform, OnDestroy {
@@ -37,7 +38,7 @@ export class FormatPipe implements PipeTransform, OnDestroy {
       locale?: Object;
     }
   ): string {
-    if (!date) {
+    if (isInvalidDate(date)) {
       throw new Error(FormatPipe.NO_ARGS_ERROR);
     }
     return formatDate(date, format, calculateLocale(options, this.config));
