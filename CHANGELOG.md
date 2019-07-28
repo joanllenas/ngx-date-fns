@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.3"></a>
+## [4.0.3](https://github.com/joanllenas/ngx-date-fns/compare/v4.0.2...v4.0.3) (2019-07-28)
+
+
+### Bug Fixes
+
+* **pipes:** Allowed `0` dates in pipes ([c05b6a6](https://github.com/joanllenas/ngx-date-fns/commit/c05b6a6)), closes [#277](https://github.com/joanllenas/ngx-date-fns/issues/277)
+
+
+
 <a name="4.0.2"></a>
 ## [4.0.2](https://github.com/joanllenas/ngx-date-fns/compare/v4.0.1...v4.0.2) (2019-01-21)
 
