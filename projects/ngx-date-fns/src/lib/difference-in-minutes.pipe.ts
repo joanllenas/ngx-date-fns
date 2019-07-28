@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isInvalidDate } from './utils';
 import { differenceInMinutes } from 'date-fns';
 
 @Pipe({ name: 'dfnsDifferenceInMinutes' })
@@ -10,7 +11,7 @@ export class DifferenceInMinutesPipe implements PipeTransform {
     dateLeft: string | number | Date,
     dateRight: string | number | Date
   ): number {
-    if (!dateLeft || !dateRight) {
+    if (isInvalidDate(dateLeft) || isInvalidDate(dateRight)) {
       throw new Error(DifferenceInMinutesPipe.NO_ARGS_ERROR);
     }
     return differenceInMinutes(dateLeft, dateRight);

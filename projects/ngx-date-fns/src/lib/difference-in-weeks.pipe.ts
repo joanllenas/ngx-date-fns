@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isInvalidDate } from './utils';
 import { differenceInWeeks } from 'date-fns';
 
 @Pipe({ name: 'dfnsDifferenceInWeeks' })
@@ -10,7 +11,7 @@ export class DifferenceInWeeksPipe implements PipeTransform {
     dateLeft: string | number | Date,
     dateRight: string | number | Date
   ): number {
-    if (!dateLeft || !dateRight) {
+    if (isInvalidDate(dateLeft) || isInvalidDate(dateRight)) {
       throw new Error(DifferenceInWeeksPipe.NO_ARGS_ERROR);
     }
     return differenceInWeeks(dateLeft, dateRight);

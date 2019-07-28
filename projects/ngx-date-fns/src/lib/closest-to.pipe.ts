@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isInvalidDate } from './utils';
 import { closestTo } from 'date-fns';
 
 @Pipe({ name: 'dfnsClosestTo' })
@@ -11,7 +12,7 @@ export class ClosestToPipe implements PipeTransform {
     datesArray: (string | number | Date)[]
   ): Date {
     if (
-      !dateToCompare ||
+      isInvalidDate(dateToCompare) ||
       !datesArray ||
       !Array.isArray(datesArray) ||
       datesArray.length < 2
