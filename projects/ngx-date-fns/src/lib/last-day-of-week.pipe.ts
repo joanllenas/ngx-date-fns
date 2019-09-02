@@ -1,21 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { lastDayOfWeek } from 'date-fns';
+import { DateFnsInputDate, DateFnsWeekIndex } from './types';
+import { Locale } from 'date-fns';
+import lastDayOfWeek from 'date-fns/lastDayOfWeek';
 
 @Pipe({ name: 'dfnsLastDayOfWeek' })
 export class LastDayOfWeekPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR =
-    'dfnsLastDayOfWeek: missing required arguments';
-
   transform(
-    date: string | number | Date,
+    date: DateFnsInputDate,
     options?: {
-      weekStartsOn?: number;
+      locale?: Locale;
+      weekStartsOn?: DateFnsWeekIndex;
     }
   ): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(LastDayOfWeekPipe.NO_ARGS_ERROR);
-    }
     return lastDayOfWeek(date, options);
   }
 }

@@ -1,15 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { addMonths } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import addMonths from 'date-fns/addMonths';
 
 @Pipe({ name: 'dfnsAddMonths' })
 export class AddMonthsPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsAddMonths: missing required arguments';
-
-  transform(date: Date | string | number, amount: number): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(AddMonthsPipe.NO_ARGS_ERROR);
-    }
-    return addMonths(date, amount || 0);
+  transform(date: DateFnsInputDate, amount: number): Date {
+    return addMonths(date, amount);
   }
 }

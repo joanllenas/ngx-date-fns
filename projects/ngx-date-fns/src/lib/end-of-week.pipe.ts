@@ -1,20 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { endOfWeek } from 'date-fns';
+import { DateFnsInputDate, DateFnsWeekIndex } from './types';
+import endOfWeek from 'date-fns/endOfWeek';
 
 @Pipe({ name: 'dfnsEndOfWeek' })
 export class EndOfWeekPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsEndOfWeek: missing required arguments';
-
   transform(
-    date: string | number | Date,
+    date: DateFnsInputDate,
     options?: {
-      weekStartsOn?: number;
+      weekStartsOn?: DateFnsWeekIndex;
     }
   ): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(EndOfWeekPipe.NO_ARGS_ERROR);
-    }
     return endOfWeek(date, options);
   }
 }

@@ -1,20 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { startOfWeek } from 'date-fns';
+import { DateFnsInputDate, DateFnsWeekIndex } from './types';
+import { Locale } from 'date-fns';
+import startOfWeek from 'date-fns/startOfWeek';
 
 @Pipe({ name: 'dfnsStartOfWeek' })
 export class StartOfWeekPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsStartOfWeek: missing required arguments';
-
   transform(
-    date: string | number | Date,
+    date: DateFnsInputDate,
     options?: {
-      weekStartsOn?: number;
+      locale?: Locale;
+      weekStartsOn?: DateFnsWeekIndex;
     }
   ): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(StartOfWeekPipe.NO_ARGS_ERROR);
-    }
     return startOfWeek(date, options);
   }
 }

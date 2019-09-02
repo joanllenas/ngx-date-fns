@@ -1,216 +1,215 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { DistanceInWordsPipe } from './distance-in-words.pipe';
-import { DistanceInWordsStrictPipe } from './distance-in-words-strict.pipe';
-import { DistanceInWordsToNowPipe } from './distance-in-words-to-now.pipe';
-import { FormatPipe } from './format.pipe';
-import { GetOverlappingDaysInRangesPipe } from './get-overlapping-days-in-ranges.pipe';
-import { GetMillisecondsPipe } from './get-milliseconds.pipe';
-import { GetSecondsPipe } from './get-seconds.pipe';
-import { GetMinutesPipe } from './get-minutes.pipe';
-import { GetHoursPipe } from './get-hours.pipe';
-import { GetDatePipe } from './get-date.pipe';
-import { GetDayOfYearPipe } from './get-day-of-year.pipe';
-import { GetDayPipe } from './get-day.pipe';
-import { GetISODayPipe } from './get-iso-day.pipe';
-import { GetDaysInMonthPipe } from './get-days-in-month.pipe';
-import { GetMonthPipe } from './get-month.pipe';
-import { GetDaysInYearPipe } from './get-days-in-year.pipe';
-import { GetYearPipe } from './get-year.pipe';
-import { GetISOWeeksInYearPipe } from './get-iso-weeks-in-year.pipe';
-import { GetISOWeekPipe } from './get-iso-week.pipe';
-import { MinPipe } from './min.pipe';
-import { MaxPipe } from './max.pipe';
-import { GetTimePipe } from './get-time.pipe';
-import { ClosestToPipe } from './closest-to.pipe';
-import { DifferenceInMillisecondsPipe } from './difference-in-milliseconds.pipe';
-import { DifferenceInSecondsPipe } from './difference-in-seconds.pipe';
-import { DifferenceInMinutesPipe } from './difference-in-minutes.pipe';
-import { DifferenceInHoursPipe } from './difference-in-hours.pipe';
-import { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe';
-import { DifferenceInDaysPipe } from './difference-in-days.pipe';
-import { DifferenceInCalendarWeeksPipe } from './difference-in-calendar-weeks.pipe';
-import { DifferenceInWeeksPipe } from './difference-in-weeks.pipe';
-import { DifferenceInCalendarISOWeeksPipe } from './difference-in-calendar-iso-weeks.pipe';
-import { DifferenceInCalendarMonthsPipe } from './difference-in-calendar-months.pipe';
-import { AddMillisecondsPipe } from './add-milliseconds.pipe';
-import { AddSecondsPipe } from './add-seconds.pipe';
-import { AddMinutesPipe } from './add-minutes.pipe';
-import { AddHoursPipe } from './add-hours.pipe';
+import { DateFnsConfigurationService } from './date-fns-configuration.service';
+// Pipes
+import { AddBusinessDaysPipe } from './add-business-days.pipe';
 import { AddDaysPipe } from './add-days.pipe';
-import { AddWeeksPipe } from './add-weeks.pipe';
+import { AddHoursPipe } from './add-hours.pipe';
+import { AddISOWeekYearsPipe } from './add-iso-week-years.pipe';
+import { AddMillisecondsPipe } from './add-milliseconds.pipe';
+import { AddMinutesPipe } from './add-minutes.pipe';
 import { AddMonthsPipe } from './add-months.pipe';
 import { AddQuartersPipe } from './add-quarters.pipe';
+import { AddSecondsPipe } from './add-seconds.pipe';
+import { AddWeeksPipe } from './add-weeks.pipe';
 import { AddYearsPipe } from './add-years.pipe';
-import { AddISOYearsPipe } from './add-iso-years.pipe';
-import { SubMillisecondsPipe } from './sub-milliseconds.pipe';
-import { SubSecondsPipe } from './sub-seconds.pipe';
-import { SubMinutesPipe } from './sub-minutes.pipe';
-import { SubHoursPipe } from './sub-hours.pipe';
-import { SubDaysPipe } from './sub-days.pipe';
-import { SubWeeksPipe } from './sub-weeks.pipe';
-import { SubMonthsPipe } from './sub-months.pipe';
-import { SubQuartersPipe } from './sub-quarters.pipe';
-import { SubYearsPipe } from './sub-years.pipe';
-import { SubISOYearsPipe } from './sub-iso-years.pipe';
-import { EndOfSecondPipe } from './end-of-second.pipe';
-import { EndOfMinutePipe } from './end-of-minute.pipe';
-import { EndOfHourPipe } from './end-of-hour.pipe';
+import { ClosestToPipe } from './closest-to.pipe';
+import { FormatPipe } from './format.pipe';
+import { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe';
+import { DifferenceInCalendarISOWeeksPipe } from './difference-in-calendar-iso-weeks.pipe';
+import { DifferenceInCalendarISOWeekYearsPipe } from './difference-in-calendar-iso-week-years.pipe';
+import { DifferenceInCalendarMonthsPipe } from './difference-in-calendar-months.pipe';
+import { DifferenceInCalendarWeeksPipe } from './difference-in-calendar-weeks.pipe';
+import { DifferenceInCalendarYearsPipe } from './difference-in-calendar-years.pipe';
+import { DifferenceInDaysPipe } from './difference-in-days.pipe';
+import { DifferenceInHoursPipe } from './difference-in-hours.pipe';
+import { DifferenceInISOWeekYearsPipe } from './difference-in-iso-week-years.pipe';
+import { DifferenceInMillisecondsPipe } from './difference-in-milliseconds.pipe';
+import { DifferenceInMinutesPipe } from './difference-in-minutes.pipe';
+import { DifferenceInMonthsPipe } from './difference-in-months.pipe';
+import { DifferenceInQuartersPipe } from './difference-in-quarters.pipe';
+import { DifferenceInSecondsPipe } from './difference-in-seconds.pipe';
+import { DifferenceInWeeksPipe } from './difference-in-weeks.pipe';
+import { DifferenceInYearsPipe } from './difference-in-years.pipe';
+import { DifferenceInBusinessDaysPipe } from './difference-in-business-days.pipe';
+import { FormatDistancePipe } from './format-distance.pipe';
+import { FormatDistanceStrictPipe } from './format-distance-strict.pipe';
+import { FormatDistanceToNowPipe } from './format-distance-to-now.pipe';
 import { EndOfDayPipe } from './end-of-day.pipe';
-import { EndOfYesterdayPipe } from './end-of-yesterday.pipe';
+import { EndOfHourPipe } from './end-of-hour.pipe';
+import { EndOfISOWeekPipe } from './end-of-iso-week.pipe';
+import { EndOfISOWeekYearPipe } from './end-of-iso-week-year.pipe';
+import { EndOfMinutePipe } from './end-of-minute.pipe';
+import { EndOfMonthPipe } from './end-of-month.pipe';
+import { EndOfQuarterPipe } from './end-of-quarter.pipe';
+import { EndOfSecondPipe } from './end-of-second.pipe';
 import { EndOfTodayPipe } from './end-of-today.pipe';
 import { EndOfTomorrowPipe } from './end-of-tomorrow.pipe';
 import { EndOfWeekPipe } from './end-of-week.pipe';
-import { EndOfISOWeekPipe } from './end-of-iso-week.pipe';
-import { EndOfMonthPipe } from './end-of-month.pipe';
-import { EndOfQuarterPipe } from './end-of-quarter.pipe';
 import { EndOfYearPipe } from './end-of-year.pipe';
-import { EndOfISOYearPipe } from './end-of-iso-year.pipe';
-import { StartOfSecondPipe } from './start-of-second.pipe';
-import { StartOfMinutePipe } from './start-of-minute.pipe';
-import { StartOfHourPipe } from './start-of-hour.pipe';
-import { StartOfDayPipe } from './start-of-day.pipe';
-import { StartOfTodayPipe } from './start-of-today.pipe';
-import { StartOfTomorrowPipe } from './start-of-tomorrow.pipe';
-import { StartOfYesterdayPipe } from './start-of-yesterday.pipe';
-import { StartOfWeekPipe } from './start-of-week.pipe';
-import { StartOfISOWeekPipe } from './start-of-iso-week.pipe';
-import { StartOfMonthPipe } from './start-of-month.pipe';
-import { StartOfQuarterPipe } from './start-of-quarter.pipe';
-import { StartOfYearPipe } from './start-of-year.pipe';
-import { StartOfISOYearPipe } from './start-of-iso-year.pipe';
-import { LastDayOfWeekPipe } from './last-day-of-week.pipe';
+import { EndOfYesterdayPipe } from './end-of-yesterday.pipe';
+import { GetDatePipe } from './get-date.pipe';
+import { GetDayOfYearPipe } from './get-day-of-year.pipe';
+import { GetDayPipe } from './get-day.pipe';
+import { GetDaysInMonthPipe } from './get-days-in-month.pipe';
+import { GetDaysInYearPipe } from './get-days-in-year.pipe';
+import { GetHoursPipe } from './get-hours.pipe';
+import { GetISODayPipe } from './get-iso-day.pipe';
+import { GetISOWeekPipe } from './get-iso-week.pipe';
+import { GetISOWeeksInYearPipe } from './get-iso-weeks-in-year.pipe';
+import { GetMillisecondsPipe } from './get-milliseconds.pipe';
+import { GetMinutesPipe } from './get-minutes.pipe';
+import { GetMonthPipe } from './get-month.pipe';
+import { GetOverlappingDaysInIntervalsPipe } from './get-overlapping-days-in-intervals.pipe';
+import { GetQuarterPipe } from './get-quarter.pipe';
+import { GetSecondsPipe } from './get-seconds.pipe';
+import { GetTimePipe } from './get-time.pipe';
+import { GetYearPipe } from './get-year.pipe';
+import { GetUnixTimePipe } from './get-unix-time.pipe';
+import { GetWeekPipe } from './get-week';
+import { GetWeekOfMonthPipe } from './get-week-of-month.pipe';
+import { GetWeeksInMonthPipe } from './get-weeks-in-month.pipe';
+import { GetDecadePipe } from './get-decade.pipe';
+import { GetWeekYearPipe } from './get-week-year.pipe';
 import { LastDayOfISOWeekPipe } from './last-day-of-iso-week.pipe';
+import { LastDayOfISOWeekYearPipe } from './last-day-of-iso-week-year.pipe';
 import { LastDayOfMonthPipe } from './last-day-of-month.pipe';
 import { LastDayOfQuarterPipe } from './last-day-of-quarter.pipe';
-import { LastDayOfISOYearPipe } from './last-day-of-iso-year.pipe';
+import { LastDayOfWeekPipe } from './last-day-of-week.pipe';
 import { LastDayOfYearPipe } from './last-day-of-year.pipe';
-import { DifferenceInMonthsPipe } from './difference-in-months.pipe';
-import { DifferenceInCalendarQuartersPipe } from './difference-in-calendar-quarters.pipe';
-import { DifferenceInQuartersPipe } from './difference-in-quarters.pipe';
-import { DifferenceInCalendarYearsPipe } from './difference-in-calendar-years.pipe';
-import { DifferenceInYearsPipe } from './difference-in-years.pipe';
-import { DifferenceInCalendarISOYearsPipe } from './difference-in-calendar-iso-years.pipe';
-import { DifferenceInISOYearsPipe } from './difference-in-iso-years.pipe';
-import { GetQuarterPipe } from './get-quarter.pipe';
-import { GetISOYearPipe } from './get-iso-year.pipe';
-import { DateFnsConfigurationService } from './date-fns-configuration.service';
+import { LastDayOfDecadePipe } from './last-day-of-decade.pipe';
+import { MaxPipe } from './max.pipe';
+import { MinPipe } from './min.pipe';
+import { StartOfDayPipe } from './start-of-day.pipe';
+import { StartOfHourPipe } from './start-of-hour.pipe';
+import { StartOfISOWeekPipe } from './start-of-iso-week.pipe';
+import { StartOfISOWeekYearPipe } from './start-of-iso-week-year.pipe';
+import { StartOfMinutePipe } from './start-of-minute.pipe';
+import { StartOfMonthPipe } from './start-of-month.pipe';
+import { StartOfQuarterPipe } from './start-of-quarter.pipe';
+import { StartOfSecondPipe } from './start-of-second.pipe';
+import { StartOfTodayPipe } from './start-of-today.pipe';
+import { StartOfTomorrowPipe } from './start-of-tomorrow.pipe';
+import { StartOfWeekPipe } from './start-of-week.pipe';
+import { StartOfYearPipe } from './start-of-year.pipe';
+import { StartOfYesterdayPipe } from './start-of-yesterday.pipe';
+import { StartOfDecadePipe } from './start-of-decade.pipe';
+import { StartOfWeekYearPipe } from './start-of-week-year.pipe';
+import { SubDaysPipe } from './sub-days.pipe';
+import { SubHoursPipe } from './sub-hours.pipe';
+import { SubISOWeekYearsPipe } from './sub-iso-week-years.pipe';
+import { SubMillisecondsPipe } from './sub-milliseconds.pipe';
+import { SubMinutesPipe } from './sub-minutes.pipe';
+import { SubMonthsPipe } from './sub-months.pipe';
+import { SubQuartersPipe } from './sub-quarters.pipe';
+import { SubSecondsPipe } from './sub-seconds.pipe';
+import { SubWeeksPipe } from './sub-weeks.pipe';
+import { SubYearsPipe } from './sub-years.pipe';
 
 const PIPES = [
-  // Distance
-  DistanceInWordsPipe,
-  DistanceInWordsStrictPipe,
-  DistanceInWordsToNowPipe,
-
-  // Get
-  GetOverlappingDaysInRangesPipe,
-  GetMillisecondsPipe,
-  GetSecondsPipe,
-  GetMinutesPipe,
-  GetHoursPipe,
-  GetDatePipe,
-  GetDayOfYearPipe,
-  GetDayPipe,
-  GetQuarterPipe,
-  GetISODayPipe,
-  GetISOYearPipe,
-  GetDaysInMonthPipe,
-  GetMonthPipe,
-  GetDaysInYearPipe,
-  GetYearPipe,
-  GetISOWeeksInYearPipe,
-  GetISOWeekPipe,
-  GetTimePipe,
-
-  // Min / Max
-  MinPipe,
-  MaxPipe,
-
-  // Misc
-  ClosestToPipe,
-  FormatPipe,
-
-  // Difference
-  DifferenceInMillisecondsPipe,
-  DifferenceInSecondsPipe,
-  DifferenceInMinutesPipe,
-  DifferenceInMonthsPipe,
-  DifferenceInHoursPipe,
-  DifferenceInCalendarDaysPipe,
-  DifferenceInCalendarISOYearsPipe,
-  DifferenceInCalendarYearsPipe,
-  DifferenceInDaysPipe,
-  DifferenceInCalendarWeeksPipe,
-  DifferenceInISOYearsPipe,
-  DifferenceInWeeksPipe,
-  DifferenceInCalendarISOWeeksPipe,
-  DifferenceInCalendarMonthsPipe,
-  DifferenceInCalendarQuartersPipe,
-  DifferenceInQuartersPipe,
-  DifferenceInYearsPipe,
-
-  // Add
-  AddMillisecondsPipe,
-  AddSecondsPipe,
-  AddMinutesPipe,
-  AddHoursPipe,
+  AddBusinessDaysPipe,
   AddDaysPipe,
-  AddWeeksPipe,
+  AddHoursPipe,
+  AddISOWeekYearsPipe,
+  AddMillisecondsPipe,
+  AddMinutesPipe,
   AddMonthsPipe,
   AddQuartersPipe,
+  AddSecondsPipe,
+  AddWeeksPipe,
   AddYearsPipe,
-  AddISOYearsPipe,
-
-  // Subtract
-  SubMillisecondsPipe,
-  SubSecondsPipe,
-  SubMinutesPipe,
-  SubHoursPipe,
-  SubDaysPipe,
-  SubWeeksPipe,
-  SubMonthsPipe,
-  SubQuartersPipe,
-  SubYearsPipe,
-  SubISOYearsPipe,
-
-  // End
-  EndOfSecondPipe,
-  EndOfMinutePipe,
-  EndOfHourPipe,
+  ClosestToPipe,
+  FormatPipe,
+  DifferenceInCalendarDaysPipe,
+  DifferenceInCalendarISOWeeksPipe,
+  DifferenceInCalendarISOWeekYearsPipe,
+  DifferenceInCalendarMonthsPipe,
+  DifferenceInCalendarWeeksPipe,
+  DifferenceInCalendarYearsPipe,
+  DifferenceInDaysPipe,
+  DifferenceInHoursPipe,
+  DifferenceInISOWeekYearsPipe,
+  DifferenceInMillisecondsPipe,
+  DifferenceInMinutesPipe,
+  DifferenceInMonthsPipe,
+  DifferenceInQuartersPipe,
+  DifferenceInSecondsPipe,
+  DifferenceInWeeksPipe,
+  DifferenceInYearsPipe,
+  DifferenceInBusinessDaysPipe,
+  FormatDistancePipe,
+  FormatDistanceStrictPipe,
+  FormatDistanceToNowPipe,
   EndOfDayPipe,
-  EndOfYesterdayPipe,
+  EndOfHourPipe,
+  EndOfISOWeekYearPipe,
+  EndOfISOWeekPipe,
+  EndOfMinutePipe,
+  EndOfMonthPipe,
+  EndOfQuarterPipe,
+  EndOfSecondPipe,
   EndOfTodayPipe,
   EndOfTomorrowPipe,
   EndOfWeekPipe,
-  EndOfISOWeekPipe,
-  EndOfMonthPipe,
-  EndOfQuarterPipe,
   EndOfYearPipe,
-  EndOfISOYearPipe,
-
-  // Start
-  StartOfSecondPipe,
-  StartOfMinutePipe,
-  StartOfHourPipe,
-  StartOfDayPipe,
-  StartOfTodayPipe,
-  StartOfTomorrowPipe,
-  StartOfYesterdayPipe,
-  StartOfWeekPipe,
-  StartOfISOWeekPipe,
-  StartOfMonthPipe,
-  StartOfQuarterPipe,
-  StartOfYearPipe,
-  StartOfISOYearPipe,
-
-  // Last
-  LastDayOfWeekPipe,
+  EndOfYesterdayPipe,
+  GetDatePipe,
+  GetDayOfYearPipe,
+  GetDayPipe,
+  GetDaysInMonthPipe,
+  GetDaysInYearPipe,
+  GetHoursPipe,
+  GetISODayPipe,
+  GetISOWeekPipe,
+  GetISOWeeksInYearPipe,
+  GetMillisecondsPipe,
+  GetMinutesPipe,
+  GetMonthPipe,
+  GetOverlappingDaysInIntervalsPipe,
+  GetQuarterPipe,
+  GetSecondsPipe,
+  GetTimePipe,
+  GetUnixTimePipe,
+  GetYearPipe,
+  GetWeekPipe,
+  GetWeekOfMonthPipe,
+  GetWeeksInMonthPipe,
+  GetDecadePipe,
+  GetWeekYearPipe,
   LastDayOfISOWeekPipe,
+  LastDayOfISOWeekYearPipe,
   LastDayOfMonthPipe,
   LastDayOfQuarterPipe,
+  LastDayOfWeekPipe,
   LastDayOfYearPipe,
-  LastDayOfISOYearPipe
+  LastDayOfDecadePipe,
+  MaxPipe,
+  MinPipe,
+  StartOfDayPipe,
+  StartOfHourPipe,
+  StartOfISOWeekPipe,
+  StartOfISOWeekYearPipe,
+  StartOfMinutePipe,
+  StartOfMonthPipe,
+  StartOfQuarterPipe,
+  StartOfSecondPipe,
+  StartOfTodayPipe,
+  StartOfTomorrowPipe,
+  StartOfWeekPipe,
+  StartOfYearPipe,
+  StartOfYesterdayPipe,
+  StartOfDecadePipe,
+  StartOfWeekYearPipe,
+  SubDaysPipe,
+  SubHoursPipe,
+  SubISOWeekYearsPipe,
+  SubMillisecondsPipe,
+  SubMinutesPipe,
+  SubMonthsPipe,
+  SubQuartersPipe,
+  SubSecondsPipe,
+  SubWeeksPipe,
+  SubYearsPipe
 ];
 
 @NgModule({

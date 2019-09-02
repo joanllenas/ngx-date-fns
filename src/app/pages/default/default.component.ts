@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import * as esLocale from 'date-fns/locale/es/index.js';
-import * as deLocale from 'date-fns/locale/de/index.js';
 import { DateFnsConfigurationService } from '../../../../projects/ngx-date-fns/src/lib/date-fns-configuration.service';
+import { es, de } from 'date-fns/locale';
 
 @Component({
   selector: 'default-component',
@@ -32,15 +31,15 @@ export class StrategyDefaultComponent {
 
   constructor(public config: DateFnsConfigurationService) {
     this.dateThree = new Date();
-    this.dateThree.setDate(-6);
+    this.dateThree.setDate(this.dateThree.getDate() - 6);
     this.dates = new Array(6)
       .fill(new Date())
       .map((d, i) => d.setDate(d.getDate() - Math.pow(5, i)));
   }
   changeToGerman() {
-    this.config.setLocale(deLocale);
+    this.config.setLocale(de);
   }
   changeToSpanish() {
-    this.config.setLocale(esLocale);
+    this.config.setLocale(es);
   }
 }

@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import * as esLocale from 'date-fns/locale/es/index.js';
+import { es } from 'date-fns/locale';
 
 @Component({
   selector: 'main-component',
   template: `
     <h2>Main</h2>
     <p>
-      {{ dateOne | dfnsFormat: 'YYYY/MM/DD' }}
+      {{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}
     </p>
     <p>
-      {{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'ddd MMM D YYYY' }}
+      {{ [dateOne, dateTwo] | dfnsMin }}
     </p>
     <p>
-      {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'ddd MMM D YYYY' }}
+      {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLLL d yyyy' }}
     </p>
     <p>
-      {{ dateThree | dfnsDistanceInWordsToNow: options }} - (Explicit 'es'
+      {{ dateThree | dfnsFormatDistanceToNow: options }} - (Explicit 'es'
       locale)
     </p>
   `
@@ -25,10 +25,11 @@ export class MainComponent {
   dateTwo = new Date(2017, 0, 1);
   dateThree: Date;
   options = {
-    locale: esLocale
+    locale: es,
+    addSuffix: true
   };
   constructor() {
     this.dateThree = new Date();
-    this.dateThree.setDate(-6);
+    this.dateThree.setDate(this.dateThree.getDate() - 6);
   }
 }

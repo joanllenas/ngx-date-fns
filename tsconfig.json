@@ -5,18 +5,31 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "importHelpers": true,
-    "strictNullChecks": true,
-    "target": "es5",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2018", "dom"],
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
     "paths": {
-      "ngx-date-fns": ["dist/ngx-date-fns"],
-      "ngx-date-fns/*": ["dist/ngx-date-fns/*"]
-    }
+      "ngx-date-fns": [
+        "dist/ngx-date-fns"
+      ],
+      "ngx-date-fns/*": [
+        "dist/ngx-date-fns/*"
+      ]
+    },
+    "strict": true
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

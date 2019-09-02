@@ -5,21 +5,6 @@ describe('MaxPipe', () => {
 
   beforeEach(() => (pipe = new MaxPipe()));
 
-  it('should throw when required arguments are not provided', () => {
-    expect(() => pipe.transform.call(pipe, undefined)).toThrowError(
-      Error,
-      MaxPipe.NO_ARGS_ERROR
-    );
-  });
-
-  it('should throw when less than two dates are provided', () => {
-    expect(() => pipe.transform([])).toThrowError(Error, MaxPipe.NO_ARGS_ERROR);
-    expect(() => pipe.transform([new Date()])).toThrowError(
-      Error,
-      MaxPipe.NO_ARGS_ERROR
-    );
-  });
-
   it('should return the max date of two dates', () => {
     expect(
       pipe.transform([new Date(2012, 1, 29), new Date(2011, 1, 29)])

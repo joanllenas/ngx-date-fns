@@ -1,15 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { startOfYear } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import startOfYear from 'date-fns/startOfYear';
 
 @Pipe({ name: 'dfnsStartOfYear' })
 export class StartOfYearPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsStartOfYear: missing required arguments';
-
-  transform(date: string | number | Date): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(StartOfYearPipe.NO_ARGS_ERROR);
-    }
+  transform(date: DateFnsInputDate): Date {
     return startOfYear(date);
   }
 }

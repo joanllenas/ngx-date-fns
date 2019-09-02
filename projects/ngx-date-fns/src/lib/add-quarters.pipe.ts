@@ -1,15 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { addQuarters } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import addQuarters from 'date-fns/addQuarters';
 
 @Pipe({ name: 'dfnsAddQuarters' })
 export class AddQuartersPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsAddQuarters: missing required arguments';
-
-  transform(date: Date | string | number, amount: number): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(AddQuartersPipe.NO_ARGS_ERROR);
-    }
-    return addQuarters(date, amount || 0);
+  transform(date: DateFnsInputDate, amount: number): Date {
+    return addQuarters(date, amount);
   }
 }

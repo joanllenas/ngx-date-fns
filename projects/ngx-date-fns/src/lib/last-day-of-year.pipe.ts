@@ -1,16 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { lastDayOfYear } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import lastDayOfYear from 'date-fns/lastDayOfYear';
 
 @Pipe({ name: 'dfnsLastDayOfYear' })
 export class LastDayOfYearPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR =
-    'dfnsLastDayOfYear: missing required arguments';
-
-  transform(date: string | number | Date): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(LastDayOfYearPipe.NO_ARGS_ERROR);
-    }
+  transform(date: DateFnsInputDate): Date {
     return lastDayOfYear(date);
   }
 }

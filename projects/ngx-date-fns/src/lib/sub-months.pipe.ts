@@ -1,15 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { subMonths } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import subMonths from 'date-fns/subMonths';
 
 @Pipe({ name: 'dfnsSubMonths' })
 export class SubMonthsPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsSubMonths: missing required arguments';
-
-  transform(date: Date | string | number, amount: number): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(SubMonthsPipe.NO_ARGS_ERROR);
-    }
-    return subMonths(date, amount || 0);
+  transform(date: DateFnsInputDate, amount: number): Date {
+    return subMonths(date, amount);
   }
 }

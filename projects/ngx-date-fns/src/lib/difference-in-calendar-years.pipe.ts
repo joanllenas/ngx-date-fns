@@ -1,19 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { differenceInCalendarYears } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import differenceInCalendarYears from 'date-fns/differenceInCalendarYears';
 
 @Pipe({ name: 'dfnsDifferenceInCalendarYears' })
 export class DifferenceInCalendarYearsPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR =
-    'dfnsDifferenceInCalendarYears: missing required arguments';
-
-  transform(
-    dateLeft: string | number | Date,
-    dateRight: string | number | Date
-  ): number {
-    if (isInvalidDate(dateLeft) || isInvalidDate(dateRight)) {
-      throw new Error(DifferenceInCalendarYearsPipe.NO_ARGS_ERROR);
-    }
+  transform(dateLeft: DateFnsInputDate, dateRight: DateFnsInputDate): number {
     return differenceInCalendarYears(dateLeft, dateRight);
   }
 }
