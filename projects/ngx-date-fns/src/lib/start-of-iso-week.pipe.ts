@@ -1,16 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { startOfISOWeek } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import startOfISOWeek from 'date-fns/startOfISOWeek';
 
 @Pipe({ name: 'dfnsStartOfISOWeek' })
 export class StartOfISOWeekPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR =
-    'dfnsStartOfISOWeek: missing required arguments';
-
-  transform(date: string | number | Date): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(StartOfISOWeekPipe.NO_ARGS_ERROR);
-    }
+  transform(date: DateFnsInputDate): Date {
     return startOfISOWeek(date);
   }
 }

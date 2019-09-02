@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Locale } from 'date-fns';
 
 export interface DateFnsConfiguration {
   /**
@@ -11,25 +12,25 @@ export interface DateFnsConfiguration {
   /**
    * Returns the default locale used by date-fns
    */
-  locale(): Object | undefined;
+  locale(): Locale | undefined;
 
   /**
    * Sets the default locale used by date-fns
    */
-  setLocale(locale: Object | undefined): void;
+  setLocale(locale: Locale | undefined): void;
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class DateFnsConfigurationService implements DateFnsConfiguration {
   public localeChanged: Subject<never> = new Subject();
-  private _locale: Object | undefined;
+  private locale$: Locale | undefined;
 
-  locale(): Object | undefined {
-    return this._locale;
+  locale(): Locale | undefined {
+    return this.locale$;
   }
 
-  setLocale(locale: Object | undefined): void {
-    this._locale = locale;
+  setLocale(locale: Locale | undefined): void {
+    this.locale$ = locale;
     this.localeChanged.next();
   }
 }
@@ -38,9 +39,9 @@ export class DateFnsConfigurationService implements DateFnsConfiguration {
  * Helper function used by all pipes to calculate locale
  */
 export const calculateLocale = (
-  options: { locale?: Object | undefined } | undefined,
+  options: { locale?: Locale } | undefined,
   config: DateFnsConfiguration
-): Object | undefined => {
+): { locale?: Locale } | undefined => {
   const configLocale = config.locale();
 
   if (!options && configLocale) {

@@ -1,25 +1,28 @@
 import { Component } from '@angular/core';
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
-import { DateFnsConfigurationService } from './date-fns-configuration.service';
+import {
+  DateFnsConfigurationService,
+  DateFnsConfiguration
+} from './date-fns-configuration.service';
 import { DateFnsModule } from '.';
-import * as esLocale from 'date-fns/locale/es/index.js';
-import * as frLocale from 'date-fns/locale/fr/index.js';
+import { es, fr } from 'date-fns/locale';
 
 @Component({
   template: `
-    <p class="dfns">{{ date | dfnsFormat: 'ddd MMM D YYYY' }}</p>
-    <p class="explicit">{{ date | dfnsFormat: 'ddd MMM D YYYY':options }}</p>
+    <p class="dfns">{{ date | dfnsFormat: 'EEE MMM d yyyy' }}</p>
+    <p class="explicit">{{ date | dfnsFormat: 'EEE MMM d yyyy':options }}</p>
   `
 })
 class TestHostComponent {
   date: Date = new Date();
-  options = { locale: frLocale };
+  options = { locale: fr };
 }
 
 describe('DateFnsConfigurationService', () => {
-  const mockConfig = new DateFnsConfigurationService();
+  let mockConfig: DateFnsConfiguration;
 
   beforeEach(async(() => {
+    mockConfig = new DateFnsConfigurationService();
     TestBed.configureTestingModule({
       declarations: [TestHostComponent],
       imports: [DateFnsModule.forRoot()],
@@ -47,7 +50,7 @@ describe('DateFnsConfigurationService', () => {
   });
 
   it('should display Spanish date when changing config locale to Spanish', () => {
-    mockConfig.setLocale(esLocale);
+    mockConfig.setLocale(es);
     component.date = new Date(2017, 11, 31);
     element = fixture.nativeElement.querySelector('.dfns');
     fixture.detectChanges();
@@ -55,7 +58,7 @@ describe('DateFnsConfigurationService', () => {
   });
 
   it('should display French date even when changing config locale to Spanish if locale has been explicitly set via options', () => {
-    mockConfig.setLocale(esLocale);
+    mockConfig.setLocale(es);
     component.date = new Date(2017, 11, 31);
     element = fixture.nativeElement.querySelector('.explicit');
     fixture.detectChanges();

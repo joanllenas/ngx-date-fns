@@ -1,19 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { differenceInHours } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import differenceInHours from 'date-fns/differenceInHours';
 
 @Pipe({ name: 'dfnsDifferenceInHours' })
 export class DifferenceInHoursPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR =
-    'dfnsDifferenceInHours: missing required arguments';
-
-  transform(
-    dateLeft: string | number | Date,
-    dateRight: string | number | Date
-  ): number {
-    if (isInvalidDate(dateLeft) || isInvalidDate(dateRight)) {
-      throw new Error(DifferenceInHoursPipe.NO_ARGS_ERROR);
-    }
+  transform(dateLeft: DateFnsInputDate, dateRight: DateFnsInputDate): number {
     return differenceInHours(dateLeft, dateRight);
   }
 }

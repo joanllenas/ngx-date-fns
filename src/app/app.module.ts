@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 
 import { AppComponent } from './app.component';
-import * as frLocale from 'date-fns/locale/fr/index.js';
+import { fr } from 'date-fns/locale';
 import { MainComponent } from './pages/main/main.component';
 import { StrategyOnPushComponent } from './pages/on-push/on-push.component';
 import { TestOnPushComponent } from './pages/on-push/test-onpush.component';
@@ -14,7 +14,7 @@ import { DateFnsModule } from '../../projects/ngx-date-fns/src/lib/date-fns.modu
 import { DateFnsConfigurationService } from '../../projects/ngx-date-fns/src/lib/date-fns-configuration.service';
 
 const frenchConfig = new DateFnsConfigurationService();
-frenchConfig.setLocale(frLocale);
+frenchConfig.setLocale(fr);
 
 @NgModule({
   declarations: [

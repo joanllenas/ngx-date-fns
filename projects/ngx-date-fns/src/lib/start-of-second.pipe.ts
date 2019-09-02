@@ -1,16 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { startOfSecond } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import startOfSecond from 'date-fns/startOfSecond';
 
 @Pipe({ name: 'dfnsStartOfSecond' })
 export class StartOfSecondPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR =
-    'dfnsStartOfSecond: missing required arguments';
-
-  transform(date: string | number | Date): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(StartOfSecondPipe.NO_ARGS_ERROR);
-    }
+  transform(date: DateFnsInputDate): Date {
     return startOfSecond(date);
   }
 }

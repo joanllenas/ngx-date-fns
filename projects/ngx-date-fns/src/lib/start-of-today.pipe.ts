@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { startOfToday } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import startOfToday from 'date-fns/startOfToday';
 
 @Pipe({ name: 'dfnsStartOfToday' })
 export class StartOfTodayPipe implements PipeTransform {

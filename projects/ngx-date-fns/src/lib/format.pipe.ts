@@ -4,18 +4,17 @@ import {
   ChangeDetectorRef,
   OnDestroy
 } from '@angular/core';
-import { format as formatDate } from 'date-fns';
 import {
   DateFnsConfigurationService,
   calculateLocale
 } from './date-fns-configuration.service';
 import { Subscription } from 'rxjs';
-import { isInvalidDate } from './utils';
+import { DateFnsInputDate } from './types';
+import { Locale } from 'date-fns';
+import format from 'date-fns/format';
 
 @Pipe({ name: 'dfnsFormat', pure: false })
 export class FormatPipe implements PipeTransform, OnDestroy {
-  static readonly NO_ARGS_ERROR = 'dfnsFormat: missing required arguments';
-
   private localeChanged$: Subscription;
 
   constructor(
@@ -32,15 +31,16 @@ export class FormatPipe implements PipeTransform, OnDestroy {
   }
 
   transform(
-    date: string | number | Date,
-    format?: string,
+    date: DateFnsInputDate,
+    dateFormat: string,
     options?: {
-      locale?: Object;
+      locale?: Locale;
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+      firstWeekContainsDate?: number;
+      useAdditionalWeekYearTokens?: boolean;
+      useAdditionalDayOfYearTokens?: boolean;
     }
   ): string {
-    if (isInvalidDate(date)) {
-      throw new Error(FormatPipe.NO_ARGS_ERROR);
-    }
-    return formatDate(date, format, calculateLocale(options, this.config));
+    return format(date, dateFormat, calculateLocale(options, this.config));
   }
 }

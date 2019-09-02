@@ -1,0 +1,10 @@
+import { Pipe, PipeTransform } from '@angular/core';
+import { DateFnsInputDate } from './types';
+import lastDayOfDecade from 'date-fns/lastDayOfDecade';
+
+@Pipe({ name: 'dfnsLastDayOfDecade' })
+export class LastDayOfDecadePipe implements PipeTransform {
+  transform(date: DateFnsInputDate): Date {
+    return lastDayOfDecade(date);
+  }
+}

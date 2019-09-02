@@ -1,6 +1,6 @@
 {
   "name": "ngx-date-fns",
-  "version": "4.0.3",
+  "version": "5.0.0",
   "description": "date-fns pipes for Angular",
   "repository": {
     "type": "git",
@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/joanllenas/ngx-date-fns#readme",
   "peerDependencies": {
-    "@angular/common": ">=6",
-    "@angular/core": ">=6",
-    "date-fns": ">=1.29"
+    "@angular/common": ">=8",
+    "@angular/core": ">=8",
+    "date-fns": ">=2"
   }
 }

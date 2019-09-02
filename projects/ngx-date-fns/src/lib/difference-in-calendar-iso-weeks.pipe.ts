@@ -1,19 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { differenceInCalendarISOWeeks } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import differenceInCalendarISOWeeks from 'date-fns/differenceInCalendarISOWeeks';
 
 @Pipe({ name: 'dfnsDifferenceInCalendarISOWeeks' })
 export class DifferenceInCalendarISOWeeksPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR =
-    'dfnsDifferenceInCalendarISOWeeks: missing required arguments';
-
-  transform(
-    dateLeft: string | number | Date,
-    dateRight: string | number | Date
-  ): number {
-    if (isInvalidDate(dateLeft) || isInvalidDate(dateRight)) {
-      throw new Error(DifferenceInCalendarISOWeeksPipe.NO_ARGS_ERROR);
-    }
+  transform(dateLeft: DateFnsInputDate, dateRight: DateFnsInputDate): number {
     return differenceInCalendarISOWeeks(dateLeft, dateRight);
   }
 }

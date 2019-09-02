@@ -1,15 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { startOfDay } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import startOfDay from 'date-fns/startOfDay';
 
 @Pipe({ name: 'dfnsStartOfDay' })
 export class StartOfDayPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsStartOfDay: missing required arguments';
-
-  transform(date: string | number | Date): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(StartOfDayPipe.NO_ARGS_ERROR);
-    }
+  transform(date: DateFnsInputDate): Date {
     return startOfDay(date);
   }
 }

@@ -1,15 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { getQuarter } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import getQuarter from 'date-fns/getQuarter';
 
 @Pipe({ name: 'dfnsGetQuarter' })
 export class GetQuarterPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsGetQuarter: missing required arguments';
-
-  transform(date: string | number | Date): number {
-    if (isInvalidDate(date)) {
-      throw new Error(GetQuarterPipe.NO_ARGS_ERROR);
-    }
+  transform(date: DateFnsInputDate): number {
     return getQuarter(date);
   }
 }

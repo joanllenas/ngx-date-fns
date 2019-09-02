@@ -5,24 +5,6 @@ describe('ClosestToPipe', () => {
 
   beforeEach(() => (pipe = new ClosestToPipe()));
 
-  it('should throw when required arguments are not provided', () => {
-    expect(() => pipe.transform.call(pipe, undefined, undefined)).toThrowError(
-      Error,
-      ClosestToPipe.NO_ARGS_ERROR
-    );
-  });
-
-  it('should throw when less than two dates are provided', () => {
-    expect(() => pipe.transform(new Date(), [])).toThrowError(
-      Error,
-      ClosestToPipe.NO_ARGS_ERROR
-    );
-    expect(() => pipe.transform(new Date(), [new Date()])).toThrowError(
-      Error,
-      ClosestToPipe.NO_ARGS_ERROR
-    );
-  });
-
   it('should return the closest date to the two given dates', () => {
     expect(
       pipe.transform(new Date(2012, 1, 1), [

@@ -1,15 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { subWeeks } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import subWeeks from 'date-fns/subWeeks';
 
 @Pipe({ name: 'dfnsSubWeeks' })
 export class SubWeeksPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR = 'dfnsSubWeeks: missing required arguments';
-
-  transform(date: Date | string | number, amount: number): Date {
-    if (isInvalidDate(date)) {
-      throw new Error(SubWeeksPipe.NO_ARGS_ERROR);
-    }
-    return subWeeks(date, amount || 0);
+  transform(date: DateFnsInputDate, amount: number): Date {
+    return subWeeks(date, amount);
   }
 }

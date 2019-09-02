@@ -1,6 +1,22 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [5.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v4.0.3...v5.0.0) (2019-09-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* **upgrade:** - Library is now Angular >= v8 only.
+- Pipe argument validations are now done by date-fns.
+- Renamed dfnsAddISOYears to dfnsAddISOWeekYears.
+- Renamed dfnsDifferenceInCalendarISOYears to dfnsDifferenceInCalendarISOWeekYears.
+- Renamed dfnsDifferenceInISOYears to dfnsDifferenceInISOWeekYears.
+- Renamed dfnsDistanceInWords to dfnsFormatDistance. Also, notice that date arguments have been swapped to be consistent with date-fns.
+
+### Features
+
+* **upgrade:** Upgraded to support date-fns v2 ([2b5909a](https://github.com/joanllenas/ngx-date-fns/commit/2b5909a)), closes [/date-fns.org/v2.0.1/docs/formatDistanceStrict#v2](https://github.com/joanllenas//date-fns.org/v2.0.1/docs/formatDistanceStrict/issues/v2) [/date-fns.org/v2.0.1/docs/getOverlappingDaysInIntervals#v2](https://github.com/joanllenas//date-fns.org/v2.0.1/docs/getOverlappingDaysInIntervals/issues/v2) [/github.com/date-fns/date-fns/blob/master/CHANGELOG.md#200---2019-08-20](https://github.com/joanllenas//github.com/date-fns/date-fns/blob/master/CHANGELOG.md/issues/200---2019-08-20)
 
 <a name="4.0.3"></a>
 ## [4.0.3](https://github.com/joanllenas/ngx-date-fns/compare/v4.0.2...v4.0.3) (2019-07-28)

@@ -1,24 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isInvalidDate } from './utils';
-import { closestTo } from 'date-fns';
+import { DateFnsInputDate } from './types';
+import closestTo from 'date-fns/closestTo';
 
 @Pipe({ name: 'dfnsClosestTo' })
 export class ClosestToPipe implements PipeTransform {
-  static readonly NO_ARGS_ERROR =
-    'dfnsClosestTo: You have to provide at least two dates and a date to compare';
-
   transform(
-    dateToCompare: string | number | Date,
-    datesArray: (string | number | Date)[]
+    dateToCompare: DateFnsInputDate,
+    datesArray: DateFnsInputDate[]
   ): Date {
-    if (
-      isInvalidDate(dateToCompare) ||
-      !datesArray ||
-      !Array.isArray(datesArray) ||
-      datesArray.length < 2
-    ) {
-      throw new Error(ClosestToPipe.NO_ARGS_ERROR);
-    }
     return closestTo(dateToCompare, datesArray);
   }
 }
