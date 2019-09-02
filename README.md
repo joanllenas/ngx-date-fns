@@ -18,6 +18,13 @@ npm install --save date-fns
 npm install --save ngx-date-fns
 ```
 
+For date-fns v1 support:
+
+```
+npm install --save date-fns@1.29.0
+npm install --save ngx-date-fns@4.0.3
+```
+
 ## Basic Usage
 
 Import `DateFnsModule` into your app's modules:
