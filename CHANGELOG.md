@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v4.0.3...v6.0.0) (2020-02-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* **pipes:** The following pipes: GetWeekOfMonthPipe, GetWeekYearPipe, GetWeekPipe,
+GetWeeksInMonthPipe, LastDayOfWeekPipe, StartOfWeekYearPipe and StartOfWeekPipe are now impure and
+require parametrization when instantiated via new MyClass().
+* **upgrade:** - Library is now Angular >= v8 only.
+- Pipe argument validations are now done by date-fns.
+- Renamed dfnsAddISOYears to dfnsAddISOWeekYears.
+- Renamed dfnsDifferenceInCalendarISOYears to dfnsDifferenceInCalendarISOWeekYears.
+- Renamed dfnsDifferenceInISOYears to dfnsDifferenceInISOWeekYears.
+- Renamed dfnsDistanceInWords to dfnsFormatDistance. Also, notice that date arguments have been swapped to be consistent with date-fns.
+
+### Features
+
+* **upgrade:** Upgraded to support date-fns v2 ([#292](https://github.com/joanllenas/ngx-date-fns/issues/292)) ([beedeac](https://github.com/joanllenas/ngx-date-fns/commit/beedeac0799d1869b7f0add24206b7696a1a6d4a)), closes [/date-fns.org/v2.0.1/docs/formatDistanceStrict#v2](https://github.com/joanllenas//date-fns.org/v2.0.1/docs/formatDistanceStrict/issues/v2) [/date-fns.org/v2.0.1/docs/getOverlappingDaysInIntervals#v2](https://github.com/joanllenas//date-fns.org/v2.0.1/docs/getOverlappingDaysInIntervals/issues/v2) [/github.com/date-fns/date-fns/blob/master/CHANGELOG.md#200---2019-08-20](https://github.com/joanllenas//github.com/date-fns/date-fns/blob/master/CHANGELOG.md/issues/200---2019-08-20)
+
+
+### Bug Fixes
+
+* **pipes:** added missing locale support to all locale-aware pipes ([34ffbfd](https://github.com/joanllenas/ngx-date-fns/commit/34ffbfd7c60b235b0793b9cc915290f1bc0f48cd)), closes [#309](https://github.com/joanllenas/ngx-date-fns/issues/309)
+
 ## [5.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v4.0.3...v5.0.0) (2019-09-02)
 
 
