@@ -1,10 +1,32 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {
+  Pipe,
+  PipeTransform,
+  OnDestroy,
+  ChangeDetectorRef
+} from '@angular/core';
 import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 import { Locale } from 'date-fns';
 import getWeeksInMonth from 'date-fns/getWeeksInMonth';
+import { Subscription } from 'rxjs';
+import { DateFnsConfigurationService, calculateLocale } from '.';
 
-@Pipe({ name: 'dfnsGetWeeksInMonth' })
-export class GetWeeksInMonthPipe implements PipeTransform {
+@Pipe({ name: 'dfnsGetWeeksInMonth', pure: false })
+export class GetWeeksInMonthPipe implements PipeTransform, OnDestroy {
+  private localeChanged$: Subscription;
+
+  constructor(
+    public config: DateFnsConfigurationService,
+    public cd: ChangeDetectorRef
+  ) {
+    this.localeChanged$ = this.config.localeChanged.subscribe(_ =>
+      this.cd.markForCheck()
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.localeChanged$.unsubscribe();
+  }
+
   transform(
     date: DateFnsInputDate,
     options?: {
@@ -12,6 +34,6 @@ export class GetWeeksInMonthPipe implements PipeTransform {
       weekStartsOn?: DateFnsWeekIndex;
     }
   ): number {
-    return getWeeksInMonth(date, options);
+    return getWeeksInMonth(date, calculateLocale(options, this.config));
   }
 }

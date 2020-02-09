@@ -23,6 +23,9 @@ import { GetWeekOfMonthPipe } from './get-week-of-month.pipe';
 import { GetWeeksInMonthPipe } from './get-weeks-in-month.pipe';
 import { GetDecadePipe } from './get-decade.pipe';
 import { GetWeekYearPipe } from './get-week-year.pipe';
+import { ChangeDetectorRef } from '@angular/core';
+import { DateFnsConfigurationService } from './date-fns-configuration.service';
+import { es, enUS } from 'date-fns/locale';
 
 [
   {
@@ -130,16 +133,42 @@ import { GetWeekYearPipe } from './get-week-year.pipe';
   });
 });
 
+// Mock Change Detector
+const MyChangeDetector = class extends ChangeDetectorRef {
+  markForCheck(): void {
+    throw new Error('Method not implemented.');
+  }
+  detach(): void {
+    throw new Error('Method not implemented.');
+  }
+  detectChanges(): void {
+    throw new Error('Method not implemented.');
+  }
+  checkNoChanges(): void {
+    throw new Error('Method not implemented.');
+  }
+  reattach(): void {
+    throw new Error('Method not implemented.');
+  }
+};
+
 // With options
 [
+  // GetWeekPipe
   {
-    pipe: new GetWeekPipe(),
+    pipe: new GetWeekPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
     date: new Date(2005, 0, 2),
     options: undefined,
     expected: 2
   },
   {
-    pipe: new GetWeekPipe(),
+    pipe: new GetWeekPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
     date: new Date(2005, 0, 2),
     options: {
       weekStartsOn: 1 as DateFnsWeekIndex,
@@ -148,7 +177,33 @@ import { GetWeekYearPipe } from './get-week-year.pipe';
     expected: 53
   },
   {
-    pipe: new GetWeekOfMonthPipe(),
+    pipe: new GetWeekPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
+    date: new Date(2020, 1, 2),
+    options: {
+      locale: es
+    },
+    expected: 5
+  },
+  {
+    pipe: new GetWeekPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
+    date: new Date(2020, 1, 2),
+    options: {
+      locale: enUS
+    },
+    expected: 6
+  },
+  // GetWeekOfMonthPipe
+  {
+    pipe: new GetWeekOfMonthPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
     date: new Date(2019, 0, 6),
     options: {
       weekStartsOn: 0 as DateFnsWeekIndex
@@ -156,7 +211,10 @@ import { GetWeekYearPipe } from './get-week-year.pipe';
     expected: 2
   },
   {
-    pipe: new GetWeekOfMonthPipe(),
+    pipe: new GetWeekOfMonthPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
     date: new Date(2019, 0, 6),
     options: {
       weekStartsOn: 1 as DateFnsWeekIndex
@@ -164,34 +222,109 @@ import { GetWeekYearPipe } from './get-week-year.pipe';
     expected: 1
   },
   {
-    pipe: new GetWeeksInMonthPipe(),
+    pipe: new GetWeekOfMonthPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
+    date: new Date(2020, 1, 2),
+    options: {
+      locale: es
+    },
+    expected: 1
+  },
+  {
+    pipe: new GetWeekOfMonthPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
+    date: new Date(2020, 1, 2),
+    options: {
+      locale: enUS
+    },
+    expected: 2
+  },
+  // GetWeeksInMonthPipe
+  {
+    pipe: new GetWeeksInMonthPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
     date: new Date(2015, 1, 8),
     options: undefined,
     expected: 4
   },
   {
-    pipe: new GetWeeksInMonthPipe(),
+    pipe: new GetWeeksInMonthPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
     date: new Date(2017, 6, 5),
     options: { weekStartsOn: 1 as DateFnsWeekIndex },
     expected: 6
   },
   {
-    pipe: new GetWeekYearPipe(),
+    pipe: new GetWeeksInMonthPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
+    date: new Date(2020, 2, 15),
+    options: { locale: es },
+    expected: 6
+  },
+  {
+    pipe: new GetWeeksInMonthPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
+    date: new Date(2020, 2, 15),
+    options: { locale: enUS },
+    expected: 5
+  },
+  // GetWeekYearPipe
+  {
+    pipe: new GetWeekYearPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
     date: new Date(2004, 11, 26),
     options: { weekStartsOn: 0 as DateFnsWeekIndex },
     expected: 2005
   },
   {
-    pipe: new GetWeekYearPipe(),
+    pipe: new GetWeekYearPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
     date: new Date(2004, 11, 26),
     options: { weekStartsOn: 6 as DateFnsWeekIndex },
     expected: 2004
   },
   {
-    pipe: new GetWeekYearPipe(),
+    pipe: new GetWeekYearPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
     date: new Date(2004, 11, 26),
     options: { firstWeekContainsDate: 4 as DateFnsFirstWeekDays },
     expected: 2004
+  },
+  {
+    pipe: new GetWeekYearPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
+    date: new Date(2004, 11, 26),
+    options: { locale: es },
+    expected: 2004
+  },
+  {
+    pipe: new GetWeekYearPipe(
+      new DateFnsConfigurationService(),
+      new MyChangeDetector()
+    ),
+    date: new Date(2004, 11, 26),
+    options: { locale: enUS },
+    expected: 2005
   }
 ].forEach(test => {
   describe(test.pipe.constructor.name, () => {

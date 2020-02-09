@@ -177,11 +177,11 @@ export class AppComponent {
 - [dfnsGetISOWeeksInYear](https://date-fns.org/v2.0.1/docs/getISOWeeksInYear)
 - [dfnsGetISOWeekYear](https://date-fns.org/v2.0.1/docs/getISOWeekYear)
 - [dfnsGetUnixTime](https://date-fns.org/v2.0.1/docs/getUnixTime)
-- [dfnsGetWeek](https://date-fns.org/v2.0.1/docs/getWeek)
-- [dfnsGetWeekOfMonth](https://date-fns.org/v2.0.1/docs/getWeekOfMonth)
-- [dfnsGetWeeksInMonth](https://date-fns.org/v2.0.1/docs/getWeeksInMonth)
+- [dfnsGetWeek](https://date-fns.org/v2.0.1/docs/getWeek) _(impure)_
+- [dfnsGetWeekOfMonth](https://date-fns.org/v2.0.1/docs/getWeekOfMonth) _(impure)_
+- [dfnsGetWeeksInMonth](https://date-fns.org/v2.0.1/docs/getWeeksInMonth) _(impure)_
 - [dfnsGetDecade](https://date-fns.org/v2.0.1/docs/getDecade)
-- [dfnsGetWeekYear](https://date-fns.org/v2.0.1/docs/getWeekYear)
+- [dfnsGetWeekYear](https://date-fns.org/v2.0.1/docs/getWeekYear) _(impure)_
 
 #### Difference
 
@@ -256,18 +256,18 @@ export class AppComponent {
 - [dfnsStartOfToday](https://date-fns.org/v2.0.1/docs/startOfToday)
 - [dfnsStartOfTomorrow](https://date-fns.org/v2.0.1/docs/startOfTomorrow)
 - [dfnsStartOfYesterday](https://date-fns.org/v2.0.1/docs/startOfYesterday)
-- [dfnsStartOfWeek](https://date-fns.org/v2.0.1/docs/startOfWeek)
+- [dfnsStartOfWeek](https://date-fns.org/v2.0.1/docs/startOfWeek) _(impure)_
 - [dfnsStartOfISOWeek](https://date-fns.org/v2.0.1/docs/startOfISOWeek)
 - [dfnsStartOfMonth](https://date-fns.org/v2.0.1/docs/startOfMonth)
 - [dfnsStartOfQuarter](https://date-fns.org/v2.0.1/docs/startOfQuarter)
 - [dfnsStartOfYear](https://date-fns.org/v2.0.1/docs/startOfYear)
 - [dfnsStartOfISOWeekYear](https://date-fns.org/v2.0.1/docs/startOfISOWeekYear)
 - [dfnsStartOfDecade](https://date-fns.org/v2.0.1/docs/startOfDecade)
-- [dfnsStartOfWeekYear](https://date-fns.org/v2.0.1/docs/startOfWeekYear)
+- [dfnsStartOfWeekYear](https://date-fns.org/v2.0.1/docs/startOfWeekYear) _(impure)_
 
 #### Last Day Of
 
-- [dfnsLastDayOfWeek](https://date-fns.org/v2.0.1/docs/lastDayOfWeek)
+- [dfnsLastDayOfWeek](https://date-fns.org/v2.0.1/docs/lastDayOfWeek) _(impure)_
 - [dfnsLastDayOfISOWeek](https://date-fns.org/v2.0.1/docs/lastDayOfISOWeek)
 - [dfnsLastDayOfMonth](https://date-fns.org/v2.0.1/docs/lastDayOfMonth)
 - [dfnsLastDayOfQuarter](https://date-fns.org/v2.0.1/docs/lastDayOfQuarter)

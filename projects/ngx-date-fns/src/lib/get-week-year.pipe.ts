@@ -1,4 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {
+  Pipe,
+  PipeTransform,
+  OnDestroy,
+  ChangeDetectorRef
+} from '@angular/core';
 import {
   DateFnsInputDate,
   DateFnsWeekIndex,
@@ -6,9 +11,26 @@ import {
 } from './types';
 import { Locale } from 'date-fns';
 import getWeekYear from 'date-fns/getWeekYear';
+import { Subscription } from 'rxjs';
+import { DateFnsConfigurationService, calculateLocale } from '.';
 
-@Pipe({ name: 'dfnsGetWeekYear' })
-export class GetWeekYearPipe implements PipeTransform {
+@Pipe({ name: 'dfnsGetWeekYear', pure: false })
+export class GetWeekYearPipe implements PipeTransform, OnDestroy {
+  private localeChanged$: Subscription;
+
+  constructor(
+    public config: DateFnsConfigurationService,
+    public cd: ChangeDetectorRef
+  ) {
+    this.localeChanged$ = this.config.localeChanged.subscribe(_ =>
+      this.cd.markForCheck()
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.localeChanged$.unsubscribe();
+  }
+
   transform(
     date: DateFnsInputDate,
     options?: {
@@ -17,6 +39,6 @@ export class GetWeekYearPipe implements PipeTransform {
       firstWeekContainsDate?: DateFnsFirstWeekDays;
     }
   ): number {
-    return getWeekYear(date, options);
+    return getWeekYear(date, calculateLocale(options, this.config));
   }
 }
