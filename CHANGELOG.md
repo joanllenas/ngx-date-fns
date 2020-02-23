@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.1.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.0.0...v6.1.0) (2020-02-23)
+
+
+### Features
+
+* **pipes:** added dfnsWeekdayName pipe ([8d7e2d7](https://github.com/joanllenas/ngx-date-fns/commit/8d7e2d79f08f964ab76a9fe2bb2e669777adc7a1)), closes [#326](https://github.com/joanllenas/ngx-date-fns/issues/326)
+* **pipes:** added is... new pipes ([38289fc](https://github.com/joanllenas/ngx-date-fns/commit/38289fc7829627e4bfdde096b69ff9c3d7d2e309)), closes [#316](https://github.com/joanllenas/ngx-date-fns/issues/316)
+
+
+### Bug Fixes
+
+* **pipes:** added missing Is... pipes to module ([2ee05da](https://github.com/joanllenas/ngx-date-fns/commit/2ee05dabcda5b8e6e9f812b9ef4b00897a093505)), closes [#326](https://github.com/joanllenas/ngx-date-fns/issues/326)
+* **pipes:** fixed circular deps. due to incorrect imports ([ebe84b7](https://github.com/joanllenas/ngx-date-fns/commit/ebe84b76e56e1e64ac868cd3ca069040f9060464))
+
 ## [6.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v4.0.3...v6.0.0) (2020-02-09)
 
 
