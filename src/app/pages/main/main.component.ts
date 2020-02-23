@@ -18,6 +18,7 @@ import { es } from 'date-fns/locale';
       {{ dateThree | dfnsFormatDistanceToNow: options }} - (Explicit 'es'
       locale)
     </p>
+    <p>{{ 0 | dfnsWeekdayName: 'full':options }} - (Explicit 'es' locale)</p>
   `
 })
 export class MainComponent {

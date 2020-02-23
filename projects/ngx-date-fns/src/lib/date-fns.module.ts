@@ -112,6 +112,7 @@ import { IsEqualPipe } from './is-equal.pipe';
 import { IsFuturePipe } from './is-future.pipe';
 import { IsPastPipe } from './is-past.pipe';
 import { IsValidPipe } from './is-valid.pipe';
+import { WeekdayNamePipe } from './utils/weekday-name.pipe';
 
 const PIPES = [
   AddBusinessDaysPipe,
@@ -223,7 +224,8 @@ const PIPES = [
   IsEqualPipe,
   IsFuturePipe,
   IsPastPipe,
-  IsValidPipe
+  IsValidPipe,
+  WeekdayNamePipe
 ];
 
 @NgModule({

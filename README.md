@@ -274,7 +274,7 @@ export class AppComponent {
 - [dfnsLastDayOfISOWeekYear](https://date-fns.org/v2.0.1/docs/lastDayOfISOWeekYear)
 - [dfnsLastDayOfDecade](https://date-fns.org/v2.0.1/docs/lastDayOfDecade)
 
-### Is...?
+#### Is...?
 
 - [dfnsIsAfter](https://date-fns.org/v2.0.1/docs/isAfter)
 - [dfnsIsBefore](https://date-fns.org/v2.0.1/docs/isBefore)
@@ -283,3 +283,41 @@ export class AppComponent {
 - [dfnsIsFuture](https://date-fns.org/v2.0.1/docs/isFuture)
 - [dfnsIsPast](https://date-fns.org/v2.0.1/docs/isPast)
 - [dfnsIsValid](https://date-fns.org/v2.0.1/docs/isValid)
+
+### Utils
+
+A collection of utilities built around date-fns functions.
+
+#### dfnsWeekdayName _(impure)_
+
+Given a weekday number, returns its name.
+
+##### @param `WeekdayNameFormat`
+
+Optional weekday format. Allowed values are:
+
+- `x1`: One char. 'M' for Monday.
+- `x2`: Two chars. 'Mo' for Monday.
+- `x3`: Three chars. 'Mon' for Monday.
+- `full`: Full weekday name. 'Monday' for Monday.
+
+Defaults to `full`.
+
+##### @param `Locale`
+
+Optional date-fns `Locale` object.
+
+Optional locale object.
+
+##### Basic example
+
+```html
+<div>
+  <!-- Prints Monday -->
+  {{ 0 | dfnsWeekdayName }}
+</div>
+<div>
+  <!-- Prints Mon -->
+  {{ 0 | dfnsWeekdayName : 'x3' }}
+</div>
+```
