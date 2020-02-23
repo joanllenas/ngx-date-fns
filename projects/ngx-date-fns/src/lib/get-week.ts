@@ -12,7 +12,10 @@ import {
 import { Locale } from 'date-fns';
 import getWeek from 'date-fns/getWeek';
 import { Subscription } from 'rxjs';
-import { DateFnsConfigurationService, calculateLocale } from '.';
+import {
+  DateFnsConfigurationService,
+  calculateLocale
+} from './date-fns-configuration.service';
 
 @Pipe({ name: 'dfnsGetWeek', pure: false })
 export class GetWeekPipe implements PipeTransform, OnDestroy {

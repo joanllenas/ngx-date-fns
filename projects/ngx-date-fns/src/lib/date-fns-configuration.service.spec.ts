@@ -4,7 +4,7 @@ import {
   DateFnsConfigurationService,
   DateFnsConfiguration
 } from './date-fns-configuration.service';
-import { DateFnsModule } from '.';
+import { DateFnsModule } from './date-fns.module';
 import { es, fr } from 'date-fns/locale';
 
 @Component({

@@ -8,7 +8,10 @@ import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 import { Locale } from 'date-fns';
 import lastDayOfWeek from 'date-fns/lastDayOfWeek';
 import { Subscription } from 'rxjs';
-import { DateFnsConfigurationService, calculateLocale } from '.';
+import {
+  DateFnsConfigurationService,
+  calculateLocale
+} from './date-fns-configuration.service';
 
 @Pipe({ name: 'dfnsLastDayOfWeek', pure: false })
 export class LastDayOfWeekPipe implements PipeTransform, OnDestroy {
