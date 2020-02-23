@@ -102,6 +102,13 @@ export * from './sub-quarters.pipe';
 export * from './sub-seconds.pipe';
 export * from './sub-weeks.pipe';
 export * from './sub-years.pipe';
+export * from './is-after.pipe';
+export * from './is-before.pipe';
+export * from './is-date.pipe';
+export * from './is-equal.pipe';
+export * from './is-future.pipe';
+export * from './is-past.pipe';
+export * from './is-valid.pipe';
 
 // Other stuff
 export * from './types';

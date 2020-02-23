@@ -273,3 +273,13 @@ export class AppComponent {
 - [dfnsLastDayOfYear](https://date-fns.org/v2.0.1/docs/lastDayOfYear)
 - [dfnsLastDayOfISOWeekYear](https://date-fns.org/v2.0.1/docs/lastDayOfISOWeekYear)
 - [dfnsLastDayOfDecade](https://date-fns.org/v2.0.1/docs/lastDayOfDecade)
+
+### Is...?
+
+- [dfnsIsAfter](https://date-fns.org/v2.0.1/docs/isAfter)
+- [dfnsIsBefore](https://date-fns.org/v2.0.1/docs/isBefore)
+- [dfnsIsDate](https://date-fns.org/v2.0.1/docs/isDate)
+- [dfnsIsEqual](https://date-fns.org/v2.0.1/docs/isEqual)
+- [dfnsIsFuture](https://date-fns.org/v2.0.1/docs/isFuture)
+- [dfnsIsPast](https://date-fns.org/v2.0.1/docs/isPast)
+- [dfnsIsValid](https://date-fns.org/v2.0.1/docs/isValid)
