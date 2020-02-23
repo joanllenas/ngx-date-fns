@@ -284,15 +284,15 @@ export class AppComponent {
 - [dfnsIsPast](https://date-fns.org/v2.0.1/docs/isPast)
 - [dfnsIsValid](https://date-fns.org/v2.0.1/docs/isValid)
 
-### Utils
+## Utils
 
 A collection of utilities built around date-fns functions.
 
-#### dfnsWeekdayName _(impure)_
+### dfnsWeekdayName _(impure)_
 
 Given a weekday number, returns its name.
 
-##### @param `WeekdayNameFormat`
+#### @param `WeekdayNameFormat`
 
 Optional weekday format. Allowed values are:
 
@@ -303,13 +303,13 @@ Optional weekday format. Allowed values are:
 
 Defaults to `full`.
 
-##### @param `Locale`
+#### @param `Locale`
 
 Optional date-fns `Locale` object.
 
 Optional locale object.
 
-##### Basic example
+#### Basic example
 
 ```html
 <div>
