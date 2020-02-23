@@ -105,6 +105,13 @@ import { SubQuartersPipe } from './sub-quarters.pipe';
 import { SubSecondsPipe } from './sub-seconds.pipe';
 import { SubWeeksPipe } from './sub-weeks.pipe';
 import { SubYearsPipe } from './sub-years.pipe';
+import { IsAfterPipe } from './is-after.pipe';
+import { IsBeforePipe } from './is-before.pipe';
+import { IsDatePipe } from './is-date.pipe';
+import { IsEqualPipe } from './is-equal.pipe';
+import { IsFuturePipe } from './is-future.pipe';
+import { IsPastPipe } from './is-past.pipe';
+import { IsValidPipe } from './is-valid.pipe';
 
 const PIPES = [
   AddBusinessDaysPipe,
@@ -209,7 +216,14 @@ const PIPES = [
   SubQuartersPipe,
   SubSecondsPipe,
   SubWeeksPipe,
-  SubYearsPipe
+  SubYearsPipe,
+  IsAfterPipe,
+  IsBeforePipe,
+  IsDatePipe,
+  IsEqualPipe,
+  IsFuturePipe,
+  IsPastPipe,
+  IsValidPipe
 ];
 
 @NgModule({
