@@ -2,7 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { es } from 'date-fns/locale';
 
 @Component({
-  selector: 'test-onpush-component',
+  selector: 'dfns-test-onpush-component',
   template: `
     <p>
       {{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}

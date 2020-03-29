@@ -151,6 +151,7 @@ export class AppComponent {
 
 #### Misc
 
+- [dfnsParse](https://date-fns.org/v2.0.1/docs/parse)
 - [dfnsClosestTo](https://date-fns.org/v2.0.1/docs/closestTo)
 - [dfnsMin](https://date-fns.org/v2.0.1/docs/min)
 - [dfnsMax](https://date-fns.org/v2.0.1/docs/max)
@@ -283,6 +284,9 @@ export class AppComponent {
 - [dfnsIsFuture](https://date-fns.org/v2.0.1/docs/isFuture)
 - [dfnsIsPast](https://date-fns.org/v2.0.1/docs/isPast)
 - [dfnsIsValid](https://date-fns.org/v2.0.1/docs/isValid)
+- [dfnsIsToday](https://date-fns.org/v2.0.1/docs/isToday)
+- [dfnsIsWeekend](https://date-fns.org/v2.0.1/docs/isWeekend)
+- [dfnsIsSameMonth](https://date-fns.org/v2.0.1/docs/isSameMonth)
 
 ## Utils
 

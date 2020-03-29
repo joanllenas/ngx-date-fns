@@ -3,7 +3,7 @@ import { es, de } from 'date-fns/locale';
 import { DateFnsConfigurationService } from '../../../../projects/ngx-date-fns/src/lib/date-fns-configuration.service';
 
 @Component({
-  selector: 'onpush-component',
+  selector: 'dfns-onpush-component',
   template: `
     <h2>On Push</h2>
     <p>Set default locale to:</p>
@@ -14,13 +14,13 @@ import { DateFnsConfigurationService } from '../../../../projects/ngx-date-fns/s
       </li>
     </ul>
     <hr />
-    <test-onpush-component
+    <dfns-test-onpush-component
       [dateOne]="dateOne"
       [dateTwo]="dateTwo"
       [dateThree]="dateThree"
       [dates]="dates"
     >
-    </test-onpush-component>
+    </dfns-test-onpush-component>
   `
 })
 export class StrategyOnPushComponent {

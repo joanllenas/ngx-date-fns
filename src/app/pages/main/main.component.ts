@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { es } from 'date-fns/locale';
 
 @Component({
-  selector: 'main-component',
+  selector: 'dfns-main-component',
   template: `
     <h2>Main</h2>
     <p>
@@ -19,6 +19,13 @@ import { es } from 'date-fns/locale';
       locale)
     </p>
     <p>{{ 0 | dfnsWeekdayName: 'full':options }} - (Explicit 'es' locale)</p>
+    <p>
+      {{
+        '12 de Marzo'
+          | dfnsParse: parseFormat:parseDate:parseLocale
+          | dfnsFormat: 'MM/dd/yyyy'
+      }}
+    </p>
   `
 })
 export class MainComponent {
@@ -29,6 +36,10 @@ export class MainComponent {
     locale: es,
     addSuffix: true
   };
+  parseDate = new Date(2010, 0, 1);
+  parseFormat = `do 'de' MMMM`;
+  parseLocale = { locale: es };
+
   constructor() {
     this.dateThree = new Date();
     this.dateThree.setDate(this.dateThree.getDate() - 6);

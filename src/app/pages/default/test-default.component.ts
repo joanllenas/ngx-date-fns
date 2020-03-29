@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { es } from 'date-fns/locale';
 
 @Component({
-  selector: 'test-default-component',
+  selector: 'dfns-test-default-component',
   template: `
     <p>{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
     <p>{{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'EEE LLLL d yyyy' }}</p>

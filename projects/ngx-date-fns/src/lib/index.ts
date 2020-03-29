@@ -109,6 +109,10 @@ export * from './is-equal.pipe';
 export * from './is-future.pipe';
 export * from './is-past.pipe';
 export * from './is-valid.pipe';
+export * from './is-today.pipe';
+export * from './is-weekend.pipe';
+export * from './is-same-month.pipe';
+export * from './parse.pipe';
 export * from './utils/weekday-name.pipe';
 
 // Other stuff

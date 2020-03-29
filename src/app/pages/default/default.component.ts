@@ -3,7 +3,7 @@ import { DateFnsConfigurationService } from '../../../../projects/ngx-date-fns/s
 import { es, de } from 'date-fns/locale';
 
 @Component({
-  selector: 'default-component',
+  selector: 'dfns-default-component',
   template: `
     <h2>Default</h2>
     <p>Set default locale to:</p>
@@ -14,13 +14,13 @@ import { es, de } from 'date-fns/locale';
       </li>
     </ul>
     <hr />
-    <test-default-component
+    <dfns-test-default-component
       [dateOne]="dateOne"
       [dateTwo]="dateTwo"
       [dateThree]="dateThree"
       [dates]="dates"
     >
-    </test-default-component>
+    </dfns-test-default-component>
   `
 })
 export class StrategyDefaultComponent {

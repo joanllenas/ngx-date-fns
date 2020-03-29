@@ -18,7 +18,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "dfns",
       "kebab-case"
     ],
     "import-blacklist": [

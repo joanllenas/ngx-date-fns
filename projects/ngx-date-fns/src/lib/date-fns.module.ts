@@ -113,6 +113,10 @@ import { IsFuturePipe } from './is-future.pipe';
 import { IsPastPipe } from './is-past.pipe';
 import { IsValidPipe } from './is-valid.pipe';
 import { WeekdayNamePipe } from './utils/weekday-name.pipe';
+import { IsWeekendPipe } from './is-weekend.pipe';
+import { IsTodayPipe } from './is-today.pipe';
+import { IsSameMonthPipe } from './is-same-month.pipe';
+import { ParsePipe } from './parse.pipe';
 
 const PIPES = [
   AddBusinessDaysPipe,
@@ -225,6 +229,10 @@ const PIPES = [
   IsFuturePipe,
   IsPastPipe,
   IsValidPipe,
+  IsTodayPipe,
+  IsWeekendPipe,
+  IsSameMonthPipe,
+  ParsePipe,
   WeekdayNamePipe
 ];
 

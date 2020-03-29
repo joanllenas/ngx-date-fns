@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'dfns-root',
   template: `
     <div class="main">
       <div class="sidebar">
