@@ -151,7 +151,7 @@ export class AppComponent {
 
 #### Misc
 
-- [dfnsParse](https://date-fns.org/v2.0.1/docs/parse)
+- [dfnsParse](https://date-fns.org/v2.0.1/docs/parse) _(impure)_
 - [dfnsClosestTo](https://date-fns.org/v2.0.1/docs/closestTo)
 - [dfnsMin](https://date-fns.org/v2.0.1/docs/min)
 - [dfnsMax](https://date-fns.org/v2.0.1/docs/max)
