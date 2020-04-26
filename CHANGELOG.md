@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.3.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.2.1...v6.3.0) (2020-04-26)
+
+
+### Features
+
+* **pipes:** added IsSameYearPipe pipe ([#330](https://github.com/joanllenas/ngx-date-fns/issues/330)) ([318a834](https://github.com/joanllenas/ngx-date-fns/commit/318a834a336ee81125636a0d3113f70e8dd01441)), closes [#329](https://github.com/joanllenas/ngx-date-fns/issues/329)
+
 ### [6.2.1](https://github.com/joanllenas/ngx-date-fns/compare/v6.2.0...v6.2.1) (2020-03-29)
 
 ## [6.2.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.1.0...v6.2.0) (2020-03-29)
