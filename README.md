@@ -287,6 +287,7 @@ export class AppComponent {
 - [dfnsIsToday](https://date-fns.org/v2.0.1/docs/isToday)
 - [dfnsIsWeekend](https://date-fns.org/v2.0.1/docs/isWeekend)
 - [dfnsIsSameMonth](https://date-fns.org/v2.0.1/docs/isSameMonth)
+- [dfnsIsSameYear](https://date-fns.org/v2.0.1/docs/isSameYear)
 
 ## Utils
 

@@ -114,6 +114,7 @@ export * from './is-weekend.pipe';
 export * from './is-same-month.pipe';
 export * from './parse.pipe';
 export * from './utils/weekday-name.pipe';
+export * from './is-same-year.pipe';
 
 // Other stuff
 export * from './types';
