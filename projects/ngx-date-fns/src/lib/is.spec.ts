@@ -9,6 +9,7 @@ import { IsValidPipe } from './is-valid.pipe';
 import { IsTodayPipe } from './is-today.pipe';
 import { IsWeekendPipe } from './is-weekend.pipe';
 import { IsSameMonthPipe } from './is-same-month.pipe';
+import { IsSameYearPipe } from './is-same-year.pipe';
 
 describe('Is..? ', () => {
   // Two params
@@ -66,6 +67,20 @@ describe('Is..? ', () => {
       pipe: new IsSameMonthPipe(),
       dateLeft: new Date(2000, 0, 31),
       dateRight: new Date(2000, 1, 1),
+      expected: false
+    },
+
+    // IsSameYearPipe
+    {
+      pipe: new IsSameYearPipe(),
+      dateLeft: new Date(2000, 0, 31),
+      dateRight: new Date(2000, 0, 1),
+      expected: true
+    },
+    {
+      pipe: new IsSameYearPipe(),
+      dateLeft: new Date(2000, 0, 31),
+      dateRight: new Date(2001, 1, 1),
       expected: false
     }
   ].forEach(test => {

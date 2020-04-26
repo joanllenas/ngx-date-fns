@@ -117,6 +117,7 @@ import { IsWeekendPipe } from './is-weekend.pipe';
 import { IsTodayPipe } from './is-today.pipe';
 import { IsSameMonthPipe } from './is-same-month.pipe';
 import { ParsePipe } from './parse.pipe';
+import { IsSameYearPipe } from './is-same-year.pipe';
 
 const PIPES = [
   AddBusinessDaysPipe,
@@ -233,7 +234,8 @@ const PIPES = [
   IsWeekendPipe,
   IsSameMonthPipe,
   ParsePipe,
-  WeekdayNamePipe
+  WeekdayNamePipe,
+  IsSameYearPipe
 ];
 
 @NgModule({
