@@ -244,7 +244,7 @@ const PIPES = [
   exports: PIPES
 })
 export class DateFnsModule {
-  static forRoot(): ModuleWithProviders<DateFnsModule> {
+  static forRoot(): ModuleWithProviders {
     return {
       ngModule: DateFnsModule,
       providers: [DateFnsConfigurationService]
