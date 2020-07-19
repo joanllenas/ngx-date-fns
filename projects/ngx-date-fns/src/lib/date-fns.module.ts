@@ -19,6 +19,7 @@ import { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe
 import { DifferenceInCalendarISOWeeksPipe } from './difference-in-calendar-iso-weeks.pipe';
 import { DifferenceInCalendarISOWeekYearsPipe } from './difference-in-calendar-iso-week-years.pipe';
 import { DifferenceInCalendarMonthsPipe } from './difference-in-calendar-months.pipe';
+import { DifferenceInCalendarQuartersPipe } from './difference-in-calendar-quarters.pipe';
 import { DifferenceInCalendarWeeksPipe } from './difference-in-calendar-weeks.pipe';
 import { DifferenceInCalendarYearsPipe } from './difference-in-calendar-years.pipe';
 import { DifferenceInDaysPipe } from './difference-in-days.pipe';
@@ -136,6 +137,7 @@ const PIPES = [
   DifferenceInCalendarDaysPipe,
   DifferenceInCalendarISOWeeksPipe,
   DifferenceInCalendarISOWeekYearsPipe,
+  DifferenceInCalendarQuartersPipe,
   DifferenceInCalendarMonthsPipe,
   DifferenceInCalendarWeeksPipe,
   DifferenceInCalendarYearsPipe,
