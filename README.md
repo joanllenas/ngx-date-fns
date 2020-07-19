@@ -159,7 +159,8 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 
 - [dfnsFormat](https://date-fns.org/v2.0.1/docs/format) _([impure](#pure-or-impure))_
   - [dfnsFormatPure](https://date-fns.org/v2.0.1/docs/format)
-- [dfnsFormatDistance](https://date-fns.org/v2.0.1/docs/formatDistance) _(impure)_
+- [dfnsFormatDistance](https://date-fns.org/v2.0.1/docs/formatDistance) _([impure](#pure-or-impure))_
+  - [dfnsFormatDistancePure](https://date-fns.org/v2.0.1/docs/formatDistance)
 - [dfnsFormatDistanceStrict](https://date-fns.org/v2.0.1/docs/formatDistanceStrict) _(impure)_
 - [dfnsFormatDistanceToNow](https://date-fns.org/v2.0.1/docs/formatDistanceToNow) _(impure)_
 
