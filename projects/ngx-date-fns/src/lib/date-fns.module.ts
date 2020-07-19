@@ -58,6 +58,7 @@ import { GetHoursPipe } from './get-hours.pipe';
 import { GetISODayPipe } from './get-iso-day.pipe';
 import { GetISOWeekPipe } from './get-iso-week.pipe';
 import { GetISOWeeksInYearPipe } from './get-iso-weeks-in-year.pipe';
+import { GetISOWeekYearPipe } from './get-iso-week-year.pipe';
 import { GetMillisecondsPipe } from './get-milliseconds.pipe';
 import { GetMinutesPipe } from './get-minutes.pipe';
 import { GetMonthPipe } from './get-month.pipe';
@@ -177,6 +178,7 @@ const PIPES = [
   GetISODayPipe,
   GetISOWeekPipe,
   GetISOWeeksInYearPipe,
+  GetISOWeekYearPipe,
   GetMillisecondsPipe,
   GetMinutesPipe,
   GetMonthPipe,

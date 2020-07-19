@@ -8,7 +8,7 @@ import { GetHoursPipe } from './get-hours.pipe';
 import { GetISODayPipe } from './get-iso-day.pipe';
 import { GetISOWeekPipe } from './get-iso-week.pipe';
 import { GetISOWeeksInYearPipe } from './get-iso-weeks-in-year.pipe';
-import { GetISOYearPipe } from './get-iso-week-year.pipe';
+import { GetISOWeekYearPipe } from './get-iso-week-year.pipe';
 import { GetMillisecondsPipe } from './get-milliseconds.pipe';
 import { GetMinutesPipe } from './get-minutes.pipe';
 import { GetMonthPipe } from './get-month.pipe';
@@ -74,7 +74,7 @@ import { es, enUS } from 'date-fns/locale';
     expected: 53
   },
   {
-    pipe: new GetISOYearPipe(),
+    pipe: new GetISOWeekYearPipe(),
     date: new Date(2005, 0, 2),
     expected: 2004
   },
