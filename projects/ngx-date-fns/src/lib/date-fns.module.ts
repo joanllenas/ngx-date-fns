@@ -15,6 +15,7 @@ import { AddWeeksPipe } from './add-weeks.pipe';
 import { AddYearsPipe } from './add-years.pipe';
 import { ClosestToPipe } from './closest-to.pipe';
 import { FormatPipe } from './format.pipe';
+import { FormatPurePipe } from './format.pure.pipe';
 import { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe';
 import { DifferenceInCalendarISOWeeksPipe } from './difference-in-calendar-iso-weeks.pipe';
 import { DifferenceInCalendarISOWeekYearsPipe } from './difference-in-calendar-iso-week-years.pipe';
@@ -239,7 +240,8 @@ const PIPES = [
   IsSameMonthPipe,
   ParsePipe,
   WeekdayNamePipe,
-  IsSameYearPipe
+  IsSameYearPipe,
+  FormatPurePipe
 ];
 
 @NgModule({
