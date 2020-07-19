@@ -119,6 +119,7 @@ export * from './difference-in-calendar-quarters.pipe';
 export * from './get-iso-week-year.pipe';
 export * from './format.pure.pipe';
 export * from './format-distance.pure.pipe';
+export * from './format-distance-strict.pure.pipe';
 
 // Other stuff
 export * from './types';

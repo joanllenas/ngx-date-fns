@@ -2,6 +2,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { es } from 'date-fns/locale';
 import { FormatDistanceStrictPipe } from './format-distance-strict.pipe';
+import { FormatDistanceStrictPurePipe } from './format-distance-strict.pure.pipe';
 
 describe('FormatDistanceStrictPipe', () => {
   let pipe: FormatDistanceStrictPipe;
@@ -74,6 +75,30 @@ describe('FormatDistanceStrictPipe', () => {
     expect(
       pipe.transform(new Date(2016, 7, 1), new Date(2015, 0, 1), {
         locale: es,
+        roundingMethod: 'floor'
+      })
+    ).toBe('1 año');
+  });
+});
+
+describe('FormatDistanceStrictPipe Pure', () => {
+  it('should display the distance between 1 August 2016 and 1 January 2015 in Spanish', () => {
+    const pipe = new FormatDistanceStrictPurePipe(
+      new DateFnsConfigurationService()
+    );
+    expect(
+      pipe.transform(new Date(2016, 7, 1), new Date(2015, 0, 1), {
+        locale: es,
+        roundingMethod: 'floor'
+      })
+    ).toBe('1 año');
+  });
+  it('should display the distance between 1 August 2016 and 1 January 2015 in Spanish when locale provided via config', () => {
+    const conf = new DateFnsConfigurationService();
+    conf.setLocale(es);
+    const pipe = new FormatDistanceStrictPurePipe(conf);
+    expect(
+      pipe.transform(new Date(2016, 7, 1), new Date(2015, 0, 1), {
         roundingMethod: 'floor'
       })
     ).toBe('1 año');
