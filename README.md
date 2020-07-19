@@ -83,7 +83,7 @@ hace 6 días
 
 ## Working with locales
 
-> All locale aware pipes use English by default.
+> All locale-aware pipes use English by default.
 
 ### Changing locale globally
 
@@ -138,13 +138,27 @@ export class AppComponent {
 }
 ```
 
+### _Pure_ or _impure_?
+
+Should I use the _pure_ or _impure_ version of the locale-aware pipes?
+
+The answer is quite simple:
+
+- Do you set the locale only once when the application starts?
+  - Use only _pure_ pipes.
+- Do you need to change the locale at runtime?
+  - Use _impure_ pipes.
+
+The main difference is that _pure_ pipes do not get notified when the locale is changed via `DateFnsConfiguration.setLocale(locale: Locale)`, because the instance is not kept in memory. Impure _pipes_, on the other hand, are kept in memory and listen for Locale change notifications.
+
 ## Available pipes
 
 > All pipes are pure unless stated otherwise.
 
 #### Format
 
-- [dfnsFormat](https://date-fns.org/v2.0.1/docs/format) _(impure)_
+- [dfnsFormat](https://date-fns.org/v2.0.1/docs/format) _([impure](#pure-or-impure))_
+  - [dfnsFormatPure](https://date-fns.org/v2.0.1/docs/format)
 - [dfnsFormatDistance](https://date-fns.org/v2.0.1/docs/formatDistance) _(impure)_
 - [dfnsFormatDistanceStrict](https://date-fns.org/v2.0.1/docs/formatDistanceStrict) _(impure)_
 - [dfnsFormatDistanceToNow](https://date-fns.org/v2.0.1/docs/formatDistanceToNow) _(impure)_
