@@ -115,6 +115,8 @@ export * from './is-same-month.pipe';
 export * from './parse.pipe';
 export * from './utils/weekday-name.pipe';
 export * from './is-same-year.pipe';
+export * from './difference-in-calendar-quarters.pipe';
+export * from './get-iso-week-year.pipe';
 
 // Other stuff
 export * from './types';
