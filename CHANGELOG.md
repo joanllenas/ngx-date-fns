@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.3.2](https://github.com/joanllenas/ngx-date-fns/compare/v6.3.1...v6.3.2) (2020-07-19)
+
+
+### Bug Fixes
+
+* **pipes:** added missing DifferenceInCalendarQuartersPipe pipe to module ([891ea66](https://github.com/joanllenas/ngx-date-fns/commit/891ea6646937e14e1c4f7fc66b84412042272e7e))
+* **pipes:** added missing GetISOWeekYearPipe pipe to the module ([d4650c2](https://github.com/joanllenas/ngx-date-fns/commit/d4650c2d25c9d8fd74b7879fd0fce9ecef50f289))
+* **pipes:** added missing pipes to public api ([f361106](https://github.com/joanllenas/ngx-date-fns/commit/f3611068b90d51ec99087abf8a006ac43d5f04fe))
+
 ### [6.3.1](https://github.com/joanllenas/ngx-date-fns/compare/v6.3.0...v6.3.1) (2020-06-29)
 
 
