@@ -27,6 +27,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { es, enUS } from 'date-fns/locale';
 import { GetWeekPurePipe } from './get-week.pure.pipe';
+import { GetWeekOfMonthPurePipe } from './get-week-of-month.pure.pipe';
 
 [
   {
@@ -258,6 +259,27 @@ const MyChangeDetector = class extends ChangeDetectorRef {
       locale: enUS
     },
     expected: 2
+  },
+  // GetWeekOfMonthPurePipe
+  {
+    pipe: new GetWeekOfMonthPurePipe(new DateFnsConfigurationService()),
+    date: new Date(2019, 0, 6),
+    options: {
+      weekStartsOn: 0 as DateFnsWeekIndex
+    },
+    expected: 2
+  },
+  {
+    pipe: (() => {
+      const conf = new DateFnsConfigurationService();
+      conf.setLocale(es);
+      return new GetWeekOfMonthPurePipe(conf);
+    })(),
+    date: new Date(2020, 1, 2),
+    options: {
+      locale: es
+    },
+    expected: 1
   },
   // GetWeeksInMonthPipe
   {
