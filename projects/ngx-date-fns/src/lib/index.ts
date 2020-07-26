@@ -127,6 +127,7 @@ export * from './get-weeks-in-month.pure.pipe';
 export * from './get-week-year.pure.pipe';
 export * from './start-of-week.pure.pipe';
 export * from './start-of-week-year.pure.pipe';
+export * from './last-day-of-week.pure.pipe';
 
 // Other stuff
 export * from './types';

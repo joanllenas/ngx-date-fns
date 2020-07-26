@@ -290,7 +290,8 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 
 #### Last Day Of
 
-- [dfnsLastDayOfWeek](https://date-fns.org/v2.0.1/docs/lastDayOfWeek) _(impure)_
+- [dfnsLastDayOfWeek](https://date-fns.org/v2.0.1/docs/lastDayOfWeek) _([impure](#pure-or-impure))_
+  - [dfnsLastDayOfWeekPure](https://date-fns.org/v2.0.1/docs/lastDayOfWeek)
 - [dfnsLastDayOfISOWeek](https://date-fns.org/v2.0.1/docs/lastDayOfISOWeek)
 - [dfnsLastDayOfMonth](https://date-fns.org/v2.0.1/docs/lastDayOfMonth)
 - [dfnsLastDayOfQuarter](https://date-fns.org/v2.0.1/docs/lastDayOfQuarter)
