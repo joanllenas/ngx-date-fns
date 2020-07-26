@@ -245,6 +245,7 @@ const PIPES = [
   IsSameYearPipe,
   FormatPurePipe,
   FormatDistancePurePipe,
+  FormatDistanceStrictPurePipe,
   FormatDistanceStrictPurePipe
 ];
 
