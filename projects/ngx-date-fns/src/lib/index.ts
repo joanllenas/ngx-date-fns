@@ -125,6 +125,7 @@ export * from './get-week.pure.pipe';
 export * from './get-week-of-month.pure.pipe';
 export * from './get-weeks-in-month.pure.pipe';
 export * from './get-week-year.pure.pipe';
+export * from './start-of-week.pure.pipe';
 
 // Other stuff
 export * from './types';
