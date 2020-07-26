@@ -2,7 +2,6 @@ import { ChangeDetectorRef } from '@angular/core';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { es } from 'date-fns/locale';
 import { FormatDistanceToNowPipe } from './format-distance-to-now.pipe';
-import { FormatDistanceToNowPurePipe } from './format-distance-to-now.pure.pipe';
 
 describe('FormatDistanceToNowPipe', () => {
   let pipe: FormatDistanceToNowPipe;
@@ -58,31 +57,5 @@ describe('FormatDistanceToNowPipe', () => {
     expect(pipe.transform(new Date(2016, 7, 1), { locale: es })).toBe(
       'más de 1 año'
     );
-  });
-});
-
-describe('FormatDistanceToNowPipe Pure', () => {
-  beforeEach(() => {
-    jasmine.clock().uninstall();
-    jasmine.clock().install();
-    jasmine.clock().mockDate(new Date(2015, 0, 1));
-  });
-
-  afterEach(() => {
-    jasmine.clock().uninstall();
-  });
-
-  it('should display output correctly', () => {
-    const pipe = new FormatDistanceToNowPurePipe(
-      new DateFnsConfigurationService()
-    );
-    expect(pipe.transform(new Date(2014, 6, 2))).toBe('6 months');
-  });
-
-  it('should display output correctly when providing "locale" via config', () => {
-    const conf = new DateFnsConfigurationService();
-    conf.setLocale(es);
-    const pipe = new FormatDistanceToNowPurePipe(conf);
-    expect(pipe.transform(new Date(2016, 7, 1))).toBe('más de 1 año');
   });
 });
