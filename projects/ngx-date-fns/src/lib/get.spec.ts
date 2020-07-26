@@ -17,7 +17,7 @@ import { GetSecondsPipe } from './get-seconds.pipe';
 import { GetTimePipe } from './get-time.pipe';
 import { GetYearPipe } from './get-year.pipe';
 import { GetUnixTimePipe } from './get-unix-time.pipe';
-import { GetWeekPipe } from './get-week';
+import { GetWeekPipe } from './get-week.pipe';
 import { DateFnsWeekIndex, DateFnsFirstWeekDays } from './types';
 import { GetWeekOfMonthPipe } from './get-week-of-month.pipe';
 import { GetWeeksInMonthPipe } from './get-weeks-in-month.pipe';
@@ -26,6 +26,7 @@ import { GetWeekYearPipe } from './get-week-year.pipe';
 import { ChangeDetectorRef } from '@angular/core';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { es, enUS } from 'date-fns/locale';
+import { GetWeekPurePipe } from './get-week.pure.pipe';
 
 [
   {
@@ -197,6 +198,21 @@ const MyChangeDetector = class extends ChangeDetectorRef {
       locale: enUS
     },
     expected: 6
+  },
+  // GetWeekPurePipe
+  {
+    pipe: new GetWeekPurePipe(new DateFnsConfigurationService()),
+    date: new Date(2005, 0, 2),
+    expected: 2
+  },
+  {
+    pipe: (() => {
+      const conf = new DateFnsConfigurationService();
+      conf.setLocale(es);
+      return new GetWeekPurePipe(conf);
+    })(),
+    date: new Date(2020, 1, 2),
+    expected: 5
   },
   // GetWeekOfMonthPipe
   {

@@ -63,7 +63,7 @@ export * from './get-seconds.pipe';
 export * from './get-time.pipe';
 export * from './get-year.pipe';
 export * from './get-unix-time.pipe';
-export * from './get-week';
+export * from './get-week.pipe';
 export * from './get-week-of-month.pipe';
 export * from './get-weeks-in-month.pipe';
 export * from './get-decade.pipe';
@@ -121,6 +121,7 @@ export * from './format.pure.pipe';
 export * from './format-distance.pure.pipe';
 export * from './format-distance-strict.pure.pipe';
 export * from './format-distance-to-now.pure.pipe';
+export * from './get-week.pure.pipe';
 
 // Other stuff
 export * from './types';
