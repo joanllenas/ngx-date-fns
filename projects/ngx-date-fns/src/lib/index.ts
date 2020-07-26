@@ -122,6 +122,7 @@ export * from './format-distance.pure.pipe';
 export * from './format-distance-strict.pure.pipe';
 export * from './format-distance-to-now.pure.pipe';
 export * from './get-week.pure.pipe';
+export * from './get-week-of-month.pure.pipe';
 
 // Other stuff
 export * from './types';
