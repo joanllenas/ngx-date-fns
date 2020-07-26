@@ -63,7 +63,7 @@ export * from './get-seconds.pipe';
 export * from './get-time.pipe';
 export * from './get-year.pipe';
 export * from './get-unix-time.pipe';
-export * from './get-week';
+export * from './get-week.pipe';
 export * from './get-week-of-month.pipe';
 export * from './get-weeks-in-month.pipe';
 export * from './get-decade.pipe';
@@ -117,6 +117,18 @@ export * from './utils/weekday-name.pipe';
 export * from './is-same-year.pipe';
 export * from './difference-in-calendar-quarters.pipe';
 export * from './get-iso-week-year.pipe';
+export * from './format.pure.pipe';
+export * from './format-distance.pure.pipe';
+export * from './format-distance-strict.pure.pipe';
+export * from './format-distance-to-now.pure.pipe';
+export * from './get-week.pure.pipe';
+export * from './get-week-of-month.pure.pipe';
+export * from './get-weeks-in-month.pure.pipe';
+export * from './get-week-year.pure.pipe';
+export * from './start-of-week.pure.pipe';
+export * from './start-of-week-year.pure.pipe';
+export * from './last-day-of-week.pure.pipe';
+export * from './parse.pure.pipe';
 
 // Other stuff
 export * from './types';

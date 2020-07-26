@@ -15,6 +15,9 @@ import { AddWeeksPipe } from './add-weeks.pipe';
 import { AddYearsPipe } from './add-years.pipe';
 import { ClosestToPipe } from './closest-to.pipe';
 import { FormatPipe } from './format.pipe';
+import { FormatPurePipe } from './format.pure.pipe';
+import { FormatDistancePurePipe } from './format-distance.pure.pipe';
+import { FormatDistanceStrictPurePipe } from './format-distance-strict.pure.pipe';
 import { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe';
 import { DifferenceInCalendarISOWeeksPipe } from './difference-in-calendar-iso-weeks.pipe';
 import { DifferenceInCalendarISOWeekYearsPipe } from './difference-in-calendar-iso-week-years.pipe';
@@ -68,7 +71,7 @@ import { GetSecondsPipe } from './get-seconds.pipe';
 import { GetTimePipe } from './get-time.pipe';
 import { GetYearPipe } from './get-year.pipe';
 import { GetUnixTimePipe } from './get-unix-time.pipe';
-import { GetWeekPipe } from './get-week';
+import { GetWeekPipe } from './get-week.pipe';
 import { GetWeekOfMonthPipe } from './get-week-of-month.pipe';
 import { GetWeeksInMonthPipe } from './get-weeks-in-month.pipe';
 import { GetDecadePipe } from './get-decade.pipe';
@@ -120,6 +123,14 @@ import { IsTodayPipe } from './is-today.pipe';
 import { IsSameMonthPipe } from './is-same-month.pipe';
 import { ParsePipe } from './parse.pipe';
 import { IsSameYearPipe } from './is-same-year.pipe';
+import { GetWeekPurePipe } from './get-week.pure.pipe';
+import { GetWeekOfMonthPurePipe } from './get-week-of-month.pure.pipe';
+import { GetWeeksInMonthPurePipe } from './get-weeks-in-month.pure.pipe';
+import { GetWeekYearPurePipe } from './get-week-year.pure.pipe';
+import { StartOfWeekPurePipe } from './start-of-week.pure.pipe';
+import { StartOfWeekYearPurePipe } from './start-of-week-year.pure.pipe';
+import { LastDayOfWeekPurePipe } from './last-day-of-week.pure.pipe';
+import { ParsePurePipe } from './parse.pure.pipe';
 
 const PIPES = [
   AddBusinessDaysPipe,
@@ -239,7 +250,19 @@ const PIPES = [
   IsSameMonthPipe,
   ParsePipe,
   WeekdayNamePipe,
-  IsSameYearPipe
+  IsSameYearPipe,
+  FormatPurePipe,
+  FormatDistancePurePipe,
+  FormatDistanceStrictPurePipe,
+  FormatDistanceStrictPurePipe,
+  GetWeekPurePipe,
+  GetWeekOfMonthPurePipe,
+  GetWeeksInMonthPurePipe,
+  GetWeekYearPurePipe,
+  StartOfWeekPurePipe,
+  StartOfWeekYearPurePipe,
+  LastDayOfWeekPurePipe,
+  ParsePurePipe
 ];
 
 @NgModule({

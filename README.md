@@ -83,7 +83,7 @@ hace 6 días
 
 ## Working with locales
 
-> All locale aware pipes use English by default.
+> All locale-aware pipes use English by default.
 
 ### Changing locale globally
 
@@ -138,20 +138,38 @@ export class AppComponent {
 }
 ```
 
+### _Pure_ or _impure_?
+
+Should I use the _pure_ or _impure_ version of the locale-aware pipes?
+
+The answer is quite simple:
+
+- Do you set the locale only once when the application starts?
+  - Use only _pure_ pipes.
+- Do you need to change the locale at runtime?
+  - Use _impure_ pipes.
+
+The main difference is that _pure_ pipes do not get notified when the locale is changed via `DateFnsConfiguration.setLocale(locale: Locale)`, because the instance is not kept in memory. Impure _pipes_, on the other hand, are kept in memory and listen for Locale change notifications.
+
 ## Available pipes
 
 > All pipes are pure unless stated otherwise.
 
 #### Format
 
-- [dfnsFormat](https://date-fns.org/v2.0.1/docs/format) _(impure)_
-- [dfnsFormatDistance](https://date-fns.org/v2.0.1/docs/formatDistance) _(impure)_
-- [dfnsFormatDistanceStrict](https://date-fns.org/v2.0.1/docs/formatDistanceStrict) _(impure)_
-- [dfnsFormatDistanceToNow](https://date-fns.org/v2.0.1/docs/formatDistanceToNow) _(impure)_
+- [dfnsFormat](https://date-fns.org/v2.0.1/docs/format) _([impure](#pure-or-impure))_
+  - [dfnsFormatPure](https://date-fns.org/v2.0.1/docs/format)
+- [dfnsFormatDistance](https://date-fns.org/v2.0.1/docs/formatDistance) _([impure](#pure-or-impure))_
+  - [dfnsFormatDistancePure](https://date-fns.org/v2.0.1/docs/formatDistance)
+- [dfnsFormatDistanceStrict](https://date-fns.org/v2.0.1/docs/formatDistanceStrict) _([impure](#pure-or-impure))_
+  - [dfnsFormatDistanceStrictPure](https://date-fns.org/v2.0.1/docs/formatDistanceStrict)
+- [dfnsFormatDistanceToNow](https://date-fns.org/v2.0.1/docs/formatDistanceToNow) _([impure](#pure-or-impure))_
+  - [dfnsFormatDistanceToNowPure](https://date-fns.org/v2.0.1/docs/formatDistanceToNow)
 
 #### Misc
 
-- [dfnsParse](https://date-fns.org/v2.0.1/docs/parse) _(impure)_
+- [dfnsParse](https://date-fns.org/v2.0.1/docs/parse) _([impure](#pure-or-impure))_
+- [dfnsParsePure](https://date-fns.org/v2.0.1/docs/parse)
 - [dfnsClosestTo](https://date-fns.org/v2.0.1/docs/closestTo)
 - [dfnsMin](https://date-fns.org/v2.0.1/docs/min)
 - [dfnsMax](https://date-fns.org/v2.0.1/docs/max)
@@ -177,11 +195,15 @@ export class AppComponent {
 - [dfnsGetISOWeeksInYear](https://date-fns.org/v2.0.1/docs/getISOWeeksInYear)
 - [dfnsGetISOWeekYear](https://date-fns.org/v2.0.1/docs/getISOWeekYear)
 - [dfnsGetUnixTime](https://date-fns.org/v2.0.1/docs/getUnixTime)
-- [dfnsGetWeek](https://date-fns.org/v2.0.1/docs/getWeek) _(impure)_
-- [dfnsGetWeekOfMonth](https://date-fns.org/v2.0.1/docs/getWeekOfMonth) _(impure)_
-- [dfnsGetWeeksInMonth](https://date-fns.org/v2.0.1/docs/getWeeksInMonth) _(impure)_
+- [dfnsGetWeek](https://date-fns.org/v2.0.1/docs/getWeek) _([impure](#pure-or-impure))_
+  - [dfnsGetWeekPure](https://date-fns.org/v2.0.1/docs/getWeek)
+- [dfnsGetWeekOfMonth](https://date-fns.org/v2.0.1/docs/getWeekOfMonth) _([impure](#pure-or-impure))_
+  - [dfnsGetWeekOfMonthPure](https://date-fns.org/v2.0.1/docs/getWeekOfMonth)
+- [dfnsGetWeeksInMonth](https://date-fns.org/v2.0.1/docs/getWeeksInMonth) _([impure](#pure-or-impure))_
+  - [dfnsGetWeeksInMonthPure](https://date-fns.org/v2.0.1/docs/getWeeksInMonth)
 - [dfnsGetDecade](https://date-fns.org/v2.0.1/docs/getDecade)
-- [dfnsGetWeekYear](https://date-fns.org/v2.0.1/docs/getWeekYear) _(impure)_
+- [dfnsGetWeekYear](https://date-fns.org/v2.0.1/docs/getWeekYear) _([impure](#pure-or-impure))_
+  - [dfnsGetWeekYearPure](https://date-fns.org/v2.0.1/docs/getWeekYear)
 
 #### Difference
 
@@ -256,18 +278,21 @@ export class AppComponent {
 - [dfnsStartOfToday](https://date-fns.org/v2.0.1/docs/startOfToday)
 - [dfnsStartOfTomorrow](https://date-fns.org/v2.0.1/docs/startOfTomorrow)
 - [dfnsStartOfYesterday](https://date-fns.org/v2.0.1/docs/startOfYesterday)
-- [dfnsStartOfWeek](https://date-fns.org/v2.0.1/docs/startOfWeek) _(impure)_
+- [dfnsStartOfWeek](https://date-fns.org/v2.0.1/docs/startOfWeek) _([impure](#pure-or-impure))_
+  - [dfnsStartOfWeekPure](https://date-fns.org/v2.0.1/docs/startOfWeek)
 - [dfnsStartOfISOWeek](https://date-fns.org/v2.0.1/docs/startOfISOWeek)
 - [dfnsStartOfMonth](https://date-fns.org/v2.0.1/docs/startOfMonth)
 - [dfnsStartOfQuarter](https://date-fns.org/v2.0.1/docs/startOfQuarter)
 - [dfnsStartOfYear](https://date-fns.org/v2.0.1/docs/startOfYear)
 - [dfnsStartOfISOWeekYear](https://date-fns.org/v2.0.1/docs/startOfISOWeekYear)
 - [dfnsStartOfDecade](https://date-fns.org/v2.0.1/docs/startOfDecade)
-- [dfnsStartOfWeekYear](https://date-fns.org/v2.0.1/docs/startOfWeekYear) _(impure)_
+- [dfnsStartOfWeekYear](https://date-fns.org/v2.0.1/docs/startOfWeekYear) _([impure](#pure-or-impure))_
+  - [dfnsStartOfWeekYearPure](https://date-fns.org/v2.0.1/docs/startOfWeekYear)
 
 #### Last Day Of
 
-- [dfnsLastDayOfWeek](https://date-fns.org/v2.0.1/docs/lastDayOfWeek) _(impure)_
+- [dfnsLastDayOfWeek](https://date-fns.org/v2.0.1/docs/lastDayOfWeek) _([impure](#pure-or-impure))_
+  - [dfnsLastDayOfWeekPure](https://date-fns.org/v2.0.1/docs/lastDayOfWeek)
 - [dfnsLastDayOfISOWeek](https://date-fns.org/v2.0.1/docs/lastDayOfISOWeek)
 - [dfnsLastDayOfMonth](https://date-fns.org/v2.0.1/docs/lastDayOfMonth)
 - [dfnsLastDayOfQuarter](https://date-fns.org/v2.0.1/docs/lastDayOfQuarter)
@@ -293,7 +318,9 @@ export class AppComponent {
 
 A collection of utilities built around date-fns functions.
 
-### dfnsWeekdayName _(impure)_
+### dfnsWeekdayName
+
+> This pipe is ([impure](#pure-or-impure))
 
 Given a weekday number, returns its name.
 
