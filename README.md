@@ -318,7 +318,9 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 
 A collection of utilities built around date-fns functions.
 
-### dfnsWeekdayName _(impure)_
+### dfnsWeekdayName
+
+> This pipe is ([impure](#pure-or-impure))
 
 Given a weekday number, returns its name.
 
