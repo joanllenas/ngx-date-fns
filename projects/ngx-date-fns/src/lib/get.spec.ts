@@ -317,7 +317,7 @@ const MyChangeDetector = class extends ChangeDetectorRef {
     options: { locale: enUS },
     expected: 5
   },
-  // GetWeeksInMonthPipe
+  // GetWeeksInMonthPurePipe
   {
     pipe: new GetWeeksInMonthPurePipe(new DateFnsConfigurationService()),
     date: new Date(2015, 1, 8),
