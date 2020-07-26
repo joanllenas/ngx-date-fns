@@ -71,7 +71,7 @@ import { GetSecondsPipe } from './get-seconds.pipe';
 import { GetTimePipe } from './get-time.pipe';
 import { GetYearPipe } from './get-year.pipe';
 import { GetUnixTimePipe } from './get-unix-time.pipe';
-import { GetWeekPipe } from './get-week';
+import { GetWeekPipe } from './get-week.pipe';
 import { GetWeekOfMonthPipe } from './get-week-of-month.pipe';
 import { GetWeeksInMonthPipe } from './get-weeks-in-month.pipe';
 import { GetDecadePipe } from './get-decade.pipe';
@@ -123,6 +123,7 @@ import { IsTodayPipe } from './is-today.pipe';
 import { IsSameMonthPipe } from './is-same-month.pipe';
 import { ParsePipe } from './parse.pipe';
 import { IsSameYearPipe } from './is-same-year.pipe';
+import { GetWeekPurePipe } from './get-week.pure.pipe';
 
 const PIPES = [
   AddBusinessDaysPipe,
@@ -246,7 +247,8 @@ const PIPES = [
   FormatPurePipe,
   FormatDistancePurePipe,
   FormatDistanceStrictPurePipe,
-  FormatDistanceStrictPurePipe
+  FormatDistanceStrictPurePipe,
+  GetWeekPurePipe
 ];
 
 @NgModule({
