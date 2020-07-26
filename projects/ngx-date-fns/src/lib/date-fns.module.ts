@@ -18,6 +18,7 @@ import { FormatPipe } from './format.pipe';
 import { FormatPurePipe } from './format.pure.pipe';
 import { FormatDistancePurePipe } from './format-distance.pure.pipe';
 import { FormatDistanceStrictPurePipe } from './format-distance-strict.pure.pipe';
+import { FormatDistanceToNowPurePipe } from './format-distance-to-now.pure.pipe';
 import { DifferenceInCalendarDaysPipe } from './difference-in-calendar-days.pipe';
 import { DifferenceInCalendarISOWeeksPipe } from './difference-in-calendar-iso-weeks.pipe';
 import { DifferenceInCalendarISOWeekYearsPipe } from './difference-in-calendar-iso-week-years.pipe';
@@ -254,7 +255,7 @@ const PIPES = [
   FormatPurePipe,
   FormatDistancePurePipe,
   FormatDistanceStrictPurePipe,
-  FormatDistanceStrictPurePipe,
+  FormatDistanceToNowPurePipe,
   GetWeekPurePipe,
   GetWeekOfMonthPurePipe,
   GetWeeksInMonthPurePipe,
