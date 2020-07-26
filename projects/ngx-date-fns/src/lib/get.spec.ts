@@ -28,6 +28,7 @@ import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { es, enUS } from 'date-fns/locale';
 import { GetWeekPurePipe } from './get-week.pure.pipe';
 import { GetWeekOfMonthPurePipe } from './get-week-of-month.pure.pipe';
+import { GetWeeksInMonthPurePipe } from './get-weeks-in-month.pure.pipe';
 
 [
   {
@@ -276,9 +277,6 @@ const MyChangeDetector = class extends ChangeDetectorRef {
       return new GetWeekOfMonthPurePipe(conf);
     })(),
     date: new Date(2020, 1, 2),
-    options: {
-      locale: es
-    },
     expected: 1
   },
   // GetWeeksInMonthPipe
@@ -317,6 +315,22 @@ const MyChangeDetector = class extends ChangeDetectorRef {
     date: new Date(2020, 2, 15),
     options: { locale: enUS },
     expected: 5
+  },
+  // GetWeeksInMonthPipe
+  {
+    pipe: new GetWeeksInMonthPurePipe(new DateFnsConfigurationService()),
+    date: new Date(2015, 1, 8),
+    options: undefined,
+    expected: 4
+  },
+  {
+    pipe: (() => {
+      const conf = new DateFnsConfigurationService();
+      conf.setLocale(es);
+      return new GetWeeksInMonthPurePipe(conf);
+    })(),
+    date: new Date(2020, 2, 15),
+    expected: 6
   },
   // GetWeekYearPipe
   {

@@ -123,6 +123,7 @@ export * from './format-distance-strict.pure.pipe';
 export * from './format-distance-to-now.pure.pipe';
 export * from './get-week.pure.pipe';
 export * from './get-week-of-month.pure.pipe';
+export * from './get-weeks-in-month.pure.pipe';
 
 // Other stuff
 export * from './types';

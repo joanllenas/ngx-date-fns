@@ -125,6 +125,7 @@ import { ParsePipe } from './parse.pipe';
 import { IsSameYearPipe } from './is-same-year.pipe';
 import { GetWeekPurePipe } from './get-week.pure.pipe';
 import { GetWeekOfMonthPurePipe } from './get-week-of-month.pure.pipe';
+import { GetWeeksInMonthPurePipe } from './get-weeks-in-month.pure.pipe';
 
 const PIPES = [
   AddBusinessDaysPipe,
@@ -250,7 +251,8 @@ const PIPES = [
   FormatDistanceStrictPurePipe,
   FormatDistanceStrictPurePipe,
   GetWeekPurePipe,
-  GetWeekOfMonthPurePipe
+  GetWeekOfMonthPurePipe,
+  GetWeeksInMonthPurePipe
 ];
 
 @NgModule({
