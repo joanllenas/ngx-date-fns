@@ -16,6 +16,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { es, enUS } from 'date-fns/locale';
 import { StartOfWeekPurePipe } from './start-of-week.pure.pipe';
+import { StartOfWeekYearPurePipe } from './start-of-week-year.pure.pipe';
 
 [
   {
@@ -142,6 +143,21 @@ const MyChangeDetector = class extends ChangeDetectorRef {
       locale: enUS
     },
     expected: new Date(2004, 11, 26)
+  },
+  // StartOfWeekYearPurePipe
+  {
+    pipe: new StartOfWeekYearPurePipe(new DateFnsConfigurationService()),
+    date: new Date(2005, 6, 2),
+    expected: new Date(2004, 11, 26)
+  },
+  {
+    pipe: (() => {
+      const conf = new DateFnsConfigurationService();
+      conf.setLocale(es);
+      return new StartOfWeekYearPurePipe(conf);
+    })(),
+    date: new Date(2005, 6, 2),
+    expected: new Date(2004, 11, 27)
   },
   // StartOfWeekPipe
   {

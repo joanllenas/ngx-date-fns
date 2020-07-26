@@ -285,7 +285,8 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 - [dfnsStartOfYear](https://date-fns.org/v2.0.1/docs/startOfYear)
 - [dfnsStartOfISOWeekYear](https://date-fns.org/v2.0.1/docs/startOfISOWeekYear)
 - [dfnsStartOfDecade](https://date-fns.org/v2.0.1/docs/startOfDecade)
-- [dfnsStartOfWeekYear](https://date-fns.org/v2.0.1/docs/startOfWeekYear) _(impure)_
+- [dfnsStartOfWeekYear](https://date-fns.org/v2.0.1/docs/startOfWeekYear) _([impure](#pure-or-impure))_
+  - [dfnsStartOfWeekYearPure](https://date-fns.org/v2.0.1/docs/startOfWeekYear)
 
 #### Last Day Of
 

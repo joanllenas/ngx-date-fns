@@ -128,6 +128,7 @@ import { GetWeekOfMonthPurePipe } from './get-week-of-month.pure.pipe';
 import { GetWeeksInMonthPurePipe } from './get-weeks-in-month.pure.pipe';
 import { GetWeekYearPurePipe } from './get-week-year.pure.pipe';
 import { StartOfWeekPurePipe } from './start-of-week.pure.pipe';
+import { StartOfWeekYearPurePipe } from './start-of-week-year.pure.pipe';
 
 const PIPES = [
   AddBusinessDaysPipe,
@@ -256,7 +257,8 @@ const PIPES = [
   GetWeekOfMonthPurePipe,
   GetWeeksInMonthPurePipe,
   GetWeekYearPurePipe,
-  StartOfWeekPurePipe
+  StartOfWeekPurePipe,
+  StartOfWeekYearPurePipe
 ];
 
 @NgModule({
