@@ -128,6 +128,7 @@ export * from './get-week-year.pure.pipe';
 export * from './start-of-week.pure.pipe';
 export * from './start-of-week-year.pure.pipe';
 export * from './last-day-of-week.pure.pipe';
+export * from './parse.pure.pipe';
 
 // Other stuff
 export * from './types';

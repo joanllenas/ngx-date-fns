@@ -168,7 +168,8 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 
 #### Misc
 
-- [dfnsParse](https://date-fns.org/v2.0.1/docs/parse) _(impure)_
+- [dfnsParse](https://date-fns.org/v2.0.1/docs/parse) _([impure](#pure-or-impure))_
+- [dfnsParsePure](https://date-fns.org/v2.0.1/docs/parse)
 - [dfnsClosestTo](https://date-fns.org/v2.0.1/docs/closestTo)
 - [dfnsMin](https://date-fns.org/v2.0.1/docs/min)
 - [dfnsMax](https://date-fns.org/v2.0.1/docs/max)
