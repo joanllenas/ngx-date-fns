@@ -29,6 +29,7 @@ import { es, enUS } from 'date-fns/locale';
 import { GetWeekPurePipe } from './get-week.pure.pipe';
 import { GetWeekOfMonthPurePipe } from './get-week-of-month.pure.pipe';
 import { GetWeeksInMonthPurePipe } from './get-weeks-in-month.pure.pipe';
+import { GetWeekYearPurePipe } from './get-week-year.pure.pipe';
 
 [
   {
@@ -377,6 +378,22 @@ const MyChangeDetector = class extends ChangeDetectorRef {
     date: new Date(2004, 11, 26),
     options: { locale: enUS },
     expected: 2005
+  },
+  // GetWeekYearPurePipe
+  {
+    pipe: new GetWeekYearPurePipe(new DateFnsConfigurationService()),
+    date: new Date(2004, 11, 26),
+    options: { weekStartsOn: 0 as DateFnsWeekIndex },
+    expected: 2005
+  },
+  {
+    pipe: (() => {
+      const conf = new DateFnsConfigurationService();
+      conf.setLocale(es);
+      return new GetWeekYearPurePipe(conf);
+    })(),
+    date: new Date(2004, 11, 26),
+    expected: 2004
   }
 ].forEach(test => {
   describe(test.pipe.constructor.name, () => {

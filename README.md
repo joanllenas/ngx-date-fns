@@ -201,7 +201,8 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 - [dfnsGetWeeksInMonth](https://date-fns.org/v2.0.1/docs/getWeeksInMonth) _([impure](#pure-or-impure))_
   - [dfnsGetWeeksInMonthPure](https://date-fns.org/v2.0.1/docs/getWeeksInMonth)
 - [dfnsGetDecade](https://date-fns.org/v2.0.1/docs/getDecade)
-- [dfnsGetWeekYear](https://date-fns.org/v2.0.1/docs/getWeekYear) _(impure)_
+- [dfnsGetWeekYear](https://date-fns.org/v2.0.1/docs/getWeekYear) _([impure](#pure-or-impure))_
+  - [dfnsGetWeekYearPure](https://date-fns.org/v2.0.1/docs/getWeekYear)
 
 #### Difference
 
