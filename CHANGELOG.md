@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.4.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.3.2...v6.4.0) (2020-07-26)
+
+
+### Features
+
+* **pipes:** added dfnsFormatDistancePure pipe ([ce45ff1](https://github.com/joanllenas/ngx-date-fns/commit/ce45ff18d4d177492f54756f9e76c0251b2de354)), closes [#160](https://github.com/joanllenas/ngx-date-fns/issues/160)
+* **pipes:** added dfnsFormatDistanceStrictPure pipe ([2a22dc9](https://github.com/joanllenas/ngx-date-fns/commit/2a22dc9b5b3f00c903f1d10db5819bbd76f16943)), closes [#160](https://github.com/joanllenas/ngx-date-fns/issues/160)
+* **pipes:** added dfnsFormatDistanceToNowPure pipe [#160](https://github.com/joanllenas/ngx-date-fns/issues/160) ([27f6a03](https://github.com/joanllenas/ngx-date-fns/commit/27f6a03efd77279b87b03361063edab2aeae439b))
+* **pipes:** added dfnsGetWeekOfMonthPure pipe [#160](https://github.com/joanllenas/ngx-date-fns/issues/160) ([81a80d2](https://github.com/joanllenas/ngx-date-fns/commit/81a80d2a560fe4e634e09191fd1eb502f977901c))
+* **pipes:** added dfnsGetWeekPure pipe [#160](https://github.com/joanllenas/ngx-date-fns/issues/160) ([7abf543](https://github.com/joanllenas/ngx-date-fns/commit/7abf5431b45f6bf838652e1b33e350dad2e75dd4))
+* **pipes:** added dfnsGetWeeksInMonthPure pipe [#160](https://github.com/joanllenas/ngx-date-fns/issues/160) ([5b13287](https://github.com/joanllenas/ngx-date-fns/commit/5b13287d94a5950adf40ec4288e55c4ad27e5325))
+* **pipes:** added dfnsGetWeekYearPure pipe [#160](https://github.com/joanllenas/ngx-date-fns/issues/160) ([a50d3a8](https://github.com/joanllenas/ngx-date-fns/commit/a50d3a86e809b29d41760041fcb45447c6f8fbb6))
+* **pipes:** added dfnsLastDayOfWeekPure pipe [#160](https://github.com/joanllenas/ngx-date-fns/issues/160) ([900579e](https://github.com/joanllenas/ngx-date-fns/commit/900579ee5d7dc271ce9429ba7a2ff28a15f793eb))
+* **pipes:** added dfnsParsePure pipe [#160](https://github.com/joanllenas/ngx-date-fns/issues/160) ([9d0ca9e](https://github.com/joanllenas/ngx-date-fns/commit/9d0ca9e214b628238c31a2827a811f132a0406c6))
+* **pipes:** added dfnsStartOfWeekPure pipe [#160](https://github.com/joanllenas/ngx-date-fns/issues/160) ([eac959a](https://github.com/joanllenas/ngx-date-fns/commit/eac959a2080fda7e005433e9370c7e9c688078bd))
+* **pipes:** added dfnsStartOfWeekYearPure pipe [#160](https://github.com/joanllenas/ngx-date-fns/issues/160) ([cb203ad](https://github.com/joanllenas/ngx-date-fns/commit/cb203adf9c4e349cf867f44e93f516df28012c7b))
+* **pipes:** added new dfnsFormatPure pipe ([350eca0](https://github.com/joanllenas/ngx-date-fns/commit/350eca0f6c806a00b20429d484fc7dc83a1959a1)), closes [#160](https://github.com/joanllenas/ngx-date-fns/issues/160)
+
+
+### Bug Fixes
+
+* **pipes:** added FormatDistanceToNowPurePipe to lib module ([75848d8](https://github.com/joanllenas/ngx-date-fns/commit/75848d81694e198277b1e07e78f4c6c8b94c3f68)), closes [#160](https://github.com/joanllenas/ngx-date-fns/issues/160)
+
 ### [6.3.2](https://github.com/joanllenas/ngx-date-fns/compare/v6.3.1...v6.3.2) (2020-07-19)
 
 
