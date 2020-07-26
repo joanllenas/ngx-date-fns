@@ -151,6 +151,18 @@ The answer is quite simple:
 
 The main difference is that _pure_ pipes do not get notified when the locale is changed via `DateFnsConfiguration.setLocale(locale: Locale)`, because the instance is not kept in memory. Impure _pipes_, on the other hand, are kept in memory and listen for Locale change notifications, which adds some memory and performance overhead.
 
+## Tree shaking date-fns
+
+I'm not a build optimization expert, but in my experiments, I've found that building the app with with `--vendorChunk=false` and `--optimization=true` does a good job at removing `date-fns` functions that are not being used in your app.
+
+You can test this by downloading this repo and running:
+
+```
+npm run build:app && npm run analyze
+```
+
+This command will load a file in your browser where you will see that `date-fns` takes `63Kb`, which is significantly less than the `286Kb` of the whole library without tree shaking applied. (this, of course, will be much less after gzipping).
+
 ## Available pipes
 
 > All pipes are pure unless stated otherwise.
