@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.5.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.4.0...v6.5.0) (2020-09-15)
+
+
+### Features
+
+* **pipes:** added new dfnsParseIso pipe ([27dd817](https://github.com/joanllenas/ngx-date-fns/commit/27dd817c6cb0ee34a6e0acb6d35a71df0de6cc0d)), closes [#337](https://github.com/joanllenas/ngx-date-fns/issues/337)
+
 ## [6.4.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.3.2...v6.4.0) (2020-07-26)
 
 
