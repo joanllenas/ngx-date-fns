@@ -182,6 +182,7 @@ This command will load a file in your browser where you will see that `date-fns`
 
 - [dfnsParse](https://date-fns.org/v2.0.1/docs/parse) _([impure](#pure-or-impure))_
   - [dfnsParsePure](https://date-fns.org/v2.0.1/docs/parse)
+- [dfnsParseIso](https://date-fns.org/v2.0.1/docs/parseISO)
 - [dfnsClosestTo](https://date-fns.org/v2.0.1/docs/closestTo)
 - [dfnsMin](https://date-fns.org/v2.0.1/docs/min)
 - [dfnsMax](https://date-fns.org/v2.0.1/docs/max)

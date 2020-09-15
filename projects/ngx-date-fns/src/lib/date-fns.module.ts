@@ -132,6 +132,7 @@ import { StartOfWeekPurePipe } from './start-of-week.pure.pipe';
 import { StartOfWeekYearPurePipe } from './start-of-week-year.pure.pipe';
 import { LastDayOfWeekPurePipe } from './last-day-of-week.pure.pipe';
 import { ParsePurePipe } from './parse.pure.pipe';
+import { ParseIsoPipe } from './parse-iso.pipe';
 
 const PIPES = [
   AddBusinessDaysPipe,
@@ -263,7 +264,8 @@ const PIPES = [
   StartOfWeekPurePipe,
   StartOfWeekYearPurePipe,
   LastDayOfWeekPurePipe,
-  ParsePurePipe
+  ParsePurePipe,
+  ParseIsoPipe
 ];
 
 @NgModule({
