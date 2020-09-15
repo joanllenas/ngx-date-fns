@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TestBed, ComponentFixture, async } from '@angular/core/testing';
+import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import {
   DateFnsConfigurationService,
   DateFnsConfiguration
@@ -21,16 +21,18 @@ class TestHostComponent {
 describe('DateFnsConfigurationService', () => {
   let mockConfig: DateFnsConfiguration;
 
-  beforeEach(async(() => {
-    mockConfig = new DateFnsConfigurationService();
-    TestBed.configureTestingModule({
-      declarations: [TestHostComponent],
-      imports: [DateFnsModule.forRoot()],
-      providers: [
-        { provide: DateFnsConfigurationService, useValue: mockConfig }
-      ]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      mockConfig = new DateFnsConfigurationService();
+      TestBed.configureTestingModule({
+        declarations: [TestHostComponent],
+        imports: [DateFnsModule.forRoot()],
+        providers: [
+          { provide: DateFnsConfigurationService, useValue: mockConfig }
+        ]
+      }).compileComponents();
+    })
+  );
 
   let component: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
