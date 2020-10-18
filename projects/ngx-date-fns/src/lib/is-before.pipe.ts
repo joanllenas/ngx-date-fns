@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import isBefore from 'date-fns/isBefore';
 
@@ -8,3 +8,9 @@ export class IsBeforePipe implements PipeTransform {
     return isBefore(date, dateToCompare);
   }
 }
+
+@NgModule({
+  declarations: [IsBeforePipe],
+  exports: [IsBeforePipe]
+})
+export class IsBeforePipeModule {}

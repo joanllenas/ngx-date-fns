@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import {
@@ -22,3 +22,9 @@ export class FormatDistanceToNowPurePipe implements PipeTransform {
     return formatDistanceToNow(date, calculateLocale(options, this.config));
   }
 }
+
+@NgModule({
+  declarations: [FormatDistanceToNowPurePipe],
+  exports: [FormatDistanceToNowPurePipe]
+})
+export class FormatDistanceToNowPurePipeModule {}

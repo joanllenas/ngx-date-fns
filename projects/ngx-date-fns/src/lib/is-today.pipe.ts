@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import isToday from 'date-fns/isToday';
 
@@ -8,3 +8,9 @@ export class IsTodayPipe implements PipeTransform {
     return isToday(date);
   }
 }
+
+@NgModule({
+  declarations: [IsTodayPipe],
+  exports: [IsTodayPipe]
+})
+export class IsTodayPipeModule {}

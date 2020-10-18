@@ -2,7 +2,8 @@ import {
   Pipe,
   PipeTransform,
   OnDestroy,
-  ChangeDetectorRef
+  ChangeDetectorRef,
+  NgModule
 } from '@angular/core';
 import {
   DateFnsInputDate,
@@ -45,3 +46,9 @@ export class StartOfWeekYearPipe implements PipeTransform, OnDestroy {
     return startOfWeekYear(date, calculateLocale(options, this.config));
   }
 }
+
+@NgModule({
+  declarations: [StartOfWeekYearPipe],
+  exports: [StartOfWeekYearPipe]
+})
+export class StartOfWeekYearPipeModule {}

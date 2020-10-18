@@ -2,7 +2,8 @@ import {
   Pipe,
   PipeTransform,
   ChangeDetectorRef,
-  OnDestroy
+  OnDestroy,
+  NgModule
 } from '@angular/core';
 import {
   DateFnsConfigurationService,
@@ -44,3 +45,9 @@ export class FormatPipe implements PipeTransform, OnDestroy {
     return format(date, dateFormat, calculateLocale(options, this.config));
   }
 }
+
+@NgModule({
+  declarations: [FormatPipe],
+  exports: [FormatPipe]
+})
+export class FormatPipeModule {}

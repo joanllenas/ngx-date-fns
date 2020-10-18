@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import isSameMonth from 'date-fns/isSameMonth';
 
@@ -8,3 +8,9 @@ export class IsSameMonthPipe implements PipeTransform {
     return isSameMonth(dateLeft, dateRight);
   }
 }
+
+@NgModule({
+  declarations: [IsSameMonthPipe],
+  exports: [IsSameMonthPipe]
+})
+export class IsSameMonthPipeModule {}

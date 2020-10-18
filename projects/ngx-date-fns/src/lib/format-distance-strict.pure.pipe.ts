@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import formatDistanceStrict from 'date-fns/formatDistanceStrict';
 import {
@@ -28,3 +28,9 @@ export class FormatDistanceStrictPurePipe implements PipeTransform {
     );
   }
 }
+
+@NgModule({
+  declarations: [FormatDistanceStrictPurePipe],
+  exports: [FormatDistanceStrictPurePipe]
+})
+export class FormatDistanceStrictPurePipeModule {}

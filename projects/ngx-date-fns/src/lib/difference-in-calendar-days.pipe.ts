@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 
@@ -8,3 +8,9 @@ export class DifferenceInCalendarDaysPipe implements PipeTransform {
     return differenceInCalendarDays(dateLeft, dateRight);
   }
 }
+
+@NgModule({
+  declarations: [DifferenceInCalendarDaysPipe],
+  exports: [DifferenceInCalendarDaysPipe]
+})
+export class DifferenceInCalendarDaysPipeModule {}

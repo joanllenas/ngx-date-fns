@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import lastDayOfWeek from 'date-fns/lastDayOfWeek';
 import {
@@ -21,3 +21,9 @@ export class LastDayOfWeekPurePipe implements PipeTransform {
     return lastDayOfWeek(date, calculateLocale(options, this.config));
   }
 }
+
+@NgModule({
+  declarations: [LastDayOfWeekPurePipe],
+  exports: [LastDayOfWeekPurePipe]
+})
+export class LastDayOfWeekPurePipeModule {}

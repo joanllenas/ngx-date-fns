@@ -124,20 +124,20 @@
       "projectType": "library",
       "root": "projects/ngx-date-fns",
       "sourceRoot": "projects/ngx-date-fns/src",
-      "prefix": "lib",
+      "prefix": "ngx-date-fns",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "projects/ngx-date-fns/tsconfig.lib.json",
             "project": "projects/ngx-date-fns/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "projects/ngx-date-fns/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -159,6 +159,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ngx-date-fns-app"
 }

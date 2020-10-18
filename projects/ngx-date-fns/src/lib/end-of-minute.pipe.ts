@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import endOfMinute from 'date-fns/endOfMinute';
 
@@ -8,3 +8,9 @@ export class EndOfMinutePipe implements PipeTransform {
     return endOfMinute(date);
   }
 }
+
+@NgModule({
+  declarations: [EndOfMinutePipe],
+  exports: [EndOfMinutePipe]
+})
+export class EndOfMinutePipeModule {}

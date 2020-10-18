@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import startOfDay from 'date-fns/startOfDay';
 
@@ -8,3 +8,9 @@ export class StartOfDayPipe implements PipeTransform {
     return startOfDay(date);
   }
 }
+
+@NgModule({
+  declarations: [StartOfDayPipe],
+  exports: [StartOfDayPipe]
+})
+export class StartOfDayPipeModule {}

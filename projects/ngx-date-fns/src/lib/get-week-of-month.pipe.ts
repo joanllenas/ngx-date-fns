@@ -2,7 +2,8 @@ import {
   Pipe,
   PipeTransform,
   ChangeDetectorRef,
-  OnDestroy
+  OnDestroy,
+  NgModule
 } from '@angular/core';
 import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 import { Locale } from 'date-fns';
@@ -40,3 +41,9 @@ export class GetWeekOfMonthPipe implements PipeTransform, OnDestroy {
     return getWeekOfMonth(date, calculateLocale(options, this.config));
   }
 }
+
+@NgModule({
+  declarations: [GetWeekOfMonthPipe],
+  exports: [GetWeekOfMonthPipe]
+})
+export class GetWeekOfMonthPipeModule {}

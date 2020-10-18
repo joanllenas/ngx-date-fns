@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import endOfMonth from 'date-fns/endOfMonth';
 
@@ -8,3 +8,9 @@ export class EndOfMonthPipe implements PipeTransform {
     return endOfMonth(date);
   }
 }
+
+@NgModule({
+  declarations: [EndOfMonthPipe],
+  exports: [EndOfMonthPipe]
+})
+export class EndOfMonthPipeModule {}

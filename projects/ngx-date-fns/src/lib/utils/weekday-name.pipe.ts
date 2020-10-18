@@ -1,5 +1,6 @@
 import {
   ChangeDetectorRef,
+  NgModule,
   OnDestroy,
   Pipe,
   PipeTransform
@@ -63,3 +64,9 @@ export class WeekdayNamePipe implements PipeTransform, OnDestroy {
     return format(week[day], formats[view], locale);
   }
 }
+
+@NgModule({
+  declarations: [WeekdayNamePipe],
+  exports: [WeekdayNamePipe]
+})
+export class WeekdayNamePipeModule {}

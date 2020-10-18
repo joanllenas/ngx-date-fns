@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import addHours from 'date-fns/addHours';
 
@@ -8,3 +8,9 @@ export class AddHoursPipe implements PipeTransform {
     return addHours(date, amount);
   }
 }
+
+@NgModule({
+  declarations: [AddHoursPipe],
+  exports: [AddHoursPipe]
+})
+export class AddHoursPipeModule {}

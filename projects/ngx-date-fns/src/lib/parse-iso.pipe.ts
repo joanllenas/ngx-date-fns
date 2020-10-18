@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import parseISO from 'date-fns/parseISO';
 
 @Pipe({ name: 'dfnsParseIso' })
@@ -12,3 +12,9 @@ export class ParseIsoPipe implements PipeTransform {
     return parseISO(dateString, options);
   }
 }
+
+@NgModule({
+  declarations: [ParseIsoPipe],
+  exports: [ParseIsoPipe]
+})
+export class ParseIsoPipeModule {}

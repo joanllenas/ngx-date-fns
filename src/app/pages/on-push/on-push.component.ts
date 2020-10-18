@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { es, de } from 'date-fns/locale';
-import { DateFnsConfigurationService } from '../../../../projects/ngx-date-fns/src/lib/date-fns-configuration.service';
+import { DateFnsConfigurationService } from 'ngx-date-fns';
 
 @Component({
   selector: 'dfns-onpush-component',

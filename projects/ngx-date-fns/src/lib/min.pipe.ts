@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import min from 'date-fns/min';
 
@@ -8,3 +8,9 @@ export class MinPipe implements PipeTransform {
     return min(dates);
   }
 }
+
+@NgModule({
+  declarations: [MinPipe],
+  exports: [MinPipe]
+})
+export class MinPipeModule {}
