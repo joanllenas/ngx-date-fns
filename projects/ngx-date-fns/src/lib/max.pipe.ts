@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import max from 'date-fns/max';
 
@@ -8,3 +8,9 @@ export class MaxPipe implements PipeTransform {
     return max(dates);
   }
 }
+
+@NgModule({
+  declarations: [MaxPipe],
+  exports: [MaxPipe]
+})
+export class MaxPipeModule {}

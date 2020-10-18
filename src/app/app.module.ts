@@ -10,8 +10,7 @@ import { StrategyOnPushComponent } from './pages/on-push/on-push.component';
 import { TestOnPushComponent } from './pages/on-push/test-onpush.component';
 import { StrategyDefaultComponent } from './pages/default/default.component';
 import { TestStrategyDefaultComponent } from './pages/default/test-default.component';
-import { DateFnsModule } from '../../projects/ngx-date-fns/src/lib/date-fns.module';
-import { DateFnsConfigurationService } from '../../projects/ngx-date-fns/src/lib/date-fns-configuration.service';
+import { DateFnsModule, DateFnsConfigurationService } from 'ngx-date-fns';
 
 const frenchConfig = new DateFnsConfigurationService();
 frenchConfig.setLocale(fr);

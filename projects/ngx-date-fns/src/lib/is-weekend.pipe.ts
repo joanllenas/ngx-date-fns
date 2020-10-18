@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import isWeekend from 'date-fns/isWeekend';
 
@@ -8,3 +8,9 @@ export class IsWeekendPipe implements PipeTransform {
     return isWeekend(date);
   }
 }
+
+@NgModule({
+  declarations: [IsWeekendPipe],
+  exports: [IsWeekendPipe]
+})
+export class IsWeekendPipeModule {}

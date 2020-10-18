@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import isPast from 'date-fns/isPast';
 
@@ -8,3 +8,9 @@ export class IsPastPipe implements PipeTransform {
     return isPast(date);
   }
 }
+
+@NgModule({
+  declarations: [IsPastPipe],
+  exports: [IsPastPipe]
+})
+export class IsPastPipeModule {}

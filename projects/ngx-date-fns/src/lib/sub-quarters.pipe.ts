@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import subQuarters from 'date-fns/subQuarters';
 
@@ -8,3 +8,9 @@ export class SubQuartersPipe implements PipeTransform {
     return subQuarters(date, amount);
   }
 }
+
+@NgModule({
+  declarations: [SubQuartersPipe],
+  exports: [SubQuartersPipe]
+})
+export class SubQuartersPipeModule {}

@@ -19,11 +19,13 @@
       "dom"
     ],
     "paths": {
-      "ngx-date-fns": [
-        "dist/ngx-date-fns"
-      ],
       "ngx-date-fns/*": [
-        "dist/ngx-date-fns/*"
+        "libs/ngx-date-fns/*",
+        "libs/ngx-date-fns"
+      ],
+      "ngx-date-fns": [
+        "dist/ngx-date-fns/*",
+        "dist/ngx-date-fns"
       ]
     },
     "strict": true

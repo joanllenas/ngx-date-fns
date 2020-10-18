@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import isSameYear from 'date-fns/isSameYear';
 
@@ -8,3 +8,9 @@ export class IsSameYearPipe implements PipeTransform {
     return isSameYear(dateLeft, dateRight);
   }
 }
+
+@NgModule({
+  declarations: [IsSameYearPipe],
+  exports: [IsSameYearPipe]
+})
+export class IsSameYearPipeModule {}

@@ -2,7 +2,8 @@ import {
   Pipe,
   PipeTransform,
   ChangeDetectorRef,
-  OnDestroy
+  OnDestroy,
+  NgModule
 } from '@angular/core';
 import {
   DateFnsConfigurationService,
@@ -50,3 +51,9 @@ export class ParsePipe implements PipeTransform, OnDestroy {
     );
   }
 }
+
+@NgModule({
+  declarations: [ParsePipe],
+  exports: [ParsePipe]
+})
+export class ParsePipeModule {}

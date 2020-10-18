@@ -2,7 +2,8 @@ import {
   Pipe,
   PipeTransform,
   ChangeDetectorRef,
-  OnDestroy
+  OnDestroy,
+  NgModule
 } from '@angular/core';
 import {
   DateFnsConfigurationService,
@@ -41,3 +42,9 @@ export class FormatDistanceToNowPipe implements PipeTransform, OnDestroy {
     return formatDistanceToNow(date, calculateLocale(options, this.config));
   }
 }
+
+@NgModule({
+  declarations: [FormatDistanceToNowPipe],
+  exports: [FormatDistanceToNowPipe]
+})
+export class FormatDistanceToNowPipeModule {}

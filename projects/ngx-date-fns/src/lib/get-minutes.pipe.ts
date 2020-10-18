@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import getMinutes from 'date-fns/getMinutes';
 
@@ -8,3 +8,9 @@ export class GetMinutesPipe implements PipeTransform {
     return getMinutes(date);
   }
 }
+
+@NgModule({
+  declarations: [GetMinutesPipe],
+  exports: [GetMinutesPipe]
+})
+export class GetMinutesPipeModule {}

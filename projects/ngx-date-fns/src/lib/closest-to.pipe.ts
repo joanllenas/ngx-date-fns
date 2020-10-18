@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import closestTo from 'date-fns/closestTo';
 
@@ -11,3 +11,9 @@ export class ClosestToPipe implements PipeTransform {
     return closestTo(dateToCompare, datesArray);
   }
 }
+
+@NgModule({
+  declarations: [ClosestToPipe],
+  exports: [ClosestToPipe]
+})
+export class ClosestToPipeModule {}

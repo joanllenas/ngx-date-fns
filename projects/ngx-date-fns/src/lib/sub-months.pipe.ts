@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import subMonths from 'date-fns/subMonths';
 
@@ -8,3 +8,9 @@ export class SubMonthsPipe implements PipeTransform {
     return subMonths(date, amount);
   }
 }
+
+@NgModule({
+  declarations: [SubMonthsPipe],
+  exports: [SubMonthsPipe]
+})
+export class SubMonthsPipeModule {}

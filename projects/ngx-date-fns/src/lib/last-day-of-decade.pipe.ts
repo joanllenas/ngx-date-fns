@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import lastDayOfDecade from 'date-fns/lastDayOfDecade';
 
@@ -8,3 +8,9 @@ export class LastDayOfDecadePipe implements PipeTransform {
     return lastDayOfDecade(date);
   }
 }
+
+@NgModule({
+  declarations: [LastDayOfDecadePipe],
+  exports: [LastDayOfDecadePipe]
+})
+export class LastDayOfDecadePipeModule {}

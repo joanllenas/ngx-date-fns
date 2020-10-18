@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import parse from 'date-fns/parse';
 import {
@@ -31,3 +31,9 @@ export class ParsePurePipe implements PipeTransform {
     );
   }
 }
+
+@NgModule({
+  declarations: [ParsePurePipe],
+  exports: [ParsePurePipe]
+})
+export class ParsePurePipeModule {}

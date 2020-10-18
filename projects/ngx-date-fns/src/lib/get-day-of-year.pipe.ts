@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import getDayOfYear from 'date-fns/getDayOfYear';
 
@@ -8,3 +8,9 @@ export class GetDayOfYearPipe implements PipeTransform {
     return getDayOfYear(date);
   }
 }
+
+@NgModule({
+  declarations: [GetDayOfYearPipe],
+  exports: [GetDayOfYearPipe]
+})
+export class GetDayOfYearPipeModule {}

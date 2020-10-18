@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import startOfWeek from 'date-fns/startOfWeek';
 import {
@@ -21,3 +21,9 @@ export class StartOfWeekPurePipe implements PipeTransform {
     return startOfWeek(date, calculateLocale(options, this.config));
   }
 }
+
+@NgModule({
+  declarations: [StartOfWeekPurePipe],
+  exports: [StartOfWeekPurePipe]
+})
+export class StartOfWeekPurePipeModule {}

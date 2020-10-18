@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import format from 'date-fns/format';
 import { DateFnsInputDate } from './types';
@@ -25,3 +25,9 @@ export class FormatPurePipe implements PipeTransform {
     return format(date, dateFormat, calculateLocale(options, this.config));
   }
 }
+
+@NgModule({
+  declarations: [FormatPurePipe],
+  exports: [FormatPurePipe]
+})
+export class FormatPurePipeModule {}

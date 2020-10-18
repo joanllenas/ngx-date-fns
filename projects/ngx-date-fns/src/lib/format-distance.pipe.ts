@@ -2,7 +2,8 @@ import {
   Pipe,
   PipeTransform,
   ChangeDetectorRef,
-  OnDestroy
+  OnDestroy,
+  NgModule
 } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import {
@@ -46,3 +47,9 @@ export class FormatDistancePipe implements PipeTransform, OnDestroy {
     );
   }
 }
+
+@NgModule({
+  declarations: [FormatDistancePipe],
+  exports: [FormatDistancePipe]
+})
+export class FormatDistancePipeModule {}

@@ -153,12 +153,44 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 
 ## Tree shaking date-fns
 
-I'm not a build optimization expert, but in my experiments, I've found that building the app with with `--vendorChunk=false` and `--optimization=true` does a good job at removing `date-fns` functions that are not being used in your app.
+You can selectively import pipes by calling them from `ngx-date-fns` package itself, as those were exported following the [SCAM structure](https://indepth.dev/emulating-tree-shakable-components-using-single-component-angular-modules/#creating-a-scam-for-the-capitalize-pipe), for example:
+
+```typescript
+// app.module.ts
+import { fr } from 'date-fns/locale';
+import { DateFnsConfigurationService } from 'ngx-date-fns';
+import {
+  FormatPipeModule,
+  MinPipeModule,
+  MaxPipeModule,
+  FormatDistanceToNowPipeModule,
+  WeekdayNamePipeModule,
+  ParsePipeModule
+} from 'ngx-date-fns';
+
+const frenchConfig = new DateFnsConfigurationService();
+frenchConfig.setLocale(fr);
+
+@NgModule({
+  // ... other module stuff
+  imports: [
+    // Selectively import
+    FormatPipeModule,
+    MinPipeModule,
+    MaxPipeModule,
+    FormatDistanceToNowPipeModule,
+    WeekdayNamePipeModule,
+    ParsePipeModule
+  ],
+  providers: [{ provide: DateFnsConfigurationService, useValue: frenchConfig }]
+})
+export class AppModule {}
+```
 
 You can test this by downloading this repo and running:
 
 ```
-npm run build:app && npm run analyze
+npm run analyze:app
 ```
 
 This command will load a file in your browser where you will see that `date-fns` takes `63Kb`, which is significantly less than the `286Kb` of the whole library without tree shaking applied. (this, of course, will be much less after gzipping).
