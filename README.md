@@ -153,7 +153,7 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 
 ## Tree shaking date-fns
 
-You can selectively import pipes by calling them from `ngx-date-fns` package itself, as those were exported following the [SCAM structure](https://indepth.dev/emulating-tree-shakable-components-using-single-component-angular-modules/#creating-a-scam-for-the-capitalize-pipe), for example:
+The library itself is optimized to be tree-shakable by just importing `DateFnsModule.forRoot()` or selectively import pipes by calling them from `ngx-date-fns` package itself, as those were exported following the [SCAM structure](https://indepth.dev/emulating-tree-shakable-components-using-single-component-angular-modules/#creating-a-scam-for-the-capitalize-pipe), for example:
 
 ```typescript
 // app.module.ts
@@ -194,6 +194,8 @@ npm run analyze:app
 ```
 
 This command will load a file in your browser where you will see that `date-fns` takes `63Kb`, which is significantly less than the `286Kb` of the whole library without tree shaking applied. (this, of course, will be much less after gzipping).
+
+Also take into account that locale files tend to increase the final bundle size of `date-fns` as well.
 
 ## Available pipes
 
