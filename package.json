@@ -38,9 +38,10 @@
     "e2e": "ng e2e",
     "cm": "git-cz",
     "cm-retry": "git-cz --retry",
+    "copy-readme": "cp ./README.md ./dist/ngx-date-fns",
     "build:version": "sync-json -v --property version --source package.json projects/ngx-date-fns/package.json && sync-json -v --property version --source package.json dist/ngx-date-fns/package.json",
-    "release": "npm run build && standard-version --no-verify --commit-all && npm publish dist/ngx-date-fns",
-    "next": "npm run build && standard-version --no-verify --commit-all --prerelease beta && npm publish dist/ngx-date-fns --tag next",
+    "release": "npm run build && npm run copy-readme && standard-version --no-verify --commit-all && npm publish dist/ngx-date-fns",
+    "next": "npm run build && npm run copy-readme && standard-version --no-verify --commit-all --prerelease beta && npm publish dist/ngx-date-fns --tag next",
     "standard-version": "standard-version"
   },
   "standard-version": {
