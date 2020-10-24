@@ -269,7 +269,6 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, PIPES],
   exports: PIPES
 })
 export class DateFnsModule {
