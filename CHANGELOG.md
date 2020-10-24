@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.6.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.5.0...v6.6.0) (2020-10-24)
+
+
+### Features
+
+* **build:** improved lib tree shaking capabilities via SCAM structure ([38f3679](https://github.com/joanllenas/ngx-date-fns/commit/38f3679a56d58d9ee0c04ef4235d165f1132a012))
+
 ## [6.5.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.4.0...v6.5.0) (2020-09-15)
 
 
