@@ -203,6 +203,8 @@ Also take into account that locale files tend to increase the final bundle size 
 
 #### Format
 
+> Since `v7.0.0` invalid Dates will return an empty string instead of throwing an exception.
+
 - [dfnsFormat](https://date-fns.org/v2.0.1/docs/format) _([impure](#pure-or-impure))_
   - [dfnsFormatPure](https://date-fns.org/v2.0.1/docs/format)
 - [dfnsFormatDistance](https://date-fns.org/v2.0.1/docs/formatDistance) _([impure](#pure-or-impure))_

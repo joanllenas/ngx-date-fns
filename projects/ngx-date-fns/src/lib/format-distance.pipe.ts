@@ -13,6 +13,7 @@ import {
 import { Subscription } from 'rxjs';
 import { Locale } from 'date-fns';
 import formatDistance from 'date-fns/formatDistance';
+import { isInvalidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatDistance', pure: false })
 export class FormatDistancePipe implements PipeTransform, OnDestroy {
@@ -40,6 +41,9 @@ export class FormatDistancePipe implements PipeTransform, OnDestroy {
       locale?: Locale;
     }
   ): string {
+    if (isInvalidDate(date) || isInvalidDate(dateToCompare)) {
+      return '';
+    }
     return formatDistance(
       date,
       dateToCompare,

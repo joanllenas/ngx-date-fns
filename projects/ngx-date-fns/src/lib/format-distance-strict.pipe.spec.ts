@@ -3,11 +3,12 @@ import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { es } from 'date-fns/locale';
 import { FormatDistanceStrictPipe } from './format-distance-strict.pipe';
 import { FormatDistanceStrictPurePipe } from './format-distance-strict.pure.pipe';
+import { nullOrUndefinedDateReturnsEmptyStringTest } from './test-utils';
 
 describe('FormatDistanceStrictPipe', () => {
   let pipe: FormatDistanceStrictPipe;
 
-  beforeEach(() => {
+  const createPipe = () => {
     const MyChangeDetector = class extends ChangeDetectorRef {
       markForCheck(): void {
         throw new Error('Method not implemented.');
@@ -25,10 +26,14 @@ describe('FormatDistanceStrictPipe', () => {
         throw new Error('Method not implemented.');
       }
     };
-    pipe = new FormatDistanceStrictPipe(
+    return new FormatDistanceStrictPipe(
       new DateFnsConfigurationService(),
       new MyChangeDetector()
     );
+  };
+
+  beforeEach(() => {
+    pipe = createPipe();
   });
 
   it('should display the distance between 2 July 2014 and 1 January 2015', () => {
@@ -79,6 +84,9 @@ describe('FormatDistanceStrictPipe', () => {
       })
     ).toBe('1 año');
   });
+
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [undefined]);
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [null]);
 });
 
 describe('FormatDistanceStrictPipe Pure', () => {
@@ -103,4 +111,12 @@ describe('FormatDistanceStrictPipe Pure', () => {
       })
     ).toBe('1 año');
   });
+  nullOrUndefinedDateReturnsEmptyStringTest(
+    new FormatDistanceStrictPurePipe(new DateFnsConfigurationService()),
+    [undefined]
+  );
+  nullOrUndefinedDateReturnsEmptyStringTest(
+    new FormatDistanceStrictPurePipe(new DateFnsConfigurationService()),
+    [null]
+  );
 });

@@ -3,11 +3,12 @@ import { es } from 'date-fns/locale';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { FormatPipe } from './format.pipe';
 import { FormatPurePipe } from './format.pure.pipe';
+import { nullOrUndefinedDateReturnsEmptyStringTest } from './test-utils';
 
 describe('FormatPipe', () => {
   let pipe: FormatPipe;
 
-  beforeEach(() => {
+  const createPipe = () => {
     const MyChangeDetector = class extends ChangeDetectorRef {
       markForCheck(): void {
         throw new Error('Method not implemented.');
@@ -25,11 +26,18 @@ describe('FormatPipe', () => {
         throw new Error('Method not implemented.');
       }
     };
-    pipe = new FormatPipe(
+    return new FormatPipe(
       new DateFnsConfigurationService(),
       new MyChangeDetector()
     );
+  };
+
+  beforeEach(() => {
+    pipe = createPipe();
   });
+
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [null]);
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [undefined]);
 
   it('should Represent 11 February 2014 in middle-endian format', () => {
     expect(pipe.transform(new Date(2014, 1, 11), 'MM/dd/yyyy')).toBe(
@@ -55,6 +63,9 @@ describe('FormatPipe', () => {
 describe('FormatPipe Pure', () => {
   const createPipe = () =>
     new FormatPurePipe(new DateFnsConfigurationService());
+
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [null]);
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [undefined]);
 
   it('should Represent 11 February 2014 in middle-endian format', () => {
     expect(createPipe().transform(new Date(2014, 1, 11), 'MM/dd/yyyy')).toBe(

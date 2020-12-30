@@ -3,11 +3,12 @@ import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { FormatDistancePipe } from './format-distance.pipe';
 import { es } from 'date-fns/locale';
 import { FormatDistancePurePipe } from './format-distance.pure.pipe';
+import { nullOrUndefinedDateReturnsEmptyStringTest } from './test-utils';
 
 describe('FormatDistancePipe', () => {
   let pipe: FormatDistancePipe;
 
-  beforeEach(() => {
+  const createPipe = () => {
     const MyChangeDetector = class extends ChangeDetectorRef {
       markForCheck(): void {
         throw new Error('Method not implemented.');
@@ -25,11 +26,18 @@ describe('FormatDistancePipe', () => {
         throw new Error('Method not implemented.');
       }
     };
-    pipe = new FormatDistancePipe(
+    return new FormatDistancePipe(
       new DateFnsConfigurationService(),
       new MyChangeDetector()
     );
+  };
+
+  beforeEach(() => {
+    pipe = createPipe();
   });
+
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [null]);
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [undefined]);
 
   it('should display the distance between 2 July 2014 and 1 January 2015', () => {
     expect(pipe.transform(new Date(2014, 6, 2), new Date(2015, 0, 1))).toBe(
@@ -67,6 +75,9 @@ describe('FormatDistancePipe', () => {
 describe('FormatDistancePipe Pure', () => {
   const createPipe = () =>
     new FormatDistancePurePipe(new DateFnsConfigurationService());
+
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [null]);
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [undefined]);
 
   it('should display the distance between 2 July 2014 and 1 January 2015', () => {
     expect(

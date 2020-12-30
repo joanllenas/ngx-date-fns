@@ -3,11 +3,12 @@ import { DateFnsConfigurationService } from './date-fns-configuration.service';
 import { es } from 'date-fns/locale';
 import { FormatDistanceToNowPipe } from './format-distance-to-now.pipe';
 import { FormatDistanceToNowPurePipe } from './format-distance-to-now.pure.pipe';
+import { nullOrUndefinedDateReturnsEmptyStringTest } from './test-utils';
 
 describe('FormatDistanceToNowPipe', () => {
   let pipe: FormatDistanceToNowPipe;
 
-  beforeEach(() => {
+  const createPipe = () => {
     const MyChangeDetector = class extends ChangeDetectorRef {
       markForCheck(): void {
         throw new Error('Method not implemented.');
@@ -25,10 +26,14 @@ describe('FormatDistanceToNowPipe', () => {
         throw new Error('Method not implemented.');
       }
     };
-    pipe = new FormatDistanceToNowPipe(
+    return new FormatDistanceToNowPipe(
       new DateFnsConfigurationService(),
       new MyChangeDetector()
     );
+  };
+
+  beforeEach(() => {
+    pipe = createPipe();
     jasmine.clock().uninstall();
     jasmine.clock().install();
     jasmine.clock().mockDate(new Date(2015, 0, 1));
@@ -59,6 +64,9 @@ describe('FormatDistanceToNowPipe', () => {
       'más de 1 año'
     );
   });
+
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [null]);
+  nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [undefined]);
 });
 
 describe('FormatDistanceToNowPipe Pure', () => {
@@ -71,6 +79,15 @@ describe('FormatDistanceToNowPipe Pure', () => {
   afterEach(() => {
     jasmine.clock().uninstall();
   });
+
+  nullOrUndefinedDateReturnsEmptyStringTest(
+    new FormatDistanceToNowPurePipe(new DateFnsConfigurationService()),
+    [null]
+  );
+  nullOrUndefinedDateReturnsEmptyStringTest(
+    new FormatDistanceToNowPurePipe(new DateFnsConfigurationService()),
+    [undefined]
+  );
 
   it('should display output correctly', () => {
     const pipe = new FormatDistanceToNowPurePipe(

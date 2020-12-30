@@ -6,6 +6,7 @@ import {
   DateFnsConfigurationService,
   calculateLocale
 } from './date-fns-configuration.service';
+import { isInvalidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatPure' })
 export class FormatPurePipe implements PipeTransform {
@@ -22,6 +23,9 @@ export class FormatPurePipe implements PipeTransform {
       useAdditionalDayOfYearTokens?: boolean;
     }
   ): string {
+    if (isInvalidDate(date)) {
+      return '';
+    }
     return format(date, dateFormat, calculateLocale(options, this.config));
   }
 }

@@ -6,6 +6,7 @@ import {
   DateFnsConfigurationService
 } from './date-fns-configuration.service';
 import { DateFnsInputDate } from './types';
+import { isInvalidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatDistancePure' })
 export class FormatDistancePurePipe implements PipeTransform {
@@ -20,6 +21,9 @@ export class FormatDistancePurePipe implements PipeTransform {
       locale?: Locale;
     }
   ): string {
+    if (isInvalidDate(date) || isInvalidDate(dateToCompare)) {
+      return '';
+    }
     return formatDistance(
       date,
       dateToCompare,
