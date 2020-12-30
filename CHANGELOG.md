@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.6.0...v7.0.0) (2020-12-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **format pipes:** The following pipes: dfnsFormatDistanceStrict, dfnsFormatDistanceStrictPure,
+dfnsFormatDistanceToNow, dfnsFormatDistanceToNowPure, dfnsFormatDistance, dfnsFormatDistancePure,
+dfnsFormat, dfnsFormatPure don't throw an exception anymore when an invalida date is provided,
+instead an empty string is returned.
+
+### Bug Fixes
+
+* **format pipes:** relaxed how invalid dates are treated ([564b9ed](https://github.com/joanllenas/ngx-date-fns/commit/564b9ed596bc475f2524fd88ffd757fac9f29203)), closes [#344](https://github.com/joanllenas/ngx-date-fns/issues/344)
+
 ## [6.6.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.5.0...v6.6.0) (2020-10-24)
 
 
