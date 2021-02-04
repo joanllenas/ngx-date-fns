@@ -28,7 +28,7 @@ npm install --save ngx-date-fns@4.0.3
 
 ## Basic Usage
 
-Import `DateFnsModule` into your app's modules:
+Import `DateFnsModule` into your app's module:
 
 ```typescript
 import { DateFnsModule } from 'ngx-date-fns';
@@ -40,6 +40,8 @@ import { DateFnsModule } from 'ngx-date-fns';
   ]
 })
 ```
+
+> In lazy loaded module declarations use `imports: [DateFnsModule]`.
 
 ```typescript
 import { Component } from '@angular/core';

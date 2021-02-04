@@ -6,8 +6,6 @@ import { appRoutes } from './routes';
 import { AppComponent } from './app.component';
 import { fr } from 'date-fns/locale';
 import { MainComponent } from './pages/main/main.component';
-import { StrategyOnPushComponent } from './pages/on-push/on-push.component';
-import { TestOnPushComponent } from './pages/on-push/test-onpush.component';
 import { StrategyDefaultComponent } from './pages/default/default.component';
 import { TestStrategyDefaultComponent } from './pages/default/test-default.component';
 import { DateFnsModule, DateFnsConfigurationService } from 'ngx-date-fns';
@@ -19,8 +17,6 @@ frenchConfig.setLocale(fr);
   declarations: [
     AppComponent,
     MainComponent,
-    StrategyOnPushComponent,
-    TestOnPushComponent,
     StrategyDefaultComponent,
     TestStrategyDefaultComponent
   ],
