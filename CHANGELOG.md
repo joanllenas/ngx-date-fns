@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.0.2](https://github.com/joanllenas/ngx-date-fns/compare/v7.0.1...v7.0.2) (2021-02-21)
+
+
+### Bug Fixes
+
+* **config:** turn enableIvy to false for publishing ([4ff441a](https://github.com/joanllenas/ngx-date-fns/commit/4ff441a3e23da3ceff65d27cddeab56131084603))
+
 ### [7.0.1](https://github.com/joanllenas/ngx-date-fns/compare/v7.0.0...v7.0.1) (2021-02-21)
 
 
