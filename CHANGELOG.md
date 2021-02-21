@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.0.1](https://github.com/joanllenas/ngx-date-fns/compare/v7.0.0...v7.0.1) (2021-02-21)
+
+
+### Bug Fixes
+
+* **pipes:** relaxed transform input types in some pipes ([6e7e4d7](https://github.com/joanllenas/ngx-date-fns/commit/6e7e4d70a3d92af32d6706515097bcee18d30c39)), closes [#347](https://github.com/joanllenas/ngx-date-fns/issues/347)
+
 ## [7.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v6.6.0...v7.0.0) (2020-12-30)
 
 
