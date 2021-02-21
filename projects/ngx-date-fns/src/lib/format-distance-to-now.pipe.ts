@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 import { DateFnsInputDate } from './types';
 import { Locale } from 'date-fns';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
-import { isInvalidDate } from './utils';
+import { isValidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatDistanceToNow', pure: false })
 export class FormatDistanceToNowPipe implements PipeTransform, OnDestroy {
@@ -33,17 +33,17 @@ export class FormatDistanceToNowPipe implements PipeTransform, OnDestroy {
   }
 
   transform(
-    date: DateFnsInputDate,
+    date?: DateFnsInputDate | null | undefined,
     options?: {
       includeSeconds?: boolean;
       addSuffix?: boolean;
       locale?: Locale;
     }
   ): string {
-    if (isInvalidDate(date)) {
-      return '';
+    if (isValidDate(date)) {
+      return formatDistanceToNow(date, calculateLocale(options, this.config));
     }
-    return formatDistanceToNow(date, calculateLocale(options, this.config));
+    return '';
   }
 }
 

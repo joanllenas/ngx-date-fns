@@ -22,7 +22,7 @@ frenchConfig.setLocale(fr);
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
     DateFnsModule.forRoot()
   ],
   providers: [{ provide: DateFnsConfigurationService, useValue: frenchConfig }],

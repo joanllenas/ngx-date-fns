@@ -13,7 +13,7 @@ module.exports = function (config) {
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: true // was false by default, but looks like some angular/karma issue is making the test page reload
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../../coverage/ngx-date-fns'),

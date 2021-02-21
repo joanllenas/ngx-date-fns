@@ -6,24 +6,24 @@ import {
   DateFnsConfigurationService
 } from './date-fns-configuration.service';
 import { DateFnsInputDate } from './types';
-import { isInvalidDate } from './utils';
+import { isValidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatDistanceToNowPure' })
 export class FormatDistanceToNowPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
   transform(
-    date: DateFnsInputDate,
+    date: DateFnsInputDate | null | undefined,
     options?: {
       includeSeconds?: boolean;
       addSuffix?: boolean;
       locale?: Locale;
     }
   ): string {
-    if (isInvalidDate(date)) {
-      return '';
+    if (isValidDate(date)) {
+      return formatDistanceToNow(date, calculateLocale(options, this.config));
     }
-    return formatDistanceToNow(date, calculateLocale(options, this.config));
+    return '';
   }
 }
 

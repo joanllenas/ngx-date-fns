@@ -13,7 +13,7 @@ import {
 import { Subscription } from 'rxjs';
 import { Locale } from 'date-fns';
 import formatDistance from 'date-fns/formatDistance';
-import { isInvalidDate } from './utils';
+import { isValidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatDistance', pure: false })
 export class FormatDistancePipe implements PipeTransform, OnDestroy {
@@ -33,22 +33,22 @@ export class FormatDistancePipe implements PipeTransform, OnDestroy {
   }
 
   transform(
-    date: DateFnsInputDate,
-    dateToCompare: DateFnsInputDate,
+    date: DateFnsInputDate | null | undefined,
+    dateToCompare: DateFnsInputDate | null | undefined,
     options?: {
       includeSeconds?: boolean;
       addSuffix?: boolean;
       locale?: Locale;
     }
   ): string {
-    if (isInvalidDate(date) || isInvalidDate(dateToCompare)) {
-      return '';
+    if (isValidDate(date) && isValidDate(dateToCompare)) {
+      return formatDistance(
+        date,
+        dateToCompare,
+        calculateLocale(options, this.config)
+      );
     }
-    return formatDistance(
-      date,
-      dateToCompare,
-      calculateLocale(options, this.config)
-    );
+    return '';
   }
 }
 

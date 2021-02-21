@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 import { DateFnsInputDate, DateFnsUnit, DateFnsRoundingMethod } from './types';
 import { Locale } from 'date-fns';
 import formatDistanceStrict from 'date-fns/formatDistanceStrict';
-import { isInvalidDate } from './utils';
+import { isValidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatDistanceStrict', pure: false })
 export class FormatDistanceStrictPipe implements PipeTransform, OnDestroy {
@@ -33,8 +33,8 @@ export class FormatDistanceStrictPipe implements PipeTransform, OnDestroy {
   }
 
   transform(
-    date: DateFnsInputDate,
-    dateToCompare: DateFnsInputDate,
+    date: DateFnsInputDate | null | undefined,
+    dateToCompare: DateFnsInputDate | null | undefined,
     options?: {
       addSuffix?: boolean;
       unit?: DateFnsUnit;
@@ -42,14 +42,14 @@ export class FormatDistanceStrictPipe implements PipeTransform, OnDestroy {
       locale?: Locale;
     }
   ): string {
-    if (isInvalidDate(date) || isInvalidDate(dateToCompare)) {
-      return '';
+    if (isValidDate(date) && isValidDate(dateToCompare)) {
+      return formatDistanceStrict(
+        date,
+        dateToCompare,
+        calculateLocale(options, this.config)
+      );
     }
-    return formatDistanceStrict(
-      date,
-      dateToCompare,
-      calculateLocale(options, this.config)
-    );
+    return '';
   }
 }
 

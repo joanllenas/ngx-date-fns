@@ -1,5 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { es } from 'date-fns/locale';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'dfns-test-onpush-component',
@@ -14,8 +15,8 @@ import { es } from 'date-fns/locale';
       {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLLL d yyyy' }}
     </p>
     <p>
-      {{ dateThree | dfnsFormatDistanceToNow: options }} - (Explicit 'es'
-      locale)
+      {{ dateThree | async | dfnsFormatDistanceToNow: options }} - (Explicit
+      'es' locale)
     </p>
     <ul>
       <li *ngFor="let d of dates">
@@ -28,7 +29,7 @@ import { es } from 'date-fns/locale';
 export class TestOnPushComponent {
   @Input() dateOne = new Date();
   @Input() dateTwo = new Date();
-  @Input() dateThree = new Date();
+  @Input() dateThree = of(new Date());
   @Input() dates: Date[] = [];
   options = {
     locale: es,

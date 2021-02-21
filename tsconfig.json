@@ -20,8 +20,8 @@
     ],
     "paths": {
       "ngx-date-fns/*": [
-        "libs/ngx-date-fns/*",
-        "libs/ngx-date-fns"
+        "projects/ngx-date-fns/*",
+        "projects/ngx-date-fns"
       ],
       "ngx-date-fns": [
         "dist/ngx-date-fns/*",
@@ -33,6 +33,6 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
-    "enableIvy": false
+    "enableIvy": true
   }
 }

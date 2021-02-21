@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 import { DateFnsInputDate } from './types';
 import { Locale } from 'date-fns';
 import format from 'date-fns/format';
-import { isInvalidDate } from './utils';
+import { isValidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormat', pure: false })
 export class FormatPipe implements PipeTransform, OnDestroy {
@@ -33,7 +33,7 @@ export class FormatPipe implements PipeTransform, OnDestroy {
   }
 
   transform(
-    date: DateFnsInputDate,
+    date: DateFnsInputDate | null | undefined,
     dateFormat: string,
     options?: {
       locale?: Locale;
@@ -43,10 +43,10 @@ export class FormatPipe implements PipeTransform, OnDestroy {
       useAdditionalDayOfYearTokens?: boolean;
     }
   ): string {
-    if (isInvalidDate(date)) {
-      return '';
+    if (isValidDate(date)) {
+      return format(date, dateFormat, calculateLocale(options, this.config));
     }
-    return format(date, dateFormat, calculateLocale(options, this.config));
+    return '';
   }
 }
 
