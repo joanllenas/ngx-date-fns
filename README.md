@@ -105,7 +105,7 @@ frenchConfig.setLocale(fr);
   ],
   providers: [
     // (...)
-    { provide: DateFnsConfigurationService, useValue: frenchConfig } // <-- All pipies in French by default
+    { provide: DateFnsConfigurationService, useValue: frenchConfig } // <-- All pipes in French by default
   ]
 })
 ```
