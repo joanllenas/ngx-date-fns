@@ -130,6 +130,8 @@ export * from './lib/start-of-week-year.pure.pipe';
 export * from './lib/last-day-of-week.pure.pipe';
 export * from './lib/parse.pure.pipe';
 export * from './lib/parse-iso.pipe';
+export * from './lib/format-duration.pure.pipe';
+export * from './lib/format-duration.pipe';
 
 // Other stuff
 export * from './lib/types';
