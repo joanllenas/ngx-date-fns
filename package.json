@@ -34,7 +34,7 @@
     "build:app": "ng build --namedChunks=true --sourceMap=true --prod",
     "analyze": "source-map-explorer dist/ngx-date-fns-app/main-es5.*.js",
     "prettier": "prettier --write src/app/**/*.ts && prettier --write projects/ngx-date-fns/src/lib/**/*.ts",
-    "precommit": "npm run lint && npm run test -- --watch=false",
+    "precommit": "npm run lint && npm run test",
     "e2e": "ng e2e",
     "cm": "git-cz",
     "cm-retry": "git-cz --retry",
@@ -60,7 +60,7 @@
     "@angular/platform-browser": "~11.2.1",
     "@angular/platform-browser-dynamic": "~11.2.1",
     "@angular/router": "~11.2.1",
-    "date-fns": "^2.0.1",
+    "date-fns": "^2.19.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
