@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v7.0.2...v8.0.0) (2021-03-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **pipes:** This version requires date-fns >= v2.16.0
+
+### Features
+
+* **pipes:** added formatDuration pipes ([03af4a5](https://github.com/joanllenas/ngx-date-fns/commit/03af4a5cd4febffc1d54744a3716b971fad3741d)), closes [#351](https://github.com/joanllenas/ngx-date-fns/issues/351)
+
 ### [7.0.2](https://github.com/joanllenas/ngx-date-fns/compare/v7.0.1...v7.0.2) (2021-02-21)
 
 
