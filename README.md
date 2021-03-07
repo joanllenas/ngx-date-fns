@@ -18,7 +18,7 @@
   - [Changing locale at runtime](#locale-runtime)
   - [_Pure_ or _impure_?](#pure-impure)
 - [Tree shaking date-fns](#tree-shaking)
-- [Available pipes](#pipes)
+- [Available pipes 📚](#pipes)
   - [Misc. pipes](#misc-pipes)
   - [Format... pipes](#format-pipes)
   - [Get... pipes](#get-pipes)
