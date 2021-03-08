@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import lastDayOfISOWeekYear from 'date-fns/lastDayOfISOWeekYear';
+import lastDayOfISOWeekYear from 'date-fns/esm/lastDayOfISOWeekYear';
 
 @Pipe({ name: 'dfnsLastDayOfISOWeekYear' })
 export class LastDayOfISOWeekYearPipe implements PipeTransform {

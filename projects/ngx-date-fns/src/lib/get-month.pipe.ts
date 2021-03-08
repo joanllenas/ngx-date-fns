@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import getMonth from 'date-fns/getMonth';
+import getMonth from 'date-fns/esm/getMonth';
 
 @Pipe({ name: 'dfnsGetMonth' })
 export class GetMonthPipe implements PipeTransform {

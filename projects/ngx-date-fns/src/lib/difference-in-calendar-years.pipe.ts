@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import differenceInCalendarYears from 'date-fns/differenceInCalendarYears';
+import differenceInCalendarYears from 'date-fns/esm/differenceInCalendarYears';
 
 @Pipe({ name: 'dfnsDifferenceInCalendarYears' })
 export class DifferenceInCalendarYearsPipe implements PipeTransform {

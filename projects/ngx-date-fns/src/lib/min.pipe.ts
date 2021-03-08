@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import min from 'date-fns/min';
+import min from 'date-fns/esm/min';
 
 @Pipe({ name: 'dfnsMin' })
 export class MinPipe implements PipeTransform {

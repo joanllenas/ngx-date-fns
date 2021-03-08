@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 
 import { AppComponent } from './app.component';
-import { fr } from 'date-fns/locale';
+import fr from 'date-fns/esm/locale/fr';
 import { MainComponent } from './pages/main/main.component';
 import { StrategyDefaultComponent } from './pages/default/default.component';
 import { TestStrategyDefaultComponent } from './pages/default/test-default.component';

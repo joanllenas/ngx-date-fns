@@ -5,11 +5,12 @@ import {
   Pipe,
   PipeTransform
 } from '@angular/core';
-import { Locale } from 'date-fns';
-import eachDayOfInterval from 'date-fns/eachDayOfInterval';
-import endOfWeek from 'date-fns/endOfWeek';
-import format from 'date-fns/format';
-import startOfWeek from 'date-fns/startOfWeek';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import eachDayOfInterval from 'date-fns/esm/eachDayOfInterval';
+import endOfWeek from 'date-fns/esm/endOfWeek';
+import format from 'date-fns/esm/format';
+import startOfWeek from 'date-fns/esm/startOfWeek';
 import { Subscription } from 'rxjs';
 import {
   calculateLocale,

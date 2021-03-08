@@ -1,5 +1,5 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
-import startOfToday from 'date-fns/startOfToday';
+import startOfToday from 'date-fns/esm/startOfToday';
 
 @Pipe({ name: 'dfnsStartOfToday' })
 export class StartOfTodayPipe implements PipeTransform {

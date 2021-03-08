@@ -11,8 +11,9 @@ import {
   calculateLocale
 } from './date-fns-configuration.service';
 import { Subscription } from 'rxjs';
-import { Locale } from 'date-fns';
-import formatDistance from 'date-fns/formatDistance';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import formatDistance from 'date-fns/esm/formatDistance';
 import { isValidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatDistance', pure: false })

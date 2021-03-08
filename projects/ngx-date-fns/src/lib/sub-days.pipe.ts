@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import subDays from 'date-fns/subDays';
+import subDays from 'date-fns/esm/subDays';
 
 @Pipe({ name: 'dfnsSubDays' })
 export class SubDaysPipe implements PipeTransform {

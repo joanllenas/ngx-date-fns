@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { es } from 'date-fns/locale';
+import es from 'date-fns/esm/locale/es';
 
 @Component({
   selector: 'dfns-main-component',

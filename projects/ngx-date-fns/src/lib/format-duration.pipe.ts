@@ -10,8 +10,9 @@ import {
   calculateLocale
 } from './date-fns-configuration.service';
 import { Subscription } from 'rxjs';
-import { Locale } from 'date-fns';
-import formatDuration from 'date-fns/formatDuration';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import formatDuration from 'date-fns/esm/formatDuration';
 
 @Pipe({ name: 'dfnsFormatDuration', pure: false })
 export class FormatDurationPipe implements PipeTransform, OnDestroy {

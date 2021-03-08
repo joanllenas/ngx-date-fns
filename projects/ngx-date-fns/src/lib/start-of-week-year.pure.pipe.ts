@@ -1,6 +1,7 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
-import { Locale } from 'date-fns';
-import startOfWeekYear from 'date-fns/startOfWeekYear';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import startOfWeekYear from 'date-fns/esm/startOfWeekYear';
 import {
   calculateLocale,
   DateFnsConfigurationService

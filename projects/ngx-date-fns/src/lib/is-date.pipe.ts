@@ -1,5 +1,5 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
-import isDate from 'date-fns/isDate';
+import isDate from 'date-fns/esm/isDate';
 
 @Pipe({ name: 'dfnsIsDate' })
 export class IsDatePipe implements PipeTransform {

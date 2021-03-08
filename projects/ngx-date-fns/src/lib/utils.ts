@@ -1,4 +1,4 @@
-import isValid from 'date-fns/isValid';
+import isValid from 'date-fns/esm/isValid';
 import { DateFnsInputDate } from './types';
 
 export const isValidDate = (

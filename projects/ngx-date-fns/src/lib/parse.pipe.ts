@@ -11,8 +11,9 @@ import {
 } from './date-fns-configuration.service';
 import { Subscription } from 'rxjs';
 import { DateFnsInputDate } from './types';
-import { Locale } from 'date-fns';
-import parse from 'date-fns/parse';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import parse from 'date-fns/esm/parse';
 
 @Pipe({ name: 'dfnsParse', pure: false })
 export class ParsePipe implements PipeTransform, OnDestroy {

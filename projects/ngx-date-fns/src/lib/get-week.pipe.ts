@@ -10,8 +10,9 @@ import {
   DateFnsWeekIndex,
   DateFnsFirstWeekDays
 } from './types';
-import { Locale } from 'date-fns';
-import getWeek from 'date-fns/getWeek';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import getWeek from 'date-fns/esm/getWeek';
 import { Subscription } from 'rxjs';
 import {
   DateFnsConfigurationService,

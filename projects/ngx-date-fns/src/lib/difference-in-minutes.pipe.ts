@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import differenceInMinutes from 'date-fns/differenceInMinutes';
+import differenceInMinutes from 'date-fns/esm/differenceInMinutes';
 
 @Pipe({ name: 'dfnsDifferenceInMinutes' })
 export class DifferenceInMinutesPipe implements PipeTransform {

@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { es } from 'date-fns/locale';
+import es from 'date-fns/esm/locale/es';
 import { of } from 'rxjs';
 
 @Component({

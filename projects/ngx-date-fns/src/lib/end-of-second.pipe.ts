@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import endOfSecond from 'date-fns/endOfSecond';
+import endOfSecond from 'date-fns/esm/endOfSecond';
 
 @Pipe({ name: 'dfnsEndOfSecond' })
 export class EndOfSecondPipe implements PipeTransform {

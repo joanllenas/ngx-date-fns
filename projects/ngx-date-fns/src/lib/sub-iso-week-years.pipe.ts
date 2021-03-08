@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import subISOWeekYears from 'date-fns/subISOWeekYears';
+import subISOWeekYears from 'date-fns/esm/subISOWeekYears';
 
 @Pipe({ name: 'dfnsSubISOWeekYears' })
 export class SubISOWeekYearsPipe implements PipeTransform {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { es, de } from 'date-fns/locale';
+import es from 'date-fns/esm/locale/es';
+import de from 'date-fns/esm/locale/de';
 import { DateFnsConfigurationService } from 'ngx-date-fns';
 import { Observable, of } from 'rxjs';
 

@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import isFuture from 'date-fns/isFuture';
+import isFuture from 'date-fns/esm/isFuture';
 
 @Pipe({ name: 'dfnsIsFuture' })
 export class IsFuturePipe implements PipeTransform {

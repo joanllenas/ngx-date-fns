@@ -1,6 +1,7 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
-import { Locale } from 'date-fns';
-import format from 'date-fns/format';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import format from 'date-fns/esm/format';
 import { DateFnsInputDate } from './types';
 import {
   DateFnsConfigurationService,

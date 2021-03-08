@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import isValid from 'date-fns/isValid';
+import isValid from 'date-fns/esm/isValid';
 
 @Pipe({ name: 'dfnsIsValid' })
 export class IsValidPipe implements PipeTransform {

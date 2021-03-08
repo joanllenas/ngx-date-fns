@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import isWeekend from 'date-fns/isWeekend';
+import isWeekend from 'date-fns/esm/isWeekend';
 
 @Pipe({ name: 'dfnsIsWeekend' })
 export class IsWeekendPipe implements PipeTransform {

@@ -6,8 +6,9 @@ import {
   NgModule
 } from '@angular/core';
 import { DateFnsInputDate, DateFnsWeekIndex } from './types';
-import { Locale } from 'date-fns';
-import startOfWeek from 'date-fns/startOfWeek';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import startOfWeek from 'date-fns/esm/startOfWeek';
 import { Subscription } from 'rxjs';
 import {
   DateFnsConfigurationService,

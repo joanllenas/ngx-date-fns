@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import startOfYear from 'date-fns/startOfYear';
+import startOfYear from 'date-fns/esm/startOfYear';
 
 @Pipe({ name: 'dfnsStartOfYear' })
 export class StartOfYearPipe implements PipeTransform {

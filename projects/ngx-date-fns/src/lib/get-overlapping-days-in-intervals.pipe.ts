@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import getOverlappingDaysInIntervals from 'date-fns/getOverlappingDaysInIntervals';
+import getOverlappingDaysInIntervals from 'date-fns/esm/getOverlappingDaysInIntervals';
 
 @Pipe({ name: 'dfnsGetOverlappingDaysInIntervals' })
 export class GetOverlappingDaysInIntervalsPipe implements PipeTransform {

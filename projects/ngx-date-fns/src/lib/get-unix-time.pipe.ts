@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import getUnixTime from 'date-fns/getUnixTime';
+import getUnixTime from 'date-fns/esm/getUnixTime';
 
 @Pipe({ name: 'dfnsGetUnixTime' })
 export class GetUnixTimePipe implements PipeTransform {

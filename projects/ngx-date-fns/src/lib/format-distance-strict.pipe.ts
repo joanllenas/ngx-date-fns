@@ -11,8 +11,9 @@ import {
 } from './date-fns-configuration.service';
 import { Subscription } from 'rxjs';
 import { DateFnsInputDate, DateFnsUnit, DateFnsRoundingMethod } from './types';
-import { Locale } from 'date-fns';
-import formatDistanceStrict from 'date-fns/formatDistanceStrict';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import formatDistanceStrict from 'date-fns/esm/formatDistanceStrict';
 import { isValidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatDistanceStrict', pure: false })

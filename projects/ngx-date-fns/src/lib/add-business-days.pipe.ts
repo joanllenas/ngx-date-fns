@@ -1,6 +1,6 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
-import addBusinessDays from 'date-fns/addBusinessDays';
+import addBusinessDays from 'date-fns/esm/addBusinessDays';
 
 @Pipe({ name: 'dfnsAddBusinessDays' })
 export class AddBusinessDaysPipe implements PipeTransform {

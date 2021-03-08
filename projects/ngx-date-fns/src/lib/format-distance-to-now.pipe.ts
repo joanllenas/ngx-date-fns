@@ -11,8 +11,9 @@ import {
 } from './date-fns-configuration.service';
 import { Subscription } from 'rxjs';
 import { DateFnsInputDate } from './types';
-import { Locale } from 'date-fns';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
+import formatDistanceToNow from 'date-fns/esm/formatDistanceToNow';
 import { isValidDate } from './utils';
 
 @Pipe({ name: 'dfnsFormatDistanceToNow', pure: false })

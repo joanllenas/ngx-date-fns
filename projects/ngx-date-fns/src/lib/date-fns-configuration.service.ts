@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Locale } from 'date-fns';
+import en from 'date-fns/esm/locale/en-US';
+type Locale = typeof en;
 
 export interface DateFnsConfiguration {
   /**
