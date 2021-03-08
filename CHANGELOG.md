@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.1-beta.0](https://github.com/joanllenas/ngx-date-fns/compare/v8.0.0...v8.0.1-beta.0) (2021-03-08)
+
+
+### Bug Fixes
+
+* **esm:** fixed date-fns ESM imports ([24f418d](https://github.com/joanllenas/ngx-date-fns/commit/24f418d2b78b41573fa94c8a0a8716fda68b2924)), closes [#354](https://github.com/joanllenas/ngx-date-fns/issues/354)
+
 ## [8.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v7.0.2...v8.0.0) (2021-03-06)
 
 
