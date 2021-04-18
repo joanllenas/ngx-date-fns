@@ -35,8 +35,9 @@
 
 ## Installation
 
-This library requires [date-fns](https://date-fns.org/) `>= v2.16.0`.
-> ⚠️ We recommend pinning your `date-fns` version to `2.16.1` until [this issue](https://github.com/date-fns/date-fns/issues/2207), which prevents tree shaking from working, is fixed.
+This library requires [date-fns](https://date-fns.org/) `>= v2.16.1`.
+
+> ⚠️ There's a range of date-fns versions for which _tree shaking_ is broken, so we recommend that you either install `v2.16.1` or `>= v2.21.1`.
 
 - `npm install --save date-fns`
 - `npm install --save ngx-date-fns`
@@ -190,7 +191,7 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 
 ## Tree shaking date-fns
 
-> ⚠️ We recommend pinning your `date-fns` version to `2.16.1` until [this issue](https://github.com/date-fns/date-fns/issues/2207), which prevents tree shaking from working, is fixed.
+> > ⚠️ There's a range of date-fns versions for which _tree shaking_ is broken, so we recommend that you either install `v2.16.1` or `>= v2.21.1`.
 
 The library itself is optimized to be tree-shakable by just importing `DateFnsModule.forRoot()` or selectively import pipes by calling them from `ngx-date-fns` package itself, as those were exported following the [SCAM structure](https://indepth.dev/emulating-tree-shakable-components-using-single-component-angular-modules/#creating-a-scam-for-the-capitalize-pipe), for example:
 
