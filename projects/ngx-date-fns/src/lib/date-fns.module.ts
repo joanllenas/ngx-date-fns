@@ -15,7 +15,9 @@ import { AddWeeksPipeModule } from './add-weeks.pipe';
 import { AddYearsPipeModule } from './add-years.pipe';
 import { ClosestToPipeModule } from './closest-to.pipe';
 import { FormatPipeModule } from './format.pipe';
+import { FormatRelativePipeModule } from './format-relative.pipe';
 import { FormatPurePipeModule } from './format.pure.pipe';
+import { FormatRelativePurePipeModule } from './format-relative.pure.pipe';
 import { FormatDistancePurePipeModule } from './format-distance.pure.pipe';
 import { FormatDistanceStrictPurePipeModule } from './format-distance-strict.pure.pipe';
 import { FormatDistanceToNowPurePipeModule } from './format-distance-to-now.pure.pipe';
@@ -150,6 +152,7 @@ const PIPES = [
   AddYearsPipeModule,
   ClosestToPipeModule,
   FormatPipeModule,
+  FormatRelativePipeModule,
   DifferenceInCalendarDaysPipeModule,
   DifferenceInCalendarISOWeeksPipeModule,
   DifferenceInCalendarISOWeekYearsPipeModule,
@@ -256,6 +259,7 @@ const PIPES = [
   WeekdayNamePipeModule,
   IsSameYearPipeModule,
   FormatPurePipeModule,
+  FormatRelativePurePipeModule,
   FormatDistancePurePipeModule,
   FormatDistanceStrictPurePipeModule,
   FormatDistanceToNowPurePipeModule,
