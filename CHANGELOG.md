@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/joanllenas/ngx-date-fns/compare/v8.0.0...v8.1.0) (2021-05-01)
+
+
+### Features
+
+* **pipes:** added format-distance-to-now-strict pipe ([778f815](https://github.com/joanllenas/ngx-date-fns/commit/778f8155a30e07569d5dc356b79993a5676c8526))
+* **pipes:** added format-relative pipe ([3530d68](https://github.com/joanllenas/ngx-date-fns/commit/3530d689095b53993f2744a1a484b567ca9c4e49))
+
 ## [8.0.0](https://github.com/joanllenas/ngx-date-fns/compare/v7.0.2...v8.0.0) (2021-03-06)
 
 
