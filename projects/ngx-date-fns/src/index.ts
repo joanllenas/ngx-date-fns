@@ -33,6 +33,7 @@ export * from './lib/difference-in-business-days.pipe';
 export * from './lib/format-distance.pipe';
 export * from './lib/format-distance-strict.pipe';
 export * from './lib/format-distance-to-now.pipe';
+export * from './lib/format-distance-to-now-strict.pipe';
 export * from './lib/end-of-day.pipe';
 export * from './lib/end-of-hour.pipe';
 export * from './lib/end-of-iso-week.pipe';

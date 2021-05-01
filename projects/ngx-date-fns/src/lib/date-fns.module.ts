@@ -21,6 +21,7 @@ import { FormatRelativePurePipeModule } from './format-relative.pure.pipe';
 import { FormatDistancePurePipeModule } from './format-distance.pure.pipe';
 import { FormatDistanceStrictPurePipeModule } from './format-distance-strict.pure.pipe';
 import { FormatDistanceToNowPurePipeModule } from './format-distance-to-now.pure.pipe';
+import { FormatDistanceToNowStrictPurePipeModule } from './format-distance-to-now-strict.pure.pipe';
 import { DifferenceInCalendarDaysPipeModule } from './difference-in-calendar-days.pipe';
 import { DifferenceInCalendarISOWeeksPipeModule } from './difference-in-calendar-iso-weeks.pipe';
 import { DifferenceInCalendarISOWeekYearsPipeModule } from './difference-in-calendar-iso-week-years.pipe';
@@ -42,6 +43,7 @@ import { DifferenceInBusinessDaysPipeModule } from './difference-in-business-day
 import { FormatDistancePipeModule } from './format-distance.pipe';
 import { FormatDistanceStrictPipeModule } from './format-distance-strict.pipe';
 import { FormatDistanceToNowPipeModule } from './format-distance-to-now.pipe';
+import { FormatDistanceToNowStrictPipeModule } from './format-distance-to-now-strict.pipe';
 import { EndOfDayPipeModule } from './end-of-day.pipe';
 import { EndOfHourPipeModule } from './end-of-hour.pipe';
 import { EndOfISOWeekPipeModule } from './end-of-iso-week.pipe';
@@ -174,6 +176,7 @@ const PIPES = [
   FormatDistancePipeModule,
   FormatDistanceStrictPipeModule,
   FormatDistanceToNowPipeModule,
+  FormatDistanceToNowStrictPipeModule,
   EndOfDayPipeModule,
   EndOfHourPipeModule,
   EndOfISOWeekYearPipeModule,
@@ -263,6 +266,7 @@ const PIPES = [
   FormatDistancePurePipeModule,
   FormatDistanceStrictPurePipeModule,
   FormatDistanceToNowPurePipeModule,
+  FormatDistanceToNowStrictPurePipeModule,
   GetWeekPurePipeModule,
   GetWeekOfMonthPurePipeModule,
   GetWeeksInMonthPurePipeModule,

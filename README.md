@@ -270,6 +270,8 @@ Also take into account that locale files tend to increase the final bundle size 
   - [dfnsFormatDistanceStrictPure](https://date-fns.org/v2.16.0/docs/formatDistanceStrict)
 - [dfnsFormatDistanceToNow](https://date-fns.org/v2.16.0/docs/formatDistanceToNow) _([impure](#pure-or-impure))_
   - [dfnsFormatDistanceToNowPure](https://date-fns.org/v2.16.0/docs/formatDistanceToNow)
+- [dfnsFormatDistanceToNowStrict](https://date-fns.org/v2.16.0/docs/formatDistanceToNowStrict) _([impure](#pure-or-impure))_
+  - [dfnsFormatDistanceToNowStrictPure](https://date-fns.org/v2.16.0/docs/formatDistanceToNowStrict)
 - [dfnsFormatDuration](https://date-fns.org/v2.16.0/docs/formatDuration) _([impure](#pure-or-impure))_
   - [dfnsFormatDurationPure](https://date-fns.org/v2.16.0/docs/formatDuration)
 
