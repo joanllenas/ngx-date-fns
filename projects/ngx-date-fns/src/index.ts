@@ -12,6 +12,7 @@ export * from './lib/add-weeks.pipe';
 export * from './lib/add-years.pipe';
 export * from './lib/closest-to.pipe';
 export * from './lib/format.pipe';
+export * from './lib/format-relative.pipe';
 export * from './lib/difference-in-calendar-days.pipe';
 export * from './lib/difference-in-calendar-iso-weeks.pipe';
 export * from './lib/difference-in-calendar-iso-week-years.pipe';

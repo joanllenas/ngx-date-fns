@@ -262,6 +262,8 @@ Also take into account that locale files tend to increase the final bundle size 
 
 - [dfnsFormat](https://date-fns.org/v2.16.0/docs/format) _([impure](#pure-or-impure))_
   - [dfnsFormatPure](https://date-fns.org/v2.16.0/docs/format)
+- [dfnsFormatRelative](https://date-fns.org/v2.16.0/docs/formatRelative) _([impure](#pure-or-impure))_
+  - [dfnsFormatRelativePure](https://date-fns.org/v2.16.0/docs/formatRelative)
 - [dfnsFormatDistance](https://date-fns.org/v2.16.0/docs/formatDistance) _([impure](#pure-or-impure))_
   - [dfnsFormatDistancePure](https://date-fns.org/v2.16.0/docs/formatDistance)
 - [dfnsFormatDistanceStrict](https://date-fns.org/v2.16.0/docs/formatDistanceStrict) _([impure](#pure-or-impure))_
