@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.2.0](https://github.com/joanllenas/ngx-date-fns/compare/v8.1.0...v8.2.0) (2021-07-31)
+
+
+### Features
+
+* **utils:** added new dfnsFormatRelativeToNow pipe ([c0d97b1](https://github.com/joanllenas/ngx-date-fns/commit/c0d97b1ba77cebf8f87ef3be1a34fe41dce78177))
+
 ## [8.1.0](https://github.com/joanllenas/ngx-date-fns/compare/v8.0.0...v8.1.0) (2021-05-01)
 
 
