@@ -139,6 +139,8 @@ import { ParsePurePipeModule } from './parse.pure.pipe';
 import { ParseIsoPipeModule } from './parse-iso.pipe';
 import { FormatDurationPipeModule } from './format-duration.pipe';
 import { FormatDurationPurePipeModule } from './format-duration.pure.pipe';
+import { FormatRelativeToNowPipeModule } from './utils/format-relative-to-now.pipe';
+import { FormatRelativeToNowPurePipeModule } from './utils/format-relative-to-now.pure.pipe';
 
 const PIPES = [
   AddBusinessDaysPipeModule,
@@ -277,7 +279,9 @@ const PIPES = [
   ParsePurePipeModule,
   ParseIsoPipeModule,
   FormatDurationPipeModule,
-  FormatDurationPurePipeModule
+  FormatDurationPurePipeModule,
+  FormatRelativeToNowPipeModule,
+  FormatRelativeToNowPurePipeModule
 ];
 
 @NgModule({

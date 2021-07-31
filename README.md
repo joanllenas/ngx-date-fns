@@ -437,6 +437,12 @@ Also take into account that locale files tend to increase the final bundle size 
 
 A collection of utilities built around date-fns functions.
 
+### dfnsFormatRelativeToNow
+
+> This pipe is ([impure](#pure-or-impure)), but there's the pure version `dfnsFormatRelativeToNowPure` too.
+
+Same as `dfnsFormatRelative` but the date to comapre against is always `Date.now()`.
+
 ### dfnsWeekdayName
 
 > This pipe is ([impure](#pure-or-impure))

@@ -134,6 +134,8 @@ export * from './lib/parse.pure.pipe';
 export * from './lib/parse-iso.pipe';
 export * from './lib/format-duration.pure.pipe';
 export * from './lib/format-duration.pipe';
+export * from './lib/utils/format-relative-to-now.pipe';
+export * from './lib/utils/format-relative-to-now.pure.pipe';
 
 // Other stuff
 export * from './lib/types';
