@@ -1,5 +1,4 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
 // Pipe Modules
 import { AddBusinessDaysPipeModule } from './add-business-days.pipe';
@@ -119,15 +118,46 @@ import { IsAfterPipeModule } from './is-after.pipe';
 import { IsBeforePipeModule } from './is-before.pipe';
 import { IsDatePipeModule } from './is-date.pipe';
 import { IsEqualPipeModule } from './is-equal.pipe';
+import { IsExistsPipeModule } from './is-exists.pipe';
+import { IsFirstDayOfMonthPipeModule } from './is-first-day-of-month.pipe';
+import { IsFridayPipeModule } from './is-friday.pipe';
 import { IsFuturePipeModule } from './is-future.pipe';
+import { IsLastDayOfMonthPipeModule } from './is-last-day-of-month.pipe';
+import { IsLeapYearPipeModule } from './is-leap-year.pipe';
+import { IsMatchPipeModule } from './is-match.pipe';
+import { IsMondayPipeModule } from './is-monday.pipe';
 import { IsPastPipeModule } from './is-past.pipe';
-import { IsValidPipeModule } from './is-valid.pipe';
-import { WeekdayNamePipeModule } from './utils/weekday-name.pipe';
-import { IsWeekendPipeModule } from './is-weekend.pipe';
-import { IsTodayPipeModule } from './is-today.pipe';
+import { IsSameDayPipeModule } from './is-same-day.pipe';
+import { IsSameHourPipeModule } from './is-same-hour.pipe';
+import { IsSameISOWeekYearPipeModule } from './is-same-isoweek-year.pipe';
+import { IsSameISOWeekPipeModule } from './is-same-isoweek.pipe';
+import { IsSameMinutePipeModule } from './is-same-minute.pipe';
 import { IsSameMonthPipeModule } from './is-same-month.pipe';
-import { ParsePipeModule } from './parse.pipe';
+import { IsSameQuarterPipeModule } from './is-same-quarter.pipe';
+import { IsSameSecondPipeModule } from './is-same-second.pipe';
+import { IsSameWeekPipeModule } from './is-same-week.pipe';
 import { IsSameYearPipeModule } from './is-same-year.pipe';
+import { IsSaturdayPipeModule } from './is-saturday.pipe';
+import { IsSundayPipeModule } from './is-sunday.pipe';
+import { IsThisHourPipeModule } from './is-this-hour.pipe';
+import { IsThisISOWeekPipeModule } from './is-this-isoweek.pipe';
+import { IsThisMinutePipeModule } from './is-this-minute.pipe';
+import { IsThisMonthPipeModule } from './is-this-month.pipe';
+import { IsThisQuarterPipeModule } from './is-this-quarter.pipe';
+import { IsThisSecondPipeModule } from './is-this-second.pipe';
+import { IsThisWeekPipeModule } from './is-this-week.pipe';
+import { IsThisYearPipeModule } from './is-this-year.pipe';
+import { IsThursdayPipeModule } from './is-thursday.pipe';
+import { IsTodayPipeModule } from './is-today.pipe';
+import { IsTomorrowPipeModule } from './is-tomorrow.pipe';
+import { IsTuesdayPipeModule } from './is-tuesday.pipe';
+import { IsValidPipeModule } from './is-valid.pipe';
+import { IsWednesdayPipeModule } from './is-wednesday.pipe';
+import { IsWeekendPipeModule } from './is-weekend.pipe';
+import { IsWithinIntervalPipeModule } from './is-within-interval.pipe';
+import { IsYesterdayPipeModule } from './is-yesterday.pipe';
+import { WeekdayNamePipeModule } from './utils/weekday-name.pipe';
+import { ParsePipeModule } from './parse.pipe';
 import { GetWeekPurePipeModule } from './get-week.pure.pipe';
 import { GetWeekOfMonthPurePipeModule } from './get-week-of-month.pure.pipe';
 import { GetWeeksInMonthPurePipeModule } from './get-weeks-in-month.pure.pipe';
@@ -260,6 +290,37 @@ const PIPES = [
   IsTodayPipeModule,
   IsWeekendPipeModule,
   IsSameMonthPipeModule,
+  IsExistsPipeModule,
+  IsFirstDayOfMonthPipeModule,
+  IsFridayPipeModule,
+  IsLastDayOfMonthPipeModule,
+  IsLeapYearPipeModule,
+  IsMatchPipeModule,
+  IsMondayPipeModule,
+  IsSameDayPipeModule,
+  IsSameHourPipeModule,
+  IsSameISOWeekPipeModule,
+  IsSameISOWeekYearPipeModule,
+  IsSameMinutePipeModule,
+  IsSameQuarterPipeModule,
+  IsSameSecondPipeModule,
+  IsSameWeekPipeModule,
+  IsSaturdayPipeModule,
+  IsSundayPipeModule,
+  IsThisHourPipeModule,
+  IsThisISOWeekPipeModule,
+  IsThisMinutePipeModule,
+  IsThisMonthPipeModule,
+  IsThisQuarterPipeModule,
+  IsThisSecondPipeModule,
+  IsThisWeekPipeModule,
+  IsThisYearPipeModule,
+  IsThursdayPipeModule,
+  IsTomorrowPipeModule,
+  IsTuesdayPipeModule,
+  IsWednesdayPipeModule,
+  IsWithinIntervalPipeModule,
+  IsYesterdayPipeModule,
   ParsePipeModule,
   WeekdayNamePipeModule,
   IsSameYearPipeModule,
