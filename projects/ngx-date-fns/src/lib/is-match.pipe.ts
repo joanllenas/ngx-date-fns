@@ -1,10 +1,27 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
-import isMatch from 'date-fns/isMatch';
+import { ChangeDetectorRef, NgModule, OnDestroy, Pipe, PipeTransform } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { calculateLocale, DateFnsConfigurationService } from './date-fns-configuration.service';
+import { isMatch } from 'date-fns';
 
 @Pipe({
   name: 'dfnsIsMatch'
 })
-export class IsMatchPipe implements PipeTransform {
+export class IsMatchPipe implements PipeTransform, OnDestroy {
+
+  private localeChanged$: Subscription;
+
+  constructor(
+    public config: DateFnsConfigurationService,
+    public cd: ChangeDetectorRef
+  ) {
+    this.localeChanged$ = this.config.localeChanged.subscribe(_ =>
+      this.cd.markForCheck()
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.localeChanged$.unsubscribe();
+  }
 
   transform(
     dateString: string,
@@ -17,7 +34,7 @@ export class IsMatchPipe implements PipeTransform {
       useAdditionalDayOfYearTokens?: boolean | undefined;
     } | undefined
   ): boolean {
-    return isMatch(dateString, formatString, options);
+    return isMatch(dateString, formatString, calculateLocale(options, this.config));
   }
 
 }
