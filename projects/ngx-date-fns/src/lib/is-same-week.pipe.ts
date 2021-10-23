@@ -1,14 +1,20 @@
-import { ChangeDetectorRef, NgModule, OnDestroy, Pipe, PipeTransform } from '@angular/core';
-import { DateFnsInputDate } from './types';
+import {
+  ChangeDetectorRef,
+  NgModule,
+  OnDestroy,
+  Pipe,
+  PipeTransform
+} from '@angular/core';
+import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 import { Subscription } from 'rxjs';
-import { calculateLocale, DateFnsConfigurationService } from './date-fns-configuration.service';
+import {
+  calculateLocale,
+  DateFnsConfigurationService
+} from './date-fns-configuration.service';
 import isSameWeek from 'date-fns/isSameWeek';
 
-@Pipe({
-  name: 'dfnsIsSameWeek'
-})
+@Pipe({ name: 'dfnsIsSameWeek', pure: false })
 export class IsSameWeekPipe implements PipeTransform, OnDestroy {
-
   private localeChanged$: Subscription;
 
   constructor(
@@ -28,17 +34,20 @@ export class IsSameWeekPipe implements PipeTransform, OnDestroy {
     dateLeft: DateFnsInputDate,
     dateRight: DateFnsInputDate,
     options?: {
-      locale?: Locale
-      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
+      locale?: Locale;
+      weekStartsOn?: DateFnsWeekIndex;
     }
   ): boolean {
-    return isSameWeek(dateLeft, dateRight, calculateLocale(options, this.config));
+    return isSameWeek(
+      dateLeft,
+      dateRight,
+      calculateLocale(options, this.config)
+    );
   }
-
 }
 
 @NgModule({
   declarations: [IsSameWeekPipe],
   exports: [IsSameWeekPipe]
 })
-export class IsSameWeekPipeModule { }
+export class IsSameWeekPipeModule {}

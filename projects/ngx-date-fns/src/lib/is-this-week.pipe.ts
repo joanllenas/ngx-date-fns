@@ -1,14 +1,20 @@
-import { ChangeDetectorRef, NgModule, OnDestroy, Pipe, PipeTransform } from '@angular/core';
-import { DateFnsInputDate } from './types';
+import {
+  ChangeDetectorRef,
+  NgModule,
+  OnDestroy,
+  Pipe,
+  PipeTransform
+} from '@angular/core';
+import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 import { Subscription } from 'rxjs';
-import { calculateLocale, DateFnsConfigurationService } from './date-fns-configuration.service';
+import {
+  calculateLocale,
+  DateFnsConfigurationService
+} from './date-fns-configuration.service';
 import { isThisWeek } from 'date-fns';
 
-@Pipe({
-  name: 'dfnsIsThisWeek'
-})
+@Pipe({ name: 'dfnsIsThisWeek', pure: false })
 export class IsThisWeekPipe implements PipeTransform, OnDestroy {
-
   private localeChanged$: Subscription;
 
   constructor(
@@ -27,17 +33,16 @@ export class IsThisWeekPipe implements PipeTransform, OnDestroy {
   transform(
     date: DateFnsInputDate,
     options?: {
-      locale?: Locale
-      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
+      locale?: Locale;
+      weekStartsOn?: DateFnsWeekIndex;
     }
   ): boolean {
     return isThisWeek(date, calculateLocale(options, this.config));
   }
-
 }
 
 @NgModule({
   declarations: [IsThisWeekPipe],
   exports: [IsThisWeekPipe]
 })
-export class IsThisWeekPipeModule { }
+export class IsThisWeekPipeModule {}

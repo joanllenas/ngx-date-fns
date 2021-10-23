@@ -134,6 +134,46 @@ export * from './lib/parse.pure.pipe';
 export * from './lib/parse-iso.pipe';
 export * from './lib/format-duration.pure.pipe';
 export * from './lib/format-duration.pipe';
+
+export * from './lib/is-exists.pipe';
+export * from './lib/is-first-day-of-month.pipe';
+export * from './lib/is-friday.pipe';
+export * from './lib/is-last-day-of-month.pipe';
+export * from './lib/is-leap-year.pipe';
+export * from './lib/is-match.pipe';
+export * from './lib/is-match.pure.pipe';
+export * from './lib/is-monday.pipe';
+export * from './lib/is-same-day.pipe';
+export * from './lib/is-same-hour.pipe';
+export * from './lib/is-same-isoweek-year.pipe';
+export * from './lib/is-same-isoweek.pipe';
+export * from './lib/is-same-minute.pipe';
+export * from './lib/is-same-month.pipe';
+export * from './lib/is-same-quarter.pipe';
+export * from './lib/is-same-second.pipe';
+export * from './lib/is-same-week.pipe';
+export * from './lib/is-same-week.pure.pipe';
+export * from './lib/is-same-year.pipe';
+export * from './lib/is-saturday.pipe';
+export * from './lib/is-sunday.pipe';
+export * from './lib/is-this-hour.pipe';
+export * from './lib/is-this-isoweek.pipe';
+export * from './lib/is-this-minute.pipe';
+export * from './lib/is-this-month.pipe';
+export * from './lib/is-this-quarter.pipe';
+export * from './lib/is-this-second.pipe';
+export * from './lib/is-this-week.pipe';
+export * from './lib/is-this-week.pure.pipe';
+export * from './lib/is-this-year.pipe';
+export * from './lib/is-thursday.pipe';
+export * from './lib/is-today.pipe';
+export * from './lib/is-tomorrow.pipe';
+export * from './lib/is-tuesday.pipe';
+export * from './lib/is-wednesday.pipe';
+export * from './lib/is-within-interval.pipe';
+export * from './lib/is-yesterday.pipe';
+
+// util pipes
 export * from './lib/utils/format-relative-to-now.pipe';
 export * from './lib/utils/format-relative-to-now.pure.pipe';
 

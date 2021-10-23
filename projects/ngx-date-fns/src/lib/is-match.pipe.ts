@@ -1,13 +1,20 @@
-import { ChangeDetectorRef, NgModule, OnDestroy, Pipe, PipeTransform } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  NgModule,
+  OnDestroy,
+  Pipe,
+  PipeTransform
+} from '@angular/core';
 import { Subscription } from 'rxjs';
-import { calculateLocale, DateFnsConfigurationService } from './date-fns-configuration.service';
+import {
+  calculateLocale,
+  DateFnsConfigurationService
+} from './date-fns-configuration.service';
 import { isMatch } from 'date-fns';
+import { DateFnsFirstWeekDays, DateFnsWeekIndex } from './types';
 
-@Pipe({
-  name: 'dfnsIsMatch'
-})
+@Pipe({ name: 'dfnsIsMatch', pure: false })
 export class IsMatchPipe implements PipeTransform, OnDestroy {
-
   private localeChanged$: Subscription;
 
   constructor(
@@ -27,20 +34,23 @@ export class IsMatchPipe implements PipeTransform, OnDestroy {
     dateString: string,
     formatString: string,
     options?: {
-      locale?: Locale | undefined;
-      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | undefined;
-      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | undefined;
-      useAdditionalWeekYearTokens?: boolean | undefined;
-      useAdditionalDayOfYearTokens?: boolean | undefined;
-    } | undefined
+      locale?: Locale;
+      weekStartsOn?: DateFnsWeekIndex;
+      firstWeekContainsDate?: DateFnsFirstWeekDays;
+      useAdditionalWeekYearTokens?: boolean;
+      useAdditionalDayOfYearTokens?: boolean;
+    }
   ): boolean {
-    return isMatch(dateString, formatString, calculateLocale(options, this.config));
+    return isMatch(
+      dateString,
+      formatString,
+      calculateLocale(options, this.config)
+    );
   }
-
 }
 
 @NgModule({
   declarations: [IsMatchPipe],
   exports: [IsMatchPipe]
 })
-export class IsMatchPipeModule { }
+export class IsMatchPipeModule {}
