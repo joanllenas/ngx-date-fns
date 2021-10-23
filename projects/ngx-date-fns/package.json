@@ -1,6 +1,6 @@
 {
   "name": "ngx-date-fns",
-  "version": "8.2.0",
+  "version": "8.3.0",
   "description": "date-fns pipes for Angular",
   "repository": {
     "type": "git",

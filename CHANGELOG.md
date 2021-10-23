@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.3.0](https://github.com/joanllenas/ngx-date-fns/compare/v8.2.0...v8.3.0) (2021-10-23)
+
+
+### Features
+
+* **pipes:** Add Missing is* pipes ([b9f2854](https://github.com/joanllenas/ngx-date-fns/commit/b9f285417346cb57f25c5b31e88fb7e5d696bfb7))
+
+
+### Bug Fixes
+
+* **pipes:** added the new is* pipes to index.ts + misc pipe fixes ([427db30](https://github.com/joanllenas/ngx-date-fns/commit/427db302f81b12ff46968644164f36af220900fa))
+
 ## [8.2.0](https://github.com/joanllenas/ngx-date-fns/compare/v8.1.0...v8.2.0) (2021-07-31)
 
 
