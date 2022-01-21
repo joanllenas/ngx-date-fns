@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0-beta.0](https://github.com/joanllenas/ngx-date-fns/compare/v8.3.0...v9.0.0-beta.0) (2022-01-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* **lib:** Applications will have to be built with Angular 12 or later to use this library.
+
+### build
+
+* **lib:** partial Ivy distribution ([1337624](https://github.com/joanllenas/ngx-date-fns/commit/133762413b7f5b19cce189ae70aee9ad30684cbc)), closes [#369](https://github.com/joanllenas/ngx-date-fns/issues/369)
+
 ## [8.3.0](https://github.com/joanllenas/ngx-date-fns/compare/v8.2.0...v8.3.0) (2021-10-23)
 
 
