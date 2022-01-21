@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0-beta.2](https://github.com/joanllenas/ngx-date-fns/compare/v9.0.0-beta.1...v9.0.0-beta.2) (2022-01-21)
+
 ## [9.0.0-beta.1](https://github.com/joanllenas/ngx-date-fns/compare/v9.0.0-beta.0...v9.0.0-beta.1) (2022-01-21)
 
 ## [9.0.0-beta.0](https://github.com/joanllenas/ngx-date-fns/compare/v8.3.0...v9.0.0-beta.0) (2022-01-21)
