@@ -7,7 +7,7 @@ export interface DateFnsConfiguration {
    * Observable language-aware pipes subscribe to get notified when the locale changes,
    * this is useful when pipes live in an OnPush component.
    */
-  localeChanged: Subject<never>;
+  localeChanged: Subject<void>;
 
   /**
    * Returns the default locale used by date-fns
@@ -22,7 +22,7 @@ export interface DateFnsConfiguration {
 
 @Injectable({ providedIn: 'root' })
 export class DateFnsConfigurationService implements DateFnsConfiguration {
-  public localeChanged: Subject<never> = new Subject();
+  public localeChanged: Subject<void> = new Subject();
   private locale$: Locale | undefined;
 
   locale(): Locale | undefined {

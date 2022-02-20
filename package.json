@@ -1,6 +1,6 @@
 {
   "name": "ngx-date-fns-app",
-  "version": "8.3.0",
+  "version": "9.0.0-beta.0",
   "description": "date-fns pipes for Angular",
   "repository": {
     "type": "git",
@@ -27,79 +27,49 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ngx-date-fns",
-    "test": "ng test ngx-date-fns --watch=false",
-    "lint": "ng lint ngx-date-fns",
+    "build": "ng build lib",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test lib --watch=false",
+    "lint": "ng lint lib",
     "analyze:app": "npm run build:app && npm run analyze",
-    "build:app": "ng build --namedChunks=true --sourceMap=true --configuration production",
-    "analyze": "source-map-explorer dist/ngx-date-fns-app/main-es5.*.js",
-    "prettier": "prettier --write src/app/**/*.ts && prettier --write projects/ngx-date-fns/src/lib/**/*.ts",
-    "precommit": "npm run lint && npm run test",
-    "e2e": "ng e2e",
-    "cm": "git-cz",
-    "cm-retry": "git-cz --retry",
-    "copy-readme": "cp ./README.md ./dist/ngx-date-fns",
-    "build:version": "sync-json -v --property version --source package.json projects/ngx-date-fns/package.json && sync-json -v --property version --source package.json dist/ngx-date-fns/package.json",
-    "release": "npm run build && npm run copy-readme && standard-version --no-verify --commit-all && npm publish dist/ngx-date-fns",
-    "next": "npm run build && npm run copy-readme && standard-version --no-verify --commit-all --prerelease beta && npm publish dist/ngx-date-fns --tag next",
-    "standard-version": "standard-version"
+    "analyze": "source-map-explorer dist/lib/main-es5.*.js",
+    "copy-readme": "cp ./README.md ./dist/lib",
+    "sync-version": "sync-json -v --property version --source package.json projects/lib/package.json && sync-json -v --property version --source package.json dist/lib/package.json",
+    "release-dance": "npm run test && npm run build && npm run copy-readme && npm run sync-version",
+    "release": "npm run release-dance && npm publish dist/lib",
+    "next": "npm run release-dance && npm publish dist/lib --tag next"
   },
-  "standard-version": {
-    "scripts": {
-      "postbump": "npm run build:version",
-      "precommit": "git add .",
-      "posttag": "git push --follow-tags"
-    }
-  },
+  "private": true,
   "dependencies": {
-    "@angular/animations": "~12.2.10",
-    "@angular/common": "~12.2.10",
-    "@angular/compiler": "~12.2.10",
-    "@angular/core": "~12.2.10",
-    "@angular/forms": "~12.2.10",
-    "@angular/platform-browser": "~12.2.10",
-    "@angular/platform-browser-dynamic": "~12.2.10",
-    "@angular/router": "~12.2.10",
+    "@angular/animations": "~13.2.0",
+    "@angular/common": "~13.2.0",
+    "@angular/compiler": "~13.2.0",
+    "@angular/core": "~13.2.0",
+    "@angular/forms": "~13.2.0",
+    "@angular/platform-browser": "~13.2.0",
+    "@angular/platform-browser-dynamic": "~13.2.0",
+    "@angular/router": "~13.2.0",
     "date-fns": "^2.21.1",
-    "rxjs": "~6.6.0",
+    "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.10",
-    "@angular/cli": "^12.2.10",
-    "@angular/compiler-cli": "~12.2.10",
-    "@angular/language-service": "~12.2.10",
-    "@types/jasmine": "~3.6.0",
-    "@types/jasminewd2": "~2.0.3",
+    "@angular-devkit/build-angular": "~13.2.4",
+    "@angular/cli": "~13.2.4",
+    "@angular/compiler-cli": "~13.2.0",
+    "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
-    "codelyzer": "^6.0.0",
-    "commitizen": "^4.2.3",
-    "cz-conventional-changelog": "^3.3.0",
-    "ghooks": "^2.0.4",
-    "jasmine-core": "~3.6.0",
-    "jasmine-spec-reporter": "~5.0.0",
-    "karma": "~6.3.4",
+    "jasmine-core": "~4.0.0",
+    "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
-    "ng-packagr": "^12.1.2",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "ng-packagr": "^13.0.0",
     "prettier": "^1.19.1",
-    "protractor": "~7.0.0",
     "source-map-explorer": "^2.4.2",
-    "standard-version": "^9.1.1",
     "sync-json": "^1.0.2",
-    "ts-node": "~7.0.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.3.5"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    },
-    "ghooks": {
-      "pre-commit": "npm run precommit"
-    }
+    "typescript": "~4.5.2"
   }
 }

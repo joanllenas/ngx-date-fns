@@ -172,6 +172,8 @@ export * from './lib/is-tuesday.pipe';
 export * from './lib/is-wednesday.pipe';
 export * from './lib/is-within-interval.pipe';
 export * from './lib/is-yesterday.pipe';
+export * from './lib/format-relative.pure.pipe';
+export * from './lib/format-distance-to-now-strict.pure.pipe';
 
 // util pipes
 export * from './lib/utils/format-relative-to-now.pipe';
