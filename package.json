@@ -36,8 +36,8 @@
     "copy-readme": "cp ./README.md ./dist/lib",
     "sync-version": "sync-json -v --property version --source package.json projects/lib/package.json && sync-json -v --property version --source package.json dist/lib/package.json",
     "release-dance": "npm run test && npm run build && npm run copy-readme && npm run sync-version",
-    "release": "npm run release-dance && npm publish dist/lib",
-    "next": "npm run release-dance && npm publish dist/lib --tag next"
+    "release": "npm run release-dance && npm publish dist/lib/",
+    "next": "npm run release-dance && npm publish dist/lib/ --tag next"
   },
   "private": true,
   "dependencies": {
