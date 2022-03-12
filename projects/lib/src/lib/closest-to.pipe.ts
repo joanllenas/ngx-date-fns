@@ -7,7 +7,7 @@ export class ClosestToPipe implements PipeTransform {
   transform(
     dateToCompare: DateFnsInputDate,
     datesArray: DateFnsInputDate[]
-  ): Date {
+  ): ReturnType<typeof closestTo> {
     return closestTo(dateToCompare, datesArray);
   }
 }
