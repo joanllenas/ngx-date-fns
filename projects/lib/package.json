@@ -25,11 +25,11 @@
   },
   "homepage": "https://github.com/joanllenas/ngx-date-fns#readme",
   "peerDependencies": {
-    "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0",
+    "@angular/common": ">=14",
+    "@angular/core": ">=14",
     "date-fns": ">=2"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": ">=2.3.0"
   }
 }
