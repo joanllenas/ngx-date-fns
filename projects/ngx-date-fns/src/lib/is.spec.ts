@@ -39,6 +39,7 @@ import { IsWithinIntervalPipe } from './is-within-interval.pipe';
 import { IsYesterdayPipe } from './is-yesterday.pipe';
 import { removePipe } from './test-utils';
 
+// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 function runFn(fn: () => any): any {
   return fn();
 }

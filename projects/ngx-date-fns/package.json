@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/joanllenas/ngx-date-fns#readme",
   "peerDependencies": {
-    "@angular/common": ">=8",
-    "@angular/core": ">=8",
+    "@angular/common": ">=12",
+    "@angular/core": ">=12",
     "date-fns": ">=2"
   },
   "dependencies": {

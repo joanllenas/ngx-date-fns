@@ -9,6 +9,7 @@ describe('FormatDistanceStrictPipe', () => {
   let pipe: FormatDistanceStrictPipe;
 
   const createPipe = () => {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     const MyChangeDetector = class extends ChangeDetectorRef {
       markForCheck(): void {
         throw new Error('Method not implemented.');

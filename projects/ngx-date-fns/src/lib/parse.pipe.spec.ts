@@ -8,6 +8,7 @@ describe('ParsePipe', () => {
   let pipe: ParsePipe;
 
   beforeEach(() => {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     const MyChangeDetector = class extends ChangeDetectorRef {
       markForCheck(): void {
         throw new Error('Method not implemented.');
