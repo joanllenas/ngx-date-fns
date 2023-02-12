@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/joanllenas/ngx-date-fns.png?branch=master)](https://travis-ci.org/joanllenas/ngx-date-fns)
 [![codecov](https://codecov.io/gh/joanllenas/ngx-date-fns/branch/master/graph/badge.svg)](https://codecov.io/gh/joanllenas/ngx-date-fns)
 [![npm version](https://badge.fury.io/js/ngx-date-fns.svg)](https://badge.fury.io/js/ngx-date-fns)
-[![Known Vulnerabilities](https://snyk.io/test/github/joanllenas/ngx-date-fns/badge.svg)](https://snyk.io/test/github/joanllenas/ngx-date-fns)
+[![npm downloads](https://img.shields.io/npm/dm/ngx-date-fns)](https://www.npmjs.com/package/ngx-date-fns)
 
 [date-fns](https://date-fns.org/) pipes for Angular 2.0 and above.
 
