@@ -69,17 +69,17 @@ import { DateFnsModule } from 'ngx-date-fns';
 > In lazy loaded module declarations use `imports: [DateFnsModule]`.
 
 ```typescript
-import { Component } from '@angular/core';
-import { es } from 'date-fns/locale';
+import { Component } from "@angular/core";
+import { es } from "date-fns/locale";
 
 @Component({
-  selector: 'my-component',
+  selector: "my-component",
   template: `
-    <p>{{ dateOne | dfnsFormat: 'yyyy/MM/dd' }}</p>
+    <p>{{ dateOne | dfnsFormat : "yyyy/MM/dd" }}</p>
     <p>{{ [dateOne, dateTwo] | dfnsMin }}</p>
-    <p>{{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLL d yyyy' }}</p>
-    <p>{{ dateThree | dfnsFormatDistanceToNow: options }}</p>
-  `
+    <p>{{ [dateOne, dateTwo] | dfnsMax | dfnsFormat : "EEE LLL d yyyy" }}</p>
+    <p>{{ dateThree | dfnsFormatDistanceToNow : options }}</p>
+  `,
 })
 export class AppComponent {
   dateOne = new Date(2016, 0, 1);
@@ -87,7 +87,7 @@ export class AppComponent {
   dateThree: Date;
   options = {
     locale: es,
-    addSuffix: true
+    addSuffix: true,
   };
   constructor() {
     this.dateThree = new Date();
@@ -146,18 +146,17 @@ frenchConfig.setLocale(fr);
 It is also possible to change the default locale at runtime:
 
 ```typescript
-import { Component } from '@angular/core';
-import { DateFnsConfigurationService } from '../lib/src/date-fns-configuration.service';
-import { es, de } from 'date-fns/locale';
+import { Component } from "@angular/core";
+import { DateFnsConfigurationService } from "../lib/src/date-fns-configuration.service";
+import { es, de } from "date-fns/locale";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   template: `
-    <p>{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
+    <p>{{ dateOne | dfnsFormat : "MM/dd/yyyy" }}</p>
     <hr />
-    Set default locale to: <a href="#" (click)="changeToGerman()">German</a>,
-    <a href="#" (click)="changeToSpanish()">Spanish</a>.
-  `
+    Set default locale to: <a href="#" (click)="changeToGerman()">German</a>, <a href="#" (click)="changeToSpanish()">Spanish</a>.
+  `,
 })
 export class AppComponent {
   dateOne = new Date(2016, 0, 1);
@@ -196,16 +195,9 @@ The library itself is optimized to be tree-shakable by just importing `DateFnsMo
 
 ```typescript
 // app.module.ts
-import { fr } from 'date-fns/locale';
-import { DateFnsConfigurationService } from 'ngx-date-fns';
-import {
-  FormatPipeModule,
-  MinPipeModule,
-  MaxPipeModule,
-  FormatDistanceToNowPipeModule,
-  WeekdayNamePipeModule,
-  ParsePipeModule
-} from 'ngx-date-fns';
+import { fr } from "date-fns/locale";
+import { DateFnsConfigurationService } from "ngx-date-fns";
+import { FormatPipeModule, MinPipeModule, MaxPipeModule, FormatDistanceToNowPipeModule, WeekdayNamePipeModule, ParsePipeModule } from "ngx-date-fns";
 
 const frenchConfig = new DateFnsConfigurationService();
 frenchConfig.setLocale(fr);
@@ -219,9 +211,9 @@ frenchConfig.setLocale(fr);
     MaxPipeModule,
     FormatDistanceToNowPipeModule,
     WeekdayNamePipeModule,
-    ParsePipeModule
+    ParsePipeModule,
   ],
-  providers: [{ provide: DateFnsConfigurationService, useValue: frenchConfig }]
+  providers: [{ provide: DateFnsConfigurationService, useValue: frenchConfig }],
 })
 export class AppModule {}
 ```
