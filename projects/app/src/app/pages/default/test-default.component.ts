@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { es } from 'date-fns/locale';
 import { DateFnsModule } from 'ngx-date-fns';
 
@@ -7,6 +7,7 @@ import { DateFnsModule } from 'ngx-date-fns';
   selector: 'dfns-test-default-component',
   standalone: true,
   imports: [CommonModule, DateFnsModule],
+  changeDetection: ChangeDetectionStrategy.Default,
   template: `
     <p data-testid="mmddyyyy">{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
     <p data-testid="dfns-min">

@@ -8,27 +8,28 @@ import { of } from 'rxjs';
   selector: 'dfns-test-onpush-component',
   standalone: true,
   imports: [CommonModule, DateFnsModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <p>
-      {{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}
-    </p>
-    <p>
+    <p data-testid="mmddyyyy">{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
+    <p data-testid="dfns-min">
       {{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'EEE LLLL d yyyy' }}
     </p>
-    <p>
+    <p data-testid="dfns-max">
       {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLLL d yyyy' }}
     </p>
-    <p>
+    <p data-testid="format-es">
       {{ dateThree | async | dfnsFormatDistanceToNow: options }} - (Explicit
       'es' locale)
     </p>
     <ul>
-      <li *ngFor="let d of dates">
+      <li
+        [attr.data-testid]="'distance-now-' + i"
+        *ngFor="let d of dates; let i = index"
+      >
         {{ d | dfnsFormatDistanceToNow }}
       </li>
     </ul>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  `
 })
 export class TestOnPushComponent {
   @Input() dateOne = new Date();

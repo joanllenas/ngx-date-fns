@@ -34,7 +34,7 @@
     "e2e": "npx cypress open",
     "copy-readme": "cp ./README.md ./dist/ngx-date-fns",
     "sync-version": "sync-json -v --property version --source package.json dist/ngx-date-fns/package.json",
-    "release-dance": "npm run test && npm run build && npm run copy-readme && npm run sync-version",
+    "release-dance": "npm run test && npm run e2e:ci && npm run build && npm run copy-readme && npm run sync-version",
     "release": "npm run release-dance && npm publish dist/ngx-date-fns/",
     "next": "npm run release-dance && npm publish dist/ngx-date-fns/ --tag next"
   },

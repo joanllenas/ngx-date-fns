@@ -1,7 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DateFnsConfigurationService } from 'ngx-date-fns';
-import { es, de } from 'date-fns/locale';
-import { CommonModule } from '@angular/common';
+import { es, de, fr } from 'date-fns/locale';
 import { TestStrategyDefaultComponent } from './test-default.component';
 
 @Component({
@@ -22,12 +22,22 @@ import { TestStrategyDefaultComponent } from './test-default.component';
     <div class="locale-toggle">
       <button
         type="button"
+        data-testid="fr"
+        [class.active]="activeLocale === 'fr'"
+        (click)="changeToFrench()"
+      >
+        French
+      </button>
+
+      <button
+        type="button"
         data-testid="de"
         [class.active]="activeLocale === 'de'"
         (click)="changeToGerman()"
       >
         German
       </button>
+
       <button
         type="button"
         data-testid="es"
@@ -53,7 +63,7 @@ export class StrategyDefaultComponent {
   dateTwo = new Date(2017, 0, 1);
   dateThree: Date;
   dates: Date[];
-  activeLocale: 'es' | 'de' | undefined = undefined;
+  activeLocale?: string;
 
   constructor(public config: DateFnsConfigurationService) {
     this.dateThree = new Date();
@@ -61,6 +71,11 @@ export class StrategyDefaultComponent {
     this.dates = new Array(6)
       .fill(new Date())
       .map((d, i) => d.setDate(d.getDate() - Math.pow(5, i)));
+    this.activeLocale = this.config.locale()?.code;
+  }
+  changeToFrench() {
+    this.config.setLocale(fr);
+    this.activeLocale = 'fr';
   }
   changeToGerman() {
     this.config.setLocale(de);
