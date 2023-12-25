@@ -8,15 +8,36 @@ import { TestStrategyDefaultComponent } from './test-default.component';
   selector: 'dfns-default-component',
   standalone: true,
   imports: [CommonModule, TestStrategyDefaultComponent],
+  styles: `
+    .locale-toggle {
+      display: flex;
+    }
+    button.active {
+      border-color: blue;
+    }
+  `,
   template: `
     <h2>Default</h2>
     <p>Set default locale to:</p>
-    <ul>
-      <li><button type="button" (click)="changeToGerman()">German</button></li>
-      <li>
-        <button type="button" (click)="changeToSpanish()">Spanish</button>
-      </li>
-    </ul>
+    <div class="locale-toggle">
+      <button
+        type="button"
+        data-testid="de"
+        [class.active]="activeLocale === 'de'"
+        (click)="changeToGerman()"
+      >
+        German
+      </button>
+      <button
+        type="button"
+        data-testid="es"
+        [class.active]="activeLocale === 'es'"
+        (click)="changeToSpanish()"
+      >
+        Spanish
+      </button>
+    </div>
+
     <hr />
     <dfns-test-default-component
       [dateOne]="dateOne"
@@ -32,6 +53,7 @@ export class StrategyDefaultComponent {
   dateTwo = new Date(2017, 0, 1);
   dateThree: Date;
   dates: Date[];
+  activeLocale: 'es' | 'de' | undefined = undefined;
 
   constructor(public config: DateFnsConfigurationService) {
     this.dateThree = new Date();
@@ -42,8 +64,10 @@ export class StrategyDefaultComponent {
   }
   changeToGerman() {
     this.config.setLocale(de);
+    this.activeLocale = 'de';
   }
   changeToSpanish() {
     this.config.setLocale(es);
+    this.activeLocale = 'es';
   }
 }

@@ -29,6 +29,9 @@
     "start": "ng serve app",
     "build": "ng build ngx-date-fns",
     "test": "ng test ngx-date-fns --no-watch --no-progress --browsers=ChromeHeadless",
+    "cy:run": "cypress run",
+    "e2e:ci": "start-server-and-test start http-get://localhost:4200 cy:run",
+    "e2e": "npx cypress open",
     "copy-readme": "cp ./README.md ./dist/ngx-date-fns",
     "sync-version": "sync-json -v --property version --source package.json dist/ngx-date-fns/package.json",
     "release-dance": "npm run test && npm run build && npm run copy-readme && npm run sync-version",
@@ -55,6 +58,7 @@
     "@angular/cli": "^17.0.8",
     "@angular/compiler-cli": "^17.0.0",
     "@types/jasmine": "~5.1.0",
+    "cypress": "^13.6.1",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -63,6 +67,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^17.0.0",
     "prettier": "^1.19.1",
+    "start-server-and-test": "^2.0.3",
     "sync-json": "^1.0.2",
     "typescript": "~5.2.2"
   }

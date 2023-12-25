@@ -9,21 +9,23 @@ import { DateFnsModule } from 'ngx-date-fns';
   imports: [CommonModule, DateFnsModule],
   template: `
     <h2>Main</h2>
-    <p>
+    <p data-testid="mmddyyyy">
       {{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}
     </p>
-    <p>
-      {{ [dateOne, dateTwo] | dfnsMin }}
+    <p data-testid="dfns-min">
+      {{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'MM/dd/yyyy' }}
     </p>
-    <p>
+    <p data-testid="dfns-max">
       {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLLL d yyyy' }}
     </p>
-    <p>
+    <p data-testid="distance-es">
       {{ dateThree | dfnsFormatDistanceToNow: options }} - (Explicit 'es'
       locale)
     </p>
-    <p>{{ 0 | dfnsWeekdayName: 'full':options }} - (Explicit 'es' locale)</p>
-    <p>
+    <p data-testid="weekday-es">
+      {{ 0 | dfnsWeekdayName: 'full':options }} - (Explicit 'es' locale)
+    </p>
+    <p data-testid="parse-es">
       {{
         '12 de Marzo'
           | dfnsParse: parseFormat:parseDate:parseLocale

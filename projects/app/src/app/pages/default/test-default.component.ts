@@ -8,15 +8,24 @@ import { DateFnsModule } from 'ngx-date-fns';
   standalone: true,
   imports: [CommonModule, DateFnsModule],
   template: `
-    <p>{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
-    <p>{{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'EEE LLLL d yyyy' }}</p>
-    <p>{{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLLL d yyyy' }}</p>
-    <p>
+    <p data-testid="mmddyyyy">{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
+    <p data-testid="dfns-min">
+      {{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'EEE LLLL d yyyy' }}
+    </p>
+    <p data-testid="dfns-max">
+      {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLLL d yyyy' }}
+    </p>
+    <p data-testid="format-es">
       {{ dateThree | dfnsFormatDistanceToNow: options }} - (Explicit 'es'
       locale)
     </p>
     <ul>
-      <li *ngFor="let d of dates">{{ d | dfnsFormatDistanceToNow }}</li>
+      <li
+        [attr.data-testid]="'distance-now-' + i"
+        *ngFor="let d of dates; let i = index"
+      >
+        {{ d | dfnsFormatDistanceToNow }}
+      </li>
     </ul>
   `
 })
