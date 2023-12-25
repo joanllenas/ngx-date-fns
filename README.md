@@ -5,18 +5,20 @@
 [![npm version](https://badge.fury.io/js/ngx-date-fns.svg)](https://badge.fury.io/js/ngx-date-fns)
 [![npm downloads](https://img.shields.io/npm/dm/ngx-date-fns)](https://www.npmjs.com/package/ngx-date-fns)
 
-[date-fns](https://date-fns.org/) pipes for Angular 2.0 and above.
+[date-fns](https://date-fns.org/) pipes for Angular applications.
 
 ## Table Of Contents
 
+- [Requirememnts](#requirememnts)
 - [Installation](#installation)
-- [date-fns v1 support](#v1-support)
+  - [date-fns v3 support](#installation)
+  - [date-fns v2 support](#v2-support)
+  - [date-fns v1 support](#v1-support)
 - [Basic Usage](#usage)
 - [Working with locales](#locales)
   - [Changing locale globally](#locale-globally)
   - [Changing locale at runtime](#locale-runtime)
-  - [_Pure_ or _impure_?](#pure-impure)
-- [Tree shaking date-fns](#tree-shaking)
+- [_Pure_ or _impure_?](#pure-impure)
 - [Available pipes 📚](#pipes)
   - [Misc. pipes](#misc-pipes)
   - [Format... pipes](#format-pipes)
@@ -30,20 +32,35 @@
   - [Is... pipes](#is-pipes)
 - [Utils](#utils)
 
+<a name="requirememnts" />
+
+## Requirememnts
+
+The latest version of this library requires:
+
+- [date-fns](https://date-fns.org/) `>= v3.0.0`.
+- Angular `>= v17.0.0`.
+
 <a name="installation" />
 
 ## Installation
 
-This library requires [date-fns](https://date-fns.org/) `>= v2.16.1`.
-
-> ⚠️ There's a range of date-fns versions for which _tree shaking_ is broken, so we recommend that you either install `v2.16.1` or `>= v2.21.1`.
-
 - `npm install --save date-fns`
 - `npm install --save ngx-date-fns`
 
+<a name="v2-support" />
+
+#### Installation for date-fns v2
+
+- `npm install --save date-fns@2.30.0`
+- `npm install --save ngx-date-fns@10.0.1`
+- [ngx-date-fns@10.0.1 docs](https://github.com/joanllenas/ngx-date-fns/tree/v10.0.1)
+
+> ⚠️ There's a range of date-fns versions for which _tree shaking_ is broken, so we recommend that you either install `v2.16.1` or `>= v2.21.1`.
+
 <a name="v1-support" />
 
-#### date-fns v1 support
+#### Installation for date-fns v1
 
 - `npm install --save date-fns@1.29.0`
 - `npm install --save ngx-date-fns@4.0.3`
@@ -53,35 +70,41 @@ This library requires [date-fns](https://date-fns.org/) `>= v2.16.1`.
 
 ## Basic Usage
 
-Import `DateFnsModule` into your app's module:
+> [stackblitz example](https://stackblitz.com/edit/stackblitz-starters-eonlzk?file=src%2Fmain.ts)
 
 ```typescript
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import 'zone.js';
+import { es } from 'date-fns/locale';
 import { DateFnsModule } from 'ngx-date-fns';
 
-@NgModule({
-  imports: [
-    // (...)
-    DateFnsModule.forRoot()
-  ]
-})
-```
-
-> In lazy loaded module declarations use `imports: [DateFnsModule]`.
-
-```typescript
-import { Component } from '@angular/core';
-import { es } from 'date-fns/locale';
-
 @Component({
-  selector: 'my-component',
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, DateFnsModule],
   template: `
-    <p>{{ dateOne | dfnsFormat: 'yyyy/MM/dd' }}</p>
-    <p>{{ [dateOne, dateTwo] | dfnsMin }}</p>
-    <p>{{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLL d yyyy' }}</p>
-    <p>{{ dateThree | dfnsFormatDistanceToNow: options }}</p>
+    <p>{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
+    <p>{{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'EEE LLLL d yyyy' }}</p>
+    <p>
+      {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLLL d yyyy' }}
+    </p>
+    <p>
+      {{ dateThree | dfnsFormatDistanceToNow: options }} - (Explicit 'es'
+      locale)
+    </p>
+    <p>{{ 0 | dfnsWeekdayName: 'full':options }} - (Explicit 'es' locale)</p>
+    <p>
+      {{
+        '12 de Marzo'
+          | dfnsParse: parseFormat:parseDate:parseLocale
+          | dfnsFormat: 'MM/dd/yyyy'
+      }}
+    </p>
   `
 })
-export class AppComponent {
+export class App {
   dateOne = new Date(2016, 0, 1);
   dateTwo = new Date(2017, 0, 1);
   dateThree: Date;
@@ -89,23 +112,28 @@ export class AppComponent {
     locale: es,
     addSuffix: true
   };
+  parseDate = new Date(2010, 0, 1);
+  parseFormat = `do 'de' MMMM`;
+  parseLocale = { locale: es };
+
   constructor() {
     this.dateThree = new Date();
     this.dateThree.setDate(this.dateThree.getDate() - 6);
   }
 }
+
+bootstrapApplication(App);
 ```
 
 The output:
 
 ```
-2016/01/01
-
-Fri Jan 01 2016 00:00:00 GMT+0100 (Central European Standard Time)
-
+01/01/2016
+Fri January 1 2016
 Sun January 1 2017
-
-hace 6 días
+hace 6 días - (Explicit 'es' locale)
+lunes - (Explicit 'es' locale)
+03/12/2010
 ```
 
 <a name="locales" />
@@ -120,23 +148,45 @@ hace 6 días
 
 Instead of passing the locale to each pipe via `options` you can set it globally in one single step by overriding the default `DateFnsConfiguration` implementation:
 
+> [stackblitz example](https://stackblitz.com/edit/stackblitz-starters-za1fa7?file=src%2Fmain.ts)
+
 ```typescript
-import { DateFnsModule } from 'ngx-date-fns';
-import { fr } from "date-fns/locale";
+// app.config.ts
+import { ApplicationConfig } from '@angular/core';
+import { DateFnsConfigurationService } from 'ngx-date-fns';
+import { fr } from 'date-fns/locale';
 
 const frenchConfig = new DateFnsConfigurationService();
 frenchConfig.setLocale(fr);
 
-@NgModule({
-  imports: [
-    // (...)
-    DateFnsModule.forRoot()
-  ],
-  providers: [
-    // (...)
-    { provide: DateFnsConfigurationService, useValue: frenchConfig } // <-- All pipes in French by default
-  ]
+export const appConfig: ApplicationConfig = {
+  providers: [{ provide: DateFnsConfigurationService, useValue: frenchConfig }]
+};
+```
+
+```typescript
+// main.ts
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import 'zone.js';
+import { es } from 'date-fns/locale';
+import { DateFnsModule } from 'ngx-date-fns';
+import { appConfig } from './app.config';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, DateFnsModule],
+  template: `
+    (...)
+  `
 })
+export class App {
+  // (...)
+}
+
+bootstrapApplication(App, appConfig).catch(err => console.error(err));
 ```
 
 <a name="locale-runtime" />
@@ -145,21 +195,28 @@ frenchConfig.setLocale(fr);
 
 It is also possible to change the default locale at runtime:
 
+> [stackblitz example](https://stackblitz.com/edit/stackblitz-starters-6rbpwc?file=src%2Fmain.ts)
+
 ```typescript
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { DateFnsConfigurationService } from '../lib/src/date-fns-configuration.service';
+import { bootstrapApplication } from '@angular/platform-browser';
+import 'zone.js';
 import { es, de } from 'date-fns/locale';
+import { DateFnsConfigurationService, DateFnsModule } from 'ngx-date-fns';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, DateFnsModule],
   template: `
-    <p>{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
+    <p>{{ dateOne | dfnsFormat: 'EEE LLLL d yyyy' }}</p>
     <hr />
     Set default locale to: <a href="#" (click)="changeToGerman()">German</a>,
     <a href="#" (click)="changeToSpanish()">Spanish</a>.
   `
 })
-export class AppComponent {
+export class App {
   dateOne = new Date(2016, 0, 1);
   constructor(public config: DateFnsConfigurationService) {}
   changeToGerman() {
@@ -169,6 +226,8 @@ export class AppComponent {
     this.config.setLocale(es);
   }
 }
+
+bootstrapApplication(App);
 ```
 
 <a name="pure-impure" />
@@ -185,56 +244,6 @@ The answer is quite simple:
   - Use _impure_ pipes.
 
 The main difference is that _pure_ pipes do not get notified when the locale is changed via `DateFnsConfiguration.setLocale(locale: Locale)`, because the instance is not kept in memory. Impure _pipes_, on the other hand, are kept in memory and listen for Locale change notifications, which adds some memory and performance overhead.
-
-<a name="tree-shaking" />
-
-## Tree shaking date-fns
-
-> > ⚠️ There's a range of date-fns versions for which _tree shaking_ is broken, so we recommend that you either install `v2.16.1` or `>= v2.21.1`.
-
-The library itself is optimized to be tree-shakable by just importing `DateFnsModule.forRoot()` or selectively import pipes by calling them from `ngx-date-fns` package itself, as those were exported following the [SCAM structure](https://indepth.dev/emulating-tree-shakable-components-using-single-component-angular-modules/#creating-a-scam-for-the-capitalize-pipe), for example:
-
-```typescript
-// app.module.ts
-import { fr } from 'date-fns/locale';
-import { DateFnsConfigurationService } from 'ngx-date-fns';
-import {
-  FormatPipeModule,
-  MinPipeModule,
-  MaxPipeModule,
-  FormatDistanceToNowPipeModule,
-  WeekdayNamePipeModule,
-  ParsePipeModule
-} from 'ngx-date-fns';
-
-const frenchConfig = new DateFnsConfigurationService();
-frenchConfig.setLocale(fr);
-
-@NgModule({
-  // ... other module stuff
-  imports: [
-    // Selectively import
-    FormatPipeModule,
-    MinPipeModule,
-    MaxPipeModule,
-    FormatDistanceToNowPipeModule,
-    WeekdayNamePipeModule,
-    ParsePipeModule
-  ],
-  providers: [{ provide: DateFnsConfigurationService, useValue: frenchConfig }]
-})
-export class AppModule {}
-```
-
-You can test this by downloading this repo and running:
-
-```
-npm run analyze:app
-```
-
-This command will load a file in your browser where you will see that `date-fns` takes `63Kb`, which is significantly less than the `286Kb` of the whole library without tree shaking applied. (this, of course, will be much less after gzipping).
-
-Also take into account that locale files tend to increase the final bundle size of `date-fns` as well.
 
 <a name="pipes" />
 
