@@ -1,4 +1,4 @@
-# ![](./.github/date-fns.png) + ![](./.github/angular-red.png) = ngx-date-fns
+# ![](./.github/14921202.png) + ![](.github/icon_angular_gradient.png) = ngx-date-fns
 
 [![Build Status](https://travis-ci.org/joanllenas/ngx-date-fns.png?branch=master)](https://travis-ci.org/joanllenas/ngx-date-fns)
 [![codecov](https://codecov.io/gh/joanllenas/ngx-date-fns/branch/master/graph/badge.svg)](https://codecov.io/gh/joanllenas/ngx-date-fns)
