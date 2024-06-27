@@ -59,7 +59,7 @@ import { TestStrategyDefaultComponent } from './test-default.component';
   `
 })
 export class StrategyDefaultComponent {
-  dateOne = new Date(2016, 0, 1);
+  dateOne = '2015-12-31T23:00:00.000Z';
   dateTwo = new Date(2017, 0, 1);
   dateThree: Date;
   dates: Date[];

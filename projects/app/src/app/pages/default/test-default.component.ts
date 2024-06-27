@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { es } from 'date-fns/locale';
-import { DateFnsModule } from 'ngx-date-fns';
+import { DateFnsInputDate, DateFnsModule } from 'ngx-date-fns';
 
 @Component({
   selector: 'dfns-test-default-component',
@@ -31,7 +31,7 @@ import { DateFnsModule } from 'ngx-date-fns';
   `
 })
 export class TestStrategyDefaultComponent {
-  @Input() dateOne: Date = new Date();
+  @Input() dateOne: DateFnsInputDate = '';
   @Input() dateTwo: Date = new Date();
   @Input() dateThree: Date = new Date();
   @Input() dates: Date[] = [];
