@@ -2,6 +2,9 @@ import { isValidDate } from './utils';
 
 describe('utils', () => {
   describe('isValidDate', () => {
+    it('should return false when an empty string is provided', () => {
+      expect(isValidDate('')).toBeFalse();
+    });
     it('should return false when undefined is provided', () => {
       expect(isValidDate(undefined)).toBeFalse();
     });
@@ -13,6 +16,9 @@ describe('utils', () => {
     });
     it('should return true when an valid Date is provided', () => {
       expect(isValidDate(new Date())).toBeTrue();
+    });
+    it('should return true when an valid string Date is provided', () => {
+      expect(isValidDate(new Date().toISOString())).toBeTrue();
     });
   });
 });

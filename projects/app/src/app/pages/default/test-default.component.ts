@@ -9,19 +9,22 @@ import { DateFnsInputDate, DateFnsModule } from 'ngx-date-fns';
   imports: [CommonModule, DateFnsModule],
   changeDetection: ChangeDetectionStrategy.Default,
   template: `
-    <p data-testid="mmddyyyy">{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
-    <p data-testid="dfns-min">
+    <p class="output" data-testid="mmddyyyy">
+      {{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}
+    </p>
+    <p class="output" data-testid="dfns-min">
       {{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'EEE LLLL d yyyy' }}
     </p>
-    <p data-testid="dfns-max">
+    <p class="output" data-testid="dfns-max">
       {{ [dateOne, dateTwo] | dfnsMax | dfnsFormat: 'EEE LLLL d yyyy' }}
     </p>
-    <p data-testid="format-es">
+    <p class="output" data-testid="format-es">
       {{ dateThree | dfnsFormatDistanceToNow: options }} - (Explicit 'es'
       locale)
     </p>
     <ul>
       <li
+        class="output"
         [attr.data-testid]="'distance-now-' + i"
         *ngFor="let d of dates; let i = index"
       >

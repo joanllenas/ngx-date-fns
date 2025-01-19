@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+.output {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}

@@ -126,7 +126,8 @@ describe('strategy default spec', () => {
       render: 'más de 10 años'
     }
   ].forEach(({ dataId, given, locale, render }) => {
-    it(`Give ${given} it should render ${render} when locale is ${locale}`, () => {
+    const locale_label = locale === '' ? 'empty' : locale;
+    it(`Give ${given} it should render ${render} when locale is ${locale_label}`, () => {
       if (locale !== '') {
         cy.get(`button[data-testid="${locale}"]`).click();
       }
