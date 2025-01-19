@@ -11,9 +11,11 @@
 
 - [Requirememnts](#requirememnts)
 - [Installation](#installation)
-  - [date-fns v3 support](#installation)
+  - [date-fns v4 support](#installation)
+  - [date-fns v3 support](#v3-support)
   - [date-fns v2 support](#v2-support)
   - [date-fns v1 support](#v1-support)
+- [Issues / feature requests](#issues-and-feat-reqs)
 - [Basic Usage](#usage)
 - [Working with locales](#locales)
   - [Changing locale globally](#locale-globally)
@@ -38,7 +40,7 @@
 
 The latest version of this library requires:
 
-- [date-fns](https://date-fns.org/) `>= v3.0.0`.
+- [date-fns](https://date-fns.org/) `= v4.x.x`.
 - Angular `>= v17.0.0`.
 
 <a name="installation" />
@@ -47,6 +49,14 @@ The latest version of this library requires:
 
 - `npm install --save date-fns`
 - `npm install --save ngx-date-fns`
+
+<a name="v3-support" />
+
+#### Installation for date-fns v3
+
+- `npm install --save date-fns@3.6.0`
+- `npm install --save ngx-date-fns@11.0.1`
+- [ngx-date-fns@11.0.1 docs](https://github.com/joanllenas/ngx-date-fns/tree/v11.0.1)
 
 <a name="v2-support" />
 
@@ -65,6 +75,12 @@ The latest version of this library requires:
 - `npm install --save date-fns@1.29.0`
 - `npm install --save ngx-date-fns@4.0.3`
 - [ngx-date-fns@4.0.3 docs](https://github.com/joanllenas/ngx-date-fns/tree/v4.0.3)
+
+<a name="issues-and-feat-reqs" />
+
+## Issues and Feature Requests
+
+This library has been around for more than 8 years and is largely complete, so don’t expect frequent new releases. If you notice missing functionality or encounter a bug, though, don’t hesitate to visit https://github.com/joanllenas/ngx-date-fns/issues and open an issue!
 
 <a name="usage" />
 
