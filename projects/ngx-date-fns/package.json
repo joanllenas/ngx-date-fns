@@ -4,7 +4,7 @@
   "peerDependencies": {
     "@angular/common": ">=17",
     "@angular/core": ">=17",
-    "date-fns": ">=3"
+    "date-fns": ">=4"
   },
   "dependencies": {
     "tslib": "^2.3.0"

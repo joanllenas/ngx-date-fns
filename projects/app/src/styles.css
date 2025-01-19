@@ -11,3 +11,8 @@ ul {
   flex-direction: column;
   gap: 2px;
 }
+
+a.active {
+  font-weight: bold;
+  text-decoration: none;
+}
