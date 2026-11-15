@@ -27,8 +27,14 @@ jobs:
         run: npm ci
       - name: Build library
         run: npm run build
-      - name: Run unit tests
-        run: npm run test
+      - name: Run unit tests with coverage
+        run: npm run test -- --code-coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v7
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage/ngx-date-fns/lcov.info
+          disable_search: true
       - name: Run e2e tests
         run: npm run e2e:ci
 
