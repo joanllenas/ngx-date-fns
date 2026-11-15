@@ -1,6 +1,6 @@
 # ![](./.github/14921202.png) + ![](.github/icon_angular_gradient.png) = ngx-date-fns
 
-[![Build Status](https://travis-ci.org/joanllenas/ngx-date-fns.png?branch=master)](https://travis-ci.org/joanllenas/ngx-date-fns)
+[![Checks](https://github.com/joanllenas/ngx-date-fns/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/joanllenas/ngx-date-fns/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/joanllenas/ngx-date-fns/branch/master/graph/badge.svg)](https://codecov.io/gh/joanllenas/ngx-date-fns)
 [![npm version](https://badge.fury.io/js/ngx-date-fns.svg)](https://badge.fury.io/js/ngx-date-fns)
 [![npm downloads](https://img.shields.io/npm/dm/ngx-date-fns)](https://www.npmjs.com/package/ngx-date-fns)
@@ -9,13 +9,14 @@
 
 ## Table Of Contents
 
-- [Requirememnts](#requirememnts)
+- [Requirements](#requirements)
 - [Installation](#installation)
   - [date-fns v4 support](#installation)
   - [date-fns v3 support](#v3-support)
   - [date-fns v2 support](#v2-support)
   - [date-fns v1 support](#v1-support)
 - [Issues / feature requests](#issues-and-feat-reqs)
+- [Contributing](#contributing)
 - [Basic Usage](#usage)
 - [Importing pipes](#importing-pipes)
 - [Working with locales](#locales)
@@ -35,9 +36,9 @@
   - [Is... pipes](#is-pipes)
 - [Utils](#utils)
 
-<a name="requirememnts" />
+<a name="requirements" />
 
-## Requirememnts
+## Requirements
 
 The latest version of this library requires:
 
@@ -82,6 +83,19 @@ The latest version of this library requires:
 ## Issues and Feature Requests
 
 This library has been around for more than 8 years and is largely complete, so don’t expect frequent new releases. If you notice missing functionality or encounter a bug, though, don’t hesitate to visit https://github.com/joanllenas/ngx-date-fns/issues and open an issue!
+
+<a name="contributing" />
+
+## Contributing
+
+Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/). When a pull request is merged into `master`, CI reads the commit messages since the last release, publishes the new version to npm, and creates the GitHub release:
+
+- `fix:` releases a patch version.
+- `feat:` releases a minor version.
+- A `BREAKING CHANGE:` footer releases a major version.
+- Other types, such as `docs:`, `test:` and `ci:`, do not release.
+
+When a pull request is squash merged, its title becomes the commit message, so the title must use the same format.
 
 <a name="usage" />
 
@@ -299,12 +313,12 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 
 #### Misc
 
-- [dfnsParse](https://date-fns.org/v2.16.0/docs/parse) _([impure](#pure-or-impure))_
-  - [dfnsParsePure](https://date-fns.org/v2.16.0/docs/parse)
-- [dfnsParseIso](https://date-fns.org/v2.16.0/docs/parseISO)
-- [dfnsClosestTo](https://date-fns.org/v2.16.0/docs/closestTo)
-- [dfnsMin](https://date-fns.org/v2.16.0/docs/min)
-- [dfnsMax](https://date-fns.org/v2.16.0/docs/max)
+- [dfnsParse](https://date-fns.org/docs/parse) _([impure](#pure-or-impure))_
+  - [dfnsParsePure](https://date-fns.org/docs/parse)
+- [dfnsParseIso](https://date-fns.org/docs/parseISO)
+- [dfnsClosestTo](https://date-fns.org/docs/closestTo)
+- [dfnsMin](https://date-fns.org/docs/min)
+- [dfnsMax](https://date-fns.org/docs/max)
 
 <a name="format-pipes" />
 
@@ -312,213 +326,213 @@ The main difference is that _pure_ pipes do not get notified when the locale is 
 
 > Since `v7.0.0` invalid Dates will return an empty string instead of throwing an exception.
 
-- [dfnsFormat](https://date-fns.org/v2.16.0/docs/format) _([impure](#pure-or-impure))_
-  - [dfnsFormatPure](https://date-fns.org/v2.16.0/docs/format)
-- [dfnsFormatRelative](https://date-fns.org/v2.16.0/docs/formatRelative) _([impure](#pure-or-impure))_
-  - [dfnsFormatRelativePure](https://date-fns.org/v2.16.0/docs/formatRelative)
-- [dfnsFormatDistance](https://date-fns.org/v2.16.0/docs/formatDistance) _([impure](#pure-or-impure))_
-  - [dfnsFormatDistancePure](https://date-fns.org/v2.16.0/docs/formatDistance)
-- [dfnsFormatDistanceStrict](https://date-fns.org/v2.16.0/docs/formatDistanceStrict) _([impure](#pure-or-impure))_
-  - [dfnsFormatDistanceStrictPure](https://date-fns.org/v2.16.0/docs/formatDistanceStrict)
-- [dfnsFormatDistanceToNow](https://date-fns.org/v2.16.0/docs/formatDistanceToNow) _([impure](#pure-or-impure))_
-  - [dfnsFormatDistanceToNowPure](https://date-fns.org/v2.16.0/docs/formatDistanceToNow)
-- [dfnsFormatDistanceToNowStrict](https://date-fns.org/v2.16.0/docs/formatDistanceToNowStrict) _([impure](#pure-or-impure))_
-  - [dfnsFormatDistanceToNowStrictPure](https://date-fns.org/v2.16.0/docs/formatDistanceToNowStrict)
-- [dfnsFormatDuration](https://date-fns.org/v2.16.0/docs/formatDuration) _([impure](#pure-or-impure))_
-  - [dfnsFormatDurationPure](https://date-fns.org/v2.16.0/docs/formatDuration)
+- [dfnsFormat](https://date-fns.org/docs/format) _([impure](#pure-or-impure))_
+  - [dfnsFormatPure](https://date-fns.org/docs/format)
+- [dfnsFormatRelative](https://date-fns.org/docs/formatRelative) _([impure](#pure-or-impure))_
+  - [dfnsFormatRelativePure](https://date-fns.org/docs/formatRelative)
+- [dfnsFormatDistance](https://date-fns.org/docs/formatDistance) _([impure](#pure-or-impure))_
+  - [dfnsFormatDistancePure](https://date-fns.org/docs/formatDistance)
+- [dfnsFormatDistanceStrict](https://date-fns.org/docs/formatDistanceStrict) _([impure](#pure-or-impure))_
+  - [dfnsFormatDistanceStrictPure](https://date-fns.org/docs/formatDistanceStrict)
+- [dfnsFormatDistanceToNow](https://date-fns.org/docs/formatDistanceToNow) _([impure](#pure-or-impure))_
+  - [dfnsFormatDistanceToNowPure](https://date-fns.org/docs/formatDistanceToNow)
+- [dfnsFormatDistanceToNowStrict](https://date-fns.org/docs/formatDistanceToNowStrict) _([impure](#pure-or-impure))_
+  - [dfnsFormatDistanceToNowStrictPure](https://date-fns.org/docs/formatDistanceToNowStrict)
+- [dfnsFormatDuration](https://date-fns.org/docs/formatDuration) _([impure](#pure-or-impure))_
+  - [dfnsFormatDurationPure](https://date-fns.org/docs/formatDuration)
 
 <a name="get-pipes" />
 
 #### Get
 
-- [dfnsGetOverlappingDaysInIntervals](https://date-fns.org/v2.16.0/docs/getOverlappingDaysInIntervals)
-- [dfnsGetTime](https://date-fns.org/v2.16.0/docs/getTime)
-- [dfnsGetMilliseconds](https://date-fns.org/v2.16.0/docs/getMilliseconds)
-- [dfnsGetSeconds](https://date-fns.org/v2.16.0/docs/getSeconds)
-- [dfnsGetMinutes](https://date-fns.org/v2.16.0/docs/getMinutes)
-- [dfnsGetHours](https://date-fns.org/v2.16.0/docs/getHours)
-- [dfnsGetDate](https://date-fns.org/v2.16.0/docs/getDate)
-- [dfnsGetDayOfYear](https://date-fns.org/v2.16.0/docs/getDayOfYear)
-- [dfnsGetDay](https://date-fns.org/v2.16.0/docs/getDay)
-- [dfnsGetISODay](https://date-fns.org/v2.16.0/docs/getISODay)
-- [dfnsGetISOWeek](https://date-fns.org/v2.16.0/docs/getISOWeek)
-- [dfnsGetDaysInMonth](https://date-fns.org/v2.16.0/docs/getDaysInMonth)
-- [dfnsGetMonth](https://date-fns.org/v2.16.0/docs/getMonth)
-- [dfnsGetQuarter](https://date-fns.org/v2.16.0/docs/getQuarter)
-- [dfnsGetDaysInYear](https://date-fns.org/v2.16.0/docs/getDaysInYear)
-- [dfnsGetYear](https://date-fns.org/v2.16.0/docs/getYear)
-- [dfnsGetISOWeeksInYear](https://date-fns.org/v2.16.0/docs/getISOWeeksInYear)
-- [dfnsGetISOWeekYear](https://date-fns.org/v2.16.0/docs/getISOWeekYear)
-- [dfnsGetUnixTime](https://date-fns.org/v2.16.0/docs/getUnixTime)
-- [dfnsGetWeek](https://date-fns.org/v2.16.0/docs/getWeek) _([impure](#pure-or-impure))_
-  - [dfnsGetWeekPure](https://date-fns.org/v2.16.0/docs/getWeek)
-- [dfnsGetWeekOfMonth](https://date-fns.org/v2.16.0/docs/getWeekOfMonth) _([impure](#pure-or-impure))_
-  - [dfnsGetWeekOfMonthPure](https://date-fns.org/v2.16.0/docs/getWeekOfMonth)
-- [dfnsGetWeeksInMonth](https://date-fns.org/v2.16.0/docs/getWeeksInMonth) _([impure](#pure-or-impure))_
-  - [dfnsGetWeeksInMonthPure](https://date-fns.org/v2.16.0/docs/getWeeksInMonth)
-- [dfnsGetDecade](https://date-fns.org/v2.16.0/docs/getDecade)
-- [dfnsGetWeekYear](https://date-fns.org/v2.16.0/docs/getWeekYear) _([impure](#pure-or-impure))_
-  - [dfnsGetWeekYearPure](https://date-fns.org/v2.16.0/docs/getWeekYear)
+- [dfnsGetOverlappingDaysInIntervals](https://date-fns.org/docs/getOverlappingDaysInIntervals)
+- [dfnsGetTime](https://date-fns.org/docs/getTime)
+- [dfnsGetMilliseconds](https://date-fns.org/docs/getMilliseconds)
+- [dfnsGetSeconds](https://date-fns.org/docs/getSeconds)
+- [dfnsGetMinutes](https://date-fns.org/docs/getMinutes)
+- [dfnsGetHours](https://date-fns.org/docs/getHours)
+- [dfnsGetDate](https://date-fns.org/docs/getDate)
+- [dfnsGetDayOfYear](https://date-fns.org/docs/getDayOfYear)
+- [dfnsGetDay](https://date-fns.org/docs/getDay)
+- [dfnsGetISODay](https://date-fns.org/docs/getISODay)
+- [dfnsGetISOWeek](https://date-fns.org/docs/getISOWeek)
+- [dfnsGetDaysInMonth](https://date-fns.org/docs/getDaysInMonth)
+- [dfnsGetMonth](https://date-fns.org/docs/getMonth)
+- [dfnsGetQuarter](https://date-fns.org/docs/getQuarter)
+- [dfnsGetDaysInYear](https://date-fns.org/docs/getDaysInYear)
+- [dfnsGetYear](https://date-fns.org/docs/getYear)
+- [dfnsGetISOWeeksInYear](https://date-fns.org/docs/getISOWeeksInYear)
+- [dfnsGetISOWeekYear](https://date-fns.org/docs/getISOWeekYear)
+- [dfnsGetUnixTime](https://date-fns.org/docs/getUnixTime)
+- [dfnsGetWeek](https://date-fns.org/docs/getWeek) _([impure](#pure-or-impure))_
+  - [dfnsGetWeekPure](https://date-fns.org/docs/getWeek)
+- [dfnsGetWeekOfMonth](https://date-fns.org/docs/getWeekOfMonth) _([impure](#pure-or-impure))_
+  - [dfnsGetWeekOfMonthPure](https://date-fns.org/docs/getWeekOfMonth)
+- [dfnsGetWeeksInMonth](https://date-fns.org/docs/getWeeksInMonth) _([impure](#pure-or-impure))_
+  - [dfnsGetWeeksInMonthPure](https://date-fns.org/docs/getWeeksInMonth)
+- [dfnsGetDecade](https://date-fns.org/docs/getDecade)
+- [dfnsGetWeekYear](https://date-fns.org/docs/getWeekYear) _([impure](#pure-or-impure))_
+  - [dfnsGetWeekYearPure](https://date-fns.org/docs/getWeekYear)
 
 <a name="difference-pipes" />
 
 #### Difference
 
-- [dfnsDifferenceInMilliseconds](https://date-fns.org/v2.16.0/docs/differenceInMilliseconds)
-- [dfnsDifferenceInSeconds](https://date-fns.org/v2.16.0/docs/differenceInSeconds)
-- [dfnsDifferenceInMinutes](https://date-fns.org/v2.16.0/docs/differenceInMinutes)
-- [dfnsDifferenceInHours](https://date-fns.org/v2.16.0/docs/differenceInHours)
-- [dfnsDifferenceInCalendarDays](https://date-fns.org/v2.16.0/docs/differenceInCalendarDays)
-- [dfnsDifferenceInBusinessDays](https://date-fns.org/v2.16.0/docs/differenceInBusinessDays)
-- [dfnsDifferenceInDays](https://date-fns.org/v2.16.0/docs/differenceInDays)
-- [dfnsDifferenceInCalendarWeeks](https://date-fns.org/v2.16.0/docs/differenceInCalendarWeeks)
-- [dfnsDifferenceInWeeks](https://date-fns.org/v2.16.0/docs/differenceInWeeks)
-- [dfnsDifferenceInCalendarISOWeeks](https://date-fns.org/v2.16.0/docs/differenceInCalendarISOWeeks)
-- [dfnsDifferenceInCalendarMonths](https://date-fns.org/v2.16.0/docs/differenceInCalendarMonths)
-- [dfnsDifferenceInMonths](https://date-fns.org/v2.16.0/docs/differenceInMonths)
-- [dfnsDifferenceInCalendarQuarters](https://date-fns.org/v2.16.0/docs/differenceInCalendarQuarters)
-- [dfnsDifferenceInQuarters](https://date-fns.org/v2.16.0/docs/differenceInQuarters)
-- [dfnsDifferenceInCalendarYears](https://date-fns.org/v2.16.0/docs/differenceInCalendarYears)
-- [dfnsDifferenceInYears](https://date-fns.org/v2.16.0/docs/differenceInYears)
-- [dfnsDifferenceInCalendarISOWeekYears](https://date-fns.org/v2.16.0/docs/differenceInCalendarISOWeekYears)
-- [dfnsDifferenceInISOWeekYears](https://date-fns.org/v2.16.0/docs/differenceInISOWeekYears)
+- [dfnsDifferenceInMilliseconds](https://date-fns.org/docs/differenceInMilliseconds)
+- [dfnsDifferenceInSeconds](https://date-fns.org/docs/differenceInSeconds)
+- [dfnsDifferenceInMinutes](https://date-fns.org/docs/differenceInMinutes)
+- [dfnsDifferenceInHours](https://date-fns.org/docs/differenceInHours)
+- [dfnsDifferenceInCalendarDays](https://date-fns.org/docs/differenceInCalendarDays)
+- [dfnsDifferenceInBusinessDays](https://date-fns.org/docs/differenceInBusinessDays)
+- [dfnsDifferenceInDays](https://date-fns.org/docs/differenceInDays)
+- [dfnsDifferenceInCalendarWeeks](https://date-fns.org/docs/differenceInCalendarWeeks)
+- [dfnsDifferenceInWeeks](https://date-fns.org/docs/differenceInWeeks)
+- [dfnsDifferenceInCalendarISOWeeks](https://date-fns.org/docs/differenceInCalendarISOWeeks)
+- [dfnsDifferenceInCalendarMonths](https://date-fns.org/docs/differenceInCalendarMonths)
+- [dfnsDifferenceInMonths](https://date-fns.org/docs/differenceInMonths)
+- [dfnsDifferenceInCalendarQuarters](https://date-fns.org/docs/differenceInCalendarQuarters)
+- [dfnsDifferenceInQuarters](https://date-fns.org/docs/differenceInQuarters)
+- [dfnsDifferenceInCalendarYears](https://date-fns.org/docs/differenceInCalendarYears)
+- [dfnsDifferenceInYears](https://date-fns.org/docs/differenceInYears)
+- [dfnsDifferenceInCalendarISOWeekYears](https://date-fns.org/docs/differenceInCalendarISOWeekYears)
+- [dfnsDifferenceInISOWeekYears](https://date-fns.org/docs/differenceInISOWeekYears)
 
 <a name="add-pipes" />
 
 #### Add
 
-- [dfnsAddMilliseconds](https://date-fns.org/v2.16.0/docs/addMilliseconds)
-- [dfnsAddSeconds](https://date-fns.org/v2.16.0/docs/addSeconds)
-- [dfnsAddMinutes](https://date-fns.org/v2.16.0/docs/addMinutes)
-- [dfnsAddHours](https://date-fns.org/v2.16.0/docs/addHours)
-- [dfnsAddBusinessDays](https://date-fns.org/v2.16.0/docs/addBusinessDays)
-- [dfnsAddDays](https://date-fns.org/v2.16.0/docs/addDays)
-- [dfnsAddWeeks](https://date-fns.org/v2.16.0/docs/addWeeks)
-- [dfnsAddMonths](https://date-fns.org/v2.16.0/docs/addMonths)
-- [dfnsAddQuarters](https://date-fns.org/v2.16.0/docs/addQuarters)
-- [dfnsAddYears](https://date-fns.org/v2.16.0/docs/addYears)
-- [dfnsAddISOWeekYears](https://date-fns.org/v2.16.0/docs/addISOWeekYears)
+- [dfnsAddMilliseconds](https://date-fns.org/docs/addMilliseconds)
+- [dfnsAddSeconds](https://date-fns.org/docs/addSeconds)
+- [dfnsAddMinutes](https://date-fns.org/docs/addMinutes)
+- [dfnsAddHours](https://date-fns.org/docs/addHours)
+- [dfnsAddBusinessDays](https://date-fns.org/docs/addBusinessDays)
+- [dfnsAddDays](https://date-fns.org/docs/addDays)
+- [dfnsAddWeeks](https://date-fns.org/docs/addWeeks)
+- [dfnsAddMonths](https://date-fns.org/docs/addMonths)
+- [dfnsAddQuarters](https://date-fns.org/docs/addQuarters)
+- [dfnsAddYears](https://date-fns.org/docs/addYears)
+- [dfnsAddISOWeekYears](https://date-fns.org/docs/addISOWeekYears)
 
 <a name="subtract-pipes" />
 
 #### Subtract
 
-- [dfnsSubMilliseconds](https://date-fns.org/v2.16.0/docs/subMilliseconds)
-- [dfnsSubSeconds](https://date-fns.org/v2.16.0/docs/subSeconds)
-- [dfnsSubMinutes](https://date-fns.org/v2.16.0/docs/subMinutes)
-- [dfnsSubHours](https://date-fns.org/v2.16.0/docs/subHours)
-- [dfnsSubDays](https://date-fns.org/v2.16.0/docs/subDays)
-- [dfnsSubWeeks](https://date-fns.org/v2.16.0/docs/subWeeks)
-- [dfnsSubMonths](https://date-fns.org/v2.16.0/docs/subMonths)
-- [dfnsSubQuarters](https://date-fns.org/v2.16.0/docs/subQuarters)
-- [dfnsSubYears](https://date-fns.org/v2.16.0/docs/subYears)
-- [dfnsSubISOWeekYears](https://date-fns.org/v2.16.0/docs/subISOWeekYears)
+- [dfnsSubMilliseconds](https://date-fns.org/docs/subMilliseconds)
+- [dfnsSubSeconds](https://date-fns.org/docs/subSeconds)
+- [dfnsSubMinutes](https://date-fns.org/docs/subMinutes)
+- [dfnsSubHours](https://date-fns.org/docs/subHours)
+- [dfnsSubDays](https://date-fns.org/docs/subDays)
+- [dfnsSubWeeks](https://date-fns.org/docs/subWeeks)
+- [dfnsSubMonths](https://date-fns.org/docs/subMonths)
+- [dfnsSubQuarters](https://date-fns.org/docs/subQuarters)
+- [dfnsSubYears](https://date-fns.org/docs/subYears)
+- [dfnsSubISOWeekYears](https://date-fns.org/docs/subISOWeekYears)
 
 <a name="end-pipes" />
 
 #### End
 
-- [dfnsEndOfSecond](https://date-fns.org/v2.16.0/docs/endOfSecond)
-- [dfnsEndOfMinute](https://date-fns.org/v2.16.0/docs/endOfMinute)
-- [dfnsEndOfHour](https://date-fns.org/v2.16.0/docs/endOfHour)
-- [dfnsEndOfDay](https://date-fns.org/v2.16.0/docs/endOfDay)
-- [dfnsEndOfToday](https://date-fns.org/v2.16.0/docs/endOfToday)
-- [dfnsEndOfTomorrow](https://date-fns.org/v2.16.0/docs/endOfTomorrow)
-- [dfnsEndOfYesterday](https://date-fns.org/v2.16.0/docs/endOfYesterday)
-- [dfnsEndOfWeek](https://date-fns.org/v2.16.0/docs/endOfWeek)
-- [dfnsEndOfISOWeek](https://date-fns.org/v2.16.0/docs/endOfISOWeek)
-- [dfnsEndOfMonth](https://date-fns.org/v2.16.0/docs/endOfMonth)
-- [dfnsEndOfQuarter](https://date-fns.org/v2.16.0/docs/endOfQuarter)
-- [dfnsEndOfYear](https://date-fns.org/v2.16.0/docs/endOfYear)
-- [dfnsEndOfISOWeekYear](https://date-fns.org/v2.16.0/docs/endOfISOWeekYear)
+- [dfnsEndOfSecond](https://date-fns.org/docs/endOfSecond)
+- [dfnsEndOfMinute](https://date-fns.org/docs/endOfMinute)
+- [dfnsEndOfHour](https://date-fns.org/docs/endOfHour)
+- [dfnsEndOfDay](https://date-fns.org/docs/endOfDay)
+- [dfnsEndOfToday](https://date-fns.org/docs/endOfToday)
+- [dfnsEndOfTomorrow](https://date-fns.org/docs/endOfTomorrow)
+- [dfnsEndOfYesterday](https://date-fns.org/docs/endOfYesterday)
+- [dfnsEndOfWeek](https://date-fns.org/docs/endOfWeek)
+- [dfnsEndOfISOWeek](https://date-fns.org/docs/endOfISOWeek)
+- [dfnsEndOfMonth](https://date-fns.org/docs/endOfMonth)
+- [dfnsEndOfQuarter](https://date-fns.org/docs/endOfQuarter)
+- [dfnsEndOfYear](https://date-fns.org/docs/endOfYear)
+- [dfnsEndOfISOWeekYear](https://date-fns.org/docs/endOfISOWeekYear)
 
 <a name="start-pipes" />
 
 #### Start
 
-- [dfnsStartOfSecond](https://date-fns.org/v2.16.0/docs/startOfSecond)
-- [dfnsStartOfMinute](https://date-fns.org/v2.16.0/docs/startOfMinute)
-- [dfnsStartOfHour](https://date-fns.org/v2.16.0/docs/startOfHour)
-- [dfnsStartOfDay](https://date-fns.org/v2.16.0/docs/startOfDay)
-- [dfnsStartOfToday](https://date-fns.org/v2.16.0/docs/startOfToday)
-- [dfnsStartOfTomorrow](https://date-fns.org/v2.16.0/docs/startOfTomorrow)
-- [dfnsStartOfYesterday](https://date-fns.org/v2.16.0/docs/startOfYesterday)
-- [dfnsStartOfWeek](https://date-fns.org/v2.16.0/docs/startOfWeek) _([impure](#pure-or-impure))_
-  - [dfnsStartOfWeekPure](https://date-fns.org/v2.16.0/docs/startOfWeek)
-- [dfnsStartOfISOWeek](https://date-fns.org/v2.16.0/docs/startOfISOWeek)
-- [dfnsStartOfMonth](https://date-fns.org/v2.16.0/docs/startOfMonth)
-- [dfnsStartOfQuarter](https://date-fns.org/v2.16.0/docs/startOfQuarter)
-- [dfnsStartOfYear](https://date-fns.org/v2.16.0/docs/startOfYear)
-- [dfnsStartOfISOWeekYear](https://date-fns.org/v2.16.0/docs/startOfISOWeekYear)
-- [dfnsStartOfDecade](https://date-fns.org/v2.16.0/docs/startOfDecade)
-- [dfnsStartOfWeekYear](https://date-fns.org/v2.16.0/docs/startOfWeekYear) _([impure](#pure-or-impure))_
-  - [dfnsStartOfWeekYearPure](https://date-fns.org/v2.16.0/docs/startOfWeekYear)
+- [dfnsStartOfSecond](https://date-fns.org/docs/startOfSecond)
+- [dfnsStartOfMinute](https://date-fns.org/docs/startOfMinute)
+- [dfnsStartOfHour](https://date-fns.org/docs/startOfHour)
+- [dfnsStartOfDay](https://date-fns.org/docs/startOfDay)
+- [dfnsStartOfToday](https://date-fns.org/docs/startOfToday)
+- [dfnsStartOfTomorrow](https://date-fns.org/docs/startOfTomorrow)
+- [dfnsStartOfYesterday](https://date-fns.org/docs/startOfYesterday)
+- [dfnsStartOfWeek](https://date-fns.org/docs/startOfWeek) _([impure](#pure-or-impure))_
+  - [dfnsStartOfWeekPure](https://date-fns.org/docs/startOfWeek)
+- [dfnsStartOfISOWeek](https://date-fns.org/docs/startOfISOWeek)
+- [dfnsStartOfMonth](https://date-fns.org/docs/startOfMonth)
+- [dfnsStartOfQuarter](https://date-fns.org/docs/startOfQuarter)
+- [dfnsStartOfYear](https://date-fns.org/docs/startOfYear)
+- [dfnsStartOfISOWeekYear](https://date-fns.org/docs/startOfISOWeekYear)
+- [dfnsStartOfDecade](https://date-fns.org/docs/startOfDecade)
+- [dfnsStartOfWeekYear](https://date-fns.org/docs/startOfWeekYear) _([impure](#pure-or-impure))_
+  - [dfnsStartOfWeekYearPure](https://date-fns.org/docs/startOfWeekYear)
 
 <a name="last-day-of-pipes" />
 
 #### Last Day Of
 
-- [dfnsLastDayOfWeek](https://date-fns.org/v2.16.0/docs/lastDayOfWeek) _([impure](#pure-or-impure))_
-  - [dfnsLastDayOfWeekPure](https://date-fns.org/v2.16.0/docs/lastDayOfWeek)
-- [dfnsLastDayOfISOWeek](https://date-fns.org/v2.16.0/docs/lastDayOfISOWeek)
-- [dfnsLastDayOfMonth](https://date-fns.org/v2.16.0/docs/lastDayOfMonth)
-- [dfnsLastDayOfQuarter](https://date-fns.org/v2.16.0/docs/lastDayOfQuarter)
-- [dfnsLastDayOfYear](https://date-fns.org/v2.16.0/docs/lastDayOfYear)
-- [dfnsLastDayOfISOWeekYear](https://date-fns.org/v2.16.0/docs/lastDayOfISOWeekYear)
-- [dfnsLastDayOfDecade](https://date-fns.org/v2.16.0/docs/lastDayOfDecade)
+- [dfnsLastDayOfWeek](https://date-fns.org/docs/lastDayOfWeek) _([impure](#pure-or-impure))_
+  - [dfnsLastDayOfWeekPure](https://date-fns.org/docs/lastDayOfWeek)
+- [dfnsLastDayOfISOWeek](https://date-fns.org/docs/lastDayOfISOWeek)
+- [dfnsLastDayOfMonth](https://date-fns.org/docs/lastDayOfMonth)
+- [dfnsLastDayOfQuarter](https://date-fns.org/docs/lastDayOfQuarter)
+- [dfnsLastDayOfYear](https://date-fns.org/docs/lastDayOfYear)
+- [dfnsLastDayOfISOWeekYear](https://date-fns.org/docs/lastDayOfISOWeekYear)
+- [dfnsLastDayOfDecade](https://date-fns.org/docs/lastDayOfDecade)
 
 <a name="is-pipes" />
 
 #### Is...?
 
-- [dfnsIsAfter](https://date-fns.org/v2.16.0/docs/isAfter)
-- [dfnsIsBefore](https://date-fns.org/v2.16.0/docs/isBefore)
-- [dfnsIsDate](https://date-fns.org/v2.16.0/docs/isDate)
-- [dfnsIsEqual](https://date-fns.org/v2.16.0/docs/isEqual)
-- [dfnsIsFuture](https://date-fns.org/v2.16.0/docs/isFuture)
-- [dfnsIsPast](https://date-fns.org/v2.16.0/docs/isPast)
-- [dfnsIsValid](https://date-fns.org/v2.16.0/docs/isValid)
-- [dfnsIsToday](https://date-fns.org/v2.16.0/docs/isToday)
-- [dfnsIsWeekend](https://date-fns.org/v2.16.0/docs/isWeekend)
-- [dfnsIsSameMonth](https://date-fns.org/v2.16.0/docs/isSameMonth)
-- [dfnsIsSameYear](https://date-fns.org/v2.16.0/docs/isSameYear)
-- [dfnsIsExists](https://date-fns.org/v2.16.0/docs/isExists)
-- [dfnsIsFirstDayOfMonth](https://date-fns.org/v2.16.0/docs/isFirstDayOfMonth)
-- [dfnsIsFriday](https://date-fns.org/v2.16.0/docs/isFriday)
-- [dfnsIsLastDayOfMonth](https://date-fns.org/v2.16.0/docs/isLastDayOfMonth)
-- [dfnsIsLeapYear](https://date-fns.org/v2.16.0/docs/isLeapYear)
-- [dfnsIsMatch](https://date-fns.org/v2.16.0/docs/isMatch) _([impure](#pure-or-impure))_
-  - [dfnsIsMatchPure](https://date-fns.org/v2.16.0/docs/isMatch)
-- [dfnsIsMonday](https://date-fns.org/v2.16.0/docs/isMonday)
-- [dfnsIsSameDay](https://date-fns.org/v2.16.0/docs/isSameDay)
-- [dfnsIsSameHour](https://date-fns.org/v2.16.0/docs/isSameHour)
-- [dfnsIsSameISOWeekYear](https://date-fns.org/v2.16.0/docs/isSameISOWeekYear)
-- [dfnsIsSameISOWeek](https://date-fns.org/v2.16.0/docs/isSameISOWeek)
-- [dfnsIsSameMinute](https://date-fns.org/v2.16.0/docs/isSameMinute)
-- [dfnsIsSameMonth](https://date-fns.org/v2.16.0/docs/isSameMonth)
-- [dfnsIsSameQuarter](https://date-fns.org/v2.16.0/docs/isSameQuarter)
-- [dfnsIsSameSecond](https://date-fns.org/v2.16.0/docs/isSameSecond)
-- [dfnsIsSameWeek](https://date-fns.org/v2.16.0/docs/isSameWeek)
-  - [dfnsIsSameWeekPure](https://date-fns.org/v2.16.0/docs/isSameWeek) _([impure](#pure-or-impure))_
-- [dfnsIsSameYear](https://date-fns.org/v2.16.0/docs/isSameYear)
-- [dfnsIsSaturday](https://date-fns.org/v2.16.0/docs/isSaturday)
-- [dfnsIsSunday](https://date-fns.org/v2.16.0/docs/isSunday)
-- [dfnsIsThisHour](https://date-fns.org/v2.16.0/docs/isThisHour)
-- [dfnsIsThisISOWeek](https://date-fns.org/v2.16.0/docs/isThisISOWeek)
-- [dfnsIsThisMinute](https://date-fns.org/v2.16.0/docs/isThisMinute)
-- [dfnsIsThisMonth](https://date-fns.org/v2.16.0/docs/isThisMonth)
-- [dfnsIsThisQuarter](https://date-fns.org/v2.16.0/docs/isThisQuarter)
-- [dfnsIsThisSecond](https://date-fns.org/v2.16.0/docs/isThisSecond)
-- [dfnsIsThisWeek](https://date-fns.org/v2.16.0/docs/isThisWeek) _([impure](#pure-or-impure))_
-  - [dfnsIsThisWeekPure](https://date-fns.org/v2.16.0/docs/isThisWeek)
-- [dfnsIsThisYear](https://date-fns.org/v2.16.0/docs/isThisYear)
-- [dfnsIsThursday](https://date-fns.org/v2.16.0/docs/isThursday)
-- [dfnsIsToday](https://date-fns.org/v2.16.0/docs/isToday)
-- [dfnsIsTomorrow](https://date-fns.org/v2.16.0/docs/isTomorrow)
-- [dfnsIsTuesday](https://date-fns.org/v2.16.0/docs/isTuesday)
-- [dfnsIsWednesday](https://date-fns.org/v2.16.0/docs/isWednesday)
-- [dfnsIsWithinInterval](https://date-fns.org/v2.16.0/docs/isWithinInterval)
-- [dfnsIsYesterday](https://date-fns.org/v2.16.0/docs/isYesterday)
+- [dfnsIsAfter](https://date-fns.org/docs/isAfter)
+- [dfnsIsBefore](https://date-fns.org/docs/isBefore)
+- [dfnsIsDate](https://date-fns.org/docs/isDate)
+- [dfnsIsEqual](https://date-fns.org/docs/isEqual)
+- [dfnsIsFuture](https://date-fns.org/docs/isFuture)
+- [dfnsIsPast](https://date-fns.org/docs/isPast)
+- [dfnsIsValid](https://date-fns.org/docs/isValid)
+- [dfnsIsToday](https://date-fns.org/docs/isToday)
+- [dfnsIsWeekend](https://date-fns.org/docs/isWeekend)
+- [dfnsIsSameMonth](https://date-fns.org/docs/isSameMonth)
+- [dfnsIsSameYear](https://date-fns.org/docs/isSameYear)
+- [dfnsIsExists](https://date-fns.org/docs/isExists)
+- [dfnsIsFirstDayOfMonth](https://date-fns.org/docs/isFirstDayOfMonth)
+- [dfnsIsFriday](https://date-fns.org/docs/isFriday)
+- [dfnsIsLastDayOfMonth](https://date-fns.org/docs/isLastDayOfMonth)
+- [dfnsIsLeapYear](https://date-fns.org/docs/isLeapYear)
+- [dfnsIsMatch](https://date-fns.org/docs/isMatch) _([impure](#pure-or-impure))_
+  - [dfnsIsMatchPure](https://date-fns.org/docs/isMatch)
+- [dfnsIsMonday](https://date-fns.org/docs/isMonday)
+- [dfnsIsSameDay](https://date-fns.org/docs/isSameDay)
+- [dfnsIsSameHour](https://date-fns.org/docs/isSameHour)
+- [dfnsIsSameISOWeekYear](https://date-fns.org/docs/isSameISOWeekYear)
+- [dfnsIsSameISOWeek](https://date-fns.org/docs/isSameISOWeek)
+- [dfnsIsSameMinute](https://date-fns.org/docs/isSameMinute)
+- [dfnsIsSameMonth](https://date-fns.org/docs/isSameMonth)
+- [dfnsIsSameQuarter](https://date-fns.org/docs/isSameQuarter)
+- [dfnsIsSameSecond](https://date-fns.org/docs/isSameSecond)
+- [dfnsIsSameWeek](https://date-fns.org/docs/isSameWeek)
+  - [dfnsIsSameWeekPure](https://date-fns.org/docs/isSameWeek) _([impure](#pure-or-impure))_
+- [dfnsIsSameYear](https://date-fns.org/docs/isSameYear)
+- [dfnsIsSaturday](https://date-fns.org/docs/isSaturday)
+- [dfnsIsSunday](https://date-fns.org/docs/isSunday)
+- [dfnsIsThisHour](https://date-fns.org/docs/isThisHour)
+- [dfnsIsThisISOWeek](https://date-fns.org/docs/isThisISOWeek)
+- [dfnsIsThisMinute](https://date-fns.org/docs/isThisMinute)
+- [dfnsIsThisMonth](https://date-fns.org/docs/isThisMonth)
+- [dfnsIsThisQuarter](https://date-fns.org/docs/isThisQuarter)
+- [dfnsIsThisSecond](https://date-fns.org/docs/isThisSecond)
+- [dfnsIsThisWeek](https://date-fns.org/docs/isThisWeek) _([impure](#pure-or-impure))_
+  - [dfnsIsThisWeekPure](https://date-fns.org/docs/isThisWeek)
+- [dfnsIsThisYear](https://date-fns.org/docs/isThisYear)
+- [dfnsIsThursday](https://date-fns.org/docs/isThursday)
+- [dfnsIsToday](https://date-fns.org/docs/isToday)
+- [dfnsIsTomorrow](https://date-fns.org/docs/isTomorrow)
+- [dfnsIsTuesday](https://date-fns.org/docs/isTuesday)
+- [dfnsIsWednesday](https://date-fns.org/docs/isWednesday)
+- [dfnsIsWithinInterval](https://date-fns.org/docs/isWithinInterval)
+- [dfnsIsYesterday](https://date-fns.org/docs/isYesterday)
 
 <a name="utils" />
 
