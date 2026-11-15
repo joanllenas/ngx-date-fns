@@ -105,6 +105,14 @@ describe('FormatRelativeToNowPipe Pure', () => {
   const createPipe = () =>
     new FormatRelativeToNowPurePipe(new DateFnsConfigurationService());
 
+  beforeEach(() => {
+    jasmine.clock().uninstall();
+    jasmine.clock().install();
+  });
+  afterEach(() => {
+    jasmine.clock().uninstall();
+  });
+
   nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [null]);
   nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [undefined]);
 
