@@ -43,7 +43,6 @@ expect_text() {
 expect_text standalone-impure 'domingo 15 noviembre 2026'
 expect_text standalone-pure '2026-11-18'
 expect_text string-input 'ene 2026'
-expect_text pipe-module 'true'
 expect_text date-fns-module '14 días'
 
 if [ "$failures" -gt 0 ]; then

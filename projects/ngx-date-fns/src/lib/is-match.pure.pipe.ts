@@ -1,4 +1,4 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import {
   calculateLocale,
   DateFnsConfigurationService
@@ -7,7 +7,7 @@ import { isMatch } from 'date-fns/isMatch';
 import { DateFnsFirstWeekDays, DateFnsWeekIndex } from './types';
 import type { Locale } from 'date-fns';
 
-@Pipe({ name: 'dfnsIsMatchPure', standalone: true })
+@Pipe({ name: 'dfnsIsMatchPure' })
 export class IsMatchPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -29,13 +29,3 @@ export class IsMatchPurePipe implements PipeTransform {
     );
   }
 }
-
-/**
- * @deprecated Import the standalone `IsMatchPurePipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [IsMatchPurePipe],
-  exports: [IsMatchPurePipe]
-})
-export class IsMatchPurePipeModule {}

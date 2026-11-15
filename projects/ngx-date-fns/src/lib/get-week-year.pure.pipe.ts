@@ -1,4 +1,4 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import { getWeekYear } from 'date-fns/getWeekYear';
 import {
@@ -11,7 +11,7 @@ import {
   DateFnsWeekIndex
 } from './types';
 
-@Pipe({ name: 'dfnsGetWeekYearPure', standalone: true })
+@Pipe({ name: 'dfnsGetWeekYearPure' })
 export class GetWeekYearPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -26,13 +26,3 @@ export class GetWeekYearPurePipe implements PipeTransform {
     return getWeekYear(date, calculateLocale(options, this.config));
   }
 }
-
-/**
- * @deprecated Import the standalone `GetWeekYearPurePipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [GetWeekYearPurePipe],
-  exports: [GetWeekYearPurePipe]
-})
-export class GetWeekYearPurePipeModule {}

@@ -1,4 +1,4 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import { startOfWeek } from 'date-fns/startOfWeek';
 import {
@@ -7,7 +7,7 @@ import {
 } from './date-fns-configuration.service';
 import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 
-@Pipe({ name: 'dfnsStartOfWeekPure', standalone: true })
+@Pipe({ name: 'dfnsStartOfWeekPure' })
 export class StartOfWeekPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -21,13 +21,3 @@ export class StartOfWeekPurePipe implements PipeTransform {
     return startOfWeek(date, calculateLocale(options, this.config));
   }
 }
-
-/**
- * @deprecated Import the standalone `StartOfWeekPurePipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [StartOfWeekPurePipe],
-  exports: [StartOfWeekPurePipe]
-})
-export class StartOfWeekPurePipeModule {}

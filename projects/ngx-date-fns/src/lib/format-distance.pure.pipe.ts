@@ -1,4 +1,4 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import { formatDistance } from 'date-fns/formatDistance';
 import {
@@ -8,7 +8,7 @@ import {
 import { DateFnsInputDate } from './types';
 import { isValidDate } from './utils';
 
-@Pipe({ name: 'dfnsFormatDistancePure', standalone: true })
+@Pipe({ name: 'dfnsFormatDistancePure' })
 export class FormatDistancePurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -31,13 +31,3 @@ export class FormatDistancePurePipe implements PipeTransform {
     return '';
   }
 }
-
-/**
- * @deprecated Import the standalone `FormatDistancePurePipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [FormatDistancePurePipe],
-  exports: [FormatDistancePurePipe]
-})
-export class FormatDistancePurePipeModule {}

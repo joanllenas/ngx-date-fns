@@ -1,4 +1,4 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import { lastDayOfWeek } from 'date-fns/lastDayOfWeek';
 import {
@@ -7,7 +7,7 @@ import {
 } from './date-fns-configuration.service';
 import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 
-@Pipe({ name: 'dfnsLastDayOfWeekPure', standalone: true })
+@Pipe({ name: 'dfnsLastDayOfWeekPure' })
 export class LastDayOfWeekPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -21,13 +21,3 @@ export class LastDayOfWeekPurePipe implements PipeTransform {
     return lastDayOfWeek(date, calculateLocale(options, this.config));
   }
 }
-
-/**
- * @deprecated Import the standalone `LastDayOfWeekPurePipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [LastDayOfWeekPurePipe],
-  exports: [LastDayOfWeekPurePipe]
-})
-export class LastDayOfWeekPurePipeModule {}

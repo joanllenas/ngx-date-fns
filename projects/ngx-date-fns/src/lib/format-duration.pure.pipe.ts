@@ -1,4 +1,4 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import type { Duration, Locale } from 'date-fns';
 import { formatDuration } from 'date-fns/formatDuration';
 import {
@@ -6,7 +6,7 @@ import {
   DateFnsConfigurationService
 } from './date-fns-configuration.service';
 
-@Pipe({ name: 'dfnsFormatDurationPure', standalone: true })
+@Pipe({ name: 'dfnsFormatDurationPure' })
 export class FormatDurationPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -22,13 +22,3 @@ export class FormatDurationPurePipe implements PipeTransform {
     return formatDuration(duration, calculateLocale(options, this.config));
   }
 }
-
-/**
- * @deprecated Import the standalone `FormatDurationPurePipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [FormatDurationPurePipe],
-  exports: [FormatDurationPurePipe]
-})
-export class FormatDurationPurePipeModule {}

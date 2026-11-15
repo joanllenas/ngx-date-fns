@@ -1,6 +1,5 @@
 import {
   ChangeDetectorRef,
-  NgModule,
   OnDestroy,
   Pipe,
   PipeTransform
@@ -31,7 +30,7 @@ const formats = {
  */
 export type WeekdayNameFormat = keyof typeof formats;
 
-@Pipe({ name: 'dfnsWeekdayName', pure: false, standalone: true })
+@Pipe({ name: 'dfnsWeekdayName', pure: false })
 export class WeekdayNamePipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -64,13 +63,3 @@ export class WeekdayNamePipe implements PipeTransform, OnDestroy {
     return format(week[day], formats[view], locale);
   }
 }
-
-/**
- * @deprecated Import the standalone `WeekdayNamePipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [WeekdayNamePipe],
-  exports: [WeekdayNamePipe]
-})
-export class WeekdayNamePipeModule {}

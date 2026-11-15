@@ -3,36 +3,25 @@ import { TestBed } from '@angular/core/testing';
 import * as publicApi from '../public-api';
 import { AddDaysPipe } from './add-days.pipe';
 import { DateFnsModule } from './date-fns.module';
-import { FormatPipe, FormatPipeModule } from './format.pipe';
+import { FormatPipe } from './format.pipe';
 
 const exportsByName = new Map<string, unknown>(Object.entries(publicApi));
 const exportNames = [...exportsByName.keys()];
 const pipeNames = exportNames.filter(name => name.endsWith('Pipe'));
-const pipeModuleNames = exportNames.filter(name => name.endsWith('PipeModule'));
 const pipes = pipeNames.map(name => exportsByName.get(name) as Type<unknown>);
 
-@Component({ standalone: true, template: '' })
+// Angular has no public API that returns the name of a pipe class.
+const templateNameOf = (pipe: Type<unknown>): string =>
+  (pipe as any).ɵpipe.name;
+
+@Component({ template: '' })
 class EmptyHostComponent {}
 
 @Component({
-  standalone: true,
   imports: [AddDaysPipe, FormatPipe],
-  template: `
-    {{ date | dfnsAddDays: 1 | dfnsFormat: 'yyyy-MM-dd' }}
-  `
+  template: ` {{ date | dfnsAddDays: 1 | dfnsFormat: 'yyyy-MM-dd' }} `
 })
 class DirectImportHostComponent {
-  date = new Date(2017, 11, 31);
-}
-
-@Component({
-  standalone: true,
-  imports: [FormatPipeModule],
-  template: `
-    {{ date | dfnsFormat: 'yyyy-MM-dd' }}
-  `
-})
-class DeprecatedModuleHostComponent {
   date = new Date(2017, 11, 31);
 }
 
@@ -41,11 +30,11 @@ describe('Standalone pipes', () => {
     expect(pipes.length).toBeGreaterThan(100);
   });
 
-  it('exports a standalone pipe for every deprecated pipe module', () => {
-    const modulesWithoutPipe = pipeModuleNames.filter(
-      moduleName => !exportsByName.has(moduleName.replace(/Module$/, ''))
+  it('does not export per-pipe modules from the public API', () => {
+    const pipeModuleNames = exportNames.filter(name =>
+      name.endsWith('PipeModule')
     );
-    expect(modulesWithoutPipe).toEqual([]);
+    expect(pipeModuleNames).toEqual([]);
   });
 
   it('can import every pipe directly in a standalone component', () => {
@@ -58,21 +47,20 @@ describe('Standalone pipes', () => {
     fixture.detectChanges();
     expect(fixture.nativeElement.textContent.trim()).toBe('2018-01-01');
   });
-
-  it('renders a pipe imported through its deprecated module', () => {
-    const fixture = TestBed.createComponent(DeprecatedModuleHostComponent);
-    fixture.detectChanges();
-    expect(fixture.nativeElement.textContent.trim()).toBe('2017-12-31');
-  });
 });
 
 describe('DateFnsModule', () => {
   it('exports every pipe of the public API', () => {
-    // Angular has no public API that lists the exports of an NgModule.
-    const moduleExports: unknown[] = (DateFnsModule as any).ɵmod.exports;
-    const missingPipes = pipeNames.filter(
-      name => !moduleExports.includes(exportsByName.get(name))
-    );
-    expect(missingPipes).toEqual([]);
+    // The AOT build removes the export list of the module. An override makes
+    // TestBed compile the module again in JIT mode, with the export list.
+    TestBed.overrideModule(DateFnsModule, {});
+    // createComponent throws NG0302 for a pipe that the module does not export.
+    const template = pipes
+      .map(pipe => `{{ null | ${templateNameOf(pipe)} }}`)
+      .join('\n');
+    TestBed.overrideComponent(EmptyHostComponent, {
+      set: { imports: [DateFnsModule], template }
+    });
+    expect(() => TestBed.createComponent(EmptyHostComponent)).not.toThrow();
   });
 });

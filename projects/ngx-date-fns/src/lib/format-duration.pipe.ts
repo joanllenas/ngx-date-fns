@@ -2,8 +2,7 @@ import {
   Pipe,
   PipeTransform,
   ChangeDetectorRef,
-  OnDestroy,
-  NgModule
+  OnDestroy
 } from '@angular/core';
 import {
   DateFnsConfigurationService,
@@ -13,7 +12,7 @@ import { Subscription } from 'rxjs';
 import type { Duration, Locale } from 'date-fns';
 import { formatDuration } from 'date-fns/formatDuration';
 
-@Pipe({ name: 'dfnsFormatDuration', pure: false, standalone: true })
+@Pipe({ name: 'dfnsFormatDuration', pure: false })
 export class FormatDurationPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -42,13 +41,3 @@ export class FormatDurationPipe implements PipeTransform, OnDestroy {
     return formatDuration(duration, calculateLocale(options, this.config));
   }
 }
-
-/**
- * @deprecated Import the standalone `FormatDurationPipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [FormatDurationPipe],
-  exports: [FormatDurationPipe]
-})
-export class FormatDurationPipeModule {}

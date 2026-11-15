@@ -2,8 +2,7 @@ import {
   Pipe,
   PipeTransform,
   ChangeDetectorRef,
-  OnDestroy,
-  NgModule
+  OnDestroy
 } from '@angular/core';
 import {
   DateFnsConfigurationService,
@@ -15,7 +14,7 @@ import { Locale } from 'date-fns';
 import { formatDistanceToNow } from 'date-fns/formatDistanceToNow';
 import { isValidDate } from './utils';
 
-@Pipe({ name: 'dfnsFormatDistanceToNow', pure: false, standalone: true })
+@Pipe({ name: 'dfnsFormatDistanceToNow', pure: false })
 export class FormatDistanceToNowPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -46,13 +45,3 @@ export class FormatDistanceToNowPipe implements PipeTransform, OnDestroy {
     return '';
   }
 }
-
-/**
- * @deprecated Import the standalone `FormatDistanceToNowPipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [FormatDistanceToNowPipe],
-  exports: [FormatDistanceToNowPipe]
-})
-export class FormatDistanceToNowPipeModule {}

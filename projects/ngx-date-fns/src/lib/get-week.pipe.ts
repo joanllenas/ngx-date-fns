@@ -2,8 +2,7 @@ import {
   Pipe,
   PipeTransform,
   OnDestroy,
-  ChangeDetectorRef,
-  NgModule
+  ChangeDetectorRef
 } from '@angular/core';
 import {
   DateFnsInputDate,
@@ -18,7 +17,7 @@ import {
   calculateLocale
 } from './date-fns-configuration.service';
 
-@Pipe({ name: 'dfnsGetWeek', pure: false, standalone: true })
+@Pipe({ name: 'dfnsGetWeek', pure: false })
 export class GetWeekPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -46,13 +45,3 @@ export class GetWeekPipe implements PipeTransform, OnDestroy {
     return getWeek(date, calculateLocale(options, this.config));
   }
 }
-
-/**
- * @deprecated Import the standalone `GetWeekPipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [GetWeekPipe],
-  exports: [GetWeekPipe]
-})
-export class GetWeekPipeModule {}
