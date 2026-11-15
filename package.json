@@ -30,6 +30,7 @@
     "build": "ng build ngx-date-fns",
     "test": "ng test ngx-date-fns --no-watch --no-progress --browsers=ChromeHeadless",
     "cy:run": "cypress run",
+    "smoke-test": "bash smoke-test/run.sh",
     "e2e:ci": "start-server-and-test start http-get://localhost:4200 cy:run",
     "e2e": "npx cypress open",
     "copy-readme": "cp ./README.md ./dist/ngx-date-fns",
