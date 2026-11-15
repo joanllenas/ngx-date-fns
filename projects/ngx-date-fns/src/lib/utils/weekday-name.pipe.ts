@@ -31,7 +31,7 @@ const formats = {
  */
 export type WeekdayNameFormat = keyof typeof formats;
 
-@Pipe({ name: 'dfnsWeekdayName', pure: false })
+@Pipe({ name: 'dfnsWeekdayName', pure: false, standalone: true })
 export class WeekdayNamePipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -65,8 +65,12 @@ export class WeekdayNamePipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `WeekdayNamePipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [WeekdayNamePipe],
+  imports: [WeekdayNamePipe],
   exports: [WeekdayNamePipe]
 })
 export class WeekdayNamePipeModule {}

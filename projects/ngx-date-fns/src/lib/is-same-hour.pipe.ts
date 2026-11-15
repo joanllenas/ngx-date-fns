@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isSameHour } from 'date-fns/isSameHour';
 
 @Pipe({
-  name: 'dfnsIsSameHour'
+  name: 'dfnsIsSameHour',
+  standalone: true
 })
 export class IsSameHourPipe implements PipeTransform {
   transform(dateLeft: DateFnsInputDate, dateRight: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsSameHourPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsSameHourPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsSameHourPipe],
+  imports: [IsSameHourPipe],
   exports: [IsSameHourPipe]
 })
 export class IsSameHourPipeModule {}

@@ -14,7 +14,7 @@ import { isMatch } from 'date-fns';
 import type { Locale } from 'date-fns';
 import { DateFnsFirstWeekDays, DateFnsWeekIndex } from './types';
 
-@Pipe({ name: 'dfnsIsMatch', pure: false })
+@Pipe({ name: 'dfnsIsMatch', pure: false, standalone: true })
 export class IsMatchPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -50,8 +50,12 @@ export class IsMatchPipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsMatchPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsMatchPipe],
+  imports: [IsMatchPipe],
   exports: [IsMatchPipe]
 })
 export class IsMatchPipeModule {}

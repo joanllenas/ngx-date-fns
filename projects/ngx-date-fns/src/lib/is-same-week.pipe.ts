@@ -14,7 +14,7 @@ import {
 import { isSameWeek } from 'date-fns/isSameWeek';
 import type { Locale } from 'date-fns';
 
-@Pipe({ name: 'dfnsIsSameWeek', pure: false })
+@Pipe({ name: 'dfnsIsSameWeek', pure: false, standalone: true })
 export class IsSameWeekPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -47,8 +47,12 @@ export class IsSameWeekPipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsSameWeekPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsSameWeekPipe],
+  imports: [IsSameWeekPipe],
   exports: [IsSameWeekPipe]
 })
 export class IsSameWeekPipeModule {}

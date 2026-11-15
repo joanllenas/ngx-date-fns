@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isSameISOWeek } from 'date-fns/isSameISOWeek';
 
 @Pipe({
-  name: 'dfnsIsSameISOWeek'
+  name: 'dfnsIsSameISOWeek',
+  standalone: true
 })
 export class IsSameISOWeekPipe implements PipeTransform {
   transform(dateLeft: DateFnsInputDate, dateRight: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsSameISOWeekPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsSameISOWeekPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsSameISOWeekPipe],
+  imports: [IsSameISOWeekPipe],
   exports: [IsSameISOWeekPipe]
 })
 export class IsSameISOWeekPipeModule {}

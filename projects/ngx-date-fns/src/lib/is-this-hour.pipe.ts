@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isThisHour } from 'date-fns/isThisHour';
 
 @Pipe({
-  name: 'dfnsIsThisHour'
+  name: 'dfnsIsThisHour',
+  standalone: true
 })
 export class IsThisHourPipe implements PipeTransform {
   transform(date: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsThisHourPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsThisHourPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsThisHourPipe],
+  imports: [IsThisHourPipe],
   exports: [IsThisHourPipe]
 })
 export class IsThisHourPipeModule {}

@@ -59,7 +59,8 @@ import { TestStrategyDefaultComponent } from './test-default.component';
   `
 })
 export class StrategyDefaultComponent {
-  dateOne = '2015-12-31T23:00:00.000Z';
+  // A date-time string without an offset is local time in every time zone.
+  dateOne = '2016-01-01T00:00:00';
   dateTwo = new Date(2017, 0, 1);
   dateThree: Date;
   dates: Date[];

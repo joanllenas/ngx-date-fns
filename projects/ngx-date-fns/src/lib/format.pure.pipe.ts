@@ -8,7 +8,7 @@ import {
 } from './date-fns-configuration.service';
 import { isValidDate } from './utils';
 
-@Pipe({ name: 'dfnsFormatPure' })
+@Pipe({ name: 'dfnsFormatPure', standalone: true })
 export class FormatPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -30,8 +30,12 @@ export class FormatPurePipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `FormatPurePipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [FormatPurePipe],
+  imports: [FormatPurePipe],
   exports: [FormatPurePipe]
 })
 export class FormatPurePipeModule {}

@@ -1,26 +1,87 @@
 name: Checks
 
 on:
+  push:
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
+  # Every Monday, to test new Angular and date-fns releases.
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install Dependencies
-        run: npm install
+          node-version: 24.x
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build library
+        run: npm run build
       - name: Run unit tests
         run: npm run test
       - name: Run e2e tests
         run: npm run e2e:ci
+
+  smoke-test:
+    name: Smoke test with the latest Angular and date-fns
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24.x
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build library
+        run: npm run build
+      - name: Build a new app with the packed library
+        run: npm run smoke-test
+
+  release:
+    name: Release to npm
+    needs: [test, smoke-test]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    # Two merges in a short time must not compute the same version.
+    concurrency:
+      group: release
+      cancel-in-progress: false
+    permissions:
+      contents: write # Creates the git tag and the GitHub release
+      issues: write # Comments on the released issues
+      pull-requests: write # Comments on the released pull requests
+      id-token: write # npm Trusted Publishing (OIDC), so no NPM_TOKEN secret
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # semantic-release reads all commits and tags since the last release.
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24.x
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build library
+        run: npm run build
+      - name: Copy README to the package
+        run: npm run copy-readme
+      # Computes the version from the commit messages, publishes
+      # dist/ngx-date-fns to npm, and creates the tag and the GitHub release.
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

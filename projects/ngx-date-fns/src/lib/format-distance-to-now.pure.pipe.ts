@@ -8,7 +8,7 @@ import {
 import { DateFnsInputDate } from './types';
 import { isValidDate } from './utils';
 
-@Pipe({ name: 'dfnsFormatDistanceToNowPure' })
+@Pipe({ name: 'dfnsFormatDistanceToNowPure', standalone: true })
 export class FormatDistanceToNowPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -27,8 +27,12 @@ export class FormatDistanceToNowPurePipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `FormatDistanceToNowPurePipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [FormatDistanceToNowPurePipe],
+  imports: [FormatDistanceToNowPurePipe],
   exports: [FormatDistanceToNowPurePipe]
 })
 export class FormatDistanceToNowPurePipeModule {}

@@ -1,7 +1,7 @@
 import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { parseISO } from 'date-fns/parseISO';
 
-@Pipe({ name: 'dfnsParseIso' })
+@Pipe({ name: 'dfnsParseIso', standalone: true })
 export class ParseIsoPipe implements PipeTransform {
   transform(
     dateString: string,
@@ -13,8 +13,12 @@ export class ParseIsoPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `ParseIsoPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [ParseIsoPipe],
+  imports: [ParseIsoPipe],
   exports: [ParseIsoPipe]
 })
 export class ParseIsoPipeModule {}

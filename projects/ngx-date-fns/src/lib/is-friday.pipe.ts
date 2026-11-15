@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isFriday } from 'date-fns/isFriday';
 
 @Pipe({
-  name: 'dfnsIsFriday'
+  name: 'dfnsIsFriday',
+  standalone: true
 })
 export class IsFridayPipe implements PipeTransform {
   transform(date: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsFridayPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsFridayPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsFridayPipe],
+  imports: [IsFridayPipe],
   exports: [IsFridayPipe]
 })
 export class IsFridayPipeModule {}

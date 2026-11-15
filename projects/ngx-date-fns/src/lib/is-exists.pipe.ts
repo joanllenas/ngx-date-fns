@@ -2,7 +2,8 @@ import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { isExists } from 'date-fns/isExists';
 
 @Pipe({
-  name: 'dfnsIsExists'
+  name: 'dfnsIsExists',
+  standalone: true
 })
 export class IsExistsPipe implements PipeTransform {
   transform(year: number, month: number, day: number): boolean {
@@ -10,8 +11,12 @@ export class IsExistsPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsExistsPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsExistsPipe],
+  imports: [IsExistsPipe],
   exports: [IsExistsPipe]
 })
 export class IsExistsPipeModule {}

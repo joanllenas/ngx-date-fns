@@ -14,7 +14,7 @@ import { DateFnsInputDate } from './types';
 import { Locale } from 'date-fns';
 import { parse } from 'date-fns/parse';
 
-@Pipe({ name: 'dfnsParse', pure: false })
+@Pipe({ name: 'dfnsParse', pure: false, standalone: true })
 export class ParsePipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -52,8 +52,12 @@ export class ParsePipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `ParsePipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [ParsePipe],
+  imports: [ParsePipe],
   exports: [ParsePipe]
 })
 export class ParsePipeModule {}

@@ -7,7 +7,7 @@ import {
 } from './date-fns-configuration.service';
 import { DateFnsInputDate } from './types';
 
-@Pipe({ name: 'dfnsParsePure' })
+@Pipe({ name: 'dfnsParsePure', standalone: true })
 export class ParsePurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -32,8 +32,12 @@ export class ParsePurePipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `ParsePurePipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [ParsePurePipe],
+  imports: [ParsePurePipe],
   exports: [ParsePurePipe]
 })
 export class ParsePurePipeModule {}

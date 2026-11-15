@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isThisYear } from 'date-fns/isThisYear';
 
 @Pipe({
-  name: 'dfnsIsThisYear'
+  name: 'dfnsIsThisYear',
+  standalone: true
 })
 export class IsThisYearPipe implements PipeTransform {
   transform(date: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsThisYearPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsThisYearPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsThisYearPipe],
+  imports: [IsThisYearPipe],
   exports: [IsThisYearPipe]
 })
 export class IsThisYearPipeModule {}

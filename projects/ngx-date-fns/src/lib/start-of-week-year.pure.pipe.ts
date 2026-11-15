@@ -11,7 +11,7 @@ import {
   DateFnsWeekIndex
 } from './types';
 
-@Pipe({ name: 'dfnsStartOfWeekYearPure' })
+@Pipe({ name: 'dfnsStartOfWeekYearPure', standalone: true })
 export class StartOfWeekYearPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -27,8 +27,12 @@ export class StartOfWeekYearPurePipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `StartOfWeekYearPurePipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [StartOfWeekYearPurePipe],
+  imports: [StartOfWeekYearPurePipe],
   exports: [StartOfWeekYearPurePipe]
 })
 export class StartOfWeekYearPurePipeModule {}

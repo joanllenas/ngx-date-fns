@@ -2,7 +2,7 @@ import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate } from './types';
 import { closestTo } from 'date-fns/closestTo';
 
-@Pipe({ name: 'dfnsClosestTo' })
+@Pipe({ name: 'dfnsClosestTo', standalone: true })
 export class ClosestToPipe implements PipeTransform {
   transform(
     dateToCompare: DateFnsInputDate,
@@ -12,8 +12,12 @@ export class ClosestToPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `ClosestToPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [ClosestToPipe],
+  imports: [ClosestToPipe],
   exports: [ClosestToPipe]
 })
 export class ClosestToPipeModule {}

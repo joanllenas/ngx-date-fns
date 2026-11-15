@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isThisQuarter } from 'date-fns/isThisQuarter';
 
 @Pipe({
-  name: 'dfnsIsThisQuarter'
+  name: 'dfnsIsThisQuarter',
+  standalone: true
 })
 export class IsThisQuarterPipe implements PipeTransform {
   transform(date: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsThisQuarterPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsThisQuarterPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsThisQuarterPipe],
+  imports: [IsThisQuarterPipe],
   exports: [IsThisQuarterPipe]
 })
 export class IsThisQuarterPipeModule {}

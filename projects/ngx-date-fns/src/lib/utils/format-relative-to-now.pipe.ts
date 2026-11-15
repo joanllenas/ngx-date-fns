@@ -15,7 +15,7 @@ import { Locale } from 'date-fns';
 import { formatRelative } from 'date-fns/formatRelative';
 import { isValidDate } from '../utils';
 
-@Pipe({ name: 'dfnsFormatRelativeToNow', pure: false })
+@Pipe({ name: 'dfnsFormatRelativeToNow', pure: false, standalone: true })
 export class FormatRelativeToNowPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -51,8 +51,12 @@ export class FormatRelativeToNowPipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `FormatRelativeToNowPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [FormatRelativeToNowPipe],
+  imports: [FormatRelativeToNowPipe],
   exports: [FormatRelativeToNowPipe]
 })
 export class FormatRelativeToNowPipeModule {}
