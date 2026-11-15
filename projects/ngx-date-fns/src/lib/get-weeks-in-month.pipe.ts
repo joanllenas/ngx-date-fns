@@ -14,7 +14,7 @@ import {
   calculateLocale
 } from './date-fns-configuration.service';
 
-@Pipe({ name: 'dfnsGetWeeksInMonth', pure: false })
+@Pipe({ name: 'dfnsGetWeeksInMonth', pure: false, standalone: true })
 export class GetWeeksInMonthPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -42,8 +42,12 @@ export class GetWeeksInMonthPipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `GetWeeksInMonthPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [GetWeeksInMonthPipe],
+  imports: [GetWeeksInMonthPipe],
   exports: [GetWeeksInMonthPipe]
 })
 export class GetWeeksInMonthPipeModule {}

@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 import type { Duration, Locale } from 'date-fns';
 import { formatDuration } from 'date-fns/formatDuration';
 
-@Pipe({ name: 'dfnsFormatDuration', pure: false })
+@Pipe({ name: 'dfnsFormatDuration', pure: false, standalone: true })
 export class FormatDurationPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -43,8 +43,12 @@ export class FormatDurationPipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `FormatDurationPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [FormatDurationPipe],
+  imports: [FormatDurationPipe],
   exports: [FormatDurationPipe]
 })
 export class FormatDurationPipeModule {}

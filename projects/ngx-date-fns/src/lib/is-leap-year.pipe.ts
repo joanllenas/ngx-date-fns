@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isLeapYear } from 'date-fns/isLeapYear';
 
 @Pipe({
-  name: 'dfnsIsLeapYear'
+  name: 'dfnsIsLeapYear',
+  standalone: true
 })
 export class IsLeapYearPipe implements PipeTransform {
   transform(date: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsLeapYearPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsLeapYearPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsLeapYearPipe],
+  imports: [IsLeapYearPipe],
   exports: [IsLeapYearPipe]
 })
 export class IsLeapYearPipeModule {}

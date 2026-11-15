@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isThisISOWeek } from 'date-fns/isThisISOWeek';
 
 @Pipe({
-  name: 'dfnsIsThisISOWeek'
+  name: 'dfnsIsThisISOWeek',
+  standalone: true
 })
 export class IsThisISOWeekPipe implements PipeTransform {
   transform(date: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsThisISOWeekPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsThisISOWeekPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsThisISOWeekPipe],
+  imports: [IsThisISOWeekPipe],
   exports: [IsThisISOWeekPipe]
 })
 export class IsThisISOWeekPipeModule {}

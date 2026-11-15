@@ -13,7 +13,7 @@ import {
 } from './date-fns-configuration.service';
 import { Locale, isThisWeek } from 'date-fns';
 
-@Pipe({ name: 'dfnsIsThisWeek', pure: false })
+@Pipe({ name: 'dfnsIsThisWeek', pure: false, standalone: true })
 export class IsThisWeekPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -41,8 +41,12 @@ export class IsThisWeekPipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsThisWeekPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsThisWeekPipe],
+  imports: [IsThisWeekPipe],
   exports: [IsThisWeekPipe]
 })
 export class IsThisWeekPipeModule {}

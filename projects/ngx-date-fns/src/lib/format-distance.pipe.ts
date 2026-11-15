@@ -15,7 +15,7 @@ import { Locale } from 'date-fns';
 import { formatDistance } from 'date-fns/formatDistance';
 import { isValidDate } from './utils';
 
-@Pipe({ name: 'dfnsFormatDistance', pure: false })
+@Pipe({ name: 'dfnsFormatDistance', pure: false, standalone: true })
 export class FormatDistancePipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -52,8 +52,12 @@ export class FormatDistancePipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `FormatDistancePipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [FormatDistancePipe],
+  imports: [FormatDistancePipe],
   exports: [FormatDistancePipe]
 })
 export class FormatDistancePipeModule {}

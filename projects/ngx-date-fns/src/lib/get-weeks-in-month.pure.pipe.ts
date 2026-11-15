@@ -7,7 +7,7 @@ import {
 } from './date-fns-configuration.service';
 import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 
-@Pipe({ name: 'dfnsGetWeeksInMonthPure' })
+@Pipe({ name: 'dfnsGetWeeksInMonthPure', standalone: true })
 export class GetWeeksInMonthPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -22,8 +22,12 @@ export class GetWeeksInMonthPurePipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `GetWeeksInMonthPurePipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [GetWeeksInMonthPurePipe],
+  imports: [GetWeeksInMonthPurePipe],
   exports: [GetWeeksInMonthPurePipe]
 })
 export class GetWeeksInMonthPurePipeModule {}

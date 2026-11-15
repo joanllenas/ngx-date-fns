@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isFirstDayOfMonth } from 'date-fns/isFirstDayOfMonth';
 
 @Pipe({
-  name: 'dfnsIsFirstDayOfMonth'
+  name: 'dfnsIsFirstDayOfMonth',
+  standalone: true
 })
 export class IsFirstDayOfMonthPipe implements PipeTransform {
   transform(date: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsFirstDayOfMonthPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsFirstDayOfMonthPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsFirstDayOfMonthPipe],
+  imports: [IsFirstDayOfMonthPipe],
   exports: [IsFirstDayOfMonthPipe]
 })
 export class IsFirstDayOfMonthPipeModule {}

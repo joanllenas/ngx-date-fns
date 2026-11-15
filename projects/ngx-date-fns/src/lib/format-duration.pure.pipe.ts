@@ -6,7 +6,7 @@ import {
   DateFnsConfigurationService
 } from './date-fns-configuration.service';
 
-@Pipe({ name: 'dfnsFormatDurationPure' })
+@Pipe({ name: 'dfnsFormatDurationPure', standalone: true })
 export class FormatDurationPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -23,8 +23,12 @@ export class FormatDurationPurePipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `FormatDurationPurePipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [FormatDurationPurePipe],
+  imports: [FormatDurationPurePipe],
   exports: [FormatDurationPurePipe]
 })
 export class FormatDurationPurePipeModule {}

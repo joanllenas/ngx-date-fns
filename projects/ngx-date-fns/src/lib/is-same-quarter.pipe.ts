@@ -3,7 +3,8 @@ import { DateFnsInputDate } from './types';
 import { isSameQuarter } from 'date-fns/isSameQuarter';
 
 @Pipe({
-  name: 'dfnsIsSameQuarter'
+  name: 'dfnsIsSameQuarter',
+  standalone: true
 })
 export class IsSameQuarterPipe implements PipeTransform {
   transform(dateLeft: DateFnsInputDate, dateRight: DateFnsInputDate): boolean {
@@ -11,8 +12,12 @@ export class IsSameQuarterPipe implements PipeTransform {
   }
 }
 
+/**
+ * @deprecated Import the standalone `IsSameQuarterPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [IsSameQuarterPipe],
+  imports: [IsSameQuarterPipe],
   exports: [IsSameQuarterPipe]
 })
 export class IsSameQuarterPipeModule {}

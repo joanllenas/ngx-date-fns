@@ -14,7 +14,7 @@ import {
   calculateLocale
 } from './date-fns-configuration.service';
 
-@Pipe({ name: 'dfnsStartOfWeek', pure: false })
+@Pipe({ name: 'dfnsStartOfWeek', pure: false, standalone: true })
 export class StartOfWeekPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -42,8 +42,12 @@ export class StartOfWeekPipe implements PipeTransform, OnDestroy {
   }
 }
 
+/**
+ * @deprecated Import the standalone `StartOfWeekPipe` instead.
+ * This module will be removed in ngx-date-fns v13.
+ */
 @NgModule({
-  declarations: [StartOfWeekPipe],
+  imports: [StartOfWeekPipe],
   exports: [StartOfWeekPipe]
 })
 export class StartOfWeekPipeModule {}

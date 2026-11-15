@@ -17,6 +17,7 @@
   - [date-fns v1 support](#v1-support)
 - [Issues / feature requests](#issues-and-feat-reqs)
 - [Basic Usage](#usage)
+- [Importing pipes](#importing-pipes)
 - [Working with locales](#locales)
   - [Changing locale globally](#locale-globally)
   - [Changing locale at runtime](#locale-runtime)
@@ -151,6 +152,33 @@ hace 6 días - (Explicit 'es' locale)
 lunes - (Explicit 'es' locale)
 03/12/2010
 ```
+
+<a name="importing-pipes" />
+
+## Importing pipes
+
+There are three ways to import the pipes:
+
+- **Standalone pipes (recommended).** Import only the pipes that you use. The class name of a pipe is its name without the `dfns` prefix, plus `Pipe`. For example, the class of `dfnsFormatDistanceToNow` is `FormatDistanceToNowPipe`.
+- **`DateFnsModule`.** It exports all pipes.
+- **Per-pipe modules, such as `FormatPipeModule`.** They are deprecated in ngx-date-fns v12.1.0 and will be removed in ngx-date-fns v13. Replace each module with its standalone pipe, for example `FormatPipeModule` -> `FormatPipe`.
+
+```typescript
+import { Component } from '@angular/core';
+import { AddDaysPipe, FormatPipe } from 'ngx-date-fns';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [AddDaysPipe, FormatPipe],
+  template: `<p>{{ date | dfnsAddDays: 1 | dfnsFormat: 'yyyy-MM-dd' }}</p>`
+})
+export class App {
+  date = new Date(2016, 0, 1);
+}
+```
+
+Standalone pipes also work in an NgModule. Add them to the `imports` array of the NgModule.
 
 <a name="locales" />
 
