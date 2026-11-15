@@ -1,6 +1,5 @@
 {
   "name": "ngx-date-fns-workspace",
-  "version": "12.0.1",
   "description": "date-fns pipes for Angular",
   "repository": {
     "type": "git",
@@ -33,11 +32,7 @@
     "smoke-test": "bash smoke-test/run.sh",
     "e2e:ci": "start-server-and-test start http-get://localhost:4200 cy:run",
     "e2e": "npx cypress open",
-    "copy-readme": "cp ./README.md ./dist/ngx-date-fns",
-    "sync-version": "sync-json -v --property version --source package.json dist/ngx-date-fns/package.json",
-    "release-dance": "npm run build && npm run test && npm run e2e:ci && npm run copy-readme && npm run sync-version",
-    "release": "npm run release-dance && npm publish dist/ngx-date-fns/",
-    "next": "npm run release-dance && npm publish dist/ngx-date-fns/ --tag next"
+    "copy-readme": "cp ./README.md ./dist/ngx-date-fns"
   },
   "private": true,
   "dependencies": {
@@ -68,8 +63,8 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^17.0.0",
     "prettier": "^1.19.1",
+    "semantic-release": "^25.0.9",
     "start-server-and-test": "^2.0.3",
-    "sync-json": "^1.0.2",
     "typescript": "~5.2.2"
   }
 }
