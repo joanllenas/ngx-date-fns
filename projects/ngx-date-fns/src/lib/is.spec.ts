@@ -549,9 +549,7 @@ describe('Is..? ', () => {
       expected: false
     }
   ].forEach(test => {
-    it(`${test.dateLeft} ${removePipe(test.pipe.constructor.name)} ${
-      test.dateRight
-    }? ${test.expected}`, () => {
+    it(`${test.dateLeft} ${removePipe(test.pipe.constructor.name)} ${test.dateRight}? ${test.expected}`, () => {
       expect(test.pipe.transform(test.dateLeft, test.dateRight)).toEqual(
         test.expected
       );
@@ -583,9 +581,7 @@ describe('Is..? ', () => {
         expected: false
       }
     ].forEach(test => {
-      it(`${test.date.toDateString()} Is Within ${test.interval.start.toDateString()} and ${test.interval.end.toDateString()}? ${
-        test.expected
-      }`, () => {
+      it(`${test.date.toDateString()} Is Within ${test.interval.start.toDateString()} and ${test.interval.end.toDateString()}? ${test.expected}`, () => {
         expect(
           new IsWithinIntervalPipe().transform(test.date, test.interval)
         ).toEqual(test.expected);
@@ -595,12 +591,12 @@ describe('Is..? ', () => {
 
   describe('isToday()', () => {
     beforeEach(() => {
-      jasmine.clock().uninstall();
-      jasmine.clock().install();
-      jasmine.clock().mockDate(new Date(2014, 9, 6));
+      vi.useRealTimers();
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2014, 9, 6));
     });
     afterEach(() => {
-      jasmine.clock().uninstall();
+      vi.useRealTimers();
     });
 
     [

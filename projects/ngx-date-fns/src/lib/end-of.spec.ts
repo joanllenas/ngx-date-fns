@@ -73,9 +73,7 @@ import { removePipe } from './test-utils';
   }
 ].forEach(test => {
   describe(test.pipe.constructor.name, () => {
-    it(`should display the ${removePipe(test.pipe.constructor.name)} of ${
-      test.date
-    }`, () => {
+    it(`should display the ${removePipe(test.pipe.constructor.name)} of ${test.date}`, () => {
       if (test.options) {
         expect(test.pipe.transform(test.date, test.options)).toEqual(
           test.expected
@@ -104,12 +102,12 @@ import { removePipe } from './test-utils';
 ].forEach(test => {
   describe(test.pipe.constructor.name, () => {
     beforeEach(() => {
-      jasmine.clock().uninstall();
-      jasmine.clock().install();
-      jasmine.clock().mockDate(new Date(2014, 9, 6));
+      vi.useRealTimers();
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2014, 9, 6));
     });
     afterEach(() => {
-      jasmine.clock().uninstall();
+      vi.useRealTimers();
     });
     it(`should display the ${removePipe(test.pipe.constructor.name)}`, () => {
       expect(test.pipe.transform()).toEqual(test.expected);

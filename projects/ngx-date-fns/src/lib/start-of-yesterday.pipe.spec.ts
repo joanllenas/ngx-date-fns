@@ -5,13 +5,13 @@ describe('StartOfYesterdayPipe', () => {
 
   beforeEach(() => {
     pipe = new StartOfYesterdayPipe();
-    jasmine.clock().uninstall();
-    jasmine.clock().install();
-    jasmine.clock().mockDate(new Date(2014, 9, 6));
+    vi.useRealTimers();
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(2014, 9, 6));
   });
 
   afterEach(() => {
-    jasmine.clock().uninstall();
+    vi.useRealTimers();
   });
 
   it('should return the start of the day before October the 6th, 2014', () => {

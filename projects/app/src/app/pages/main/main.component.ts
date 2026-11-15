@@ -1,12 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { es } from 'date-fns/locale';
 import { DateFnsModule } from 'ngx-date-fns';
 
 @Component({
   selector: 'dfns-main-component',
-  standalone: true,
-  imports: [CommonModule, DateFnsModule],
+  imports: [DateFnsModule],
   template: `
     <h2>Main</h2>
     <p class="output" data-testid="mmddyyyy">
@@ -23,12 +21,12 @@ import { DateFnsModule } from 'ngx-date-fns';
       locale)
     </p>
     <p class="output" data-testid="weekday-es">
-      {{ 0 | dfnsWeekdayName: 'full':options }} - (Explicit 'es' locale)
+      {{ 0 | dfnsWeekdayName: 'full' : options }} - (Explicit 'es' locale)
     </p>
     <p class="output" data-testid="parse-es">
       {{
         '12 de Marzo'
-          | dfnsParse: parseFormat:parseDate:parseLocale
+          | dfnsParse: parseFormat : parseDate : parseLocale
           | dfnsFormat: 'MM/dd/yyyy'
       }}
     </p>

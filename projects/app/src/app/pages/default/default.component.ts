@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DateFnsConfigurationService } from 'ngx-date-fns';
 import { es, de, fr } from 'date-fns/locale';
@@ -6,8 +5,7 @@ import { TestStrategyDefaultComponent } from './test-default.component';
 
 @Component({
   selector: 'dfns-default-component',
-  standalone: true,
-  imports: [CommonModule, TestStrategyDefaultComponent],
+  imports: [TestStrategyDefaultComponent],
   styles: `
     .locale-toggle {
       display: flex;

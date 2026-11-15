@@ -33,12 +33,12 @@ describe('FormatRelativeToNowPipe', () => {
   };
 
   beforeEach(() => {
-    jasmine.clock().uninstall();
-    jasmine.clock().install();
+    vi.useRealTimers();
+    vi.useFakeTimers();
     pipe = createPipe();
   });
   afterEach(() => {
-    jasmine.clock().uninstall();
+    vi.useRealTimers();
   });
 
   nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [null]);
@@ -46,7 +46,7 @@ describe('FormatRelativeToNowPipe', () => {
 
   it('should display distance to the previous 6th day', () => {
     const now = new Date(2015, 0, 10, 4, 30, 0);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     expect(pipe.transform(new Date(2015, 0, 4, 4, 30, 0))).toBe(
       'last Sunday at 4:30 AM'
     );
@@ -54,7 +54,7 @@ describe('FormatRelativeToNowPipe', () => {
 
   it('should display distance to the previous day', () => {
     const now = new Date(2015, 0, 10, 4, 30, 0);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     expect(pipe.transform(new Date(2015, 0, 9, 4, 30, 0))).toBe(
       'yesterday at 4:30 AM'
     );
@@ -62,7 +62,7 @@ describe('FormatRelativeToNowPipe', () => {
 
   it('should display for the same day', () => {
     const now = new Date(2015, 0, 10, 4, 30, 0);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     expect(pipe.transform(new Date(2015, 0, 10, 4, 30, 0))).toBe(
       'today at 4:30 AM'
     );
@@ -70,7 +70,7 @@ describe('FormatRelativeToNowPipe', () => {
 
   it('should display distance to the next day', () => {
     const now = new Date(2015, 0, 10, 4, 30, 0);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     expect(pipe.transform(new Date(2015, 0, 11, 4, 30, 0))).toBe(
       'tomorrow at 4:30 AM'
     );
@@ -78,7 +78,7 @@ describe('FormatRelativeToNowPipe', () => {
 
   it('should display distance to next 6th day', () => {
     const now = new Date(2015, 0, 12, 4, 30, 0);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     expect(pipe.transform(new Date(2015, 0, 18, 4, 30, 0))).toBe(
       'Sunday at 4:30 AM'
     );
@@ -86,13 +86,13 @@ describe('FormatRelativeToNowPipe', () => {
 
   it('should display other dates as formatted', () => {
     const now = new Date(2015, 6, 1, 4, 30, 0);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     expect(pipe.transform(new Date(2015, 0, 1, 4, 30, 0))).toBe('01/01/2015');
   });
 
   it('should display output correctly when providing "locale"', () => {
     const now = new Date(2015, 0, 2);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     expect(
       pipe.transform(new Date(2015, 0, 1), {
         locale: es
@@ -106,11 +106,11 @@ describe('FormatRelativeToNowPipe Pure', () => {
     new FormatRelativeToNowPurePipe(new DateFnsConfigurationService());
 
   beforeEach(() => {
-    jasmine.clock().uninstall();
-    jasmine.clock().install();
+    vi.useRealTimers();
+    vi.useFakeTimers();
   });
   afterEach(() => {
-    jasmine.clock().uninstall();
+    vi.useRealTimers();
   });
 
   nullOrUndefinedDateReturnsEmptyStringTest(createPipe(), [null]);
@@ -118,7 +118,7 @@ describe('FormatRelativeToNowPipe Pure', () => {
 
   it('should display for the same day', () => {
     const now = new Date(2015, 0, 10, 4, 30, 0);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     expect(createPipe().transform(new Date(2015, 0, 10, 4, 30, 0))).toBe(
       'today at 4:30 AM'
     );
@@ -126,7 +126,7 @@ describe('FormatRelativeToNowPipe Pure', () => {
 
   it('should display output correctly when providing "locale"', () => {
     const now = new Date(2015, 0, 1);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     expect(
       createPipe().transform(new Date(2015, 0, 1), {
         locale: es
@@ -136,7 +136,7 @@ describe('FormatRelativeToNowPipe Pure', () => {
 
   it('should display output correctly when providing "locale" via config', () => {
     const now = new Date(2015, 0, 1);
-    jasmine.clock().mockDate(now);
+    vi.setSystemTime(now);
     const conf = new DateFnsConfigurationService();
     conf.setLocale(es);
     const pipe = new FormatRelativeToNowPurePipe(conf);

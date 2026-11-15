@@ -1,12 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { es } from 'date-fns/locale';
 import { DateFnsInputDate, DateFnsModule } from 'ngx-date-fns';
 
 @Component({
   selector: 'dfns-test-default-component',
-  standalone: true,
-  imports: [CommonModule, DateFnsModule],
+  imports: [DateFnsModule],
   changeDetection: ChangeDetectionStrategy.Default,
   template: `
     <p class="output" data-testid="mmddyyyy">
@@ -23,13 +21,11 @@ import { DateFnsInputDate, DateFnsModule } from 'ngx-date-fns';
       locale)
     </p>
     <ul>
-      <li
-        class="output"
-        [attr.data-testid]="'distance-now-' + i"
-        *ngFor="let d of dates; let i = index"
-      >
-        {{ d | dfnsFormatDistanceToNow }}
-      </li>
+      @for (d of dates; track d; let i = $index) {
+        <li class="output" [attr.data-testid]="'distance-now-' + i">
+          {{ d | dfnsFormatDistanceToNow }}
+        </li>
+      }
     </ul>
   `
 })
