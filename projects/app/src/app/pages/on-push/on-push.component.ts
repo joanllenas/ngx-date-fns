@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DateFnsConfigurationService } from 'ngx-date-fns';
 import { es, de, fr } from 'date-fns/locale';
@@ -7,8 +6,7 @@ import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'dfns-onpush-component',
-  standalone: true,
-  imports: [CommonModule, TestOnPushComponent],
+  imports: [TestOnPushComponent],
   styles: `
     .locale-toggle {
       display: flex;

@@ -2,8 +2,7 @@ import {
   Pipe,
   PipeTransform,
   ChangeDetectorRef,
-  OnDestroy,
-  NgModule
+  OnDestroy
 } from '@angular/core';
 import {
   DateFnsConfigurationService,
@@ -15,7 +14,7 @@ import { Locale } from 'date-fns';
 import { format } from 'date-fns/format';
 import { isValidDate } from './utils';
 
-@Pipe({ name: 'dfnsFormat', pure: false, standalone: true })
+@Pipe({ name: 'dfnsFormat', pure: false })
 export class FormatPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -49,13 +48,3 @@ export class FormatPipe implements PipeTransform, OnDestroy {
     return '';
   }
 }
-
-/**
- * @deprecated Import the standalone `FormatPipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [FormatPipe],
-  exports: [FormatPipe]
-})
-export class FormatPipeModule {}

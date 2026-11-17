@@ -1,8 +1,8 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 import { endOfWeek } from 'date-fns/endOfWeek';
 
-@Pipe({ name: 'dfnsEndOfWeek', standalone: true })
+@Pipe({ name: 'dfnsEndOfWeek' })
 export class EndOfWeekPipe implements PipeTransform {
   transform(
     date: DateFnsInputDate,
@@ -13,13 +13,3 @@ export class EndOfWeekPipe implements PipeTransform {
     return endOfWeek(date, options);
   }
 }
-
-/**
- * @deprecated Import the standalone `EndOfWeekPipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [EndOfWeekPipe],
-  exports: [EndOfWeekPipe]
-})
-export class EndOfWeekPipeModule {}

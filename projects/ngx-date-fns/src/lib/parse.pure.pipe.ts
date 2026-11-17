@@ -1,4 +1,4 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { Locale } from 'date-fns';
 import { parse } from 'date-fns/parse';
 import {
@@ -7,7 +7,7 @@ import {
 } from './date-fns-configuration.service';
 import { DateFnsInputDate } from './types';
 
-@Pipe({ name: 'dfnsParsePure', standalone: true })
+@Pipe({ name: 'dfnsParsePure' })
 export class ParsePurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -31,13 +31,3 @@ export class ParsePurePipe implements PipeTransform {
     );
   }
 }
-
-/**
- * @deprecated Import the standalone `ParsePurePipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [ParsePurePipe],
-  exports: [ParsePurePipe]
-})
-export class ParsePurePipeModule {}

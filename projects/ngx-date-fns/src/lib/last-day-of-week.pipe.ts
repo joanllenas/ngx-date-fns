@@ -2,8 +2,7 @@ import {
   Pipe,
   PipeTransform,
   OnDestroy,
-  ChangeDetectorRef,
-  NgModule
+  ChangeDetectorRef
 } from '@angular/core';
 import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 import { Locale } from 'date-fns';
@@ -14,7 +13,7 @@ import {
   calculateLocale
 } from './date-fns-configuration.service';
 
-@Pipe({ name: 'dfnsLastDayOfWeek', pure: false, standalone: true })
+@Pipe({ name: 'dfnsLastDayOfWeek', pure: false })
 export class LastDayOfWeekPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -41,13 +40,3 @@ export class LastDayOfWeekPipe implements PipeTransform, OnDestroy {
     return lastDayOfWeek(date, calculateLocale(options, this.config));
   }
 }
-
-/**
- * @deprecated Import the standalone `LastDayOfWeekPipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [LastDayOfWeekPipe],
-  exports: [LastDayOfWeekPipe]
-})
-export class LastDayOfWeekPipeModule {}

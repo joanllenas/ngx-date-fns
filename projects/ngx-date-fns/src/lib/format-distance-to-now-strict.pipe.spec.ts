@@ -34,13 +34,12 @@ describe('FormatDistanceToNowStrictPipe', () => {
 
   beforeEach(() => {
     pipe = createPipe();
-    jasmine.clock().uninstall();
-    jasmine.clock().install();
-    jasmine.clock().mockDate(new Date(2015, 0, 1));
+    vi.useFakeTimers({ toFake: ['Date'] });
+    vi.setSystemTime(new Date(2015, 0, 1));
   });
 
   afterEach(() => {
-    jasmine.clock().uninstall();
+    vi.useRealTimers();
   });
 
   it('should display output correctly', () => {
@@ -84,13 +83,12 @@ describe('FormatDistanceToNowStrictPipe', () => {
 
 describe('FormatDistanceToNowStrictPipe Pure', () => {
   beforeEach(() => {
-    jasmine.clock().uninstall();
-    jasmine.clock().install();
-    jasmine.clock().mockDate(new Date(2015, 0, 1));
+    vi.useFakeTimers({ toFake: ['Date'] });
+    vi.setSystemTime(new Date(2015, 0, 1));
   });
 
   afterEach(() => {
-    jasmine.clock().uninstall();
+    vi.useRealTimers();
   });
 
   nullOrUndefinedDateReturnsEmptyStringTest(

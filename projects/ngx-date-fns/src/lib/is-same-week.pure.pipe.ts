@@ -1,4 +1,4 @@
-import { NgModule, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import {
   calculateLocale,
   DateFnsConfigurationService
@@ -7,7 +7,7 @@ import { DateFnsInputDate, DateFnsWeekIndex } from './types';
 import { isSameWeek } from 'date-fns/isSameWeek';
 import type { Locale } from 'date-fns';
 
-@Pipe({ name: 'dfnsIsSameWeekPure', standalone: true })
+@Pipe({ name: 'dfnsIsSameWeekPure' })
 export class IsSameWeekPurePipe implements PipeTransform {
   constructor(public config: DateFnsConfigurationService) {}
 
@@ -26,13 +26,3 @@ export class IsSameWeekPurePipe implements PipeTransform {
     );
   }
 }
-
-/**
- * @deprecated Import the standalone `IsSameWeekPurePipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [IsSameWeekPurePipe],
-  exports: [IsSameWeekPurePipe]
-})
-export class IsSameWeekPurePipeModule {}

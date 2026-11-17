@@ -43,7 +43,14 @@
 The latest version of this library requires:
 
 - [date-fns](https://date-fns.org/) `= v4.x.x`.
-- Angular `>= v17.0.0`.
+- Angular `>= v21.0.0`.
+
+| Angular      | ngx-date-fns |
+| ------------ | ------------ |
+| 21 and newer | 13.x         |
+| 17 to 20     | 12.x         |
+
+For Angular 17 to 20, install ngx-date-fns 12 with `npm install --save ngx-date-fns@12`. See the [ngx-date-fns@12.1.0 docs](https://github.com/joanllenas/ngx-date-fns/tree/v12.1.0).
 
 <a name="installation" />
 
@@ -104,17 +111,14 @@ When a pull request is squash merged, its title becomes the commit message, so t
 > [stackblitz example](https://stackblitz.com/edit/stackblitz-starters-eonlzk?file=src%2Fmain.ts)
 
 ```typescript
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import 'zone.js';
 import { es } from 'date-fns/locale';
 import { DateFnsModule } from 'ngx-date-fns';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, DateFnsModule],
+  imports: [DateFnsModule],
   template: `
     <p>{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
     <p>{{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'EEE LLLL d yyyy' }}</p>
@@ -171,11 +175,10 @@ lunes - (Explicit 'es' locale)
 
 ## Importing pipes
 
-There are three ways to import the pipes:
+There are two ways to import the pipes:
 
 - **Standalone pipes (recommended).** Import only the pipes that you use. The class name of a pipe is its name without the `dfns` prefix, plus `Pipe`. For example, the class of `dfnsFormatDistanceToNow` is `FormatDistanceToNowPipe`.
 - **`DateFnsModule`.** It exports all pipes.
-- **Per-pipe modules, such as `FormatPipeModule`.** They are deprecated in ngx-date-fns v12.1.0 and will be removed in ngx-date-fns v13. Replace each module with its standalone pipe, for example `FormatPipeModule` -> `FormatPipe`.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -183,7 +186,6 @@ import { AddDaysPipe, FormatPipe } from 'ngx-date-fns';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [AddDaysPipe, FormatPipe],
   template: `<p>{{ date | dfnsAddDays: 1 | dfnsFormat: 'yyyy-MM-dd' }}</p>`
 })
@@ -193,6 +195,8 @@ export class App {
 ```
 
 Standalone pipes also work in an NgModule. Add them to the `imports` array of the NgModule.
+
+ngx-date-fns v13 removed the per-pipe modules, such as `FormatPipeModule`. Replace each module with its standalone pipe, for example `FormatPipeModule` -> `FormatPipe`.
 
 <a name="locales" />
 
@@ -224,18 +228,15 @@ export const appConfig: ApplicationConfig = {
 
 ```typescript
 // main.ts
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import 'zone.js';
 import { es } from 'date-fns/locale';
 import { DateFnsModule } from 'ngx-date-fns';
 import { appConfig } from './app.config';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, DateFnsModule],
+  imports: [DateFnsModule],
   template: `
     (...)
   `
@@ -256,17 +257,14 @@ It is also possible to change the default locale at runtime:
 > [stackblitz example](https://stackblitz.com/edit/stackblitz-starters-6rbpwc?file=src%2Fmain.ts)
 
 ```typescript
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import 'zone.js';
 import { es, de } from 'date-fns/locale';
 import { DateFnsConfigurationService, DateFnsModule } from 'ngx-date-fns';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, DateFnsModule],
+  imports: [DateFnsModule],
   template: `
     <p>{{ dateOne | dfnsFormat: 'EEE LLLL d yyyy' }}</p>
     <hr />

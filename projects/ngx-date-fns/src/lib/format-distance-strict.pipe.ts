@@ -2,8 +2,7 @@ import {
   Pipe,
   PipeTransform,
   OnDestroy,
-  ChangeDetectorRef,
-  NgModule
+  ChangeDetectorRef
 } from '@angular/core';
 import {
   DateFnsConfigurationService,
@@ -15,7 +14,7 @@ import { Locale } from 'date-fns';
 import { formatDistanceStrict } from 'date-fns/formatDistanceStrict';
 import { isValidDate } from './utils';
 
-@Pipe({ name: 'dfnsFormatDistanceStrict', pure: false, standalone: true })
+@Pipe({ name: 'dfnsFormatDistanceStrict', pure: false })
 export class FormatDistanceStrictPipe implements PipeTransform, OnDestroy {
   private localeChanged$: Subscription;
 
@@ -52,13 +51,3 @@ export class FormatDistanceStrictPipe implements PipeTransform, OnDestroy {
     return '';
   }
 }
-
-/**
- * @deprecated Import the standalone `FormatDistanceStrictPipe` instead.
- * This module will be removed in ngx-date-fns v13.
- */
-@NgModule({
-  imports: [FormatDistanceStrictPipe],
-  exports: [FormatDistanceStrictPipe]
-})
-export class FormatDistanceStrictPipeModule {}

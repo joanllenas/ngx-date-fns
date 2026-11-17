@@ -1,6 +1,6 @@
 // Root component of the app that smoke-test/run.sh generates.
-// It uses the three ways to import pipes: standalone pipe classes,
-// a deprecated per-pipe module and DateFnsModule.
+// It uses the two ways to import pipes: standalone pipe classes and
+// DateFnsModule.
 import { Component, inject } from '@angular/core';
 import { es } from 'date-fns/locale';
 import {
@@ -8,20 +8,12 @@ import {
   DateFnsConfigurationService,
   DateFnsModule,
   FormatPipe,
-  FormatPurePipe,
-  IsSameMonthPipeModule
+  FormatPurePipe
 } from 'ngx-date-fns';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [
-    AddDaysPipe,
-    FormatPipe,
-    FormatPurePipe,
-    IsSameMonthPipeModule,
-    DateFnsModule
-  ],
+  imports: [AddDaysPipe, FormatPipe, FormatPurePipe, DateFnsModule],
   template: `
     <p id="standalone-impure">{{ date | dfnsFormat: 'EEEE d MMMM yyyy' }}</p>
     <p id="standalone-pure">
@@ -30,7 +22,6 @@ import {
     <p id="string-input">
       {{ '2026-01-15T10:00:00Z' | dfnsFormat: 'MMM yyyy' }}
     </p>
-    <p id="pipe-module">{{ date | dfnsIsSameMonth: otherDate }}</p>
     <p id="date-fns-module">{{ date | dfnsFormatDistance: otherDate }}</p>
   `
 })
