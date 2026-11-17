@@ -111,17 +111,14 @@ When a pull request is squash merged, its title becomes the commit message, so t
 > [stackblitz example](https://stackblitz.com/edit/stackblitz-starters-eonlzk?file=src%2Fmain.ts)
 
 ```typescript
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import 'zone.js';
 import { es } from 'date-fns/locale';
 import { DateFnsModule } from 'ngx-date-fns';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, DateFnsModule],
+  imports: [DateFnsModule],
   template: `
     <p>{{ dateOne | dfnsFormat: 'MM/dd/yyyy' }}</p>
     <p>{{ [dateOne, dateTwo] | dfnsMin | dfnsFormat: 'EEE LLLL d yyyy' }}</p>
@@ -189,7 +186,6 @@ import { AddDaysPipe, FormatPipe } from 'ngx-date-fns';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [AddDaysPipe, FormatPipe],
   template: `<p>{{ date | dfnsAddDays: 1 | dfnsFormat: 'yyyy-MM-dd' }}</p>`
 })
@@ -232,18 +228,15 @@ export const appConfig: ApplicationConfig = {
 
 ```typescript
 // main.ts
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import 'zone.js';
 import { es } from 'date-fns/locale';
 import { DateFnsModule } from 'ngx-date-fns';
 import { appConfig } from './app.config';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, DateFnsModule],
+  imports: [DateFnsModule],
   template: `
     (...)
   `
@@ -264,17 +257,14 @@ It is also possible to change the default locale at runtime:
 > [stackblitz example](https://stackblitz.com/edit/stackblitz-starters-6rbpwc?file=src%2Fmain.ts)
 
 ```typescript
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import 'zone.js';
 import { es, de } from 'date-fns/locale';
 import { DateFnsConfigurationService, DateFnsModule } from 'ngx-date-fns';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, DateFnsModule],
+  imports: [DateFnsModule],
   template: `
     <p>{{ dateOne | dfnsFormat: 'EEE LLLL d yyyy' }}</p>
     <hr />
