@@ -34,8 +34,7 @@ describe('FormatDistanceToNowPipe', () => {
 
   beforeEach(() => {
     pipe = createPipe();
-    vi.useRealTimers();
-    vi.useFakeTimers();
+    vi.useFakeTimers({ toFake: ['Date'] });
     vi.setSystemTime(new Date(2015, 0, 1));
   });
 
@@ -71,8 +70,7 @@ describe('FormatDistanceToNowPipe', () => {
 
 describe('FormatDistanceToNowPipe Pure', () => {
   beforeEach(() => {
-    vi.useRealTimers();
-    vi.useFakeTimers();
+    vi.useFakeTimers({ toFake: ['Date'] });
     vi.setSystemTime(new Date(2015, 0, 1));
   });
 

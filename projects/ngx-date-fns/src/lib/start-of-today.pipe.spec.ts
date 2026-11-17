@@ -5,8 +5,7 @@ describe('StartOfTodayPipe', () => {
 
   beforeEach(() => {
     pipe = new StartOfTodayPipe();
-    vi.useRealTimers();
-    vi.useFakeTimers();
+    vi.useFakeTimers({ toFake: ['Date'] });
     vi.setSystemTime(new Date(2014, 9, 6));
   });
   afterEach(() => {

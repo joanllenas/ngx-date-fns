@@ -33,8 +33,7 @@ describe('FormatRelativeToNowPipe', () => {
   };
 
   beforeEach(() => {
-    vi.useRealTimers();
-    vi.useFakeTimers();
+    vi.useFakeTimers({ toFake: ['Date'] });
     pipe = createPipe();
   });
   afterEach(() => {
@@ -106,8 +105,7 @@ describe('FormatRelativeToNowPipe Pure', () => {
     new FormatRelativeToNowPurePipe(new DateFnsConfigurationService());
 
   beforeEach(() => {
-    vi.useRealTimers();
-    vi.useFakeTimers();
+    vi.useFakeTimers({ toFake: ['Date'] });
   });
   afterEach(() => {
     vi.useRealTimers();

@@ -102,8 +102,7 @@ import { removePipe } from './test-utils';
 ].forEach(test => {
   describe(test.pipe.constructor.name, () => {
     beforeEach(() => {
-      vi.useRealTimers();
-      vi.useFakeTimers();
+      vi.useFakeTimers({ toFake: ['Date'] });
       vi.setSystemTime(new Date(2014, 9, 6));
     });
     afterEach(() => {
