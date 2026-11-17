@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DateFnsConfigurationService } from 'ngx-date-fns';
+import { subDays } from 'date-fns';
 import { es, de, fr } from 'date-fns/locale';
 import { TestOnPushComponent } from './test-onpush.component';
 import { Observable, of } from 'rxjs';
@@ -68,9 +69,11 @@ export class StrategyOnPushComponent {
     const dateThree = new Date();
     dateThree.setDate(dateThree.getDate() - 6);
     this.dateThree$ = of(dateThree);
-    this.dates = new Array(6)
-      .fill(new Date())
-      .map((d, i) => d.setDate(d.getDate() - Math.pow(5, i)));
+    // Each distance gives a different output: days, about 1 month, months,
+    // about 2 years and over 10 years.
+    this.dates = [1, 6, 31, 156, 781, 3906].map(days =>
+      subDays(new Date(), days)
+    );
     this.activeLocale = this.config.locale()?.code;
   }
   changeToFrench() {
